@@ -292,6 +292,52 @@ html, body {
   line-height: 1.35;
 }
 
+.validate-box {
+  margin-top: 20px;
+  border-top: 1px solid rgba(28, 42, 68, 0.3);
+  padding-top: 14px;
+}
+.rating-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 10px 0;
+}
+.rating-btn {
+  background: rgba(255,255,255,0.3);
+  border: 1.5px solid var(--navy-soft);
+  padding: 8px 6px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  color: var(--ink);
+}
+.rating-btn:hover { background: rgba(255,255,255,0.55); }
+.rating-btn.active { background: var(--navy); color: var(--manila); border-color: var(--navy); }
+.validate-box input.share-fallback { margin-bottom: 10px; }
+@media (max-width: 560px) {
+  .rating-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+.site-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--navy-soft);
+}
+.site-footer a {
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--navy-soft);
+}
+.site-footer a:hover {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
 .breakdown {
   margin-top: 16px;
   border-top: 1px solid rgba(28, 42, 68, 0.3);

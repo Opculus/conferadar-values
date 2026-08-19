@@ -9,6 +9,11 @@
 // catches every 50/50 blend of each bucket's closest anchor pair (100% recall)
 // while cutting the false-positive rate to 12.6%.
 const LABEL_THRESHOLD = 9;
+// Opt-in, anonymized result submission for construct-validity testing (does
+// respondents agree with their result?). Empty string disables the feature —
+// no submit UI renders until a real endpoint is deployed. See
+// SETUP-DATA-COLLECTION.md to deploy one and fill this in.
+const SUBMIT_ENDPOINT = '';
 const MODULE2_FILES = {
   1: 'module2-b01-ml-questions.json',
   2: 'module2-b02-leftcom-questions.json',
@@ -245,6 +250,9 @@ const state = {
   culturalScore: 50,
   m2: null,
   fromLink: false,
+  accuracyRating: '',
+  selfId: '',
+  submitStatus: 'idle', // 'idle' | 'sending' | 'sent' | 'error'
 };
 
 const root = document.getElementById('app');
@@ -278,6 +286,109 @@ function el(tag, attrs = {}, children = []) {
 }
 const text = (tag, cls, str) => el(tag, { class: cls }, [document.createTextNode(str)]);
 
+function siteFooter() {
+  return el('div', { class: 'site-footer' }, [
+    document.createTextNode('Discussion & feedback — '),
+    el('a', {
+      href: 'https://discord.gg/Ct5aNegdun',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    }, document.createTextNode('join the Discord ↗')),
+  ]);
+}
+
+function buildSubmissionPayload() {
+  const family = state.routing.find(r => r.id === state.bucketId) || state.routing[0];
+  return {
+    form: state.form,
+    m1: {
+      bucket: family.name,
+      axes: state.m1scores,
+      matchPercent: family.matchPercent,
+    },
+    m2: {
+      bucketId: state.bucketId,
+      label: state.m2.label,
+      primary: state.m2.primary.name,
+      secondary: state.m2.secondary ? state.m2.secondary.name : '',
+      matchPercent: state.m2.primary.matchPercent,
+    },
+    culturalScore: state.culturalScore,
+    accuracyRating: state.accuracyRating,
+    // free text is the whole point (self-reported ideology to compare against
+    // the routed label) but still capped — this is a public unauthenticated
+    // endpoint and the field must not become a place to paste arbitrary text.
+    selfId: state.selfId.slice(0, 300),
+  };
+}
+
+// Shown only on a respondent's own freshly-taken result (never on a shared
+// link someone else is viewing) and only once an endpoint is deployed.
+function renderValidation() {
+  const box = el('div', { class: 'validate-box' });
+  box.appendChild(text('div', 'section-title', 'HELP CALIBRATE THIS TEST'));
+
+  if (state.submitStatus === 'sent') {
+    box.appendChild(text('p', 'note', 'Thanks — your anonymized result was submitted.'));
+    return box;
+  }
+
+  box.appendChild(text('p', 'note',
+    'Optional and anonymous. Submitting sends only the scores and label shown ' +
+    'above, plus whatever you answer below — no individual question answers, ' +
+    'no identifying info.'));
+
+  const ratingRow = el('div', { class: 'rating-row' });
+  for (const r of ['Spot on', 'Close', 'Off', 'Way off']) {
+    ratingRow.appendChild(el('button', {
+      class: 'rating-btn' + (state.accuracyRating === r ? ' active' : ''),
+      onclick: () => { state.accuracyRating = r; render(); },
+    }, text('span', '', r)));
+  }
+  box.appendChild(ratingRow);
+
+  const selfIdInput = el('input', {
+    class: 'share-fallback',
+    placeholder: 'If different, what do you actually identify as? (optional)',
+    value: state.selfId,
+  });
+  // deliberately no render() here — a full re-render on every keystroke would
+  // blow away focus and cursor position in this input
+  selfIdInput.addEventListener('input', e => { state.selfId = e.target.value; });
+  box.appendChild(selfIdInput);
+
+  const submitBtn = el('button', {
+    class: 'begin-btn compact',
+    disabled: state.submitStatus === 'sending' ? 'disabled' : null,
+  }, text('span', '', state.submitStatus === 'error' ? 'RETRY SUBMIT' : '📤 SUBMIT ANONYMIZED RESULT'));
+  submitBtn.addEventListener('click', async () => {
+    state.submitStatus = 'sending';
+    render();
+    try {
+      // no-cors: Apps Script web apps don't send CORS headers a browser will
+      // accept, so the response is opaque and unreadable either way — the
+      // POST still reaches the server and appends the row. text/plain avoids
+      // a preflight OPTIONS request, which Apps Script doesn't implement.
+      await fetch(SUBMIT_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(buildSubmissionPayload()),
+      });
+      state.submitStatus = 'sent';
+    } catch (e) {
+      state.submitStatus = 'error';
+    }
+    render();
+  });
+  box.appendChild(submitBtn);
+  if (state.submitStatus === 'error') {
+    box.appendChild(text('p', 'note', 'Submission failed — check your connection and try again.'));
+  }
+
+  return box;
+}
+
 function renderIntro() {
   const wrap = el('div', { class: 'sheet intro' });
   wrap.appendChild(el('div', { class: 'stamp-corner' }, text('span', '', 'CLASSIFIED')));
@@ -305,6 +416,8 @@ function renderIntro() {
     class: 'begin-btn',
     onclick: () => beginModule1(),
   }, text('span', '', 'BEGIN INTAKE →')));
+
+  wrap.appendChild(siteFooter());
 
   root.appendChild(wrap);
 }
@@ -631,6 +744,10 @@ function renderResults() {
     },
   }, text('span', '', state.fromLink ? '→ TAKE THE TEST YOURSELF' : '↺ RETAKE ASSESSMENT')));
   wrap.appendChild(actions);
+
+  if (SUBMIT_ENDPOINT && !state.fromLink) wrap.appendChild(renderValidation());
+
+  wrap.appendChild(siteFooter());
 
   root.appendChild(wrap);
 }

@@ -56,6 +56,10 @@ questions actually capture the beliefs they claim to). See
 testing, and `MODULE2-NOTES.md` / `WORDING-ISSUES.md` for the design and
 tuning history.
 
+## Discussion
+
+[discord.gg/Ct5aNegdun](https://discord.gg/Ct5aNegdun)
+
 ## License
 
 MIT — see `LICENSE`.

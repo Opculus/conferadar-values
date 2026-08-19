@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Conferadar Values</title>
+<meta name="description" content="A deeper, more granular political-ideology quiz than 8values or Political Compass: a 6-axis router into 13 ideological families, then a family-specific 8-axis battery placing you among 151 named sub-ideologies.">
+<meta property="og:title" content="Conferadar Values">
+<meta property="og:description" content="A deeper, more granular political-ideology quiz than 8values or Political Compass: a 6-axis router into 13 ideological families, then a family-specific 8-axis battery placing you among 151 named sub-ideologies.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Conferadar Values">
+<meta name="twitter:description" content="A deeper, more granular political-ideology quiz than 8values or Political Compass: a 6-axis router into 13 ideological families, then a family-specific 8-axis battery placing you among 151 named sub-ideologies.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23d9c9a3'/%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%231c2a44' stroke-width='2.5'/%3E%3Cline x1='16' y1='3' x2='16' y2='29' stroke='%231c2a44' stroke-width='1.5'/%3E%3Cline x1='3' y1='16' x2='29' y2='16' stroke='%231c2a44' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%238c1f1f'/%3E%3C/svg%3E">
 <style>
 :root {
   --manila: #d9c9a3;
@@ -299,6 +307,52 @@ html, body {
   line-height: 1.35;
 }
 
+.validate-box {
+  margin-top: 20px;
+  border-top: 1px solid rgba(28, 42, 68, 0.3);
+  padding-top: 14px;
+}
+.rating-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 10px 0;
+}
+.rating-btn {
+  background: rgba(255,255,255,0.3);
+  border: 1.5px solid var(--navy-soft);
+  padding: 8px 6px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  color: var(--ink);
+}
+.rating-btn:hover { background: rgba(255,255,255,0.55); }
+.rating-btn.active { background: var(--navy); color: var(--manila); border-color: var(--navy); }
+.validate-box input.share-fallback { margin-bottom: 10px; }
+@media (max-width: 560px) {
+  .rating-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+.site-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--navy-soft);
+}
+.site-footer a {
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--navy-soft);
+}
+.site-footer a:hover {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
 .breakdown {
   margin-top: 16px;
   border-top: 1px solid rgba(28, 42, 68, 0.3);
@@ -383,6 +437,11 @@ html, body {
 // catches every 50/50 blend of each bucket's closest anchor pair (100% recall)
 // while cutting the false-positive rate to 12.6%.
 const LABEL_THRESHOLD = 9;
+// Opt-in, anonymized result submission for construct-validity testing (does
+// respondents agree with their result?). Empty string disables the feature —
+// no submit UI renders until a real endpoint is deployed. See
+// SETUP-DATA-COLLECTION.md to deploy one and fill this in.
+const SUBMIT_ENDPOINT = '';
 const MODULE2_FILES = {
   1: 'module2-b01-ml-questions.json',
   2: 'module2-b02-leftcom-questions.json',
@@ -619,6 +678,9 @@ const state = {
   culturalScore: 50,
   m2: null,
   fromLink: false,
+  accuracyRating: '',
+  selfId: '',
+  submitStatus: 'idle', // 'idle' | 'sending' | 'sent' | 'error'
 };
 
 const root = document.getElementById('app');
@@ -652,6 +714,109 @@ function el(tag, attrs = {}, children = []) {
 }
 const text = (tag, cls, str) => el(tag, { class: cls }, [document.createTextNode(str)]);
 
+function siteFooter() {
+  return el('div', { class: 'site-footer' }, [
+    document.createTextNode('Discussion & feedback — '),
+    el('a', {
+      href: 'https://discord.gg/Ct5aNegdun',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    }, document.createTextNode('join the Discord ↗')),
+  ]);
+}
+
+function buildSubmissionPayload() {
+  const family = state.routing.find(r => r.id === state.bucketId) || state.routing[0];
+  return {
+    form: state.form,
+    m1: {
+      bucket: family.name,
+      axes: state.m1scores,
+      matchPercent: family.matchPercent,
+    },
+    m2: {
+      bucketId: state.bucketId,
+      label: state.m2.label,
+      primary: state.m2.primary.name,
+      secondary: state.m2.secondary ? state.m2.secondary.name : '',
+      matchPercent: state.m2.primary.matchPercent,
+    },
+    culturalScore: state.culturalScore,
+    accuracyRating: state.accuracyRating,
+    // free text is the whole point (self-reported ideology to compare against
+    // the routed label) but still capped — this is a public unauthenticated
+    // endpoint and the field must not become a place to paste arbitrary text.
+    selfId: state.selfId.slice(0, 300),
+  };
+}
+
+// Shown only on a respondent's own freshly-taken result (never on a shared
+// link someone else is viewing) and only once an endpoint is deployed.
+function renderValidation() {
+  const box = el('div', { class: 'validate-box' });
+  box.appendChild(text('div', 'section-title', 'HELP CALIBRATE THIS TEST'));
+
+  if (state.submitStatus === 'sent') {
+    box.appendChild(text('p', 'note', 'Thanks — your anonymized result was submitted.'));
+    return box;
+  }
+
+  box.appendChild(text('p', 'note',
+    'Optional and anonymous. Submitting sends only the scores and label shown ' +
+    'above, plus whatever you answer below — no individual question answers, ' +
+    'no identifying info.'));
+
+  const ratingRow = el('div', { class: 'rating-row' });
+  for (const r of ['Spot on', 'Close', 'Off', 'Way off']) {
+    ratingRow.appendChild(el('button', {
+      class: 'rating-btn' + (state.accuracyRating === r ? ' active' : ''),
+      onclick: () => { state.accuracyRating = r; render(); },
+    }, text('span', '', r)));
+  }
+  box.appendChild(ratingRow);
+
+  const selfIdInput = el('input', {
+    class: 'share-fallback',
+    placeholder: 'If different, what do you actually identify as? (optional)',
+    value: state.selfId,
+  });
+  // deliberately no render() here — a full re-render on every keystroke would
+  // blow away focus and cursor position in this input
+  selfIdInput.addEventListener('input', e => { state.selfId = e.target.value; });
+  box.appendChild(selfIdInput);
+
+  const submitBtn = el('button', {
+    class: 'begin-btn compact',
+    disabled: state.submitStatus === 'sending' ? 'disabled' : null,
+  }, text('span', '', state.submitStatus === 'error' ? 'RETRY SUBMIT' : '📤 SUBMIT ANONYMIZED RESULT'));
+  submitBtn.addEventListener('click', async () => {
+    state.submitStatus = 'sending';
+    render();
+    try {
+      // no-cors: Apps Script web apps don't send CORS headers a browser will
+      // accept, so the response is opaque and unreadable either way — the
+      // POST still reaches the server and appends the row. text/plain avoids
+      // a preflight OPTIONS request, which Apps Script doesn't implement.
+      await fetch(SUBMIT_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(buildSubmissionPayload()),
+      });
+      state.submitStatus = 'sent';
+    } catch (e) {
+      state.submitStatus = 'error';
+    }
+    render();
+  });
+  box.appendChild(submitBtn);
+  if (state.submitStatus === 'error') {
+    box.appendChild(text('p', 'note', 'Submission failed — check your connection and try again.'));
+  }
+
+  return box;
+}
+
 function renderIntro() {
   const wrap = el('div', { class: 'sheet intro' });
   wrap.appendChild(el('div', { class: 'stamp-corner' }, text('span', '', 'CLASSIFIED')));
@@ -679,6 +844,8 @@ function renderIntro() {
     class: 'begin-btn',
     onclick: () => beginModule1(),
   }, text('span', '', 'BEGIN INTAKE →')));
+
+  wrap.appendChild(siteFooter());
 
   root.appendChild(wrap);
 }
@@ -1005,6 +1172,10 @@ function renderResults() {
     },
   }, text('span', '', state.fromLink ? '→ TAKE THE TEST YOURSELF' : '↺ RETAKE ASSESSMENT')));
   wrap.appendChild(actions);
+
+  if (SUBMIT_ENDPOINT && !state.fromLink) wrap.appendChild(renderValidation());
+
+  wrap.appendChild(siteFooter());
 
   root.appendChild(wrap);
 }
