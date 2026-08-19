@@ -1,0 +1,1122 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 4,
+    "bucket": "Social Democracy / Democratic Socialism",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "goal",
+      "name": "End Goal",
+      "negPole": "Abolish Capitalism Eventually",
+      "posPole": "Permanently Humanise Capitalism"
+    },
+    {
+      "key": "ownr",
+      "name": "Ownership Model",
+      "negPole": "State / Public Ownership",
+      "posPole": "Cooperative & Associational"
+    },
+    {
+      "key": "agen",
+      "name": "Agency of Change",
+      "negPole": "Expert / Administrative Elite",
+      "posPole": "Mass Labour Movement"
+    },
+    {
+      "key": "clas",
+      "name": "Class Framing",
+      "negPole": "Explicit Class Struggle",
+      "posPole": "Cross-Class National Solidarity"
+    },
+    {
+      "key": "mora",
+      "name": "Moral Ground",
+      "negPole": "Historical-Materialist Analysis",
+      "posPole": "Ethical / Religious Conviction"
+    },
+    {
+      "key": "mkt",
+      "name": "Allocation",
+      "negPole": "Comprehensive Planning",
+      "posPole": "Markets Retained"
+    },
+    {
+      "key": "intl",
+      "name": "Horizon",
+      "negPole": "National Framework Primary",
+      "posPole": "International Solidarity Primary"
+    },
+    {
+      "key": "rout",
+      "name": "Institutional Route",
+      "negPole": "Parliamentary State Capture",
+      "posPole": "Parallel Movement Institutions"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Classical Social Democracy (Bernstein)",
+      "umbrella": false,
+      "anchor": {
+        "goal": 47,
+        "ownr": 66,
+        "agen": 84,
+        "clas": 61,
+        "mora": 79,
+        "mkt": 88,
+        "intl": 42,
+        "rout": 45
+      }
+    },
+    {
+      "name": "Nordic Model Social Democracy",
+      "umbrella": false,
+      "anchor": {
+        "goal": 86,
+        "ownr": 32,
+        "agen": 55,
+        "clas": 74,
+        "mora": 40,
+        "mkt": 90,
+        "intl": 32,
+        "rout": 14
+      }
+    },
+    {
+      "name": "Democratic Socialism (contemporary)",
+      "umbrella": false,
+      "anchor": {
+        "goal": 18,
+        "ownr": 32,
+        "agen": 92,
+        "clas": 18,
+        "mora": 26,
+        "mkt": 34,
+        "intl": 78,
+        "rout": 42
+      }
+    },
+    {
+      "name": "Fabianism",
+      "umbrella": false,
+      "anchor": {
+        "goal": 46,
+        "ownr": 4,
+        "agen": 2,
+        "clas": 62,
+        "mora": 34,
+        "mkt": 24,
+        "intl": 22,
+        "rout": 4
+      }
+    },
+    {
+      "name": "Austromarxism",
+      "umbrella": false,
+      "anchor": {
+        "goal": 12,
+        "ownr": 16,
+        "agen": 90,
+        "clas": 4,
+        "mora": 2,
+        "mkt": 30,
+        "intl": 72,
+        "rout": 72
+      }
+    },
+    {
+      "name": "Guild Socialism",
+      "umbrella": false,
+      "anchor": {
+        "goal": 20,
+        "ownr": 86,
+        "agen": 80,
+        "clas": 34,
+        "mora": 46,
+        "mkt": 40,
+        "intl": 38,
+        "rout": 76
+      }
+    },
+    {
+      "name": "Christian Socialism",
+      "umbrella": false,
+      "anchor": {
+        "goal": 46,
+        "ownr": 72,
+        "agen": 48,
+        "clas": 78,
+        "mora": 99,
+        "mkt": 56,
+        "intl": 62,
+        "rout": 60
+      }
+    },
+    {
+      "name": "Market Socialism (Lange-Lerner)",
+      "umbrella": false,
+      "anchor": {
+        "goal": 28,
+        "ownr": 46,
+        "agen": 12,
+        "clas": 60,
+        "mora": 12,
+        "mkt": 95,
+        "intl": 44,
+        "rout": 18
+      }
+    },
+    {
+      "name": "Ethical Socialism (Tawney)",
+      "umbrella": false,
+      "anchor": {
+        "goal": 45,
+        "ownr": 40,
+        "agen": 60,
+        "clas": 55,
+        "mora": 82,
+        "mkt": 50,
+        "intl": 50,
+        "rout": 30
+      }
+    },
+    {
+      "name": "Cooperative Socialism / Owenism",
+      "umbrella": false,
+      "anchor": {
+        "goal": 30,
+        "ownr": 99,
+        "agen": 60,
+        "clas": 58,
+        "mora": 58,
+        "mkt": 62,
+        "intl": 55,
+        "rout": 96
+      }
+    },
+    {
+      "name": "Utopian Socialism (Fourier, Saint-Simon)",
+      "umbrella": false,
+      "anchor": {
+        "goal": 24,
+        "ownr": 92,
+        "agen": 18,
+        "clas": 88,
+        "mora": 80,
+        "mkt": 18,
+        "intl": 72,
+        "rout": 92
+      }
+    },
+    {
+      "name": "Labor Zionism",
+      "umbrella": false,
+      "anchor": {
+        "goal": 42,
+        "ownr": 90,
+        "agen": 76,
+        "clas": 80,
+        "mora": 52,
+        "mkt": 46,
+        "intl": 2,
+        "rout": 88
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "goal01",
+      "axis": "goal",
+      "core": true,
+      "effect": {
+        "goal": -10
+      },
+      "text": "Capitalism should eventually be superseded by a socialised economy, even if the road there is gradual."
+    },
+    {
+      "id": "goal02",
+      "axis": "goal",
+      "core": true,
+      "effect": {
+        "goal": -9
+      },
+      "text": "Reforms are worthwhile mainly insofar as they build toward eventually replacing capitalism."
+    },
+    {
+      "id": "goal03",
+      "axis": "goal",
+      "core": true,
+      "effect": {
+        "goal": -8
+      },
+      "text": "A fully socialised economy remains the ultimate goal, whatever compromises the present requires."
+    },
+    {
+      "id": "goal04",
+      "axis": "goal",
+      "core": false,
+      "effect": {
+        "goal": -10
+      },
+      "text": "Private ownership of the major means of production is a problem to be solved, not managed indefinitely."
+    },
+    {
+      "id": "goal05",
+      "axis": "goal",
+      "core": false,
+      "effect": {
+        "goal": -8
+      },
+      "text": "The welfare state is a stage on the way to something beyond capitalism, not the final destination."
+    },
+    {
+      "id": "goal06",
+      "axis": "goal",
+      "core": false,
+      "effect": {
+        "goal": -7
+      },
+      "text": "Socialists should keep the horizon of a post-capitalist economy alive, even while working within the current one."
+    },
+    {
+      "id": "goal07",
+      "axis": "goal",
+      "core": true,
+      "effect": {
+        "goal": 10
+      },
+      "text": "A well-regulated capitalism with a strong welfare state is not a stage toward something else; it is the goal."
+    },
+    {
+      "id": "goal08",
+      "axis": "goal",
+      "core": true,
+      "effect": {
+        "goal": 9
+      },
+      "text": "Taming capitalism's worst effects is a full and sufficient program, not a first step toward abolishing it."
+    },
+    {
+      "id": "goal09",
+      "axis": "goal",
+      "core": true,
+      "effect": {
+        "goal": 8
+      },
+      "text": "There is no need to imagine an economy beyond capitalism as long as capitalism can be made humane enough."
+    },
+    {
+      "id": "goal10",
+      "axis": "goal",
+      "core": false,
+      "effect": {
+        "goal": 10
+      },
+      "text": "Permanent management of capitalism through democratic institutions is preferable to any attempt to replace it."
+    },
+    {
+      "id": "goal11",
+      "axis": "goal",
+      "core": false,
+      "effect": {
+        "goal": 8
+      },
+      "text": "A regulated market economy, indefinitely sustained, is compatible with a genuinely socialist commitment."
+    },
+    {
+      "id": "goal12",
+      "axis": "goal",
+      "core": false,
+      "effect": {
+        "goal": 7
+      },
+      "text": "The point of socialism is to civilise capitalism, not to end it."
+    },
+    {
+      "id": "ownr01",
+      "axis": "ownr",
+      "core": true,
+      "effect": {
+        "ownr": -10
+      },
+      "text": "Key industries should be brought into state or public ownership."
+    },
+    {
+      "id": "ownr02",
+      "axis": "ownr",
+      "core": true,
+      "effect": {
+        "ownr": -9
+      },
+      "text": "Nationalisation of major utilities and infrastructure is a legitimate and often necessary policy."
+    },
+    {
+      "id": "ownr03",
+      "axis": "ownr",
+      "core": true,
+      "effect": {
+        "ownr": -8
+      },
+      "text": "The state is the right vehicle to own and run large-scale enterprise on behalf of the public."
+    },
+    {
+      "id": "ownr04",
+      "axis": "ownr",
+      "core": false,
+      "effect": {
+        "ownr": -10
+      },
+      "text": "Public ownership, properly managed, outperforms private ownership in essential sectors."
+    },
+    {
+      "id": "ownr05",
+      "axis": "ownr",
+      "core": false,
+      "effect": {
+        "ownr": -8
+      },
+      "text": "A government elected to represent the public should be willing to take strategic industries into public hands."
+    },
+    {
+      "id": "ownr06",
+      "axis": "ownr",
+      "core": false,
+      "effect": {
+        "ownr": -7
+      },
+      "text": "State ownership removes profit-seeking from decisions that affect everyone."
+    },
+    {
+      "id": "ownr07",
+      "axis": "ownr",
+      "core": true,
+      "effect": {
+        "ownr": 10
+      },
+      "text": "Worker and consumer cooperatives are a better model of social ownership than a state-run enterprise."
+    },
+    {
+      "id": "ownr08",
+      "axis": "ownr",
+      "core": true,
+      "effect": {
+        "ownr": 9
+      },
+      "text": "Ownership should be devolved to workers' and users' associations rather than centralised in the state."
+    },
+    {
+      "id": "ownr09",
+      "axis": "ownr",
+      "core": true,
+      "effect": {
+        "ownr": 8
+      },
+      "text": "A cooperative economy avoids the bureaucratic distance that state ownership creates between the enterprise and the people it serves."
+    },
+    {
+      "id": "ownr10",
+      "axis": "ownr",
+      "core": false,
+      "effect": {
+        "ownr": 10
+      },
+      "text": "Mutual and cooperative ownership better reflects democratic control than a ministry ever could."
+    },
+    {
+      "id": "ownr11",
+      "axis": "ownr",
+      "core": false,
+      "effect": {
+        "ownr": 8
+      },
+      "text": "The state is too remote from day-to-day production to be the right owner of most enterprise."
+    },
+    {
+      "id": "ownr12",
+      "axis": "ownr",
+      "core": false,
+      "effect": {
+        "ownr": 7
+      },
+      "text": "Associational forms of ownership, not nationalisation, are the socialist alternative to private capital."
+    },
+    {
+      "id": "agen01",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": 10
+      },
+      "text": "Organised labour, through unions and mass parties, is the driving force of social progress."
+    },
+    {
+      "id": "agen02",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": 9
+      },
+      "text": "Real gains for working people have historically come from mobilised labour movements, not from enlightened administration alone."
+    },
+    {
+      "id": "agen03",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": 8
+      },
+      "text": "A socialist party without a rooted labour movement behind it has no real base."
+    },
+    {
+      "id": "agen04",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": 10
+      },
+      "text": "Strikes and organised labour pressure remain a legitimate and necessary part of achieving social democratic goals."
+    },
+    {
+      "id": "agen05",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": 8
+      },
+      "text": "The trade union movement should have a formal, structural role inside a social democratic party."
+    },
+    {
+      "id": "agen06",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": 7
+      },
+      "text": "Mass membership and mobilisation are what give a labour party its legitimacy and power."
+    },
+    {
+      "id": "agen07",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": -10
+      },
+      "text": "Competent technocratic administration and expert policy design deliver more reliable progress than mass mobilisation does."
+    },
+    {
+      "id": "agen08",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": -9
+      },
+      "text": "A well-run civil service can achieve more for ordinary people than industrial action ever could."
+    },
+    {
+      "id": "agen09",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": -8
+      },
+      "text": "Modern social democracy is better served by expert governance than by dependence on trade union power."
+    },
+    {
+      "id": "agen10",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": -10
+      },
+      "text": "Professional policymaking, insulated from union pressure, produces more sustainable reform."
+    },
+    {
+      "id": "agen11",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": -8
+      },
+      "text": "The labour movement's role should be advisory rather than decisive in shaping government policy."
+    },
+    {
+      "id": "agen12",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": -7
+      },
+      "text": "Sound administration matters more to social democracy's success than the strength of any particular movement behind it."
+    },
+    {
+      "id": "clas01",
+      "axis": "clas",
+      "core": true,
+      "effect": {
+        "clas": -10
+      },
+      "text": "Society is organised around a real conflict between labour and capital, and social democracy exists to represent labour's side of it."
+    },
+    {
+      "id": "clas02",
+      "axis": "clas",
+      "core": true,
+      "effect": {
+        "clas": -9
+      },
+      "text": "Political parties should be honest that they represent the interests of a particular class, not the nation as a whole."
+    },
+    {
+      "id": "clas03",
+      "axis": "clas",
+      "core": true,
+      "effect": {
+        "clas": -8
+      },
+      "text": "The interests of workers and the interests of employers are, at bottom, opposed."
+    },
+    {
+      "id": "clas04",
+      "axis": "clas",
+      "core": false,
+      "effect": {
+        "clas": -10
+      },
+      "text": "A social democratic party should see itself as the political expression of the labour movement."
+    },
+    {
+      "id": "clas05",
+      "axis": "clas",
+      "core": false,
+      "effect": {
+        "clas": -8
+      },
+      "text": "Redistribution is justified because capital's gains come at labour's expense."
+    },
+    {
+      "id": "clas06",
+      "axis": "clas",
+      "core": false,
+      "effect": {
+        "clas": -7
+      },
+      "text": "Class remains the primary division that social democratic politics has to organise around."
+    },
+    {
+      "id": "clas07",
+      "axis": "clas",
+      "core": true,
+      "effect": {
+        "clas": 10
+      },
+      "text": "The national interest, properly understood, unites workers and employers more than it divides them."
+    },
+    {
+      "id": "clas08",
+      "axis": "clas",
+      "core": true,
+      "effect": {
+        "clas": 9
+      },
+      "text": "Government should represent the whole nation, not act as the political arm of any one class."
+    },
+    {
+      "id": "clas09",
+      "axis": "clas",
+      "core": true,
+      "effect": {
+        "clas": 8
+      },
+      "text": "Cross-class cooperation between labour and capital is possible and preferable to permanent conflict."
+    },
+    {
+      "id": "clas10",
+      "axis": "clas",
+      "core": false,
+      "effect": {
+        "clas": 10
+      },
+      "text": "Framing politics as a struggle between classes is a distortion that a modern social democracy should move past."
+    },
+    {
+      "id": "clas11",
+      "axis": "clas",
+      "core": false,
+      "effect": {
+        "clas": 8
+      },
+      "text": "Employers and employees share a common interest in a growing, well-managed economy."
+    },
+    {
+      "id": "clas12",
+      "axis": "clas",
+      "core": false,
+      "effect": {
+        "clas": 7
+      },
+      "text": "Class-based politics narrows a party's appeal in ways that hurt rather than help ordinary people."
+    },
+    {
+      "id": "mora01",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": 10
+      },
+      "text": "Socialism's case rests on ethical conviction and human solidarity as much as on any theory of economic development."
+    },
+    {
+      "id": "mora02",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": 9
+      },
+      "text": "A religious or humanist sense of duty toward the poor is a legitimate foundation for socialist commitment."
+    },
+    {
+      "id": "mora03",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": 8
+      },
+      "text": "Fellowship and mutual obligation are the moral core of the socialist project, not just its material programme."
+    },
+    {
+      "id": "mora04",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": 10
+      },
+      "text": "Socialism should be defended as a moral vision of how people ought to treat one another, not only as economic analysis."
+    },
+    {
+      "id": "mora05",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": 8
+      },
+      "text": "The case for social democracy can rest on conscience and compassion without needing a theory of historical stages."
+    },
+    {
+      "id": "mora06",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": 7
+      },
+      "text": "Ethical conviction is a sufficient basis for socialist politics on its own."
+    },
+    {
+      "id": "mora07",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": -10
+      },
+      "text": "Socialist policy should be grounded in a materialist analysis of economic development, not in moral sentiment."
+    },
+    {
+      "id": "mora08",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": -9
+      },
+      "text": "Appeals to ethics and conscience are a weaker foundation for politics than an analysis of class interest."
+    },
+    {
+      "id": "mora09",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": -8
+      },
+      "text": "The case for redistribution should rest on structural economic argument, not on charity or compassion."
+    },
+    {
+      "id": "mora10",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": -10
+      },
+      "text": "Socialism is a scientific analysis of capitalism's development, not primarily a moral creed."
+    },
+    {
+      "id": "mora11",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": -8
+      },
+      "text": "Grounding policy in sentiment rather than economic analysis makes for worse, less durable politics."
+    },
+    {
+      "id": "mora12",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": -7
+      },
+      "text": "A social democratic programme should be justified by its material outcomes, not by an appeal to conscience."
+    },
+    {
+      "id": "mkt01",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": 10
+      },
+      "text": "Markets, properly regulated and taxed, are a reasonably efficient way to allocate most goods."
+    },
+    {
+      "id": "mkt02",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": 9
+      },
+      "text": "A mixed economy with strong regulation and a robust welfare state is preferable to comprehensive planning."
+    },
+    {
+      "id": "mkt03",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": 8
+      },
+      "text": "Private enterprise, operating within rules set democratically, can be compatible with a socialist programme."
+    },
+    {
+      "id": "mkt04",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": 10
+      },
+      "text": "Central planning across the whole economy is neither necessary nor desirable to achieve social democratic goals."
+    },
+    {
+      "id": "mkt05",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": 8
+      },
+      "text": "Markets can be harnessed for social ends through taxation and regulation rather than replaced outright."
+    },
+    {
+      "id": "mkt06",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": 7
+      },
+      "text": "A competitive market sector, combined with strong public services, is the practical model worth pursuing."
+    },
+    {
+      "id": "mkt07",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": -10
+      },
+      "text": "The economy as a whole should be organised through comprehensive democratic planning, not left to market allocation."
+    },
+    {
+      "id": "mkt08",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": -9
+      },
+      "text": "Relying on markets, even regulated ones, leaves too much power in private hands to be a real socialist model."
+    },
+    {
+      "id": "mkt09",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": -8
+      },
+      "text": "Planning, not market incentives, should determine what gets produced and how it's distributed."
+    },
+    {
+      "id": "mkt10",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": -10
+      },
+      "text": "A market economy, however regulated, still runs on the logic of profit, which planning would remove."
+    },
+    {
+      "id": "mkt11",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": -8
+      },
+      "text": "Serious social democrats should aim to replace market allocation with democratic planning over time."
+    },
+    {
+      "id": "mkt12",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": -7
+      },
+      "text": "Trusting markets to deliver socially desirable outcomes, even with regulation, concedes too much to capital."
+    },
+    {
+      "id": "intl01",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": 10
+      },
+      "text": "Solidarity between workers of different countries should take priority over any one nation's programme."
+    },
+    {
+      "id": "intl02",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": 9
+      },
+      "text": "International labour and socialist organisation matters as much as winning power in any single country."
+    },
+    {
+      "id": "intl03",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": 8
+      },
+      "text": "A social democratic government should coordinate with sister parties abroad rather than act purely in national terms."
+    },
+    {
+      "id": "intl04",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": 10
+      },
+      "text": "The labour movement's outlook should be internationalist even when its immediate battles are fought at home."
+    },
+    {
+      "id": "intl05",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": 8
+      },
+      "text": "Building international institutions of solidarity is a legitimate priority for a socialist movement."
+    },
+    {
+      "id": "intl06",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": 7
+      },
+      "text": "Workers everywhere share more in common with each other than with the capital of their own country."
+    },
+    {
+      "id": "intl07",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": -10
+      },
+      "text": "A social democratic party's first obligation is to the workers of its own nation."
+    },
+    {
+      "id": "intl08",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": -9
+      },
+      "text": "National programmes, tailored to national conditions, should take priority over international coordination."
+    },
+    {
+      "id": "intl09",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": -8
+      },
+      "text": "Practical social democracy is built one country at a time, not through international schemes."
+    },
+    {
+      "id": "intl10",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": -10
+      },
+      "text": "The nation remains the primary framework within which social democratic gains are actually won and defended."
+    },
+    {
+      "id": "intl11",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": -8
+      },
+      "text": "International solidarity is a worthy sentiment but a secondary concern next to winning power at home."
+    },
+    {
+      "id": "intl12",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": -7
+      },
+      "text": "A social democratic government answers to its own electorate first, international solidarity second."
+    },
+    {
+      "id": "rout01",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": -10
+      },
+      "text": "Winning elections and governing through parliament is the legitimate route to social democratic change."
+    },
+    {
+      "id": "rout02",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": -9
+      },
+      "text": "Working through existing constitutional and parliamentary institutions is both practical and principled."
+    },
+    {
+      "id": "rout03",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": -8
+      },
+      "text": "A social democratic party should aim to win office and legislate its programme through the state."
+    },
+    {
+      "id": "rout04",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": -10
+      },
+      "text": "Reform through the ballot box has delivered real, lasting gains for working people."
+    },
+    {
+      "id": "rout05",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": -8
+      },
+      "text": "Patient parliamentary work, however slow, is more durable than any shortcut around it."
+    },
+    {
+      "id": "rout06",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": -7
+      },
+      "text": "The state, once captured through elections, is a legitimate and sufficient instrument for social democratic change."
+    },
+    {
+      "id": "rout07",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": 10
+      },
+      "text": "Lasting change requires building movement institutions — unions, cooperatives, mutual societies — that operate alongside and sometimes against the state."
+    },
+    {
+      "id": "rout08",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": 9
+      },
+      "text": "Relying solely on parliament leaves a movement vulnerable whenever it loses an election."
+    },
+    {
+      "id": "rout09",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": 8
+      },
+      "text": "Parallel structures of working-class power should be built regardless of who holds government office."
+    },
+    {
+      "id": "rout10",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": 10
+      },
+      "text": "A movement's own institutions, not just its parliamentary representatives, are what secure real, lasting gains."
+    },
+    {
+      "id": "rout11",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": 8
+      },
+      "text": "Electoral office is only one part of building power; movement infrastructure outside the state matters as much."
+    },
+    {
+      "id": "rout12",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": 7
+      },
+      "text": "Depending only on the state for change cedes too much of the movement's independence."
+    }
+  ]
+}

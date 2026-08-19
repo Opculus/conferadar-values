@@ -1,0 +1,1192 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 3,
+    "bucket": "Anarchism",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "vehi",
+      "name": "Organisational Vehicle",
+      "negPole": "Mass Union / Syndicate",
+      "posPole": "Affinity Group / Informal Network"
+    },
+    {
+      "key": "disc",
+      "name": "Organisational Discipline",
+      "negPole": "Synthesis / Loose Federation",
+      "posPole": "Programmatic Unity & Collective Responsibility"
+    },
+    {
+      "key": "prop",
+      "name": "Property Form",
+      "negPole": "Full Communism / To Each by Need",
+      "posPole": "Individual Possession & Exchange"
+    },
+    {
+      "key": "viol",
+      "name": "Means",
+      "negPole": "Strict Nonviolence",
+      "posPole": "Insurrectionary Force"
+    },
+    {
+      "key": "tech",
+      "name": "Technology & Civilisation",
+      "negPole": "Embrace Industry & Technology",
+      "posPole": "Reject Civilisation"
+    },
+    {
+      "key": "pref",
+      "name": "Strategy",
+      "negPole": "Prefigurative Counter-Institutions",
+      "posPole": "Destructive Rupture, No Blueprint"
+    },
+    {
+      "key": "muni",
+      "name": "Territorial Politics",
+      "negPole": "Reject All Governmental Forms",
+      "posPole": "Confederated Municipal Assemblies"
+    },
+    {
+      "key": "oppr",
+      "name": "Analytical Primacy",
+      "negPole": "Class Struggle Primary",
+      "posPole": "Intersecting Dominations Primary"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Anarcho-Communism (Kropotkin)",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 40,
+        "disc": 40,
+        "prop": 2,
+        "viol": 60,
+        "tech": 15,
+        "pref": 35,
+        "muni": 45,
+        "oppr": 20
+      }
+    },
+    {
+      "name": "Anarcho-Syndicalism",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 2,
+        "disc": 62,
+        "prop": 15,
+        "viol": 50,
+        "tech": 5,
+        "pref": 20,
+        "muni": 25,
+        "oppr": 3
+      }
+    },
+    {
+      "name": "Collectivist Anarchism (Bakunin)",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 22,
+        "disc": 68,
+        "prop": 32,
+        "viol": 72,
+        "tech": 10,
+        "pref": 30,
+        "muni": 40,
+        "oppr": 8
+      }
+    },
+    {
+      "name": "Mutualism (Proudhon)",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 55,
+        "disc": 18,
+        "prop": 92,
+        "viol": 22,
+        "tech": 20,
+        "pref": 5,
+        "muni": 55,
+        "oppr": 35
+      }
+    },
+    {
+      "name": "Individualist Anarchism (Stirner)",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 94,
+        "disc": 2,
+        "prop": 96,
+        "viol": 55,
+        "tech": 30,
+        "pref": 62,
+        "muni": 5,
+        "oppr": 58
+      }
+    },
+    {
+      "name": "Platformism (Makhno/Arshinov)",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 15,
+        "disc": 94,
+        "prop": 8,
+        "viol": 55,
+        "tech": 8,
+        "pref": 20,
+        "muni": 35,
+        "oppr": 10
+      }
+    },
+    {
+      "name": "Especifismo",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 50,
+        "disc": 96,
+        "prop": 10,
+        "viol": 55,
+        "tech": 8,
+        "pref": 30,
+        "muni": 55,
+        "oppr": 32
+      }
+    },
+    {
+      "name": "Green / Eco-Anarchism",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 70,
+        "disc": 30,
+        "prop": 20,
+        "viol": 55,
+        "tech": 78,
+        "pref": 30,
+        "muni": 58,
+        "oppr": 60
+      }
+    },
+    {
+      "name": "Anarcho-Primitivism (Zerzan)",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 88,
+        "disc": 4,
+        "prop": 42,
+        "viol": 76,
+        "tech": 100,
+        "pref": 72,
+        "muni": 4,
+        "oppr": 66
+      }
+    },
+    {
+      "name": "Social Ecology / Communalism",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 45,
+        "disc": 60,
+        "prop": 10,
+        "viol": 28,
+        "tech": 30,
+        "pref": 6,
+        "muni": 98,
+        "oppr": 52
+      }
+    },
+    {
+      "name": "Post-Left Anarchy",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 90,
+        "disc": 2,
+        "prop": 60,
+        "viol": 70,
+        "tech": 66,
+        "pref": 88,
+        "muni": 2,
+        "oppr": 72
+      }
+    },
+    {
+      "name": "Insurrectionary Anarchism",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 96,
+        "disc": 4,
+        "prop": 14,
+        "viol": 99,
+        "tech": 60,
+        "pref": 96,
+        "muni": 2,
+        "oppr": 55
+      }
+    },
+    {
+      "name": "Anarcha-Feminism",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 52,
+        "disc": 35,
+        "prop": 14,
+        "viol": 42,
+        "tech": 24,
+        "pref": 45,
+        "muni": 42,
+        "oppr": 92
+      }
+    },
+    {
+      "name": "Christian Anarchism (Tolstoy)",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 80,
+        "disc": 12,
+        "prop": 14,
+        "viol": 4,
+        "tech": 62,
+        "pref": 26,
+        "muni": 12,
+        "oppr": 66
+      }
+    },
+    {
+      "name": "Anarcho-Pacifism",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 58,
+        "disc": 28,
+        "prop": 32,
+        "viol": 0,
+        "tech": 45,
+        "pref": 18,
+        "muni": 42,
+        "oppr": 52
+      }
+    },
+    {
+      "name": "Queer Anarchism",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 82,
+        "disc": 18,
+        "prop": 24,
+        "viol": 60,
+        "tech": 34,
+        "pref": 68,
+        "muni": 22,
+        "oppr": 97
+      }
+    },
+    {
+      "name": "Black Anarchism",
+      "umbrella": false,
+      "anchor": {
+        "vehi": 50,
+        "disc": 55,
+        "prop": 8,
+        "viol": 78,
+        "tech": 20,
+        "pref": 45,
+        "muni": 55,
+        "oppr": 80
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "vehi01",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": 10
+      },
+      "text": "Small groups of trusted comrades acting on shared affinity are a more honest basis for organising than any mass structure."
+    },
+    {
+      "id": "vehi02",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": 9
+      },
+      "text": "Formal, large-membership organisations tend to develop the very hierarchies anarchists are trying to abolish."
+    },
+    {
+      "id": "vehi03",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": 8
+      },
+      "text": "An affinity group can move faster and stay truer to its principles than a mass union ever could."
+    },
+    {
+      "id": "vehi04",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": 10
+      },
+      "text": "Informal networks of relationships are a more resilient basis for revolutionary organising than any formal structure."
+    },
+    {
+      "id": "vehi05",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": 8
+      },
+      "text": "The intimacy of a small group protects against the bureaucratic drift that larger organisations can't avoid."
+    },
+    {
+      "id": "vehi06",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": 7
+      },
+      "text": "Building loose, overlapping networks beats building one large durable organisation."
+    },
+    {
+      "id": "vehi07",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": -10
+      },
+      "text": "A mass union rooted in the workplace is the only vehicle with the numbers to actually confront capital."
+    },
+    {
+      "id": "vehi08",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": -9
+      },
+      "text": "Organising has to scale to the size of the working class, which means building large membership structures."
+    },
+    {
+      "id": "vehi09",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": -8
+      },
+      "text": "Small affinity groups can be principled, but they will never have the leverage a mass organisation has."
+    },
+    {
+      "id": "vehi10",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": -10
+      },
+      "text": "The union floor, not the affinity group, is where most workers actually encounter anarchist ideas."
+    },
+    {
+      "id": "vehi11",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": -8
+      },
+      "text": "Durable mass organisation, not informal networking, is what turns sympathy into a movement."
+    },
+    {
+      "id": "vehi12",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": -7
+      },
+      "text": "A revolutionary union federation can mobilise numbers that no network of small groups can match."
+    },
+    {
+      "id": "disc01",
+      "axis": "disc",
+      "core": true,
+      "effect": {
+        "disc": 10
+      },
+      "text": "An anarchist organisation should unite around a single strategic programme that binds every member."
+    },
+    {
+      "id": "disc02",
+      "axis": "disc",
+      "core": true,
+      "effect": {
+        "disc": 9
+      },
+      "text": "Collective responsibility for the organisation's decisions is a serious commitment members should be held to."
+    },
+    {
+      "id": "disc03",
+      "axis": "disc",
+      "core": true,
+      "effect": {
+        "disc": 8
+      },
+      "text": "A federation that tolerates real disagreement over strategy and ideology among its affiliates ends up capable of nothing."
+    },
+    {
+      "id": "disc04",
+      "axis": "disc",
+      "core": false,
+      "effect": {
+        "disc": 10
+      },
+      "text": "Tactical unity across an organisation matters more than accommodating every internal disagreement."
+    },
+    {
+      "id": "disc05",
+      "axis": "disc",
+      "core": false,
+      "effect": {
+        "disc": 8
+      },
+      "text": "An organisation strong enough to act needs agreed positions its members are expected to defend."
+    },
+    {
+      "id": "disc06",
+      "axis": "disc",
+      "core": false,
+      "effect": {
+        "disc": 7
+      },
+      "text": "Programmatic coherence is what let some anarchist organisations act decisively where looser ones couldn't."
+    },
+    {
+      "id": "disc07",
+      "axis": "disc",
+      "core": true,
+      "effect": {
+        "disc": -10
+      },
+      "text": "A federation should be a loose space where different anarchist tendencies coexist without a single binding programme."
+    },
+    {
+      "id": "disc08",
+      "axis": "disc",
+      "core": true,
+      "effect": {
+        "disc": -9
+      },
+      "text": "Requiring ideological and tactical unity narrows a federation into a sect."
+    },
+    {
+      "id": "disc09",
+      "axis": "disc",
+      "core": true,
+      "effect": {
+        "disc": -8
+      },
+      "text": "Anarchist organisation should preserve the autonomy of each group and current within it, not override it."
+    },
+    {
+      "id": "disc10",
+      "axis": "disc",
+      "core": false,
+      "effect": {
+        "disc": -10
+      },
+      "text": "A synthesis of communists, syndicalists, and individualists in one federation is a strength, not a weakness."
+    },
+    {
+      "id": "disc11",
+      "axis": "disc",
+      "core": false,
+      "effect": {
+        "disc": -8
+      },
+      "text": "Binding collective responsibility on individual members contradicts anarchism's basic commitments."
+    },
+    {
+      "id": "disc12",
+      "axis": "disc",
+      "core": false,
+      "effect": {
+        "disc": -7
+      },
+      "text": "The looser the federation, the more genuinely anarchist its internal life remains."
+    },
+    {
+      "id": "prop01",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": -10
+      },
+      "text": "Goods should be distributed according to need, with no accounting of what any individual contributed."
+    },
+    {
+      "id": "prop02",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": -9
+      },
+      "text": "Money and exchange between individuals should be abolished, not merely redistributed more fairly."
+    },
+    {
+      "id": "prop03",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": -8
+      },
+      "text": "Even labour itself should not be measured or exchanged once scarcity is overcome."
+    },
+    {
+      "id": "prop04",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": -10
+      },
+      "text": "Full communism, not mutual exchange, is the goal a genuinely free society should aim at."
+    },
+    {
+      "id": "prop05",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": -8
+      },
+      "text": "Once production is collectivised, the next step is abolishing exchange between individuals altogether."
+    },
+    {
+      "id": "prop06",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": -7
+      },
+      "text": "A free society has no need to track who produced what."
+    },
+    {
+      "id": "prop07",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": 10
+      },
+      "text": "Individuals should hold and freely exchange the product of their own labour rather than pool it into a common stock."
+    },
+    {
+      "id": "prop08",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": 9
+      },
+      "text": "Mutual credit between free associations of producers is a fairer basis for exchange than pooling everything in common."
+    },
+    {
+      "id": "prop09",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": 8
+      },
+      "text": "Possession of what one uses and produces is legitimate; ownership of what one doesn't is not."
+    },
+    {
+      "id": "prop10",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": 10
+      },
+      "text": "A market of small producers exchanging freely, without capital or usury, is compatible with anarchism."
+    },
+    {
+      "id": "prop11",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": 8
+      },
+      "text": "Even under anarchism, some form of accounting for individual contribution is fair and necessary."
+    },
+    {
+      "id": "prop12",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": 7
+      },
+      "text": "Occupancy and use, not communal pooling, should determine who controls a given piece of land or tool."
+    },
+    {
+      "id": "viol01",
+      "axis": "viol",
+      "core": true,
+      "effect": {
+        "viol": 10
+      },
+      "text": "Violence in self-defence and in overthrowing an oppressive order is legitimate."
+    },
+    {
+      "id": "viol02",
+      "axis": "viol",
+      "core": true,
+      "effect": {
+        "viol": 9
+      },
+      "text": "Expropriating capital by force is a justifiable revolutionary act."
+    },
+    {
+      "id": "viol03",
+      "axis": "viol",
+      "core": true,
+      "effect": {
+        "viol": 8
+      },
+      "text": "Waiting for a purely peaceful transition means waiting forever, since the state will not surrender its violence voluntarily."
+    },
+    {
+      "id": "viol04",
+      "axis": "viol",
+      "core": false,
+      "effect": {
+        "viol": 10
+      },
+      "text": "Armed defence of a popular uprising against counter-revolution is not a betrayal of anarchist principles."
+    },
+    {
+      "id": "viol05",
+      "axis": "viol",
+      "core": false,
+      "effect": {
+        "viol": 8
+      },
+      "text": "There is nothing inconsistent about anarchists organising armed resistance when the situation demands it."
+    },
+    {
+      "id": "viol06",
+      "axis": "viol",
+      "core": false,
+      "effect": {
+        "viol": 7
+      },
+      "text": "A revolution that refuses all force will be crushed by a state that has none of the same scruples."
+    },
+    {
+      "id": "viol07",
+      "axis": "viol",
+      "core": true,
+      "effect": {
+        "viol": -10
+      },
+      "text": "Anarchism should commit to nonviolence as a matter of consistent principle, not just tactics."
+    },
+    {
+      "id": "viol08",
+      "axis": "viol",
+      "core": true,
+      "effect": {
+        "viol": -9
+      },
+      "text": "Using violence to achieve a stateless society reproduces the domination it claims to abolish."
+    },
+    {
+      "id": "viol09",
+      "axis": "viol",
+      "core": true,
+      "effect": {
+        "viol": -8
+      },
+      "text": "Means and ends can't be separated; a violent revolution will produce a violent aftermath."
+    },
+    {
+      "id": "viol10",
+      "axis": "viol",
+      "core": false,
+      "effect": {
+        "viol": -10
+      },
+      "text": "Nonviolent resistance and mutual aid do more to build a free society than armed struggle does."
+    },
+    {
+      "id": "viol11",
+      "axis": "viol",
+      "core": false,
+      "effect": {
+        "viol": -8
+      },
+      "text": "Anarchists who take up arms end up organised like the states they oppose."
+    },
+    {
+      "id": "viol12",
+      "axis": "viol",
+      "core": false,
+      "effect": {
+        "viol": -7
+      },
+      "text": "Coercion of any kind, even in a revolutionary cause, contradicts anarchism's basic commitments."
+    },
+    {
+      "id": "tech01",
+      "axis": "tech",
+      "core": true,
+      "effect": {
+        "tech": -10
+      },
+      "text": "Modern industry and technology can be reorganised for collective benefit rather than rejected outright."
+    },
+    {
+      "id": "tech02",
+      "axis": "tech",
+      "core": true,
+      "effect": {
+        "tech": -9
+      },
+      "text": "Large-scale infrastructure and coordination are compatible with a stateless, classless society."
+    },
+    {
+      "id": "tech03",
+      "axis": "tech",
+      "core": true,
+      "effect": {
+        "tech": -8
+      },
+      "text": "Rejecting industrial technology altogether would condemn most people to a much harder life than they need to live."
+    },
+    {
+      "id": "tech04",
+      "axis": "tech",
+      "core": false,
+      "effect": {
+        "tech": -10
+      },
+      "text": "Technology is a tool whose effects depend on who controls it, not something inherently opposed to freedom."
+    },
+    {
+      "id": "tech05",
+      "axis": "tech",
+      "core": false,
+      "effect": {
+        "tech": -8
+      },
+      "text": "A federated, technologically advanced society is a realistic goal, not a contradiction in terms."
+    },
+    {
+      "id": "tech06",
+      "axis": "tech",
+      "core": false,
+      "effect": {
+        "tech": -7
+      },
+      "text": "Anarchists should aim to seize and repurpose industrial capacity, not dismantle it."
+    },
+    {
+      "id": "tech07",
+      "axis": "tech",
+      "core": true,
+      "effect": {
+        "tech": 10
+      },
+      "text": "Civilisation itself — mass society, agriculture, division of labour — is the root of domination, not just its capitalist form."
+    },
+    {
+      "id": "tech08",
+      "axis": "tech",
+      "core": true,
+      "effect": {
+        "tech": 9
+      },
+      "text": "A genuinely free life means abandoning industrial technology and its dependencies, not redistributing them."
+    },
+    {
+      "id": "tech09",
+      "axis": "tech",
+      "core": true,
+      "effect": {
+        "tech": 8
+      },
+      "text": "Complex technological systems require the very hierarchy and expertise anarchists are trying to abolish."
+    },
+    {
+      "id": "tech10",
+      "axis": "tech",
+      "core": false,
+      "effect": {
+        "tech": 10
+      },
+      "text": "Returning to small-scale, low-technology ways of living is the only way to actually end domination."
+    },
+    {
+      "id": "tech11",
+      "axis": "tech",
+      "core": false,
+      "effect": {
+        "tech": 8
+      },
+      "text": "Mass society and its infrastructure cannot be organised without reproducing coercive control."
+    },
+    {
+      "id": "tech12",
+      "axis": "tech",
+      "core": false,
+      "effect": {
+        "tech": 7
+      },
+      "text": "The domestication of nature that founded civilisation is itself the first act of domination."
+    },
+    {
+      "id": "pref01",
+      "axis": "pref",
+      "core": true,
+      "effect": {
+        "pref": -10
+      },
+      "text": "Building cooperatives, communes, and mutual aid networks now is how the new society is actually constructed."
+    },
+    {
+      "id": "pref02",
+      "axis": "pref",
+      "core": true,
+      "effect": {
+        "pref": -9
+      },
+      "text": "A revolution has to prefigure the world it wants; the means must already resemble the ends."
+    },
+    {
+      "id": "pref03",
+      "axis": "pref",
+      "core": true,
+      "effect": {
+        "pref": -8
+      },
+      "text": "Creating working alternative institutions matters as much as tearing down the existing ones."
+    },
+    {
+      "id": "pref04",
+      "axis": "pref",
+      "core": false,
+      "effect": {
+        "pref": -10
+      },
+      "text": "Practising self-management now, on however small a scale, is real revolutionary work."
+    },
+    {
+      "id": "pref05",
+      "axis": "pref",
+      "core": false,
+      "effect": {
+        "pref": -8
+      },
+      "text": "Counter-institutions built before the revolution give people something to defend and expand once it comes."
+    },
+    {
+      "id": "pref06",
+      "axis": "pref",
+      "core": false,
+      "effect": {
+        "pref": -7
+      },
+      "text": "A movement that never builds anything concrete has nothing to offer once the old order falls."
+    },
+    {
+      "id": "pref07",
+      "axis": "pref",
+      "core": true,
+      "effect": {
+        "pref": 10
+      },
+      "text": "The task is disruption and rupture; blueprints for a future society are premature and constraining."
+    },
+    {
+      "id": "pref08",
+      "axis": "pref",
+      "core": true,
+      "effect": {
+        "pref": 9
+      },
+      "text": "Building alternative institutions can become an accommodation with the existing order rather than a threat to it."
+    },
+    {
+      "id": "pref09",
+      "axis": "pref",
+      "core": true,
+      "effect": {
+        "pref": 8
+      },
+      "text": "No amount of prefigurative organising substitutes for actually destroying the systems of domination."
+    },
+    {
+      "id": "pref10",
+      "axis": "pref",
+      "core": false,
+      "effect": {
+        "pref": 10
+      },
+      "text": "Cooperatives and communes that operate within capitalism end up managing themselves under its rules, not escaping them."
+    },
+    {
+      "id": "pref11",
+      "axis": "pref",
+      "core": false,
+      "effect": {
+        "pref": 8
+      },
+      "text": "Rupture has to come before construction; you cannot build the new world inside the shell of the old."
+    },
+    {
+      "id": "pref12",
+      "axis": "pref",
+      "core": false,
+      "effect": {
+        "pref": 7
+      },
+      "text": "Focusing energy on alternative institutions can dull the urgency of confronting power directly."
+    },
+    {
+      "id": "muni01",
+      "axis": "muni",
+      "core": true,
+      "effect": {
+        "muni": 10
+      },
+      "text": "Confederations of directly democratic municipal assemblies are a viable form of anarchist self-government."
+    },
+    {
+      "id": "muni02",
+      "axis": "muni",
+      "core": true,
+      "effect": {
+        "muni": 9
+      },
+      "text": "Local assemblies, federated upward, can perform the coordinating functions anarchists need without becoming a state."
+    },
+    {
+      "id": "muni03",
+      "axis": "muni",
+      "core": true,
+      "effect": {
+        "muni": 8
+      },
+      "text": "A directly democratic municipality is not a government in the sense anarchists oppose."
+    },
+    {
+      "id": "muni04",
+      "axis": "muni",
+      "core": false,
+      "effect": {
+        "muni": 10
+      },
+      "text": "Citizens' assemblies claiming legitimate public power can be a real transitional strategy toward a stateless society."
+    },
+    {
+      "id": "muni05",
+      "axis": "muni",
+      "core": false,
+      "effect": {
+        "muni": 8
+      },
+      "text": "Running candidates for local office on a libertarian municipalist platform is a defensible anarchist tactic."
+    },
+    {
+      "id": "muni06",
+      "axis": "muni",
+      "core": false,
+      "effect": {
+        "muni": 7
+      },
+      "text": "Dual power built through confederated municipalities is a credible path beyond the nation-state."
+    },
+    {
+      "id": "muni07",
+      "axis": "muni",
+      "core": true,
+      "effect": {
+        "muni": -10
+      },
+      "text": "Any structure claiming to exercise public, binding authority — even a local assembly — is a government and should be rejected."
+    },
+    {
+      "id": "muni08",
+      "axis": "muni",
+      "core": true,
+      "effect": {
+        "muni": -9
+      },
+      "text": "Federating assemblies from the ground up still recreates layers of representation anarchists should refuse."
+    },
+    {
+      "id": "muni09",
+      "axis": "muni",
+      "core": true,
+      "effect": {
+        "muni": -8
+      },
+      "text": "There is no such thing as a legitimate government, local or confederal, direct or representative."
+    },
+    {
+      "id": "muni10",
+      "axis": "muni",
+      "core": false,
+      "effect": {
+        "muni": -10
+      },
+      "text": "Anarchism means the negation of the state as such, not its replacement with a smaller, friendlier version."
+    },
+    {
+      "id": "muni11",
+      "axis": "muni",
+      "core": false,
+      "effect": {
+        "muni": -8
+      },
+      "text": "Running for local office, however framed, concedes the legitimacy of electoral government."
+    },
+    {
+      "id": "muni12",
+      "axis": "muni",
+      "core": false,
+      "effect": {
+        "muni": -7
+      },
+      "text": "A confederation with binding votes across municipalities is still a form of rule over the minority."
+    },
+    {
+      "id": "oppr01",
+      "axis": "oppr",
+      "core": true,
+      "effect": {
+        "oppr": 10
+      },
+      "text": "Gender, race, and sexuality are independent axes of domination that class struggle alone does not explain or resolve."
+    },
+    {
+      "id": "oppr02",
+      "axis": "oppr",
+      "core": true,
+      "effect": {
+        "oppr": 9
+      },
+      "text": "A movement that centres only class will reproduce patriarchal and racial hierarchies within itself."
+    },
+    {
+      "id": "oppr03",
+      "axis": "oppr",
+      "core": true,
+      "effect": {
+        "oppr": 8
+      },
+      "text": "Confronting patriarchy and white supremacy is as fundamental to anarchism as confronting capital and the state."
+    },
+    {
+      "id": "oppr04",
+      "axis": "oppr",
+      "core": false,
+      "effect": {
+        "oppr": 10
+      },
+      "text": "Domination takes many forms that don't reduce to economic exploitation."
+    },
+    {
+      "id": "oppr05",
+      "axis": "oppr",
+      "core": false,
+      "effect": {
+        "oppr": 8
+      },
+      "text": "Anarchist organising has to actively centre those most marginalised, not treat their oppression as secondary."
+    },
+    {
+      "id": "oppr06",
+      "axis": "oppr",
+      "core": false,
+      "effect": {
+        "oppr": 7
+      },
+      "text": "The abolition of the state and capital does not automatically abolish patriarchy or racial hierarchy."
+    },
+    {
+      "id": "oppr07",
+      "axis": "oppr",
+      "core": true,
+      "effect": {
+        "oppr": -10
+      },
+      "text": "Class exploitation is the foundation that other forms of domination ultimately rest on."
+    },
+    {
+      "id": "oppr08",
+      "axis": "oppr",
+      "core": true,
+      "effect": {
+        "oppr": -9
+      },
+      "text": "Once capitalism and the state are abolished, the material basis for other hierarchies falls away with them."
+    },
+    {
+      "id": "oppr09",
+      "axis": "oppr",
+      "core": true,
+      "effect": {
+        "oppr": -8
+      },
+      "text": "Organising around identity fragments the working class instead of uniting it against its common enemy."
+    },
+    {
+      "id": "oppr10",
+      "axis": "oppr",
+      "core": false,
+      "effect": {
+        "oppr": -10
+      },
+      "text": "Class struggle is what actually unites people across the divisions capital uses to keep them apart."
+    },
+    {
+      "id": "oppr11",
+      "axis": "oppr",
+      "core": false,
+      "effect": {
+        "oppr": -8
+      },
+      "text": "Prioritising any single axis of oppression other than class ends up serving capital by dividing its opponents."
+    },
+    {
+      "id": "oppr12",
+      "axis": "oppr",
+      "core": false,
+      "effect": {
+        "oppr": -7
+      },
+      "text": "The point of production remains the central site of struggle, whatever other hierarchies also exist."
+    }
+  ]
+}

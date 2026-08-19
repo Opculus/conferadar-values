@@ -1,0 +1,1080 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 11,
+    "bucket": "Anarcho-Capitalism / Right-Libertarianism",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "stat",
+      "name": "State Residue",
+      "negPole": "Zero State",
+      "posPole": "Night-Watchman State Retained"
+    },
+    {
+      "key": "ethi",
+      "name": "Ethical Foundation",
+      "negPole": "Deontological Natural Rights",
+      "posPole": "Consequentialist Efficiency"
+    },
+    {
+      "key": "land",
+      "name": "Land & Natural Resources",
+      "negPole": "Homesteading Absolutism",
+      "posPole": "Land Rent Belongs to All"
+    },
+    {
+      "key": "stra",
+      "name": "Strategy",
+      "negPole": "Electoral / Institutional Reform",
+      "posPole": "Counter-Economics / Exit"
+    },
+    {
+      "key": "base",
+      "name": "Social Base Strategy",
+      "negPole": "Universalist Individual Appeal",
+      "posPole": "Coalition with Traditional Communities"
+    },
+    {
+      "key": "mone",
+      "name": "Money & Finance",
+      "negPole": "Hard Commodity Money",
+      "posPole": "Monetary Pluralism / Crypto"
+    },
+    {
+      "key": "egoi",
+      "name": "Moral Psychology",
+      "negPole": "Explicit Ethical Egoism",
+      "posPole": "Rights Plus Community Obligation"
+    },
+    {
+      "key": "ipro",
+      "name": "Intellectual Property",
+      "negPole": "IP Is Legitimate Property",
+      "posPole": "IP Is an Illegitimate Monopoly"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Anarcho-Capitalism (Rothbard)",
+      "umbrella": false,
+      "anchor": {
+        "stat": 0,
+        "ethi": 3,
+        "land": 0,
+        "stra": 45,
+        "base": 45,
+        "mone": 10,
+        "egoi": 35,
+        "ipro": 88
+      }
+    },
+    {
+      "name": "Minarchism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 96,
+        "ethi": 45,
+        "land": 15,
+        "stra": 15,
+        "base": 30,
+        "mone": 30,
+        "egoi": 55,
+        "ipro": 30
+      }
+    },
+    {
+      "name": "Agorism (Konkin)",
+      "umbrella": false,
+      "anchor": {
+        "stat": 3,
+        "ethi": 15,
+        "land": 20,
+        "stra": 100,
+        "base": 15,
+        "mone": 75,
+        "egoi": 40,
+        "ipro": 92
+      }
+    },
+    {
+      "name": "Paleolibertarianism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 30,
+        "ethi": 20,
+        "land": 5,
+        "stra": 30,
+        "base": 99,
+        "mone": 5,
+        "egoi": 70,
+        "ipro": 45
+      }
+    },
+    {
+      "name": "Geolibertarianism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 55,
+        "ethi": 60,
+        "land": 100,
+        "stra": 20,
+        "base": 30,
+        "mone": 55,
+        "egoi": 80,
+        "ipro": 70
+      }
+    },
+    {
+      "name": "Voluntaryism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 2,
+        "ethi": 5,
+        "land": 5,
+        "stra": 66,
+        "base": 25,
+        "mone": 55,
+        "egoi": 60,
+        "ipro": 76
+      }
+    },
+    {
+      "name": "Crypto- / Techno-Libertarianism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 8,
+        "ethi": 72,
+        "land": 25,
+        "stra": 92,
+        "base": 3,
+        "mone": 100,
+        "egoi": 20,
+        "ipro": 99
+      }
+    },
+    {
+      "name": "Objectivism (Rand)",
+      "umbrella": false,
+      "anchor": {
+        "stat": 86,
+        "ethi": 15,
+        "land": 3,
+        "stra": 25,
+        "base": 5,
+        "mone": 15,
+        "egoi": 0,
+        "ipro": 0
+      }
+    },
+    {
+      "name": "Right-Libertarianism (umbrella)",
+      "umbrella": true,
+      "anchor": {
+        "stat": 70,
+        "ethi": 55,
+        "land": 25,
+        "stra": 5,
+        "base": 35,
+        "mone": 40,
+        "egoi": 55,
+        "ipro": 40
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "stat01",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -10
+      },
+      "text": "All functions currently performed by the state, including courts, police, and defence, can and should be provided by competing private firms."
+    },
+    {
+      "id": "stat02",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -9
+      },
+      "text": "The state is not a necessary institution; it is a monopoly on force that competition could replace."
+    },
+    {
+      "id": "stat03",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -8
+      },
+      "text": "Private arbitration and defence agencies would work at least as well as a state monopoly on those functions."
+    },
+    {
+      "id": "stat04",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -10
+      },
+      "text": "There is no legitimate function that requires a single coercive monopoly rather than voluntary competing providers."
+    },
+    {
+      "id": "stat05",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -8
+      },
+      "text": "A society with no state at all, only voluntary institutions, is both possible and preferable."
+    },
+    {
+      "id": "stat06",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -7
+      },
+      "text": "Even courts and law enforcement should be opened to competition rather than reserved to a single state."
+    },
+    {
+      "id": "stat07",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 10
+      },
+      "text": "A minimal state confined to defence, courts, and police is necessary and legitimate, even if nothing more is."
+    },
+    {
+      "id": "stat08",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 9
+      },
+      "text": "Some functions, like enforcement of contracts and defence, genuinely require a single legitimate authority to work."
+    },
+    {
+      "id": "stat09",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 8
+      },
+      "text": "Purely private substitutes for courts and policing would struggle to remain neutral and would likely re-create a state."
+    },
+    {
+      "id": "stat10",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 10
+      },
+      "text": "A night-watchman state is the minimum needed to prevent private force from degenerating into warlordism."
+    },
+    {
+      "id": "stat11",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 8
+      },
+      "text": "Removing the state entirely goes further than protecting liberty actually requires."
+    },
+    {
+      "id": "stat12",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 7
+      },
+      "text": "A small, constitutionally limited state is compatible with, and more stable than, having no state at all."
+    },
+    {
+      "id": "ethi01",
+      "axis": "ethi",
+      "core": true,
+      "effect": {
+        "ethi": -10
+      },
+      "text": "Rights against force and fraud are absolute and cannot be traded off against other social goals."
+    },
+    {
+      "id": "ethi02",
+      "axis": "ethi",
+      "core": true,
+      "effect": {
+        "ethi": -9
+      },
+      "text": "The non-aggression principle is a strict moral rule, not one consideration to weigh against others."
+    },
+    {
+      "id": "ethi03",
+      "axis": "ethi",
+      "core": true,
+      "effect": {
+        "ethi": -8
+      },
+      "text": "Individual rights hold regardless of the consequences of respecting them in a given case."
+    },
+    {
+      "id": "ethi04",
+      "axis": "ethi",
+      "core": false,
+      "effect": {
+        "ethi": -10
+      },
+      "text": "Violating someone's rights is wrong even if doing so would produce better aggregate outcomes."
+    },
+    {
+      "id": "ethi05",
+      "axis": "ethi",
+      "core": false,
+      "effect": {
+        "ethi": -8
+      },
+      "text": "Property and contract rights are deduced from self-ownership, not justified by their social usefulness."
+    },
+    {
+      "id": "ethi06",
+      "axis": "ethi",
+      "core": false,
+      "effect": {
+        "ethi": -7
+      },
+      "text": "A rights framework should never bend to utilitarian calculation of costs and benefits."
+    },
+    {
+      "id": "ethi07",
+      "axis": "ethi",
+      "core": true,
+      "effect": {
+        "ethi": 10
+      },
+      "text": "Rules of property and exchange are ultimately justified by the good outcomes they produce, not by an abstract natural right."
+    },
+    {
+      "id": "ethi08",
+      "axis": "ethi",
+      "core": true,
+      "effect": {
+        "ethi": 9
+      },
+      "text": "If a policy that violates strict property rights produces clearly better outcomes, that's a real point in its favour."
+    },
+    {
+      "id": "ethi09",
+      "axis": "ethi",
+      "core": true,
+      "effect": {
+        "ethi": 8
+      },
+      "text": "Rights are useful conventions we adopt because they tend to work, not moral absolutes prior to consequences."
+    },
+    {
+      "id": "ethi10",
+      "axis": "ethi",
+      "core": false,
+      "effect": {
+        "ethi": 10
+      },
+      "text": "Cost-benefit analysis is a legitimate way to evaluate libertarian policy, not something to be ruled out in principle."
+    },
+    {
+      "id": "ethi11",
+      "axis": "ethi",
+      "core": false,
+      "effect": {
+        "ethi": 8
+      },
+      "text": "Practical outcomes should guide libertarian policy at least as much as any doctrine of natural rights."
+    },
+    {
+      "id": "ethi12",
+      "axis": "ethi",
+      "core": false,
+      "effect": {
+        "ethi": 7
+      },
+      "text": "A rule of property is worth keeping only as long as it continues to produce good results."
+    },
+    {
+      "id": "land01",
+      "axis": "land",
+      "core": true,
+      "effect": {
+        "land": -10
+      },
+      "text": "Whoever first mixes their labour with unowned land or resources rightfully owns them outright, with no further obligation."
+    },
+    {
+      "id": "land02",
+      "axis": "land",
+      "core": true,
+      "effect": {
+        "land": -9
+      },
+      "text": "Original appropriation of land, once made, creates a full and permanent property right like any other."
+    },
+    {
+      "id": "land03",
+      "axis": "land",
+      "core": true,
+      "effect": {
+        "land": -8
+      },
+      "text": "There is no residual claim the rest of society has over land once it has been justly homesteaded."
+    },
+    {
+      "id": "land04",
+      "axis": "land",
+      "core": false,
+      "effect": {
+        "land": -10
+      },
+      "text": "Land should be treated exactly like any other justly acquired private property."
+    },
+    {
+      "id": "land05",
+      "axis": "land",
+      "core": false,
+      "effect": {
+        "land": -8
+      },
+      "text": "Homesteading unowned resources requires no compensation to anyone else, now or in the future."
+    },
+    {
+      "id": "land06",
+      "axis": "land",
+      "core": false,
+      "effect": {
+        "land": -7
+      },
+      "text": "A full, unqualified right to land follows from the same logic as a right to any other property."
+    },
+    {
+      "id": "land07",
+      "axis": "land",
+      "core": true,
+      "effect": {
+        "land": 10
+      },
+      "text": "The value of land itself, as distinct from what's built on it, rightfully belongs to the community and should be taxed accordingly."
+    },
+    {
+      "id": "land08",
+      "axis": "land",
+      "core": true,
+      "effect": {
+        "land": 9
+      },
+      "text": "Unimproved land value is a common inheritance that no individual can justly claim without compensating others."
+    },
+    {
+      "id": "land09",
+      "axis": "land",
+      "core": true,
+      "effect": {
+        "land": 8
+      },
+      "text": "A single tax on land value, replacing other taxes, is compatible with a strongly free-market economy."
+    },
+    {
+      "id": "land10",
+      "axis": "land",
+      "core": false,
+      "effect": {
+        "land": 10
+      },
+      "text": "Ownership of raw land is different in kind from ownership of what human labour produces, and should be treated differently."
+    },
+    {
+      "id": "land11",
+      "axis": "land",
+      "core": false,
+      "effect": {
+        "land": 8
+      },
+      "text": "Landowners owe society compensation for the value of the land itself, apart from any improvements they've made."
+    },
+    {
+      "id": "land12",
+      "axis": "land",
+      "core": false,
+      "effect": {
+        "land": 7
+      },
+      "text": "Full private ownership of land ignores that no one created the land itself."
+    },
+    {
+      "id": "stra01",
+      "axis": "stra",
+      "core": true,
+      "effect": {
+        "stra": -10
+      },
+      "text": "The most effective path to a freer society is running for office and reforming the system from within."
+    },
+    {
+      "id": "stra02",
+      "axis": "stra",
+      "core": true,
+      "effect": {
+        "stra": -9
+      },
+      "text": "Libertarians should build political parties and contest elections as their primary strategy."
+    },
+    {
+      "id": "stra03",
+      "axis": "stra",
+      "core": true,
+      "effect": {
+        "stra": -8
+      },
+      "text": "Working through legislatures and courts is a legitimate and realistic route to reducing state power."
+    },
+    {
+      "id": "stra04",
+      "axis": "stra",
+      "core": false,
+      "effect": {
+        "stra": -10
+      },
+      "text": "Electoral politics, however slow, is more likely to succeed than trying to route around the state entirely."
+    },
+    {
+      "id": "stra05",
+      "axis": "stra",
+      "core": false,
+      "effect": {
+        "stra": -8
+      },
+      "text": "A libertarian movement needs to engage seriously with existing institutions to have any real influence."
+    },
+    {
+      "id": "stra06",
+      "axis": "stra",
+      "core": false,
+      "effect": {
+        "stra": -7
+      },
+      "text": "Winning elections is the strategy most likely to actually roll back state power."
+    },
+    {
+      "id": "stra07",
+      "axis": "stra",
+      "core": true,
+      "effect": {
+        "stra": 10
+      },
+      "text": "Building alternative institutions and markets that operate outside and beneath state control is the more effective strategy."
+    },
+    {
+      "id": "stra08",
+      "axis": "stra",
+      "core": true,
+      "effect": {
+        "stra": 9
+      },
+      "text": "Voting and lobbying inside the system tend to legitimise the very state a libertarian should be trying to shrink."
+    },
+    {
+      "id": "stra09",
+      "axis": "stra",
+      "core": true,
+      "effect": {
+        "stra": 8
+      },
+      "text": "Counter-economics — untaxed, unregulated exchange — does more to reduce the state's power than electoral politics does."
+    },
+    {
+      "id": "stra10",
+      "axis": "stra",
+      "core": false,
+      "effect": {
+        "stra": 10
+      },
+      "text": "The state should be starved and evaded, not reformed through participation in its own institutions."
+    },
+    {
+      "id": "stra11",
+      "axis": "stra",
+      "core": false,
+      "effect": {
+        "stra": 8
+      },
+      "text": "Exit and evasion of state control are more consistent libertarian strategies than working within the system."
+    },
+    {
+      "id": "stra12",
+      "axis": "stra",
+      "core": false,
+      "effect": {
+        "stra": 7
+      },
+      "text": "A parallel economy operating outside state control is a more radical and effective strategy than seeking office."
+    },
+    {
+      "id": "base01",
+      "axis": "base",
+      "core": true,
+      "effect": {
+        "base": -10
+      },
+      "text": "A free society should welcome anyone regardless of background who accepts its property and contract norms."
+    },
+    {
+      "id": "base02",
+      "axis": "base",
+      "core": true,
+      "effect": {
+        "base": -9
+      },
+      "text": "Libertarian principles apply universally and shouldn't be tied to any particular cultural or religious community."
+    },
+    {
+      "id": "base03",
+      "axis": "base",
+      "core": true,
+      "effect": {
+        "base": -8
+      },
+      "text": "Cultural and religious diversity is compatible with, and doesn't threaten, a free-market order."
+    },
+    {
+      "id": "base04",
+      "axis": "base",
+      "core": false,
+      "effect": {
+        "base": -10
+      },
+      "text": "The case for liberty should be made in universal terms, not aimed at any one cultural group."
+    },
+    {
+      "id": "base05",
+      "axis": "base",
+      "core": false,
+      "effect": {
+        "base": -8
+      },
+      "text": "A libertarian order has no need to privilege any particular tradition or community over others."
+    },
+    {
+      "id": "base06",
+      "axis": "base",
+      "core": false,
+      "effect": {
+        "base": -7
+      },
+      "text": "Openness to newcomers, so long as they respect property and contract, strengthens rather than threatens a free society."
+    },
+    {
+      "id": "base07",
+      "axis": "base",
+      "core": true,
+      "effect": {
+        "base": 10
+      },
+      "text": "A free society is more stable when built on communities that share strong cultural norms and traditions, not just abstract rules."
+    },
+    {
+      "id": "base08",
+      "axis": "base",
+      "core": true,
+      "effect": {
+        "base": 9
+      },
+      "text": "Explicitly traditionalist communities are a more realistic foundation for lasting liberty than a purely universalist appeal."
+    },
+    {
+      "id": "base09",
+      "axis": "base",
+      "core": true,
+      "effect": {
+        "base": 8
+      },
+      "text": "Shared culture and even exclusion by covenant can be a legitimate and effective basis for a free community."
+    },
+    {
+      "id": "base10",
+      "axis": "base",
+      "core": false,
+      "effect": {
+        "base": 10
+      },
+      "text": "A coalition with traditionalist and religious conservatives serves libertarian goals better than a purely individualist appeal."
+    },
+    {
+      "id": "base11",
+      "axis": "base",
+      "core": false,
+      "effect": {
+        "base": 8
+      },
+      "text": "Homogeneous, covenant-based communities may preserve liberty better than open, universalist ones."
+    },
+    {
+      "id": "base12",
+      "axis": "base",
+      "core": false,
+      "effect": {
+        "base": 7
+      },
+      "text": "Cultural cohesion, not abstract universalism, is what actually sustains a free social order over time."
+    },
+    {
+      "id": "mone01",
+      "axis": "mone",
+      "core": true,
+      "effect": {
+        "mone": -10
+      },
+      "text": "Money should be backed by a scarce physical commodity like gold, not issued at the discretion of any authority."
+    },
+    {
+      "id": "mone02",
+      "axis": "mone",
+      "core": true,
+      "effect": {
+        "mone": -9
+      },
+      "text": "A commodity-based monetary standard prevents the kind of arbitrary inflation that discretionary money invites."
+    },
+    {
+      "id": "mone03",
+      "axis": "mone",
+      "core": true,
+      "effect": {
+        "mone": -8
+      },
+      "text": "Central banks and fiat currency are a major source of economic distortion and should be abolished."
+    },
+    {
+      "id": "mone04",
+      "axis": "mone",
+      "core": false,
+      "effect": {
+        "mone": -10
+      },
+      "text": "Sound money means money whose supply cannot be expanded by political decision."
+    },
+    {
+      "id": "mone05",
+      "axis": "mone",
+      "core": false,
+      "effect": {
+        "mone": -8
+      },
+      "text": "A gold or similar commodity standard disciplines government spending in a way paper money cannot."
+    },
+    {
+      "id": "mone06",
+      "axis": "mone",
+      "core": false,
+      "effect": {
+        "mone": -7
+      },
+      "text": "Returning to a hard, commodity-backed currency would substantially improve economic stability."
+    },
+    {
+      "id": "mone07",
+      "axis": "mone",
+      "core": true,
+      "effect": {
+        "mone": 10
+      },
+      "text": "Competing private and digital currencies are a legitimate and promising alternative to any single monetary standard."
+    },
+    {
+      "id": "mone08",
+      "axis": "mone",
+      "core": true,
+      "effect": {
+        "mone": 9
+      },
+      "text": "Multiple currencies competing for use, including cryptocurrencies, produce better outcomes than any single official standard."
+    },
+    {
+      "id": "mone09",
+      "axis": "mone",
+      "core": true,
+      "effect": {
+        "mone": 8
+      },
+      "text": "Monetary innovation, including decentralised digital currency, is a genuine advance over traditional commodity money."
+    },
+    {
+      "id": "mone10",
+      "axis": "mone",
+      "core": false,
+      "effect": {
+        "mone": 10
+      },
+      "text": "The right approach to money is letting the market choose among competing currencies, not fixing on any one standard."
+    },
+    {
+      "id": "mone11",
+      "axis": "mone",
+      "core": false,
+      "effect": {
+        "mone": 8
+      },
+      "text": "Cryptographic and algorithmically governed currencies can replace the function gold once served."
+    },
+    {
+      "id": "mone12",
+      "axis": "mone",
+      "core": false,
+      "effect": {
+        "mone": 7
+      },
+      "text": "A diverse, competitive monetary landscape is preferable to reinstating a single commodity standard."
+    },
+    {
+      "id": "egoi01",
+      "axis": "egoi",
+      "core": true,
+      "effect": {
+        "egoi": -10
+      },
+      "text": "Rational self-interest is not just permissible but the proper and admirable guide to individual action."
+    },
+    {
+      "id": "egoi02",
+      "axis": "egoi",
+      "core": true,
+      "effect": {
+        "egoi": -9
+      },
+      "text": "Altruism as a demanded duty is a corrupting, not an ennobling, moral ideal."
+    },
+    {
+      "id": "egoi03",
+      "axis": "egoi",
+      "core": true,
+      "effect": {
+        "egoi": -8
+      },
+      "text": "A person owes nothing to others beyond what they voluntarily choose to give."
+    },
+    {
+      "id": "egoi04",
+      "axis": "egoi",
+      "core": false,
+      "effect": {
+        "egoi": -10
+      },
+      "text": "The pursuit of one's own values and happiness is the standard by which action should be judged."
+    },
+    {
+      "id": "egoi05",
+      "axis": "egoi",
+      "core": false,
+      "effect": {
+        "egoi": -8
+      },
+      "text": "Sacrifice of one's own interest for others, when not freely chosen, has no moral claim on a person."
+    },
+    {
+      "id": "egoi06",
+      "axis": "egoi",
+      "core": false,
+      "effect": {
+        "egoi": -7
+      },
+      "text": "A society of consistently self-interested individuals, each respecting others' rights, is a moral achievement."
+    },
+    {
+      "id": "egoi07",
+      "axis": "egoi",
+      "core": true,
+      "effect": {
+        "egoi": 10
+      },
+      "text": "Individual liberty makes the most sense within a wider framework of duty and reciprocal obligation to others."
+    },
+    {
+      "id": "egoi08",
+      "axis": "egoi",
+      "core": true,
+      "effect": {
+        "egoi": 9
+      },
+      "text": "A purely self-interested ethic, taken on its own, leaves out real obligations people have toward each other."
+    },
+    {
+      "id": "egoi09",
+      "axis": "egoi",
+      "core": true,
+      "effect": {
+        "egoi": 8
+      },
+      "text": "Rights have to be paired with a sense of community responsibility, not treated as licence for pure self-interest."
+    },
+    {
+      "id": "egoi10",
+      "axis": "egoi",
+      "core": false,
+      "effect": {
+        "egoi": 10
+      },
+      "text": "Libertarian ethics need some account of obligation to others, not just freedom from interference."
+    },
+    {
+      "id": "egoi11",
+      "axis": "egoi",
+      "core": false,
+      "effect": {
+        "egoi": 8
+      },
+      "text": "An ethic of rational self-interest alone doesn't capture everything that matters about how people should treat each other."
+    },
+    {
+      "id": "egoi12",
+      "axis": "egoi",
+      "core": false,
+      "effect": {
+        "egoi": 7
+      },
+      "text": "Liberty and mutual obligation belong together; neither one alone is a sufficient moral foundation."
+    },
+    {
+      "id": "ipro01",
+      "axis": "ipro",
+      "core": true,
+      "effect": {
+        "ipro": -10
+      },
+      "text": "Intellectual creations like inventions and writing are legitimate property, and the state is right to protect them."
+    },
+    {
+      "id": "ipro02",
+      "axis": "ipro",
+      "core": true,
+      "effect": {
+        "ipro": -9
+      },
+      "text": "Patents and copyrights are a justified application of ordinary property rights to ideas."
+    },
+    {
+      "id": "ipro03",
+      "axis": "ipro",
+      "core": true,
+      "effect": {
+        "ipro": -8
+      },
+      "text": "Without some enforceable claim to an idea's use, there's too little incentive to create it in the first place."
+    },
+    {
+      "id": "ipro04",
+      "axis": "ipro",
+      "core": false,
+      "effect": {
+        "ipro": -10
+      },
+      "text": "A creator's claim over their invention or work is as legitimate as a farmer's claim over their crop."
+    },
+    {
+      "id": "ipro05",
+      "axis": "ipro",
+      "core": false,
+      "effect": {
+        "ipro": -8
+      },
+      "text": "Protecting intellectual property doesn't contradict libertarian principles; it extends them to a new kind of good."
+    },
+    {
+      "id": "ipro06",
+      "axis": "ipro",
+      "core": false,
+      "effect": {
+        "ipro": -7
+      },
+      "text": "Enforcing intellectual property rights is a proper, limited function even for a minimal state."
+    },
+    {
+      "id": "ipro07",
+      "axis": "ipro",
+      "core": true,
+      "effect": {
+        "ipro": 10
+      },
+      "text": "Intellectual property is really a state-granted monopoly, not a legitimate property right at all."
+    },
+    {
+      "id": "ipro08",
+      "axis": "ipro",
+      "core": true,
+      "effect": {
+        "ipro": 9
+      },
+      "text": "Ideas can be copied without depriving the original creator of their use, which makes them unlike ordinary property."
+    },
+    {
+      "id": "ipro09",
+      "axis": "ipro",
+      "core": true,
+      "effect": {
+        "ipro": 8
+      },
+      "text": "Patent and copyright law mainly protect incumbents and restrict the free flow of information."
+    },
+    {
+      "id": "ipro10",
+      "axis": "ipro",
+      "core": false,
+      "effect": {
+        "ipro": 10
+      },
+      "text": "A genuinely free market would have no enforceable claims over the copying of ideas or inventions."
+    },
+    {
+      "id": "ipro11",
+      "axis": "ipro",
+      "core": false,
+      "effect": {
+        "ipro": 8
+      },
+      "text": "Abolishing intellectual property protections would increase, not reduce, real innovation and competition."
+    },
+    {
+      "id": "ipro12",
+      "axis": "ipro",
+      "core": false,
+      "effect": {
+        "ipro": 7
+      },
+      "text": "Treating ideas as ownable property contradicts the same logic that makes physical property legitimate."
+    }
+  ]
+}

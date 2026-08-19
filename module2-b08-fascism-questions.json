@@ -1,0 +1,1150 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 8,
+    "bucket": "Fascism / Third Position / National-Populism",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "race",
+      "name": "Basis of Belonging",
+      "negPole": "Cultural / Statist Nationalism",
+      "posPole": "Biological Racial Determinism"
+    },
+    {
+      "key": "econ",
+      "name": "Economic Doctrine",
+      "negPole": "Anti-Capitalist / Socialising",
+      "posPole": "Alliance with Existing Capital"
+    },
+    {
+      "key": "reli",
+      "name": "Religion",
+      "negPole": "Secular / Neo-Pagan / Anti-Clerical",
+      "posPole": "Confessional-Clerical"
+    },
+    {
+      "key": "regi",
+      "name": "Regime Form",
+      "negPole": "Authoritarian Conservative Order",
+      "posPole": "Totalitarian Mass Party"
+    },
+    {
+      "key": "impe",
+      "name": "External Ambition",
+      "negPole": "Defensive Nationalism",
+      "posPole": "Expansionist Empire"
+    },
+    {
+      "key": "myst",
+      "name": "Register",
+      "negPole": "Rationalist-Technocratic Statism",
+      "posPole": "Palingenetic Myth & Rebirth"
+    },
+    {
+      "key": "corp",
+      "name": "Economic Structure",
+      "negPole": "Direct State Command",
+      "posPole": "Corporatist / Syndical Intermediation"
+    },
+    {
+      "key": "mode",
+      "name": "Modernity",
+      "negPole": "Futurist / Pro-Industrial",
+      "posPole": "Agrarian-Traditional / Anti-Modern"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Italian Fascism (Mussolini)",
+      "umbrella": false,
+      "anchor": {
+        "race": 25,
+        "econ": 55,
+        "reli": 35,
+        "regi": 85,
+        "impe": 88,
+        "myst": 70,
+        "corp": 85,
+        "mode": 5
+      }
+    },
+    {
+      "name": "Nazism / National Socialism",
+      "umbrella": false,
+      "anchor": {
+        "race": 100,
+        "econ": 60,
+        "reli": 5,
+        "regi": 98,
+        "impe": 98,
+        "myst": 80,
+        "corp": 20,
+        "mode": 30
+      }
+    },
+    {
+      "name": "Falangism (Spain)",
+      "umbrella": false,
+      "anchor": {
+        "race": 15,
+        "econ": 30,
+        "reli": 70,
+        "regi": 55,
+        "impe": 45,
+        "myst": 65,
+        "corp": 92,
+        "mode": 45
+      }
+    },
+    {
+      "name": "Austrofascism",
+      "umbrella": false,
+      "anchor": {
+        "race": 10,
+        "econ": 60,
+        "reli": 96,
+        "regi": 30,
+        "impe": 10,
+        "myst": 35,
+        "corp": 88,
+        "mode": 60
+      }
+    },
+    {
+      "name": "Iron Guard / Legionarism",
+      "umbrella": false,
+      "anchor": {
+        "race": 55,
+        "econ": 40,
+        "reli": 92,
+        "regi": 75,
+        "impe": 20,
+        "myst": 99,
+        "corp": 40,
+        "mode": 70
+      }
+    },
+    {
+      "name": "Francoism",
+      "umbrella": false,
+      "anchor": {
+        "race": 20,
+        "econ": 88,
+        "reli": 90,
+        "regi": 18,
+        "impe": 25,
+        "myst": 25,
+        "corp": 70,
+        "mode": 60
+      }
+    },
+    {
+      "name": "Strasserism",
+      "umbrella": false,
+      "anchor": {
+        "race": 80,
+        "econ": 2,
+        "reli": 15,
+        "regi": 80,
+        "impe": 40,
+        "myst": 45,
+        "corp": 60,
+        "mode": 45
+      }
+    },
+    {
+      "name": "National Syndicalism",
+      "umbrella": false,
+      "anchor": {
+        "race": 20,
+        "econ": 12,
+        "reli": 25,
+        "regi": 70,
+        "impe": 35,
+        "myst": 40,
+        "corp": 97,
+        "mode": 20
+      }
+    },
+    {
+      "name": "Integralism (Brazil/Portugal)",
+      "umbrella": false,
+      "anchor": {
+        "race": 5,
+        "econ": 45,
+        "reli": 82,
+        "regi": 72,
+        "impe": 20,
+        "myst": 72,
+        "corp": 78,
+        "mode": 45
+      }
+    },
+    {
+      "name": "Clerical Fascism",
+      "umbrella": false,
+      "anchor": {
+        "race": 30,
+        "econ": 74,
+        "reli": 100,
+        "regi": 35,
+        "impe": 25,
+        "myst": 78,
+        "corp": 66,
+        "mode": 70
+      }
+    },
+    {
+      "name": "Showa Statism (Imperial Japan)",
+      "umbrella": false,
+      "anchor": {
+        "race": 60,
+        "econ": 66,
+        "reli": 72,
+        "regi": 32,
+        "impe": 96,
+        "myst": 45,
+        "corp": 24,
+        "mode": 20
+      }
+    },
+    {
+      "name": "Ecofascism",
+      "umbrella": false,
+      "anchor": {
+        "race": 86,
+        "econ": 35,
+        "reli": 20,
+        "regi": 55,
+        "impe": 18,
+        "myst": 82,
+        "corp": 20,
+        "mode": 97
+      }
+    },
+    {
+      "name": "Contemporary National-Populism",
+      "umbrella": false,
+      "anchor": {
+        "race": 55,
+        "econ": 72,
+        "reli": 40,
+        "regi": 12,
+        "impe": 4,
+        "myst": 15,
+        "corp": 8,
+        "mode": 35
+      }
+    },
+    {
+      "name": "Third Position (umbrella)",
+      "umbrella": true,
+      "anchor": {
+        "race": 50,
+        "econ": 20,
+        "reli": 45,
+        "regi": 70,
+        "impe": 35,
+        "myst": 60,
+        "corp": 70,
+        "mode": 45
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "race01",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": 10
+      },
+      "text": "Biological race is the deepest and most decisive fact determining a people's character and destiny."
+    },
+    {
+      "id": "race02",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": 9
+      },
+      "text": "Racial purity is a value worth protecting through active state policy."
+    },
+    {
+      "id": "race03",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": 8
+      },
+      "text": "A nation's strength ultimately rests on the biological quality of its people."
+    },
+    {
+      "id": "race04",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": 10
+      },
+      "text": "Mixing of distinct races weakens the character and vitality of a nation."
+    },
+    {
+      "id": "race05",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": 8
+      },
+      "text": "Some races are naturally suited to rule and others to be ruled."
+    },
+    {
+      "id": "race06",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": 7
+      },
+      "text": "Blood and descent, not shared institutions, are what truly define who belongs to the nation."
+    },
+    {
+      "id": "race07",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": -10
+      },
+      "text": "What defines the nation is shared culture, language, and history, not biology or bloodline."
+    },
+    {
+      "id": "race08",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": -9
+      },
+      "text": "Anyone who fully embraces the nation's culture and struggle should be considered part of it, regardless of ancestry."
+    },
+    {
+      "id": "race09",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": -8
+      },
+      "text": "Racial theory is a distraction from the real basis of national unity, which is cultural and political."
+    },
+    {
+      "id": "race10",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": -10
+      },
+      "text": "The nation is a spiritual and cultural community, not a biological category."
+    },
+    {
+      "id": "race11",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": -8
+      },
+      "text": "Racial hierarchy has no legitimate place in a properly ordered nationalist movement."
+    },
+    {
+      "id": "race12",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": -7
+      },
+      "text": "National unity should be built on shared struggle and loyalty, not on ancestry."
+    },
+    {
+      "id": "econ01",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -10
+      },
+      "text": "Big finance and large capital are enemies of the nation as much as any external threat."
+    },
+    {
+      "id": "econ02",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -9
+      },
+      "text": "Interest-bearing capital and speculative finance should be broken and subordinated to national production."
+    },
+    {
+      "id": "econ03",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -8
+      },
+      "text": "A national revolution has to expropriate parasitic capital, not just discipline it."
+    },
+    {
+      "id": "econ04",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -10
+      },
+      "text": "Workers' material interests must be genuinely served, not just rhetorically invoked, by a nationalist movement."
+    },
+    {
+      "id": "econ05",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -8
+      },
+      "text": "Class privilege within the nation is as much an enemy as class privilege serving foreign interests."
+    },
+    {
+      "id": "econ06",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -7
+      },
+      "text": "The nation's revolution is incomplete if it leaves the existing economic elite untouched."
+    },
+    {
+      "id": "econ07",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 10
+      },
+      "text": "The nation's existing industrialists and business elite can be valuable allies against common enemies."
+    },
+    {
+      "id": "econ08",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 9
+      },
+      "text": "Private capital, properly aligned with national goals, should be preserved and used, not expropriated."
+    },
+    {
+      "id": "econ09",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 8
+      },
+      "text": "A strong national economy needs the cooperation of existing business elites, not their elimination."
+    },
+    {
+      "id": "econ10",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 10
+      },
+      "text": "Radical economic levelling threatens the social order a nationalist movement is trying to defend."
+    },
+    {
+      "id": "econ11",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 8
+      },
+      "text": "A movement that alienates capital and industry weakens itself for no strategic gain."
+    },
+    {
+      "id": "econ12",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 7
+      },
+      "text": "National strength is better built through alliance with existing economic power than through its destruction."
+    },
+    {
+      "id": "reli01",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -10
+      },
+      "text": "The nation's spiritual life should draw on pre-Christian myth and will, not on the churches."
+    },
+    {
+      "id": "reli02",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -9
+      },
+      "text": "Established religious institutions have grown too weak and universalist to serve as the nation's spiritual centre."
+    },
+    {
+      "id": "reli03",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -8
+      },
+      "text": "A national movement's true religion is the nation and the race, not any confessional church."
+    },
+    {
+      "id": "reli04",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -10
+      },
+      "text": "Clerical authority should be subordinated to the movement's own vision, not the reverse."
+    },
+    {
+      "id": "reli05",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -8
+      },
+      "text": "Christianity's emphasis on universal brotherhood conflicts with a movement built on national or racial struggle."
+    },
+    {
+      "id": "reli06",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -7
+      },
+      "text": "The state, not the church, should be the ultimate spiritual authority for the nation."
+    },
+    {
+      "id": "reli07",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 10
+      },
+      "text": "The nation's traditional church should be honoured as a pillar of the social order, not sidelined."
+    },
+    {
+      "id": "reli08",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 9
+      },
+      "text": "A movement should work with, not against, established religious authority and its institutions."
+    },
+    {
+      "id": "reli09",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 8
+      },
+      "text": "Religious faith and clerical support give a nationalist movement legitimacy it cannot generate on its own."
+    },
+    {
+      "id": "reli10",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 10
+      },
+      "text": "The clergy's moral authority should be respected and incorporated into the movement's public life."
+    },
+    {
+      "id": "reli11",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 8
+      },
+      "text": "A nationalist movement should present itself as the defender of traditional religion, not its rival."
+    },
+    {
+      "id": "reli12",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 7
+      },
+      "text": "Confessional loyalty and national loyalty should reinforce, not compete with, each other."
+    },
+    {
+      "id": "regi01",
+      "axis": "regi",
+      "core": true,
+      "effect": {
+        "regi": -10
+      },
+      "text": "Existing conservative institutions and elites are useful, if limited, allies for restoring order."
+    },
+    {
+      "id": "regi02",
+      "axis": "regi",
+      "core": true,
+      "effect": {
+        "regi": -9
+      },
+      "text": "An authoritarian government that preserves the social hierarchy is preferable to a mass revolutionary party."
+    },
+    {
+      "id": "regi03",
+      "axis": "regi",
+      "core": true,
+      "effect": {
+        "regi": -8
+      },
+      "text": "Order and stability, delivered from above by a strong executive, matter more than mass mobilisation."
+    },
+    {
+      "id": "regi04",
+      "axis": "regi",
+      "core": false,
+      "effect": {
+        "regi": -10
+      },
+      "text": "Working through existing institutions, even undemocratically, is more realistic than remaking society from below."
+    },
+    {
+      "id": "regi05",
+      "axis": "regi",
+      "core": false,
+      "effect": {
+        "regi": -8
+      },
+      "text": "A traditional elite, properly empowered, can restore national order without needing a mass party apparatus."
+    },
+    {
+      "id": "regi06",
+      "axis": "regi",
+      "core": false,
+      "effect": {
+        "regi": -7
+      },
+      "text": "Authoritarian rule that leaves most of society's structure intact is a workable and sufficient model."
+    },
+    {
+      "id": "regi07",
+      "axis": "regi",
+      "core": true,
+      "effect": {
+        "regi": 10
+      },
+      "text": "The nation needs total mobilisation of society through a single mass party, not just an authoritarian government."
+    },
+    {
+      "id": "regi08",
+      "axis": "regi",
+      "core": true,
+      "effect": {
+        "regi": 9
+      },
+      "text": "Every institution of society — youth, labour, culture — should be brought under the movement's organisation."
+    },
+    {
+      "id": "regi09",
+      "axis": "regi",
+      "core": true,
+      "effect": {
+        "regi": 8
+      },
+      "text": "A revolutionary party has to permeate the whole of society, not just occupy the state."
+    },
+    {
+      "id": "regi10",
+      "axis": "regi",
+      "core": false,
+      "effect": {
+        "regi": 10
+      },
+      "text": "Passive obedience to an authoritarian state is not enough; the population must be actively mobilised and organised."
+    },
+    {
+      "id": "regi11",
+      "axis": "regi",
+      "core": false,
+      "effect": {
+        "regi": 8
+      },
+      "text": "The party, not the traditional state apparatus, should be the true centre of national life."
+    },
+    {
+      "id": "regi12",
+      "axis": "regi",
+      "core": false,
+      "effect": {
+        "regi": 7
+      },
+      "text": "A totalising mass movement, not a conventional authoritarian government, is what national rebirth requires."
+    },
+    {
+      "id": "impe01",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": 10
+      },
+      "text": "The nation's vitality is proven and renewed through expansion and the conquest of living space."
+    },
+    {
+      "id": "impe02",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": 9
+      },
+      "text": "A great people is entitled to secure territory beyond its current borders by force if necessary."
+    },
+    {
+      "id": "impe03",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": 8
+      },
+      "text": "National greatness naturally expresses itself in imperial ambition, not just self-defence."
+    },
+    {
+      "id": "impe04",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": 10
+      },
+      "text": "Weaker neighbouring peoples and territories are legitimate objects of national expansion."
+    },
+    {
+      "id": "impe05",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": 8
+      },
+      "text": "A nation that does not expand when it has the strength to do so is failing its own destiny."
+    },
+    {
+      "id": "impe06",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": 7
+      },
+      "text": "War and conquest are not aberrations but expressions of a nation's vital strength."
+    },
+    {
+      "id": "impe07",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": -10
+      },
+      "text": "The nation's goal should be securing and defending its existing homeland, not conquering new territory."
+    },
+    {
+      "id": "impe08",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": -9
+      },
+      "text": "Expansionist ambition beyond the nation's own people and territory is a needless and costly overreach."
+    },
+    {
+      "id": "impe09",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": -8
+      },
+      "text": "A defensive nationalism, focused on the homeland, is more sustainable than an expansionist one."
+    },
+    {
+      "id": "impe10",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": -10
+      },
+      "text": "Foreign conquest drains the resources a movement needs to consolidate power at home."
+    },
+    {
+      "id": "impe11",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": -8
+      },
+      "text": "National rebirth doesn't require empire; it requires securing what is already the nation's own."
+    },
+    {
+      "id": "impe12",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": -7
+      },
+      "text": "A movement should renounce expansionist ambitions and focus entirely on domestic renewal."
+    },
+    {
+      "id": "myst01",
+      "axis": "myst",
+      "core": true,
+      "effect": {
+        "myst": 10
+      },
+      "text": "The nation is reborn through myth, will, and struggle, not through rational administration alone."
+    },
+    {
+      "id": "myst02",
+      "axis": "myst",
+      "core": true,
+      "effect": {
+        "myst": 9
+      },
+      "text": "A movement needs a unifying myth of national rebirth that goes beyond rational political argument."
+    },
+    {
+      "id": "myst03",
+      "axis": "myst",
+      "core": true,
+      "effect": {
+        "myst": 8
+      },
+      "text": "Ritual, symbol, and collective ecstasy are legitimate and necessary tools of national mobilisation."
+    },
+    {
+      "id": "myst04",
+      "axis": "myst",
+      "core": false,
+      "effect": {
+        "myst": 10
+      },
+      "text": "The leader's will and the nation's myth matter more to political success than technical policy."
+    },
+    {
+      "id": "myst05",
+      "axis": "myst",
+      "core": false,
+      "effect": {
+        "myst": 8
+      },
+      "text": "A politics of pure rational calculation cannot generate the devotion a national movement needs."
+    },
+    {
+      "id": "myst06",
+      "axis": "myst",
+      "core": false,
+      "effect": {
+        "myst": 7
+      },
+      "text": "Heroic struggle and sacrifice, not bureaucratic competence, define the movement's true character."
+    },
+    {
+      "id": "myst07",
+      "axis": "myst",
+      "core": true,
+      "effect": {
+        "myst": -10
+      },
+      "text": "The movement's legitimacy should rest on efficient, rational administration of the state, not on myth or ritual."
+    },
+    {
+      "id": "myst08",
+      "axis": "myst",
+      "core": true,
+      "effect": {
+        "myst": -9
+      },
+      "text": "Technocratic competence matters more to national strength than symbolism or collective myth."
+    },
+    {
+      "id": "myst09",
+      "axis": "myst",
+      "core": true,
+      "effect": {
+        "myst": -8
+      },
+      "text": "A modern nationalist movement should present itself in the language of expertise and order, not mystical rebirth."
+    },
+    {
+      "id": "myst10",
+      "axis": "myst",
+      "core": false,
+      "effect": {
+        "myst": -10
+      },
+      "text": "Practical results, not evocations of destiny or myth, are what actually build durable national strength."
+    },
+    {
+      "id": "myst11",
+      "axis": "myst",
+      "core": false,
+      "effect": {
+        "myst": -8
+      },
+      "text": "Rational planning and administrative efficiency should take priority over appeals to myth and will."
+    },
+    {
+      "id": "myst12",
+      "axis": "myst",
+      "core": false,
+      "effect": {
+        "myst": -7
+      },
+      "text": "A movement's success depends more on competent governance than on stirring collective symbolism."
+    },
+    {
+      "id": "corp01",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": 10
+      },
+      "text": "The economy should be organised into corporate bodies representing employers and workers together under state coordination."
+    },
+    {
+      "id": "corp02",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": 9
+      },
+      "text": "Sectoral councils, not direct state ministries, should manage the day-to-day running of industry."
+    },
+    {
+      "id": "corp03",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": 8
+      },
+      "text": "Class conflict should be replaced by structured cooperation between capital and labour within each industry."
+    },
+    {
+      "id": "corp04",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": 10
+      },
+      "text": "Corporatist bargaining bodies are a more stable economic model than either free markets or direct state control."
+    },
+    {
+      "id": "corp05",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": 8
+      },
+      "text": "Organising the economy by trade and sector, rather than treating individuals as isolated units, better reflects the nation's organic structure."
+    },
+    {
+      "id": "corp06",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": 7
+      },
+      "text": "A syndicalist structure of national production keeps economic decisions close to the industries themselves."
+    },
+    {
+      "id": "corp07",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": -10
+      },
+      "text": "The state itself, not intermediary corporate bodies, should directly command and coordinate the economy."
+    },
+    {
+      "id": "corp08",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": -9
+      },
+      "text": "Direct state control of production is more reliable than delegating economic coordination to sectoral councils."
+    },
+    {
+      "id": "corp09",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": -8
+      },
+      "text": "Corporatist intermediary bodies dilute the authority the state needs to direct the nation's economy effectively."
+    },
+    {
+      "id": "corp10",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": -10
+      },
+      "text": "A command economy run straight from the centre avoids the compromises corporatist bargaining requires."
+    },
+    {
+      "id": "corp11",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": -8
+      },
+      "text": "Sectoral councils tend to become new vested interests that the state has to work around."
+    },
+    {
+      "id": "corp12",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": -7
+      },
+      "text": "Centralised state command of production is the more disciplined and reliable economic model."
+    },
+    {
+      "id": "mode01",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": -10
+      },
+      "text": "Technology, industry, and speed are expressions of the nation's vitality and should be embraced and celebrated."
+    },
+    {
+      "id": "mode02",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": -9
+      },
+      "text": "A modern nationalist movement should present itself as futurist, not nostalgic for a rural past."
+    },
+    {
+      "id": "mode03",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": -8
+      },
+      "text": "Industrial power and technological progress are sources of national strength worth actively pursuing."
+    },
+    {
+      "id": "mode04",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": -10
+      },
+      "text": "The movement should associate itself with modernity, machines, and industrial dynamism."
+    },
+    {
+      "id": "mode05",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": -8
+      },
+      "text": "A backward-looking, agrarian ideal has less to offer national renewal than embracing industrial modernity does."
+    },
+    {
+      "id": "mode06",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": -7
+      },
+      "text": "Speed, machinery, and industrial production symbolise the nation's rebirth better than rural tradition does."
+    },
+    {
+      "id": "mode07",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": 10
+      },
+      "text": "The nation's true character lies in its agrarian, pre-industrial roots, not in industrial modernity."
+    },
+    {
+      "id": "mode08",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": 9
+      },
+      "text": "Industrial modernity has uprooted the nation from the soil and traditions that gave it strength."
+    },
+    {
+      "id": "mode09",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": 8
+      },
+      "text": "A return to rural, traditional ways of life is central to genuine national renewal."
+    },
+    {
+      "id": "mode10",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": 10
+      },
+      "text": "The movement should resist, not celebrate, the rootless and mechanised character of modern industrial life."
+    },
+    {
+      "id": "mode11",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": 8
+      },
+      "text": "National rebirth means recovering a traditional, land-based way of life, not accelerating industrial modernity."
+    },
+    {
+      "id": "mode12",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": 7
+      },
+      "text": "Urban, industrial modernity is a foreign imposition on the nation's authentic agrarian character."
+    }
+  ]
+}

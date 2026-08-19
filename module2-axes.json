@@ -1,0 +1,2966 @@
+{
+  "meta": {
+    "module": 2,
+    "name": "Tendency Test - axis architecture",
+    "version": "0.1-draft",
+    "purpose": "Per-bucket battery of 8 family-specific axes. Module 2 does NOT route between buckets; it produces a radar plot plus a flavour sub-tendency label derived from the nearest sub-ideology anchors.",
+    "labelRule": "Nearest sub-ideology anchor gives the primary label; if the second-nearest is within 15% match, emit a compound label (e.g. 'Stalinist-Orthodox, Third-Worldist Lean').",
+    "matchPercent": "100 * (1 - distance / sqrt(8 * 100^2)), denominator = 282.84",
+    "density": "12 questions per axis, 96 per bucket; short form 6 per axis, 48.",
+    "weightPattern": {
+      "full": [
+        10,
+        9,
+        8,
+        10,
+        8,
+        7,
+        -10,
+        -9,
+        -8,
+        -10,
+        -8,
+        -7
+      ],
+      "core": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8
+      ],
+      "note": "Fixed per-axis ordering makes keyed balance and weight balance true by construction: 52/52 full, 27/27 short form."
+    },
+    "umbrellaNote": "Entries flagged umbrella are critics' labels or family-level aspirations rather than distinct positions. They are placed on the radar but excluded from pairwise-separation scoring.",
+    "culturalAxis": "The Traditionalist<->Progressive appendage is excluded from every bucket's 8 axes by design. No axis below should correlate strongly with it; if one does, that bucket has only 7 real axes."
+  },
+  "buckets": [
+    {
+      "id": 1,
+      "name": "Marxism-Leninism / Communism",
+      "axes": [
+        {
+          "key": "road",
+          "name": "Route to Power",
+          "negPole": "Armed Rupture",
+          "posPole": "Peaceful / Parliamentary Road"
+        },
+        {
+          "key": "subj",
+          "name": "Revolutionary Subject",
+          "negPole": "Industrial Proletariat",
+          "posPole": "Peasantry & Rural Periphery"
+        },
+        {
+          "key": "vang",
+          "name": "Vanguard Discipline",
+          "negPole": "Mass-Democratic / Pluralist",
+          "posPole": "Monolithic Cadre Party"
+        },
+        {
+          "key": "aes",
+          "name": "AES Defence",
+          "negPole": "Critical / Deformed-or-Revisionist",
+          "posPole": "Defend the Socialist Camp"
+        },
+        {
+          "key": "cont",
+          "name": "Continuous Revolution",
+          "negPole": "Productive-Forces Primacy",
+          "posPole": "Class Struggle Under Socialism"
+        },
+        {
+          "key": "mech",
+          "name": "Economic Mechanism",
+          "negPole": "Comprehensive Central Planning",
+          "posPole": "Market & Enterprise Autonomy"
+        },
+        {
+          "key": "intl",
+          "name": "Internationalist Scope",
+          "negPole": "Socialism in One Country",
+          "posPole": "Permanent World Revolution"
+        },
+        {
+          "key": "lead",
+          "name": "Leadership Principle",
+          "negPole": "Collective / Institutional",
+          "posPole": "Guiding Thought of One Leader"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Marxism-Leninism (orthodox/Stalinist)",
+          "umbrella": false,
+          "anchor": {
+            "road": 15,
+            "subj": 30,
+            "vang": 88,
+            "aes": 78,
+            "cont": 40,
+            "mech": 12,
+            "intl": 25,
+            "lead": 85
+          }
+        },
+        {
+          "name": "Trotskyism / Left Opposition",
+          "umbrella": false,
+          "anchor": {
+            "road": 25,
+            "subj": 18,
+            "vang": 55,
+            "aes": 18,
+            "cont": 55,
+            "mech": 28,
+            "intl": 96,
+            "lead": 22
+          }
+        },
+        {
+          "name": "Maoism",
+          "umbrella": false,
+          "anchor": {
+            "road": 12,
+            "subj": 80,
+            "vang": 80,
+            "aes": 60,
+            "cont": 88,
+            "mech": 25,
+            "intl": 55,
+            "lead": 85
+          }
+        },
+        {
+          "name": "Marxism-Leninism-Maoism (Gonzalo)",
+          "umbrella": false,
+          "anchor": {
+            "road": 0,
+            "subj": 90,
+            "vang": 99,
+            "aes": 35,
+            "cont": 96,
+            "mech": 10,
+            "intl": 70,
+            "lead": 99
+          }
+        },
+        {
+          "name": "Hoxhaism (Anti-Revisionist)",
+          "umbrella": false,
+          "anchor": {
+            "road": 12,
+            "subj": 35,
+            "vang": 92,
+            "aes": 22,
+            "cont": 62,
+            "mech": 4,
+            "intl": 33,
+            "lead": 78
+          }
+        },
+        {
+          "name": "Titoism (self-management)",
+          "umbrella": false,
+          "anchor": {
+            "road": 32,
+            "subj": 42,
+            "vang": 58,
+            "aes": 48,
+            "cont": 28,
+            "mech": 82,
+            "intl": 48,
+            "lead": 76
+          }
+        },
+        {
+          "name": "Castro-Guevarism",
+          "umbrella": false,
+          "anchor": {
+            "road": 5,
+            "subj": 66,
+            "vang": 68,
+            "aes": 66,
+            "cont": 60,
+            "mech": 18,
+            "intl": 88,
+            "lead": 80
+          }
+        },
+        {
+          "name": "Ho Chi Minh Thought",
+          "umbrella": false,
+          "anchor": {
+            "road": 22,
+            "subj": 76,
+            "vang": 78,
+            "aes": 74,
+            "cont": 42,
+            "mech": 32,
+            "intl": 28,
+            "lead": 72
+          }
+        },
+        {
+          "name": "Kim Il-Sungism / Juche",
+          "umbrella": false,
+          "anchor": {
+            "road": 15,
+            "subj": 68,
+            "vang": 96,
+            "aes": 52,
+            "cont": 48,
+            "mech": 8,
+            "intl": 2,
+            "lead": 99
+          }
+        },
+        {
+          "name": "Prachanda Path",
+          "umbrella": false,
+          "anchor": {
+            "road": 38,
+            "subj": 84,
+            "vang": 72,
+            "aes": 50,
+            "cont": 72,
+            "mech": 38,
+            "intl": 55,
+            "lead": 84
+          }
+        },
+        {
+          "name": "Dengism / Reform Communism",
+          "umbrella": false,
+          "anchor": {
+            "road": 48,
+            "subj": 45,
+            "vang": 82,
+            "aes": 76,
+            "cont": 6,
+            "mech": 94,
+            "intl": 18,
+            "lead": 42
+          }
+        },
+        {
+          "name": "Khrushchevism / De-Stalinization",
+          "umbrella": false,
+          "anchor": {
+            "road": 62,
+            "subj": 28,
+            "vang": 60,
+            "aes": 66,
+            "cont": 22,
+            "mech": 38,
+            "intl": 62,
+            "lead": 25
+          }
+        },
+        {
+          "name": "Brezhnevism / Developed Socialism",
+          "umbrella": false,
+          "anchor": {
+            "road": 45,
+            "subj": 26,
+            "vang": 86,
+            "aes": 97,
+            "cont": 10,
+            "mech": 20,
+            "intl": 45,
+            "lead": 52
+          }
+        },
+        {
+          "name": "Eurocommunism",
+          "umbrella": false,
+          "anchor": {
+            "road": 95,
+            "subj": 22,
+            "vang": 26,
+            "aes": 28,
+            "cont": 32,
+            "mech": 72,
+            "intl": 42,
+            "lead": 12
+          }
+        },
+        {
+          "name": "Naxalism",
+          "umbrella": false,
+          "anchor": {
+            "road": 0,
+            "subj": 96,
+            "vang": 88,
+            "aes": 40,
+            "cont": 70,
+            "mech": 20,
+            "intl": 35,
+            "lead": 55
+          }
+        },
+        {
+          "name": "National Bolshevism",
+          "umbrella": false,
+          "anchor": {
+            "road": 25,
+            "subj": 52,
+            "vang": 82,
+            "aes": 55,
+            "cont": 34,
+            "mech": 46,
+            "intl": 4,
+            "lead": 90
+          }
+        },
+        {
+          "name": "Barracks Communism",
+          "umbrella": true,
+          "anchor": {
+            "road": 20,
+            "subj": 50,
+            "vang": 95,
+            "aes": 45,
+            "cont": 18,
+            "mech": 2,
+            "intl": 26,
+            "lead": 76
+          }
+        },
+        {
+          "name": "Posadism",
+          "umbrella": false,
+          "anchor": {
+            "road": 22,
+            "subj": 24,
+            "vang": 48,
+            "aes": 40,
+            "cont": 62,
+            "mech": 18,
+            "intl": 99,
+            "lead": 68
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Left-Communism / Communization",
+      "axes": [
+        {
+          "key": "org",
+          "name": "Organisational Form",
+          "negPole": "Formal Party / Organic Centralism",
+          "posPole": "Spontaneous Self-Organisation"
+        },
+        {
+          "key": "prog",
+          "name": "Programme Fixity",
+          "negPole": "Invariant Programme",
+          "posPole": "Historically Open / Self-Revising"
+        },
+        {
+          "key": "comz",
+          "name": "Communisation Immediacy",
+          "negPole": "Transitional Workers' Power First",
+          "posPole": "Immediate Abolition of Value & Work"
+        },
+        {
+          "key": "site",
+          "name": "Site of Struggle",
+          "negPole": "Point of Production",
+          "posPole": "Everyday Life & Social Reproduction"
+        },
+        {
+          "key": "unio",
+          "name": "Union Question",
+          "negPole": "Unions as Revolutionary Vehicle",
+          "posPole": "Unions as Organs of Capital"
+        },
+        {
+          "key": "parl",
+          "name": "Electoral Tactic",
+          "negPole": "Strict Abstentionism",
+          "posPole": "Revolutionary Parliamentarism"
+        },
+        {
+          "key": "natl",
+          "name": "National Question",
+          "negPole": "Anti-Colonial Struggles Supportable",
+          "posPole": "No Support for Any National Struggle"
+        },
+        {
+          "key": "insu",
+          "name": "Form of Action",
+          "negPole": "Mass Strike / Class Movement",
+          "posPole": "Minoritarian Direct Action"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Council Communism (Pannekoek, Gorter)",
+          "umbrella": false,
+          "anchor": {
+            "org": 92,
+            "prog": 55,
+            "comz": 42,
+            "site": 12,
+            "unio": 88,
+            "parl": 4,
+            "natl": 80,
+            "insu": 10
+          }
+        },
+        {
+          "name": "Bordigism (Italian Left)",
+          "umbrella": false,
+          "anchor": {
+            "org": 2,
+            "prog": 2,
+            "comz": 12,
+            "site": 22,
+            "unio": 42,
+            "parl": 0,
+            "natl": 30,
+            "insu": 15
+          }
+        },
+        {
+          "name": "Luxemburgism",
+          "umbrella": false,
+          "anchor": {
+            "org": 58,
+            "prog": 62,
+            "comz": 28,
+            "site": 18,
+            "unio": 28,
+            "parl": 78,
+            "natl": 88,
+            "insu": 4
+          }
+        },
+        {
+          "name": "Communization Theory",
+          "umbrella": false,
+          "anchor": {
+            "org": 86,
+            "prog": 88,
+            "comz": 98,
+            "site": 82,
+            "unio": 94,
+            "parl": 2,
+            "natl": 92,
+            "insu": 58
+          }
+        },
+        {
+          "name": "Autonomism / Operaismo",
+          "umbrella": false,
+          "anchor": {
+            "org": 80,
+            "prog": 90,
+            "comz": 78,
+            "site": 66,
+            "unio": 90,
+            "parl": 6,
+            "natl": 58,
+            "insu": 72
+          }
+        },
+        {
+          "name": "Situationism (Debord, SI)",
+          "umbrella": false,
+          "anchor": {
+            "org": 78,
+            "prog": 80,
+            "comz": 45,
+            "site": 97,
+            "unio": 88,
+            "parl": 0,
+            "natl": 65,
+            "insu": 45
+          }
+        },
+        {
+          "name": "De Leonism",
+          "umbrella": false,
+          "anchor": {
+            "org": 18,
+            "prog": 18,
+            "comz": 24,
+            "site": 2,
+            "unio": 0,
+            "parl": 72,
+            "natl": 60,
+            "insu": 8
+          }
+        },
+        {
+          "name": "Impossibilism (SPGB)",
+          "umbrella": false,
+          "anchor": {
+            "org": 26,
+            "prog": 14,
+            "comz": 34,
+            "site": 26,
+            "unio": 62,
+            "parl": 97,
+            "natl": 92,
+            "insu": 2
+          }
+        },
+        {
+          "name": "Council-ist Trotskyism (Castoriadis)",
+          "umbrella": false,
+          "anchor": {
+            "org": 72,
+            "prog": 96,
+            "comz": 52,
+            "site": 48,
+            "unio": 74,
+            "parl": 12,
+            "natl": 76,
+            "insu": 20
+          }
+        },
+        {
+          "name": "Insurrectionary / Anti-Work Communism",
+          "umbrella": false,
+          "anchor": {
+            "org": 96,
+            "prog": 80,
+            "comz": 92,
+            "site": 86,
+            "unio": 96,
+            "parl": 0,
+            "natl": 70,
+            "insu": 99
+          }
+        },
+        {
+          "name": "Ultra-leftism (umbrella)",
+          "umbrella": true,
+          "anchor": {
+            "org": 80,
+            "prog": 70,
+            "comz": 70,
+            "site": 60,
+            "unio": 85,
+            "parl": 5,
+            "natl": 78,
+            "insu": 55
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Anarchism",
+      "axes": [
+        {
+          "key": "vehi",
+          "name": "Organisational Vehicle",
+          "negPole": "Mass Union / Syndicate",
+          "posPole": "Affinity Group / Informal Network"
+        },
+        {
+          "key": "disc",
+          "name": "Organisational Discipline",
+          "negPole": "Synthesis / Loose Federation",
+          "posPole": "Programmatic Unity & Collective Responsibility"
+        },
+        {
+          "key": "prop",
+          "name": "Property Form",
+          "negPole": "Full Communism / To Each by Need",
+          "posPole": "Individual Possession & Exchange"
+        },
+        {
+          "key": "viol",
+          "name": "Means",
+          "negPole": "Strict Nonviolence",
+          "posPole": "Insurrectionary Force"
+        },
+        {
+          "key": "tech",
+          "name": "Technology & Civilisation",
+          "negPole": "Embrace Industry & Technology",
+          "posPole": "Reject Civilisation"
+        },
+        {
+          "key": "pref",
+          "name": "Strategy",
+          "negPole": "Prefigurative Counter-Institutions",
+          "posPole": "Destructive Rupture, No Blueprint"
+        },
+        {
+          "key": "muni",
+          "name": "Territorial Politics",
+          "negPole": "Reject All Governmental Forms",
+          "posPole": "Confederated Municipal Assemblies"
+        },
+        {
+          "key": "oppr",
+          "name": "Analytical Primacy",
+          "negPole": "Class Struggle Primary",
+          "posPole": "Intersecting Dominations Primary"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Anarcho-Communism (Kropotkin)",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 40,
+            "disc": 40,
+            "prop": 2,
+            "viol": 60,
+            "tech": 15,
+            "pref": 35,
+            "muni": 45,
+            "oppr": 20
+          }
+        },
+        {
+          "name": "Anarcho-Syndicalism",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 2,
+            "disc": 62,
+            "prop": 15,
+            "viol": 50,
+            "tech": 5,
+            "pref": 20,
+            "muni": 25,
+            "oppr": 3
+          }
+        },
+        {
+          "name": "Collectivist Anarchism (Bakunin)",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 22,
+            "disc": 68,
+            "prop": 32,
+            "viol": 72,
+            "tech": 10,
+            "pref": 30,
+            "muni": 40,
+            "oppr": 8
+          }
+        },
+        {
+          "name": "Mutualism (Proudhon)",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 55,
+            "disc": 18,
+            "prop": 92,
+            "viol": 22,
+            "tech": 20,
+            "pref": 5,
+            "muni": 55,
+            "oppr": 35
+          }
+        },
+        {
+          "name": "Individualist Anarchism (Stirner)",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 94,
+            "disc": 2,
+            "prop": 96,
+            "viol": 55,
+            "tech": 30,
+            "pref": 62,
+            "muni": 5,
+            "oppr": 58
+          }
+        },
+        {
+          "name": "Platformism (Makhno/Arshinov)",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 15,
+            "disc": 94,
+            "prop": 8,
+            "viol": 55,
+            "tech": 8,
+            "pref": 20,
+            "muni": 35,
+            "oppr": 10
+          }
+        },
+        {
+          "name": "Especifismo",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 50,
+            "disc": 96,
+            "prop": 10,
+            "viol": 55,
+            "tech": 8,
+            "pref": 30,
+            "muni": 55,
+            "oppr": 32
+          }
+        },
+        {
+          "name": "Green / Eco-Anarchism",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 70,
+            "disc": 30,
+            "prop": 20,
+            "viol": 55,
+            "tech": 78,
+            "pref": 30,
+            "muni": 58,
+            "oppr": 60
+          }
+        },
+        {
+          "name": "Anarcho-Primitivism (Zerzan)",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 88,
+            "disc": 4,
+            "prop": 42,
+            "viol": 76,
+            "tech": 100,
+            "pref": 72,
+            "muni": 4,
+            "oppr": 66
+          }
+        },
+        {
+          "name": "Social Ecology / Communalism",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 45,
+            "disc": 60,
+            "prop": 10,
+            "viol": 28,
+            "tech": 30,
+            "pref": 6,
+            "muni": 98,
+            "oppr": 52
+          }
+        },
+        {
+          "name": "Post-Left Anarchy",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 90,
+            "disc": 2,
+            "prop": 60,
+            "viol": 70,
+            "tech": 66,
+            "pref": 88,
+            "muni": 2,
+            "oppr": 72
+          }
+        },
+        {
+          "name": "Insurrectionary Anarchism",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 96,
+            "disc": 4,
+            "prop": 14,
+            "viol": 99,
+            "tech": 60,
+            "pref": 96,
+            "muni": 2,
+            "oppr": 55
+          }
+        },
+        {
+          "name": "Anarcha-Feminism",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 52,
+            "disc": 35,
+            "prop": 14,
+            "viol": 42,
+            "tech": 24,
+            "pref": 45,
+            "muni": 42,
+            "oppr": 92
+          }
+        },
+        {
+          "name": "Christian Anarchism (Tolstoy)",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 80,
+            "disc": 12,
+            "prop": 14,
+            "viol": 4,
+            "tech": 62,
+            "pref": 26,
+            "muni": 12,
+            "oppr": 66
+          }
+        },
+        {
+          "name": "Anarcho-Pacifism",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 58,
+            "disc": 28,
+            "prop": 32,
+            "viol": 0,
+            "tech": 45,
+            "pref": 18,
+            "muni": 42,
+            "oppr": 52
+          }
+        },
+        {
+          "name": "Queer Anarchism",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 82,
+            "disc": 18,
+            "prop": 24,
+            "viol": 60,
+            "tech": 34,
+            "pref": 68,
+            "muni": 22,
+            "oppr": 97
+          }
+        },
+        {
+          "name": "Black Anarchism",
+          "umbrella": false,
+          "anchor": {
+            "vehi": 50,
+            "disc": 55,
+            "prop": 8,
+            "viol": 78,
+            "tech": 20,
+            "pref": 45,
+            "muni": 55,
+            "oppr": 80
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Social Democracy / Democratic Socialism",
+      "axes": [
+        {
+          "key": "goal",
+          "name": "End Goal",
+          "negPole": "Abolish Capitalism Eventually",
+          "posPole": "Permanently Humanise Capitalism"
+        },
+        {
+          "key": "ownr",
+          "name": "Ownership Model",
+          "negPole": "State / Public Ownership",
+          "posPole": "Cooperative & Associational"
+        },
+        {
+          "key": "agen",
+          "name": "Agency of Change",
+          "negPole": "Expert / Administrative Elite",
+          "posPole": "Mass Labour Movement"
+        },
+        {
+          "key": "clas",
+          "name": "Class Framing",
+          "negPole": "Explicit Class Struggle",
+          "posPole": "Cross-Class National Solidarity"
+        },
+        {
+          "key": "mora",
+          "name": "Moral Ground",
+          "negPole": "Historical-Materialist Analysis",
+          "posPole": "Ethical / Religious Conviction"
+        },
+        {
+          "key": "mkt",
+          "name": "Allocation",
+          "negPole": "Comprehensive Planning",
+          "posPole": "Markets Retained"
+        },
+        {
+          "key": "intl",
+          "name": "Horizon",
+          "negPole": "National Framework Primary",
+          "posPole": "International Solidarity Primary"
+        },
+        {
+          "key": "rout",
+          "name": "Institutional Route",
+          "negPole": "Parliamentary State Capture",
+          "posPole": "Parallel Movement Institutions"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Classical Social Democracy (Bernstein)",
+          "umbrella": false,
+          "anchor": {
+            "goal": 47,
+            "ownr": 66,
+            "agen": 84,
+            "clas": 61,
+            "mora": 79,
+            "mkt": 88,
+            "intl": 42,
+            "rout": 45
+          }
+        },
+        {
+          "name": "Nordic Model Social Democracy",
+          "umbrella": false,
+          "anchor": {
+            "goal": 86,
+            "ownr": 32,
+            "agen": 55,
+            "clas": 74,
+            "mora": 40,
+            "mkt": 90,
+            "intl": 32,
+            "rout": 14
+          }
+        },
+        {
+          "name": "Democratic Socialism (contemporary)",
+          "umbrella": false,
+          "anchor": {
+            "goal": 18,
+            "ownr": 32,
+            "agen": 92,
+            "clas": 18,
+            "mora": 26,
+            "mkt": 34,
+            "intl": 78,
+            "rout": 42
+          }
+        },
+        {
+          "name": "Fabianism",
+          "umbrella": false,
+          "anchor": {
+            "goal": 46,
+            "ownr": 4,
+            "agen": 2,
+            "clas": 62,
+            "mora": 34,
+            "mkt": 24,
+            "intl": 22,
+            "rout": 4
+          }
+        },
+        {
+          "name": "Austromarxism",
+          "umbrella": false,
+          "anchor": {
+            "goal": 12,
+            "ownr": 16,
+            "agen": 90,
+            "clas": 4,
+            "mora": 2,
+            "mkt": 30,
+            "intl": 72,
+            "rout": 72
+          }
+        },
+        {
+          "name": "Guild Socialism",
+          "umbrella": false,
+          "anchor": {
+            "goal": 20,
+            "ownr": 86,
+            "agen": 80,
+            "clas": 34,
+            "mora": 46,
+            "mkt": 40,
+            "intl": 38,
+            "rout": 76
+          }
+        },
+        {
+          "name": "Christian Socialism",
+          "umbrella": false,
+          "anchor": {
+            "goal": 46,
+            "ownr": 72,
+            "agen": 48,
+            "clas": 78,
+            "mora": 99,
+            "mkt": 56,
+            "intl": 62,
+            "rout": 60
+          }
+        },
+        {
+          "name": "Market Socialism (Lange-Lerner)",
+          "umbrella": false,
+          "anchor": {
+            "goal": 28,
+            "ownr": 46,
+            "agen": 12,
+            "clas": 60,
+            "mora": 12,
+            "mkt": 95,
+            "intl": 44,
+            "rout": 18
+          }
+        },
+        {
+          "name": "Ethical Socialism (Tawney)",
+          "umbrella": false,
+          "anchor": {
+            "goal": 45,
+            "ownr": 40,
+            "agen": 60,
+            "clas": 55,
+            "mora": 82,
+            "mkt": 50,
+            "intl": 50,
+            "rout": 30
+          }
+        },
+        {
+          "name": "Cooperative Socialism / Owenism",
+          "umbrella": false,
+          "anchor": {
+            "goal": 30,
+            "ownr": 99,
+            "agen": 60,
+            "clas": 58,
+            "mora": 58,
+            "mkt": 62,
+            "intl": 55,
+            "rout": 96
+          }
+        },
+        {
+          "name": "Utopian Socialism (Fourier, Saint-Simon)",
+          "umbrella": false,
+          "anchor": {
+            "goal": 24,
+            "ownr": 92,
+            "agen": 18,
+            "clas": 88,
+            "mora": 80,
+            "mkt": 18,
+            "intl": 72,
+            "rout": 92
+          }
+        },
+        {
+          "name": "Labor Zionism",
+          "umbrella": false,
+          "anchor": {
+            "goal": 42,
+            "ownr": 90,
+            "agen": 76,
+            "clas": 80,
+            "mora": 52,
+            "mkt": 46,
+            "intl": 2,
+            "rout": 88
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Progressive / Social Liberalism",
+      "axes": [
+        {
+          "key": "stat",
+          "name": "State Economic Role",
+          "negPole": "Market-Deferential",
+          "posPole": "Large Redistributive State"
+        },
+        {
+          "key": "just",
+          "name": "Ground of Justification",
+          "negPole": "Pragmatic Problem-Solving",
+          "posPole": "Principled Rights & Theory"
+        },
+        {
+          "key": "reco",
+          "name": "Axis of Justice",
+          "negPole": "Material Redistribution",
+          "posPole": "Recognition & Identity"
+        },
+        {
+          "key": "expe",
+          "name": "Mode of Change",
+          "negPole": "Technocratic Administration",
+          "posPole": "Popular Movement Pressure"
+        },
+        {
+          "key": "grow",
+          "name": "Growth & Limits",
+          "negPole": "Growth-Compatible",
+          "posPole": "Ecological Limits Bind"
+        },
+        {
+          "key": "cosm",
+          "name": "Community of Obligation",
+          "negPole": "Bounded National Community",
+          "posPole": "Cosmopolitan / Global"
+        },
+        {
+          "key": "mkt",
+          "name": "Market Confidence",
+          "negPole": "Markets Need Structural Correction",
+          "posPole": "Markets Work; Correct at Margins"
+        },
+        {
+          "key": "forp",
+          "name": "Foreign Posture",
+          "negPole": "Restraint / Non-Intervention",
+          "posPole": "Liberal Interventionism"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "New Deal Liberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 92,
+            "just": 18,
+            "reco": 4,
+            "expe": 42,
+            "grow": 8,
+            "cosm": 18,
+            "mkt": 12,
+            "forp": 58
+          }
+        },
+        {
+          "name": "Rawlsian Liberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 76,
+            "just": 99,
+            "reco": 24,
+            "expe": 30,
+            "grow": 30,
+            "cosm": 56,
+            "mkt": 38,
+            "forp": 44
+          }
+        },
+        {
+          "name": "Welfare Liberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 86,
+            "just": 55,
+            "reco": 14,
+            "expe": 34,
+            "grow": 20,
+            "cosm": 34,
+            "mkt": 24,
+            "forp": 44
+          }
+        },
+        {
+          "name": "Third Way / Blairism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 24,
+            "just": 18,
+            "reco": 42,
+            "expe": 6,
+            "grow": 2,
+            "cosm": 46,
+            "mkt": 94,
+            "forp": 96
+          }
+        },
+        {
+          "name": "Green Liberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 60,
+            "just": 46,
+            "reco": 44,
+            "expe": 62,
+            "grow": 97,
+            "cosm": 76,
+            "mkt": 34,
+            "forp": 16
+          }
+        },
+        {
+          "name": "Feminist Liberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 66,
+            "just": 76,
+            "reco": 88,
+            "expe": 78,
+            "grow": 34,
+            "cosm": 66,
+            "mkt": 46,
+            "forp": 48
+          }
+        },
+        {
+          "name": "Multiculturalist Liberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 54,
+            "just": 82,
+            "reco": 97,
+            "expe": 58,
+            "grow": 28,
+            "cosm": 92,
+            "mkt": 56,
+            "forp": 52
+          }
+        },
+        {
+          "name": "Civil Rights Liberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 60,
+            "just": 86,
+            "reco": 82,
+            "expe": 96,
+            "grow": 18,
+            "cosm": 44,
+            "mkt": 44,
+            "forp": 22
+          }
+        },
+        {
+          "name": "Progressivism (US Progressive Era)",
+          "umbrella": false,
+          "anchor": {
+            "stat": 66,
+            "just": 8,
+            "reco": 18,
+            "expe": 8,
+            "grow": 14,
+            "cosm": 12,
+            "mkt": 24,
+            "forp": 40
+          }
+        },
+        {
+          "name": "Radical Centrism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 34,
+            "just": 4,
+            "reco": 34,
+            "expe": 2,
+            "grow": 10,
+            "cosm": 30,
+            "mkt": 84,
+            "forp": 66
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Classical / Market Liberalism",
+      "axes": [
+        {
+          "key": "stat",
+          "name": "State & the Market",
+          "negPole": "Pure Laissez-Faire",
+          "posPole": "State Constructs the Market Order"
+        },
+        {
+          "key": "prop",
+          "name": "Property Theory",
+          "negPole": "Natural-Rights Absolutism",
+          "posPole": "Property as Social Convention"
+        },
+        {
+          "key": "epis",
+          "name": "Epistemic Method",
+          "negPole": "Deductive / Rationalist",
+          "posPole": "Empirical / Utilitarian"
+        },
+        {
+          "key": "demo",
+          "name": "Democracy",
+          "negPole": "Bind Democracy by Rules",
+          "posPole": "Trust Majoritarian Democracy"
+        },
+        {
+          "key": "soci",
+          "name": "Social Provision",
+          "negPole": "No Public Welfare",
+          "posPole": "Substantial Safety Net"
+        },
+        {
+          "key": "intl",
+          "name": "Trade Order",
+          "negPole": "Free-Trade Universalism",
+          "posPole": "Managed National Economic Sovereignty"
+        },
+        {
+          "key": "mora",
+          "name": "Moral Register",
+          "negPole": "Individualist / Egoist Ethics",
+          "posPole": "Civic Virtue & Moral Community"
+        },
+        {
+          "key": "corp",
+          "name": "Concentrated Capital",
+          "negPole": "Concentration Is Benign",
+          "posPole": "Private Power Must Be Broken Up"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Classical Liberalism (Locke, Smith)",
+          "umbrella": false,
+          "anchor": {
+            "stat": 68,
+            "prop": 28,
+            "epis": 87,
+            "demo": 30,
+            "soci": 81,
+            "intl": 29,
+            "mora": 81,
+            "corp": 66
+          }
+        },
+        {
+          "name": "Neoliberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 55,
+            "prop": 45,
+            "epis": 88,
+            "demo": 18,
+            "soci": 40,
+            "intl": 10,
+            "mora": 34,
+            "corp": 28
+          }
+        },
+        {
+          "name": "Ordoliberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 97,
+            "prop": 60,
+            "epis": 60,
+            "demo": 14,
+            "soci": 82,
+            "intl": 55,
+            "mora": 82,
+            "corp": 97
+          }
+        },
+        {
+          "name": "Manchester Liberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 2,
+            "prop": 20,
+            "epis": 72,
+            "demo": 62,
+            "soci": 12,
+            "intl": 0,
+            "mora": 30,
+            "corp": 40
+          }
+        },
+        {
+          "name": "Georgism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 60,
+            "prop": 99,
+            "epis": 42,
+            "demo": 78,
+            "soci": 70,
+            "intl": 24,
+            "mora": 62,
+            "corp": 80
+          }
+        },
+        {
+          "name": "Austrian School Liberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 8,
+            "prop": 8,
+            "epis": 2,
+            "demo": 24,
+            "soci": 10,
+            "intl": 18,
+            "mora": 26,
+            "corp": 18
+          }
+        },
+        {
+          "name": "Constitutional / Federalist Liberalism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 45,
+            "prop": 40,
+            "epis": 50,
+            "demo": 4,
+            "soci": 30,
+            "intl": 58,
+            "mora": 72,
+            "corp": 60
+          }
+        },
+        {
+          "name": "Objectivism (Rand)",
+          "umbrella": false,
+          "anchor": {
+            "stat": 5,
+            "prop": 0,
+            "epis": 4,
+            "demo": 10,
+            "soci": 0,
+            "intl": 26,
+            "mora": 0,
+            "corp": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Conservatism",
+      "axes": [
+        {
+          "key": "econ",
+          "name": "Economic Posture",
+          "negPole": "Market Fundamentalist",
+          "posPole": "Economic Paternalism / Social Market"
+        },
+        {
+          "key": "forp",
+          "name": "Foreign Posture",
+          "negPole": "Restraint / Non-Intervention",
+          "posPole": "Global Interventionism"
+        },
+        {
+          "key": "reli",
+          "name": "Religion in Public Life",
+          "negPole": "Secular Civic Conservatism",
+          "posPole": "Confessional Grounding"
+        },
+        {
+          "key": "iden",
+          "name": "National Identity",
+          "negPole": "Civic / Creedal Nation",
+          "posPole": "Ethno-Cultural / Ancestral Nation"
+        },
+        {
+          "key": "chng",
+          "name": "Disposition to Change",
+          "negPole": "Prudential Gradualism",
+          "posPole": "Restorationist / Roll Back"
+        },
+        {
+          "key": "stat",
+          "name": "State Capacity",
+          "negPole": "Minimal State",
+          "posPole": "Strong Directive State"
+        },
+        {
+          "key": "cpol",
+          "name": "Moral Policy Instrument",
+          "negPole": "Persuasion & Civil Society",
+          "posPole": "Legal Enforcement of Moral Order"
+        },
+        {
+          "key": "popu",
+          "name": "Political Style",
+          "negPole": "Deference to Established Elites",
+          "posPole": "Popular Anti-Elite Mobilisation"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Traditional / Burkean Conservatism",
+          "umbrella": false,
+          "anchor": {
+            "econ": 55,
+            "forp": 40,
+            "reli": 45,
+            "iden": 50,
+            "chng": 5,
+            "stat": 45,
+            "cpol": 30,
+            "popu": 5
+          }
+        },
+        {
+          "name": "Paleoconservatism",
+          "umbrella": false,
+          "anchor": {
+            "econ": 45,
+            "forp": 2,
+            "reli": 65,
+            "iden": 88,
+            "chng": 85,
+            "stat": 35,
+            "cpol": 55,
+            "popu": 80
+          }
+        },
+        {
+          "name": "Neoconservatism",
+          "umbrella": false,
+          "anchor": {
+            "econ": 25,
+            "forp": 99,
+            "reli": 25,
+            "iden": 3,
+            "chng": 50,
+            "stat": 70,
+            "cpol": 35,
+            "popu": 20
+          }
+        },
+        {
+          "name": "Fusionism",
+          "umbrella": false,
+          "anchor": {
+            "econ": 12,
+            "forp": 65,
+            "reli": 30,
+            "iden": 15,
+            "chng": 45,
+            "stat": 15,
+            "cpol": 15,
+            "popu": 35
+          }
+        },
+        {
+          "name": "One-Nation Conservatism / Toryism",
+          "umbrella": false,
+          "anchor": {
+            "econ": 80,
+            "forp": 45,
+            "reli": 30,
+            "iden": 35,
+            "chng": 15,
+            "stat": 65,
+            "cpol": 25,
+            "popu": 10
+          }
+        },
+        {
+          "name": "Christian Democracy",
+          "umbrella": false,
+          "anchor": {
+            "econ": 88,
+            "forp": 45,
+            "reli": 97,
+            "iden": 28,
+            "chng": 20,
+            "stat": 66,
+            "cpol": 45,
+            "popu": 18
+          }
+        },
+        {
+          "name": "National Conservatism",
+          "umbrella": false,
+          "anchor": {
+            "econ": 60,
+            "forp": 30,
+            "reli": 55,
+            "iden": 86,
+            "chng": 78,
+            "stat": 90,
+            "cpol": 76,
+            "popu": 94
+          }
+        },
+        {
+          "name": "Agrarian Conservatism",
+          "umbrella": false,
+          "anchor": {
+            "econ": 66,
+            "forp": 10,
+            "reli": 62,
+            "iden": 70,
+            "chng": 70,
+            "stat": 30,
+            "cpol": 40,
+            "popu": 66
+          }
+        },
+        {
+          "name": "Cultural / Social Conservatism",
+          "umbrella": false,
+          "anchor": {
+            "econ": 50,
+            "forp": 40,
+            "reli": 86,
+            "iden": 60,
+            "chng": 65,
+            "stat": 58,
+            "cpol": 92,
+            "popu": 60
+          }
+        },
+        {
+          "name": "Compassionate Conservatism",
+          "umbrella": false,
+          "anchor": {
+            "econ": 58,
+            "forp": 55,
+            "reli": 72,
+            "iden": 18,
+            "chng": 22,
+            "stat": 50,
+            "cpol": 32,
+            "popu": 28
+          }
+        },
+        {
+          "name": "Libertarian Conservatism",
+          "umbrella": false,
+          "anchor": {
+            "econ": 2,
+            "forp": 8,
+            "reli": 5,
+            "iden": 20,
+            "chng": 45,
+            "stat": 2,
+            "cpol": 0,
+            "popu": 45
+          }
+        },
+        {
+          "name": "Communitarian Conservatism",
+          "umbrella": false,
+          "anchor": {
+            "econ": 92,
+            "forp": 22,
+            "reli": 50,
+            "iden": 45,
+            "chng": 30,
+            "stat": 58,
+            "cpol": 30,
+            "popu": 48
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Fascism / Third Position / National-Populism",
+      "axes": [
+        {
+          "key": "race",
+          "name": "Basis of Belonging",
+          "negPole": "Cultural / Statist Nationalism",
+          "posPole": "Biological Racial Determinism"
+        },
+        {
+          "key": "econ",
+          "name": "Economic Doctrine",
+          "negPole": "Anti-Capitalist / Socialising",
+          "posPole": "Alliance with Existing Capital"
+        },
+        {
+          "key": "reli",
+          "name": "Religion",
+          "negPole": "Secular / Neo-Pagan / Anti-Clerical",
+          "posPole": "Confessional-Clerical"
+        },
+        {
+          "key": "regi",
+          "name": "Regime Form",
+          "negPole": "Authoritarian Conservative Order",
+          "posPole": "Totalitarian Mass Party"
+        },
+        {
+          "key": "impe",
+          "name": "External Ambition",
+          "negPole": "Defensive Nationalism",
+          "posPole": "Expansionist Empire"
+        },
+        {
+          "key": "myst",
+          "name": "Register",
+          "negPole": "Rationalist-Technocratic Statism",
+          "posPole": "Palingenetic Myth & Rebirth"
+        },
+        {
+          "key": "corp",
+          "name": "Economic Structure",
+          "negPole": "Direct State Command",
+          "posPole": "Corporatist / Syndical Intermediation"
+        },
+        {
+          "key": "mode",
+          "name": "Modernity",
+          "negPole": "Futurist / Pro-Industrial",
+          "posPole": "Agrarian-Traditional / Anti-Modern"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Italian Fascism (Mussolini)",
+          "umbrella": false,
+          "anchor": {
+            "race": 25,
+            "econ": 55,
+            "reli": 35,
+            "regi": 85,
+            "impe": 88,
+            "myst": 70,
+            "corp": 85,
+            "mode": 5
+          }
+        },
+        {
+          "name": "Nazism / National Socialism",
+          "umbrella": false,
+          "anchor": {
+            "race": 100,
+            "econ": 60,
+            "reli": 5,
+            "regi": 98,
+            "impe": 98,
+            "myst": 80,
+            "corp": 20,
+            "mode": 30
+          }
+        },
+        {
+          "name": "Falangism (Spain)",
+          "umbrella": false,
+          "anchor": {
+            "race": 15,
+            "econ": 30,
+            "reli": 70,
+            "regi": 55,
+            "impe": 45,
+            "myst": 65,
+            "corp": 92,
+            "mode": 45
+          }
+        },
+        {
+          "name": "Austrofascism",
+          "umbrella": false,
+          "anchor": {
+            "race": 10,
+            "econ": 60,
+            "reli": 96,
+            "regi": 30,
+            "impe": 10,
+            "myst": 35,
+            "corp": 88,
+            "mode": 60
+          }
+        },
+        {
+          "name": "Iron Guard / Legionarism",
+          "umbrella": false,
+          "anchor": {
+            "race": 55,
+            "econ": 40,
+            "reli": 92,
+            "regi": 75,
+            "impe": 20,
+            "myst": 99,
+            "corp": 40,
+            "mode": 70
+          }
+        },
+        {
+          "name": "Francoism",
+          "umbrella": false,
+          "anchor": {
+            "race": 20,
+            "econ": 88,
+            "reli": 90,
+            "regi": 18,
+            "impe": 25,
+            "myst": 25,
+            "corp": 70,
+            "mode": 60
+          }
+        },
+        {
+          "name": "Strasserism",
+          "umbrella": false,
+          "anchor": {
+            "race": 80,
+            "econ": 2,
+            "reli": 15,
+            "regi": 80,
+            "impe": 40,
+            "myst": 45,
+            "corp": 60,
+            "mode": 45
+          }
+        },
+        {
+          "name": "National Syndicalism",
+          "umbrella": false,
+          "anchor": {
+            "race": 20,
+            "econ": 12,
+            "reli": 25,
+            "regi": 70,
+            "impe": 35,
+            "myst": 40,
+            "corp": 97,
+            "mode": 20
+          }
+        },
+        {
+          "name": "Integralism (Brazil/Portugal)",
+          "umbrella": false,
+          "anchor": {
+            "race": 5,
+            "econ": 45,
+            "reli": 82,
+            "regi": 72,
+            "impe": 20,
+            "myst": 72,
+            "corp": 78,
+            "mode": 45
+          }
+        },
+        {
+          "name": "Clerical Fascism",
+          "umbrella": false,
+          "anchor": {
+            "race": 30,
+            "econ": 74,
+            "reli": 100,
+            "regi": 35,
+            "impe": 25,
+            "myst": 78,
+            "corp": 66,
+            "mode": 70
+          }
+        },
+        {
+          "name": "Showa Statism (Imperial Japan)",
+          "umbrella": false,
+          "anchor": {
+            "race": 60,
+            "econ": 66,
+            "reli": 72,
+            "regi": 32,
+            "impe": 96,
+            "myst": 45,
+            "corp": 24,
+            "mode": 20
+          }
+        },
+        {
+          "name": "Ecofascism",
+          "umbrella": false,
+          "anchor": {
+            "race": 86,
+            "econ": 35,
+            "reli": 20,
+            "regi": 55,
+            "impe": 18,
+            "myst": 82,
+            "corp": 20,
+            "mode": 97
+          }
+        },
+        {
+          "name": "Contemporary National-Populism",
+          "umbrella": false,
+          "anchor": {
+            "race": 55,
+            "econ": 72,
+            "reli": 40,
+            "regi": 12,
+            "impe": 4,
+            "myst": 15,
+            "corp": 8,
+            "mode": 35
+          }
+        },
+        {
+          "name": "Third Position (umbrella)",
+          "umbrella": true,
+          "anchor": {
+            "race": 50,
+            "econ": 20,
+            "reli": 45,
+            "regi": 70,
+            "impe": 35,
+            "myst": 60,
+            "corp": 70,
+            "mode": 45
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Monarchism / Reaction",
+      "axes": [
+        {
+          "key": "sove",
+          "name": "Sovereign Power",
+          "negPole": "Ceremonial / Constrained Crown",
+          "posPole": "Absolute Personal Sovereignty"
+        },
+        {
+          "key": "titl",
+          "name": "Basis of Title",
+          "negPole": "Dynastic Blood & Divine Right",
+          "posPole": "Acclaim, Performance or Contract"
+        },
+        {
+          "key": "reli",
+          "name": "Religion",
+          "negPole": "Secular / Erastian",
+          "posPole": "Confessional Throne-and-Altar"
+        },
+        {
+          "key": "orde",
+          "name": "Social Order",
+          "negPole": "Estate / Corporate Hierarchy",
+          "posPole": "Legal Equality of Subjects"
+        },
+        {
+          "key": "cent",
+          "name": "Territorial Form",
+          "negPole": "Regional Privileges / Fueros",
+          "posPole": "Unitary Absolutist Centralism"
+        },
+        {
+          "key": "econ",
+          "name": "Economic Order",
+          "negPole": "Agrarian-Corporatist",
+          "posPole": "Commercial-Capitalist"
+        },
+        {
+          "key": "rout",
+          "name": "Route to Restoration",
+          "negPole": "Legal / Institutional",
+          "posPole": "Coup, Rising or Rupture"
+        },
+        {
+          "key": "popu",
+          "name": "Social Base",
+          "negPole": "Elite / Aristocratic Politics",
+          "posPole": "Mass Popular Base"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Absolute Monarchism",
+          "umbrella": false,
+          "anchor": {
+            "sove": 100,
+            "titl": 12,
+            "reli": 60,
+            "orde": 30,
+            "cent": 92,
+            "econ": 40,
+            "rout": 50,
+            "popu": 12
+          }
+        },
+        {
+          "name": "Constitutional Monarchism",
+          "umbrella": false,
+          "anchor": {
+            "sove": 2,
+            "titl": 60,
+            "reli": 30,
+            "orde": 88,
+            "cent": 50,
+            "econ": 75,
+            "rout": 3,
+            "popu": 30
+          }
+        },
+        {
+          "name": "Legitimism (Bourbon)",
+          "umbrella": false,
+          "anchor": {
+            "sove": 82,
+            "titl": 0,
+            "reli": 78,
+            "orde": 8,
+            "cent": 55,
+            "econ": 18,
+            "rout": 25,
+            "popu": 8
+          }
+        },
+        {
+          "name": "Orleanism",
+          "umbrella": false,
+          "anchor": {
+            "sove": 25,
+            "titl": 45,
+            "reli": 40,
+            "orde": 65,
+            "cent": 60,
+            "econ": 92,
+            "rout": 20,
+            "popu": 10
+          }
+        },
+        {
+          "name": "Carlism (Spain)",
+          "umbrella": false,
+          "anchor": {
+            "sove": 65,
+            "titl": 8,
+            "reli": 98,
+            "orde": 5,
+            "cent": 2,
+            "econ": 5,
+            "rout": 90,
+            "popu": 80
+          }
+        },
+        {
+          "name": "Jacobitism (Stuart claim)",
+          "umbrella": false,
+          "anchor": {
+            "sove": 55,
+            "titl": 3,
+            "reli": 70,
+            "orde": 20,
+            "cent": 25,
+            "econ": 25,
+            "rout": 75,
+            "popu": 45
+          }
+        },
+        {
+          "name": "Bonapartism",
+          "umbrella": false,
+          "anchor": {
+            "sove": 85,
+            "titl": 88,
+            "reli": 30,
+            "orde": 85,
+            "cent": 95,
+            "econ": 60,
+            "rout": 92,
+            "popu": 98
+          }
+        },
+        {
+          "name": "Tsarist Restorationism",
+          "umbrella": false,
+          "anchor": {
+            "sove": 90,
+            "titl": 10,
+            "reli": 85,
+            "orde": 20,
+            "cent": 88,
+            "econ": 30,
+            "rout": 55,
+            "popu": 40
+          }
+        },
+        {
+          "name": "Throne-and-Altar Traditionalism",
+          "umbrella": false,
+          "anchor": {
+            "sove": 72,
+            "titl": 18,
+            "reli": 100,
+            "orde": 3,
+            "cent": 25,
+            "econ": 8,
+            "rout": 30,
+            "popu": 35
+          }
+        },
+        {
+          "name": "Neo-Reaction / Dark Enlightenment",
+          "umbrella": false,
+          "anchor": {
+            "sove": 88,
+            "titl": 95,
+            "reli": 15,
+            "orde": 25,
+            "cent": 20,
+            "econ": 98,
+            "rout": 40,
+            "popu": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Theocracy / Religious Fundamentalism",
+      "axes": [
+        {
+          "key": "rout",
+          "name": "Route to Power",
+          "negPole": "Electoral / Gradualist / Preaching",
+          "posPole": "Armed Vanguard Struggle"
+        },
+        {
+          "key": "cler",
+          "name": "Locus of Authority",
+          "negPole": "Lay Political Leadership",
+          "posPole": "Formal Clerical Rule"
+        },
+        {
+          "key": "lite",
+          "name": "Relation to Text",
+          "negPole": "Interpretive Tradition & Jurisprudence",
+          "posPole": "Direct Return to Scripture"
+        },
+        {
+          "key": "natl",
+          "name": "Political Community",
+          "negPole": "Universal Religious Community",
+          "posPole": "Ethno-National Religious State"
+        },
+        {
+          "key": "econ",
+          "name": "Economic Doctrine",
+          "negPole": "Redistributive Religious Economics",
+          "posPole": "Market & Merchant-Friendly"
+        },
+        {
+          "key": "form",
+          "name": "The Modern State",
+          "negPole": "Reject It / Pre-Modern Order",
+          "posPole": "Capture and Use It"
+        },
+        {
+          "key": "takf",
+          "name": "Boundary of the Faithful",
+          "negPole": "Broad / Ecumenical Inclusion",
+          "posPole": "Excommunicative Purism"
+        },
+        {
+          "key": "impe",
+          "name": "Geopolitical Posture",
+          "negPole": "Accommodating to Western Power",
+          "posPole": "Militant Anti-Western"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Salafism / Wahhabism",
+          "umbrella": false,
+          "anchor": {
+            "rout": 35,
+            "cler": 60,
+            "lite": 98,
+            "natl": 15,
+            "econ": 80,
+            "form": 25,
+            "takf": 86,
+            "impe": 25
+          }
+        },
+        {
+          "name": "Khomeinism (Vilayat-e Faqih)",
+          "umbrella": false,
+          "anchor": {
+            "rout": 70,
+            "cler": 100,
+            "lite": 30,
+            "natl": 40,
+            "econ": 20,
+            "form": 88,
+            "takf": 45,
+            "impe": 97
+          }
+        },
+        {
+          "name": "Muslim Brotherhood Islamism",
+          "umbrella": false,
+          "anchor": {
+            "rout": 12,
+            "cler": 42,
+            "lite": 55,
+            "natl": 30,
+            "econ": 55,
+            "form": 78,
+            "takf": 24,
+            "impe": 66
+          }
+        },
+        {
+          "name": "Salafi-Jihadism",
+          "umbrella": false,
+          "anchor": {
+            "rout": 100,
+            "cler": 50,
+            "lite": 95,
+            "natl": 0,
+            "econ": 45,
+            "form": 4,
+            "takf": 100,
+            "impe": 100
+          }
+        },
+        {
+          "name": "Christian Dominionism",
+          "umbrella": false,
+          "anchor": {
+            "rout": 20,
+            "cler": 30,
+            "lite": 65,
+            "natl": 60,
+            "econ": 82,
+            "form": 62,
+            "takf": 45,
+            "impe": 10
+          }
+        },
+        {
+          "name": "Christian Reconstructionism",
+          "umbrella": false,
+          "anchor": {
+            "rout": 12,
+            "cler": 55,
+            "lite": 92,
+            "natl": 55,
+            "econ": 97,
+            "form": 34,
+            "takf": 72,
+            "impe": 20
+          }
+        },
+        {
+          "name": "Religious Zionism / Kahanism",
+          "umbrella": false,
+          "anchor": {
+            "rout": 58,
+            "cler": 40,
+            "lite": 60,
+            "natl": 92,
+            "econ": 66,
+            "form": 72,
+            "takf": 66,
+            "impe": 12
+          }
+        },
+        {
+          "name": "Hindutva",
+          "umbrella": false,
+          "anchor": {
+            "rout": 38,
+            "cler": 18,
+            "lite": 35,
+            "natl": 97,
+            "econ": 78,
+            "form": 97,
+            "takf": 40,
+            "impe": 20
+          }
+        },
+        {
+          "name": "Buddhist Nationalism",
+          "umbrella": false,
+          "anchor": {
+            "rout": 42,
+            "cler": 46,
+            "lite": 28,
+            "natl": 94,
+            "econ": 52,
+            "form": 86,
+            "takf": 46,
+            "impe": 32
+          }
+        },
+        {
+          "name": "Catholic Integralism",
+          "umbrella": false,
+          "anchor": {
+            "rout": 6,
+            "cler": 88,
+            "lite": 4,
+            "natl": 18,
+            "econ": 42,
+            "form": 28,
+            "takf": 40,
+            "impe": 36
+          }
+        },
+        {
+          "name": "Deobandi political current",
+          "umbrella": false,
+          "anchor": {
+            "rout": 40,
+            "cler": 72,
+            "lite": 58,
+            "natl": 44,
+            "econ": 48,
+            "form": 44,
+            "takf": 68,
+            "impe": 62
+          }
+        },
+        {
+          "name": "Barelvi political current",
+          "umbrella": false,
+          "anchor": {
+            "rout": 28,
+            "cler": 82,
+            "lite": 8,
+            "natl": 58,
+            "econ": 44,
+            "form": 56,
+            "takf": 26,
+            "impe": 40
+          }
+        },
+        {
+          "name": "Islamism (general, umbrella)",
+          "umbrella": true,
+          "anchor": {
+            "rout": 30,
+            "cler": 55,
+            "lite": 55,
+            "natl": 25,
+            "econ": 45,
+            "form": 66,
+            "takf": 45,
+            "impe": 70
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Anarcho-Capitalism / Right-Libertarianism",
+      "axes": [
+        {
+          "key": "stat",
+          "name": "State Residue",
+          "negPole": "Zero State",
+          "posPole": "Night-Watchman State Retained"
+        },
+        {
+          "key": "ethi",
+          "name": "Ethical Foundation",
+          "negPole": "Deontological Natural Rights",
+          "posPole": "Consequentialist Efficiency"
+        },
+        {
+          "key": "land",
+          "name": "Land & Natural Resources",
+          "negPole": "Homesteading Absolutism",
+          "posPole": "Land Rent Belongs to All"
+        },
+        {
+          "key": "stra",
+          "name": "Strategy",
+          "negPole": "Electoral / Institutional Reform",
+          "posPole": "Counter-Economics / Exit"
+        },
+        {
+          "key": "base",
+          "name": "Social Base Strategy",
+          "negPole": "Universalist Individual Appeal",
+          "posPole": "Coalition with Traditional Communities"
+        },
+        {
+          "key": "mone",
+          "name": "Money & Finance",
+          "negPole": "Hard Commodity Money",
+          "posPole": "Monetary Pluralism / Crypto"
+        },
+        {
+          "key": "egoi",
+          "name": "Moral Psychology",
+          "negPole": "Explicit Ethical Egoism",
+          "posPole": "Rights Plus Community Obligation"
+        },
+        {
+          "key": "ipro",
+          "name": "Intellectual Property",
+          "negPole": "IP Is Legitimate Property",
+          "posPole": "IP Is an Illegitimate Monopoly"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Anarcho-Capitalism (Rothbard)",
+          "umbrella": false,
+          "anchor": {
+            "stat": 0,
+            "ethi": 3,
+            "land": 0,
+            "stra": 45,
+            "base": 45,
+            "mone": 10,
+            "egoi": 35,
+            "ipro": 88
+          }
+        },
+        {
+          "name": "Minarchism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 96,
+            "ethi": 45,
+            "land": 15,
+            "stra": 15,
+            "base": 30,
+            "mone": 30,
+            "egoi": 55,
+            "ipro": 30
+          }
+        },
+        {
+          "name": "Agorism (Konkin)",
+          "umbrella": false,
+          "anchor": {
+            "stat": 3,
+            "ethi": 15,
+            "land": 20,
+            "stra": 100,
+            "base": 15,
+            "mone": 75,
+            "egoi": 40,
+            "ipro": 92
+          }
+        },
+        {
+          "name": "Paleolibertarianism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 30,
+            "ethi": 20,
+            "land": 5,
+            "stra": 30,
+            "base": 99,
+            "mone": 5,
+            "egoi": 70,
+            "ipro": 45
+          }
+        },
+        {
+          "name": "Geolibertarianism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 55,
+            "ethi": 60,
+            "land": 100,
+            "stra": 20,
+            "base": 30,
+            "mone": 55,
+            "egoi": 80,
+            "ipro": 70
+          }
+        },
+        {
+          "name": "Voluntaryism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 2,
+            "ethi": 5,
+            "land": 5,
+            "stra": 66,
+            "base": 25,
+            "mone": 55,
+            "egoi": 60,
+            "ipro": 76
+          }
+        },
+        {
+          "name": "Crypto- / Techno-Libertarianism",
+          "umbrella": false,
+          "anchor": {
+            "stat": 8,
+            "ethi": 72,
+            "land": 25,
+            "stra": 92,
+            "base": 3,
+            "mone": 100,
+            "egoi": 20,
+            "ipro": 99
+          }
+        },
+        {
+          "name": "Objectivism (Rand)",
+          "umbrella": false,
+          "anchor": {
+            "stat": 86,
+            "ethi": 15,
+            "land": 3,
+            "stra": 25,
+            "base": 5,
+            "mone": 15,
+            "egoi": 0,
+            "ipro": 0
+          }
+        },
+        {
+          "name": "Right-Libertarianism (umbrella)",
+          "umbrella": true,
+          "anchor": {
+            "stat": 70,
+            "ethi": 55,
+            "land": 25,
+            "stra": 5,
+            "base": 35,
+            "mone": 40,
+            "egoi": 55,
+            "ipro": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Third-Worldism / National Liberation",
+      "axes": [
+        {
+          "key": "marx",
+          "name": "Theoretical Frame",
+          "negPole": "Scientific Socialism / Class Analysis",
+          "posPole": "Indigenous Cultural Socialism"
+        },
+        {
+          "key": "vehi",
+          "name": "Vehicle",
+          "negPole": "Vanguard Party & State Apparatus",
+          "posPole": "Autonomous Communities & Movements"
+        },
+        {
+          "key": "reli",
+          "name": "Religious Register",
+          "negPole": "Explicitly Secular",
+          "posPole": "Faith Integrated into Liberation"
+        },
+        {
+          "key": "scop",
+          "name": "Scope of Solidarity",
+          "negPole": "Single Nation / Self-Reliance",
+          "posPole": "Pan-Regional or Global South Union"
+        },
+        {
+          "key": "alig",
+          "name": "Cold-War Alignment",
+          "negPole": "Soviet-Bloc Aligned",
+          "posPole": "Strict Non-Alignment"
+        },
+        {
+          "key": "deve",
+          "name": "Development Model",
+          "negPole": "State-Led Heavy Industrialisation",
+          "posPole": "Rural-Communal Self-Sufficiency"
+        },
+        {
+          "key": "plur",
+          "name": "Political Form",
+          "negPole": "Single-Party / Personalist Rule",
+          "posPole": "Electoral Pluralism Accepted"
+        },
+        {
+          "key": "agen",
+          "name": "Revolutionary Agent",
+          "negPole": "Domestic Workers & Peasants",
+          "posPole": "The Nation Against Imperialism"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Juche / Kim Il-Sungism",
+          "umbrella": false,
+          "anchor": {
+            "marx": 25,
+            "vehi": 0,
+            "reli": 15,
+            "scop": 0,
+            "alig": 35,
+            "deve": 20,
+            "plur": 0,
+            "agen": 80
+          }
+        },
+        {
+          "name": "Ba'athism",
+          "umbrella": false,
+          "anchor": {
+            "marx": 55,
+            "vehi": 2,
+            "reli": 8,
+            "scop": 96,
+            "alig": 55,
+            "deve": 5,
+            "plur": 2,
+            "agen": 90
+          }
+        },
+        {
+          "name": "Nasserism",
+          "umbrella": false,
+          "anchor": {
+            "marx": 72,
+            "vehi": 14,
+            "reli": 45,
+            "scop": 66,
+            "alig": 40,
+            "deve": 12,
+            "plur": 12,
+            "agen": 82
+          }
+        },
+        {
+          "name": "Bolivarianism / Chavismo",
+          "umbrella": false,
+          "anchor": {
+            "marx": 40,
+            "vehi": 35,
+            "reli": 60,
+            "scop": 75,
+            "alig": 55,
+            "deve": 25,
+            "plur": 66,
+            "agen": 55
+          }
+        },
+        {
+          "name": "Sandinismo",
+          "umbrella": false,
+          "anchor": {
+            "marx": 20,
+            "vehi": 25,
+            "reli": 66,
+            "scop": 35,
+            "alig": 20,
+            "deve": 40,
+            "plur": 60,
+            "agen": 35
+          }
+        },
+        {
+          "name": "Zapatismo",
+          "umbrella": false,
+          "anchor": {
+            "marx": 55,
+            "vehi": 100,
+            "reli": 55,
+            "scop": 35,
+            "alig": 92,
+            "deve": 98,
+            "plur": 48,
+            "agen": 24
+          }
+        },
+        {
+          "name": "Pan-Africanism (Nkrumaism)",
+          "umbrella": false,
+          "anchor": {
+            "marx": 35,
+            "vehi": 15,
+            "reli": 35,
+            "scop": 96,
+            "alig": 60,
+            "deve": 15,
+            "plur": 15,
+            "agen": 70
+          }
+        },
+        {
+          "name": "Ujamaa / African Socialism (Nyerere)",
+          "umbrella": false,
+          "anchor": {
+            "marx": 86,
+            "vehi": 15,
+            "reli": 45,
+            "scop": 25,
+            "alig": 76,
+            "deve": 97,
+            "plur": 20,
+            "agen": 60
+          }
+        },
+        {
+          "name": "Negritude-Socialism (Senghor)",
+          "umbrella": false,
+          "anchor": {
+            "marx": 97,
+            "vehi": 20,
+            "reli": 60,
+            "scop": 76,
+            "alig": 92,
+            "deve": 70,
+            "plur": 46,
+            "agen": 80
+          }
+        },
+        {
+          "name": "Pan-Arabism",
+          "umbrella": true,
+          "anchor": {
+            "marx": 76,
+            "vehi": 15,
+            "reli": 30,
+            "scop": 100,
+            "alig": 70,
+            "deve": 15,
+            "plur": 15,
+            "agen": 92
+          }
+        },
+        {
+          "name": "Sankarism (Burkina Faso)",
+          "umbrella": false,
+          "anchor": {
+            "marx": 20,
+            "vehi": 20,
+            "reli": 15,
+            "scop": 30,
+            "alig": 65,
+            "deve": 62,
+            "plur": 15,
+            "agen": 34
+          }
+        },
+        {
+          "name": "Gaddafism / Third International Theory",
+          "umbrella": false,
+          "anchor": {
+            "marx": 80,
+            "vehi": 72,
+            "reli": 86,
+            "scop": 86,
+            "alig": 86,
+            "deve": 45,
+            "plur": 10,
+            "agen": 76
+          }
+        },
+        {
+          "name": "Maoist Third-Worldism",
+          "umbrella": false,
+          "anchor": {
+            "marx": 0,
+            "vehi": 20,
+            "reli": 5,
+            "scop": 92,
+            "alig": 72,
+            "deve": 55,
+            "plur": 20,
+            "agen": 88
+          }
+        },
+        {
+          "name": "Non-Aligned Movement developmentalism",
+          "umbrella": false,
+          "anchor": {
+            "marx": 70,
+            "vehi": 20,
+            "reli": 40,
+            "scop": 88,
+            "alig": 100,
+            "deve": 25,
+            "plur": 56,
+            "agen": 92
+          }
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Neo-Eurasianism / Traditionalism",
+      "axes": [
+        {
+          "key": "meta",
+          "name": "Metaphysical Ground",
+          "negPole": "Secular / Materialist Analysis",
+          "posPole": "Sacred Metaphysics & Cyclical Time"
+        },
+        {
+          "key": "unit",
+          "name": "Political Unit",
+          "negPole": "Ethnic Nation-State",
+          "posPole": "Multi-Ethnic Civilisation-Empire"
+        },
+        {
+          "key": "econ",
+          "name": "Economic Doctrine",
+          "negPole": "Anti-Capitalist / Socialising",
+          "posPole": "Market & Techno-Capital Embrace"
+        },
+        {
+          "key": "mode",
+          "name": "Modernity",
+          "negPole": "Accelerate Technology",
+          "posPole": "Reject Modernity Wholesale"
+        },
+        {
+          "key": "mass",
+          "name": "Political Method",
+          "negPole": "Elite / Esoteric Cadre",
+          "posPole": "Mass Mobilisation"
+        },
+        {
+          "key": "geop",
+          "name": "Geopolitical Orientation",
+          "negPole": "Atlanticist or Indifferent",
+          "posPole": "Militant Anti-Atlanticism"
+        },
+        {
+          "key": "spec",
+          "name": "Religious Form",
+          "negPole": "Single Confessional Truth Claim",
+          "posPole": "Perennialist / Multi-Confessional"
+        },
+        {
+          "key": "race",
+          "name": "Basis of Belonging",
+          "negPole": "Culture & Faith",
+          "posPole": "Biological Race"
+        }
+      ],
+      "subIdeologies": [
+        {
+          "name": "Duginism / Fourth Political Theory",
+          "umbrella": false,
+          "anchor": {
+            "meta": 90,
+            "unit": 98,
+            "econ": 25,
+            "mode": 60,
+            "mass": 60,
+            "geop": 100,
+            "spec": 85,
+            "race": 15
+          }
+        },
+        {
+          "name": "Classical Eurasianism (Trubetzkoy)",
+          "umbrella": false,
+          "anchor": {
+            "meta": 60,
+            "unit": 95,
+            "econ": 35,
+            "mode": 55,
+            "mass": 30,
+            "geop": 90,
+            "spec": 40,
+            "race": 10
+          }
+        },
+        {
+          "name": "Integral Traditionalism (Guenon, Evola)",
+          "umbrella": false,
+          "anchor": {
+            "meta": 100,
+            "unit": 60,
+            "econ": 40,
+            "mode": 100,
+            "mass": 0,
+            "geop": 45,
+            "spec": 90,
+            "race": 50
+          }
+        },
+        {
+          "name": "Conservative Revolution (Weimar)",
+          "umbrella": false,
+          "anchor": {
+            "meta": 45,
+            "unit": 45,
+            "econ": 30,
+            "mode": 30,
+            "mass": 55,
+            "geop": 65,
+            "spec": 60,
+            "race": 35
+          }
+        },
+        {
+          "name": "National Bolshevism",
+          "umbrella": false,
+          "anchor": {
+            "meta": 25,
+            "unit": 60,
+            "econ": 5,
+            "mode": 35,
+            "mass": 95,
+            "geop": 92,
+            "spec": 65,
+            "race": 30
+          }
+        },
+        {
+          "name": "Identitarianism / European New Right",
+          "umbrella": false,
+          "anchor": {
+            "meta": 40,
+            "unit": 55,
+            "econ": 35,
+            "mode": 55,
+            "mass": 25,
+            "geop": 70,
+            "spec": 75,
+            "race": 78
+          }
+        },
+        {
+          "name": "Neo-Reaction / Dark Enlightenment",
+          "umbrella": false,
+          "anchor": {
+            "meta": 15,
+            "unit": 20,
+            "econ": 80,
+            "mode": 15,
+            "mass": 3,
+            "geop": 20,
+            "spec": 55,
+            "race": 82
+          }
+        },
+        {
+          "name": "Neoreactionary Techno-Commercialism",
+          "umbrella": false,
+          "anchor": {
+            "meta": 5,
+            "unit": 5,
+            "econ": 100,
+            "mode": 0,
+            "mass": 5,
+            "geop": 10,
+            "spec": 60,
+            "race": 60
+          }
+        },
+        {
+          "name": "Traditionalist Catholicism",
+          "umbrella": false,
+          "anchor": {
+            "meta": 98,
+            "unit": 70,
+            "econ": 45,
+            "mode": 75,
+            "mass": 25,
+            "geop": 35,
+            "spec": 0,
+            "race": 5
+          }
+        }
+      ]
+    }
+  ]
+}

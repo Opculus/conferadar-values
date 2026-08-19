@@ -1,0 +1,1206 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 1,
+    "bucket": "Marxism-Leninism / Communism",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "road",
+      "name": "Route to Power",
+      "negPole": "Armed Rupture",
+      "posPole": "Peaceful / Parliamentary Road"
+    },
+    {
+      "key": "subj",
+      "name": "Revolutionary Subject",
+      "negPole": "Industrial Proletariat",
+      "posPole": "Peasantry & Rural Periphery"
+    },
+    {
+      "key": "vang",
+      "name": "Vanguard Discipline",
+      "negPole": "Mass-Democratic / Pluralist",
+      "posPole": "Monolithic Cadre Party"
+    },
+    {
+      "key": "aes",
+      "name": "AES Defence",
+      "negPole": "Critical / Deformed-or-Revisionist",
+      "posPole": "Defend the Socialist Camp"
+    },
+    {
+      "key": "cont",
+      "name": "Continuous Revolution",
+      "negPole": "Productive-Forces Primacy",
+      "posPole": "Class Struggle Under Socialism"
+    },
+    {
+      "key": "mech",
+      "name": "Economic Mechanism",
+      "negPole": "Comprehensive Central Planning",
+      "posPole": "Market & Enterprise Autonomy"
+    },
+    {
+      "key": "intl",
+      "name": "Internationalist Scope",
+      "negPole": "Socialism in One Country",
+      "posPole": "Permanent World Revolution"
+    },
+    {
+      "key": "lead",
+      "name": "Leadership Principle",
+      "negPole": "Collective / Institutional",
+      "posPole": "Guiding Thought of One Leader"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Marxism-Leninism (orthodox/Stalinist)",
+      "umbrella": false,
+      "anchor": {
+        "road": 15,
+        "subj": 30,
+        "vang": 88,
+        "aes": 78,
+        "cont": 40,
+        "mech": 12,
+        "intl": 25,
+        "lead": 85
+      }
+    },
+    {
+      "name": "Trotskyism / Left Opposition",
+      "umbrella": false,
+      "anchor": {
+        "road": 25,
+        "subj": 18,
+        "vang": 55,
+        "aes": 18,
+        "cont": 55,
+        "mech": 28,
+        "intl": 96,
+        "lead": 22
+      }
+    },
+    {
+      "name": "Maoism",
+      "umbrella": false,
+      "anchor": {
+        "road": 12,
+        "subj": 80,
+        "vang": 80,
+        "aes": 60,
+        "cont": 88,
+        "mech": 25,
+        "intl": 55,
+        "lead": 85
+      }
+    },
+    {
+      "name": "Marxism-Leninism-Maoism (Gonzalo)",
+      "umbrella": false,
+      "anchor": {
+        "road": 0,
+        "subj": 90,
+        "vang": 99,
+        "aes": 35,
+        "cont": 96,
+        "mech": 10,
+        "intl": 70,
+        "lead": 99
+      }
+    },
+    {
+      "name": "Hoxhaism (Anti-Revisionist)",
+      "umbrella": false,
+      "anchor": {
+        "road": 12,
+        "subj": 35,
+        "vang": 92,
+        "aes": 22,
+        "cont": 62,
+        "mech": 4,
+        "intl": 33,
+        "lead": 78
+      }
+    },
+    {
+      "name": "Titoism (self-management)",
+      "umbrella": false,
+      "anchor": {
+        "road": 32,
+        "subj": 42,
+        "vang": 58,
+        "aes": 48,
+        "cont": 28,
+        "mech": 82,
+        "intl": 48,
+        "lead": 76
+      }
+    },
+    {
+      "name": "Castro-Guevarism",
+      "umbrella": false,
+      "anchor": {
+        "road": 5,
+        "subj": 66,
+        "vang": 68,
+        "aes": 66,
+        "cont": 60,
+        "mech": 18,
+        "intl": 88,
+        "lead": 80
+      }
+    },
+    {
+      "name": "Ho Chi Minh Thought",
+      "umbrella": false,
+      "anchor": {
+        "road": 22,
+        "subj": 76,
+        "vang": 78,
+        "aes": 74,
+        "cont": 42,
+        "mech": 32,
+        "intl": 28,
+        "lead": 72
+      }
+    },
+    {
+      "name": "Kim Il-Sungism / Juche",
+      "umbrella": false,
+      "anchor": {
+        "road": 15,
+        "subj": 68,
+        "vang": 96,
+        "aes": 52,
+        "cont": 48,
+        "mech": 8,
+        "intl": 2,
+        "lead": 99
+      }
+    },
+    {
+      "name": "Prachanda Path",
+      "umbrella": false,
+      "anchor": {
+        "road": 38,
+        "subj": 84,
+        "vang": 72,
+        "aes": 50,
+        "cont": 72,
+        "mech": 38,
+        "intl": 55,
+        "lead": 84
+      }
+    },
+    {
+      "name": "Dengism / Reform Communism",
+      "umbrella": false,
+      "anchor": {
+        "road": 48,
+        "subj": 45,
+        "vang": 82,
+        "aes": 76,
+        "cont": 6,
+        "mech": 94,
+        "intl": 18,
+        "lead": 42
+      }
+    },
+    {
+      "name": "Khrushchevism / De-Stalinization",
+      "umbrella": false,
+      "anchor": {
+        "road": 62,
+        "subj": 28,
+        "vang": 60,
+        "aes": 66,
+        "cont": 22,
+        "mech": 38,
+        "intl": 62,
+        "lead": 25
+      }
+    },
+    {
+      "name": "Brezhnevism / Developed Socialism",
+      "umbrella": false,
+      "anchor": {
+        "road": 45,
+        "subj": 26,
+        "vang": 86,
+        "aes": 97,
+        "cont": 10,
+        "mech": 20,
+        "intl": 45,
+        "lead": 52
+      }
+    },
+    {
+      "name": "Eurocommunism",
+      "umbrella": false,
+      "anchor": {
+        "road": 95,
+        "subj": 22,
+        "vang": 26,
+        "aes": 28,
+        "cont": 32,
+        "mech": 72,
+        "intl": 42,
+        "lead": 12
+      }
+    },
+    {
+      "name": "Naxalism",
+      "umbrella": false,
+      "anchor": {
+        "road": 0,
+        "subj": 96,
+        "vang": 88,
+        "aes": 40,
+        "cont": 70,
+        "mech": 20,
+        "intl": 35,
+        "lead": 55
+      }
+    },
+    {
+      "name": "National Bolshevism",
+      "umbrella": false,
+      "anchor": {
+        "road": 25,
+        "subj": 52,
+        "vang": 82,
+        "aes": 55,
+        "cont": 34,
+        "mech": 46,
+        "intl": 4,
+        "lead": 90
+      }
+    },
+    {
+      "name": "Barracks Communism",
+      "umbrella": true,
+      "anchor": {
+        "road": 20,
+        "subj": 50,
+        "vang": 95,
+        "aes": 45,
+        "cont": 18,
+        "mech": 2,
+        "intl": 26,
+        "lead": 76
+      }
+    },
+    {
+      "name": "Posadism",
+      "umbrella": false,
+      "anchor": {
+        "road": 22,
+        "subj": 24,
+        "vang": 48,
+        "aes": 40,
+        "cont": 62,
+        "mech": 18,
+        "intl": 99,
+        "lead": 68
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "road01",
+      "axis": "road",
+      "core": true,
+      "effect": {
+        "road": 10
+      },
+      "text": "A communist party can come to power through elections and hold it without an armed seizure."
+    },
+    {
+      "id": "road02",
+      "axis": "road",
+      "core": true,
+      "effect": {
+        "road": 9
+      },
+      "text": "Where a parliament exists, contesting it seriously is a better use of cadre than preparing for armed struggle."
+    },
+    {
+      "id": "road03",
+      "axis": "road",
+      "core": true,
+      "effect": {
+        "road": 8
+      },
+      "text": "A negotiated transfer of power is preferable to civil war, even at the cost of real concessions."
+    },
+    {
+      "id": "road04",
+      "axis": "road",
+      "core": false,
+      "effect": {
+        "road": 10
+      },
+      "text": "The existing army and police can be won over and reformed rather than smashed."
+    },
+    {
+      "id": "road05",
+      "axis": "road",
+      "core": false,
+      "effect": {
+        "road": 8
+      },
+      "text": "Signing a peace accord and entering government can be a revolutionary act rather than a capitulation."
+    },
+    {
+      "id": "road06",
+      "axis": "road",
+      "core": false,
+      "effect": {
+        "road": 7
+      },
+      "text": "A broad electoral alliance with non-communist parties is worth the programmatic compromises it requires."
+    },
+    {
+      "id": "road07",
+      "axis": "road",
+      "core": true,
+      "effect": {
+        "road": -10
+      },
+      "text": "No ruling class has ever given up state power without being forced, and none ever will."
+    },
+    {
+      "id": "road08",
+      "axis": "road",
+      "core": true,
+      "effect": {
+        "road": -9
+      },
+      "text": "Building an armed force is the central task of a revolutionary party, not one task among several."
+    },
+    {
+      "id": "road09",
+      "axis": "road",
+      "core": true,
+      "effect": {
+        "road": -8
+      },
+      "text": "Standing in elections is only ever worthwhile as a way of exposing them."
+    },
+    {
+      "id": "road10",
+      "axis": "road",
+      "core": false,
+      "effect": {
+        "road": -10
+      },
+      "text": "The standing army and the police must be dismantled outright, never inherited."
+    },
+    {
+      "id": "road11",
+      "axis": "road",
+      "core": false,
+      "effect": {
+        "road": -8
+      },
+      "text": "A party that has not prepared for illegality will be destroyed the moment it becomes dangerous."
+    },
+    {
+      "id": "road12",
+      "axis": "road",
+      "core": false,
+      "effect": {
+        "road": -7
+      },
+      "text": "Every peaceful road to socialism attempted so far has ended in the movement's defeat."
+    },
+    {
+      "id": "subj01",
+      "axis": "subj",
+      "core": true,
+      "effect": {
+        "subj": 10
+      },
+      "text": "The peasantry, not the industrial working class, is the main force of revolution across most of the world."
+    },
+    {
+      "id": "subj02",
+      "axis": "subj",
+      "core": true,
+      "effect": {
+        "subj": 9
+      },
+      "text": "Revolution advances by building base areas in the countryside and encircling the cities from them."
+    },
+    {
+      "id": "subj03",
+      "axis": "subj",
+      "core": true,
+      "effect": {
+        "subj": 8
+      },
+      "text": "The land question is the decisive question of the revolution."
+    },
+    {
+      "id": "subj04",
+      "axis": "subj",
+      "core": false,
+      "effect": {
+        "subj": 10
+      },
+      "text": "In a semi-feudal country the urban proletariat is far too small to lead on its own."
+    },
+    {
+      "id": "subj05",
+      "axis": "subj",
+      "core": false,
+      "effect": {
+        "subj": 8
+      },
+      "text": "The most reliable cadre are recruited from the villages rather than the factories."
+    },
+    {
+      "id": "subj06",
+      "axis": "subj",
+      "core": false,
+      "effect": {
+        "subj": 7
+      },
+      "text": "Rural poverty produces a sharper and more durable class hatred than industrial wage labour does."
+    },
+    {
+      "id": "subj07",
+      "axis": "subj",
+      "core": true,
+      "effect": {
+        "subj": -10
+      },
+      "text": "Only the industrial working class can lead a socialist revolution; other classes can at most follow it."
+    },
+    {
+      "id": "subj08",
+      "axis": "subj",
+      "core": true,
+      "effect": {
+        "subj": -9
+      },
+      "text": "A revolution with a rural base ends in peasant war, not in proletarian power."
+    },
+    {
+      "id": "subj09",
+      "axis": "subj",
+      "core": true,
+      "effect": {
+        "subj": -8
+      },
+      "text": "The decisive battles are fought in the cities, where production and the state are concentrated."
+    },
+    {
+      "id": "subj10",
+      "axis": "subj",
+      "core": false,
+      "effect": {
+        "subj": -10
+      },
+      "text": "Socialism presupposes large-scale industry and the class that large-scale industry creates."
+    },
+    {
+      "id": "subj11",
+      "axis": "subj",
+      "core": false,
+      "effect": {
+        "subj": -8
+      },
+      "text": "Organising in the workplaces takes priority over organising in the countryside."
+    },
+    {
+      "id": "subj12",
+      "axis": "subj",
+      "core": false,
+      "effect": {
+        "subj": -7
+      },
+      "text": "What the peasantry wants is land of its own, and that is not a socialist demand."
+    },
+    {
+      "id": "vang01",
+      "axis": "vang",
+      "core": true,
+      "effect": {
+        "vang": 10
+      },
+      "text": "Once the party has settled a line, no member may argue against it in public."
+    },
+    {
+      "id": "vang02",
+      "axis": "vang",
+      "core": true,
+      "effect": {
+        "vang": 9
+      },
+      "text": "Organised factions inside the party must be prohibited outright."
+    },
+    {
+      "id": "vang03",
+      "axis": "vang",
+      "core": true,
+      "effect": {
+        "vang": 8
+      },
+      "text": "The party should be a selected body of tested cadre, not a mass membership open to anyone."
+    },
+    {
+      "id": "vang04",
+      "axis": "vang",
+      "core": false,
+      "effect": {
+        "vang": 10
+      },
+      "text": "Party decisions must bind lower bodies absolutely, with no appeal to the membership at large."
+    },
+    {
+      "id": "vang05",
+      "axis": "vang",
+      "core": false,
+      "effect": {
+        "vang": 8
+      },
+      "text": "Ideological uniformity is a source of strength in a revolutionary party, not a weakness."
+    },
+    {
+      "id": "vang06",
+      "axis": "vang",
+      "core": false,
+      "effect": {
+        "vang": 7
+      },
+      "text": "Removing unreliable elements from the ranks is a normal and necessary part of party life."
+    },
+    {
+      "id": "vang07",
+      "axis": "vang",
+      "core": true,
+      "effect": {
+        "vang": -10
+      },
+      "text": "The right to form organised tendencies within the party must be permanent and unconditional."
+    },
+    {
+      "id": "vang08",
+      "axis": "vang",
+      "core": true,
+      "effect": {
+        "vang": -9
+      },
+      "text": "Party leaderships should be openly contested and removable by the membership at any time."
+    },
+    {
+      "id": "vang09",
+      "axis": "vang",
+      "core": true,
+      "effect": {
+        "vang": -8
+      },
+      "text": "Disagreements inside a revolutionary party should be argued out in public, in front of the class."
+    },
+    {
+      "id": "vang10",
+      "axis": "vang",
+      "core": false,
+      "effect": {
+        "vang": -10
+      },
+      "text": "Other working-class parties should be free to exist and compete after the revolution."
+    },
+    {
+      "id": "vang11",
+      "axis": "vang",
+      "core": false,
+      "effect": {
+        "vang": -8
+      },
+      "text": "A party that suppresses internal disagreement will make worse decisions, not better ones."
+    },
+    {
+      "id": "vang12",
+      "axis": "vang",
+      "core": false,
+      "effect": {
+        "vang": -7
+      },
+      "text": "Trade unions and mass organisations should keep real independence from the party that leads them."
+    },
+    {
+      "id": "aes01",
+      "axis": "aes",
+      "core": true,
+      "effect": {
+        "aes": 10
+      },
+      "text": "The socialist states of the twentieth century were, on the whole, genuine workers' states worth defending."
+    },
+    {
+      "id": "aes02",
+      "axis": "aes",
+      "core": true,
+      "effect": {
+        "aes": 9
+      },
+      "text": "Criticism of existing socialist states mainly serves imperialism, whatever the critic intends."
+    },
+    {
+      "id": "aes03",
+      "axis": "aes",
+      "core": true,
+      "effect": {
+        "aes": 8
+      },
+      "text": "The achievements of the socialist camp outweigh its errors by a wide margin."
+    },
+    {
+      "id": "aes04",
+      "axis": "aes",
+      "core": false,
+      "effect": {
+        "aes": 10
+      },
+      "text": "Where a socialist state and an imperialist power come into conflict, one takes the socialist side without conditions."
+    },
+    {
+      "id": "aes05",
+      "axis": "aes",
+      "core": false,
+      "effect": {
+        "aes": 8
+      },
+      "text": "The collapse of the Soviet Union was a defeat for the working class of the entire world."
+    },
+    {
+      "id": "aes06",
+      "axis": "aes",
+      "core": false,
+      "effect": {
+        "aes": 7
+      },
+      "text": "States that describe themselves as socialist today deserve the movement's active support."
+    },
+    {
+      "id": "aes07",
+      "axis": "aes",
+      "core": true,
+      "effect": {
+        "aes": -10
+      },
+      "text": "Most states that called themselves socialist had long since stopped being workers' states."
+    },
+    {
+      "id": "aes08",
+      "axis": "aes",
+      "core": true,
+      "effect": {
+        "aes": -9
+      },
+      "text": "A bureaucratic caste ruled in the name of the working class while excluding it from power."
+    },
+    {
+      "id": "aes09",
+      "axis": "aes",
+      "core": true,
+      "effect": {
+        "aes": -8
+      },
+      "text": "Defending existing socialist states uncritically has cost the movement more than any enemy has."
+    },
+    {
+      "id": "aes10",
+      "axis": "aes",
+      "core": false,
+      "effect": {
+        "aes": -10
+      },
+      "text": "Past a certain point the ruling parties of the socialist camp went over to revisionism."
+    },
+    {
+      "id": "aes11",
+      "axis": "aes",
+      "core": false,
+      "effect": {
+        "aes": -8
+      },
+      "text": "State ownership on its own does not make a country socialist."
+    },
+    {
+      "id": "aes12",
+      "axis": "aes",
+      "core": false,
+      "effect": {
+        "aes": -7
+      },
+      "text": "The socialist camp should be judged by exactly the standards applied to any other state."
+    },
+    {
+      "id": "cont01",
+      "axis": "cont",
+      "core": true,
+      "effect": {
+        "cont": 10
+      },
+      "text": "Classes and class struggle persist under socialism and can restore capitalism if they are not fought."
+    },
+    {
+      "id": "cont02",
+      "axis": "cont",
+      "core": true,
+      "effect": {
+        "cont": 9
+      },
+      "text": "A new bourgeoisie can form inside the ruling party itself."
+    },
+    {
+      "id": "cont03",
+      "axis": "cont",
+      "core": true,
+      "effect": {
+        "cont": 8
+      },
+      "text": "The masses must be mobilised to criticise and overturn officials, even at the cost of disorder."
+    },
+    {
+      "id": "cont04",
+      "axis": "cont",
+      "core": false,
+      "effect": {
+        "cont": 10
+      },
+      "text": "Transforming consciousness and social relations matters as much as raising output does."
+    },
+    {
+      "id": "cont05",
+      "axis": "cont",
+      "core": false,
+      "effect": {
+        "cont": 8
+      },
+      "text": "Periodic upheavals from below are necessary to stop the state from hardening into a caste."
+    },
+    {
+      "id": "cont06",
+      "axis": "cont",
+      "core": false,
+      "effect": {
+        "cont": 7
+      },
+      "text": "Technical experts and managers become a privileged stratum unless they are constantly checked."
+    },
+    {
+      "id": "cont07",
+      "axis": "cont",
+      "core": true,
+      "effect": {
+        "cont": -10
+      },
+      "text": "The main task after taking power is developing the productive forces, not further class struggle."
+    },
+    {
+      "id": "cont08",
+      "axis": "cont",
+      "core": true,
+      "effect": {
+        "cont": -9
+      },
+      "text": "Once the means of production are socialised, the class question is essentially settled."
+    },
+    {
+      "id": "cont09",
+      "axis": "cont",
+      "core": true,
+      "effect": {
+        "cont": -8
+      },
+      "text": "Mass campaigns against officials disrupt production and set the whole economy back."
+    },
+    {
+      "id": "cont10",
+      "axis": "cont",
+      "core": false,
+      "effect": {
+        "cont": -10
+      },
+      "text": "Poverty, not insufficient revolutionary consciousness, is the main obstacle to socialism."
+    },
+    {
+      "id": "cont11",
+      "axis": "cont",
+      "core": false,
+      "effect": {
+        "cont": -8
+      },
+      "text": "Steady administration serves the working class better than permanent upheaval does."
+    },
+    {
+      "id": "cont12",
+      "axis": "cont",
+      "core": false,
+      "effect": {
+        "cont": -7
+      },
+      "text": "Raising living standards is the strongest argument socialism can make."
+    },
+    {
+      "id": "mech01",
+      "axis": "mech",
+      "core": true,
+      "effect": {
+        "mech": 10
+      },
+      "text": "Markets and private enterprise can be used for a long period under the direction of a socialist state."
+    },
+    {
+      "id": "mech02",
+      "axis": "mech",
+      "core": true,
+      "effect": {
+        "mech": 9
+      },
+      "text": "Enterprises should set much of their own output, pricing, and investment."
+    },
+    {
+      "id": "mech03",
+      "axis": "mech",
+      "core": true,
+      "effect": {
+        "mech": 8
+      },
+      "text": "Foreign investment can be admitted on terms set by a socialist state without endangering it."
+    },
+    {
+      "id": "mech04",
+      "axis": "mech",
+      "core": false,
+      "effect": {
+        "mech": 10
+      },
+      "text": "Competition between socialist enterprises improves efficiency more than commands from above do."
+    },
+    {
+      "id": "mech05",
+      "axis": "mech",
+      "core": false,
+      "effect": {
+        "mech": 8
+      },
+      "text": "Some inequality of income is acceptable where it raises overall output."
+    },
+    {
+      "id": "mech06",
+      "axis": "mech",
+      "core": false,
+      "effect": {
+        "mech": 7
+      },
+      "text": "Self-management of individual enterprises is preferable to direction by central ministries."
+    },
+    {
+      "id": "mech07",
+      "axis": "mech",
+      "core": true,
+      "effect": {
+        "mech": -10
+      },
+      "text": "The whole economy should follow a single plan, with no market in the means of production."
+    },
+    {
+      "id": "mech08",
+      "axis": "mech",
+      "core": true,
+      "effect": {
+        "mech": -9
+      },
+      "text": "A durable turn back toward market allocation under socialism risks becoming a slide toward capitalist restoration."
+    },
+    {
+      "id": "mech09",
+      "axis": "mech",
+      "core": true,
+      "effect": {
+        "mech": -8
+      },
+      "text": "Prices should be set by the plan according to need, not by supply and demand."
+    },
+    {
+      "id": "mech10",
+      "axis": "mech",
+      "core": false,
+      "effect": {
+        "mech": -10
+      },
+      "text": "Private enterprise should be eliminated altogether, not tolerated in a subordinate role."
+    },
+    {
+      "id": "mech11",
+      "axis": "mech",
+      "core": false,
+      "effect": {
+        "mech": -8
+      },
+      "text": "Wage differentials should be compressed as far as production allows."
+    },
+    {
+      "id": "mech12",
+      "axis": "mech",
+      "core": false,
+      "effect": {
+        "mech": -7
+      },
+      "text": "Trade with capitalist countries should be minimised in favour of self-reliance."
+    },
+    {
+      "id": "intl01",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": 10
+      },
+      "text": "Socialism cannot be completed in a single country; it stands or falls internationally."
+    },
+    {
+      "id": "intl02",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": 9
+      },
+      "text": "A socialist state's foreign policy should be subordinated to spreading revolution abroad."
+    },
+    {
+      "id": "intl03",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": 8
+      },
+      "text": "The revolution must be carried forward without pausing at any national stage."
+    },
+    {
+      "id": "intl04",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": 10
+      },
+      "text": "A workers' state that puts its own diplomatic interests first has already begun to degenerate."
+    },
+    {
+      "id": "intl05",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": 8
+      },
+      "text": "Building an international organisation matters more than consolidating any one national party."
+    },
+    {
+      "id": "intl06",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": 7
+      },
+      "text": "Borders are an obstacle the revolution has to dissolve, not a framework to work within."
+    },
+    {
+      "id": "intl07",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": -10
+      },
+      "text": "A single country can build socialism on its own, whatever happens elsewhere."
+    },
+    {
+      "id": "intl08",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": -9
+      },
+      "text": "Self-reliance is the first duty of a revolutionary state; outside assistance is a bonus."
+    },
+    {
+      "id": "intl09",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": -8
+      },
+      "text": "Each country's revolution must follow its own road, determined by its own party."
+    },
+    {
+      "id": "intl10",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": -10
+      },
+      "text": "Exporting revolution wastes resources the country needs to defend and develop itself."
+    },
+    {
+      "id": "intl11",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": -8
+      },
+      "text": "A socialist state should make whatever diplomatic arrangements its security requires."
+    },
+    {
+      "id": "intl12",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": -7
+      },
+      "text": "Loyalty to one's nation and loyalty to the revolution point in the same direction."
+    },
+    {
+      "id": "lead01",
+      "axis": "lead",
+      "core": true,
+      "effect": {
+        "lead": 10
+      },
+      "text": "A revolution needs one recognised leader whose thought guides the whole movement."
+    },
+    {
+      "id": "lead02",
+      "axis": "lead",
+      "core": true,
+      "effect": {
+        "lead": 9
+      },
+      "text": "A leader's contribution should be named as a distinct development of Marxism."
+    },
+    {
+      "id": "lead03",
+      "axis": "lead",
+      "core": true,
+      "effect": {
+        "lead": 8
+      },
+      "text": "Public veneration of the leader strengthens the movement's cohesion."
+    },
+    {
+      "id": "lead04",
+      "axis": "lead",
+      "core": false,
+      "effect": {
+        "lead": 10
+      },
+      "text": "Where the leader and the central committee disagree, the leader is usually right."
+    },
+    {
+      "id": "lead05",
+      "axis": "lead",
+      "core": false,
+      "effect": {
+        "lead": 8
+      },
+      "text": "A movement with no authoritative individual leader falls into indecision."
+    },
+    {
+      "id": "lead06",
+      "axis": "lead",
+      "core": false,
+      "effect": {
+        "lead": 7
+      },
+      "text": "The leader embodies the continuity of the revolution across generations."
+    },
+    {
+      "id": "lead07",
+      "axis": "lead",
+      "core": true,
+      "effect": {
+        "lead": -10
+      },
+      "text": "No individual should ever be placed above the party's collective bodies."
+    },
+    {
+      "id": "lead08",
+      "axis": "lead",
+      "core": true,
+      "effect": {
+        "lead": -9
+      },
+      "text": "Structuring the movement's authority around one leader's personal standing, however capable they are, leaves it fragile once that leader is gone."
+    },
+    {
+      "id": "lead09",
+      "axis": "lead",
+      "core": true,
+      "effect": {
+        "lead": -8
+      },
+      "text": "Naming a doctrine after a living leader is a warning sign, not a theoretical advance."
+    },
+    {
+      "id": "lead10",
+      "axis": "lead",
+      "core": false,
+      "effect": {
+        "lead": -10
+      },
+      "text": "Leadership positions should rotate and remain accountable to elected bodies."
+    },
+    {
+      "id": "lead11",
+      "axis": "lead",
+      "core": false,
+      "effect": {
+        "lead": -8
+      },
+      "text": "Theory belongs to the movement as a whole, never to any single thinker."
+    },
+    {
+      "id": "lead12",
+      "axis": "lead",
+      "core": false,
+      "effect": {
+        "lead": -7
+      },
+      "text": "A leader's personal authority should never exceed the office they hold."
+    }
+  ]
+}

@@ -1,0 +1,1150 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 12,
+    "bucket": "Third-Worldism / National Liberation",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "marx",
+      "name": "Theoretical Frame",
+      "negPole": "Scientific Socialism / Class Analysis",
+      "posPole": "Indigenous Cultural Socialism"
+    },
+    {
+      "key": "vehi",
+      "name": "Vehicle",
+      "negPole": "Vanguard Party & State Apparatus",
+      "posPole": "Autonomous Communities & Movements"
+    },
+    {
+      "key": "reli",
+      "name": "Religious Register",
+      "negPole": "Explicitly Secular",
+      "posPole": "Faith Integrated into Liberation"
+    },
+    {
+      "key": "scop",
+      "name": "Scope of Solidarity",
+      "negPole": "Single Nation / Self-Reliance",
+      "posPole": "Pan-Regional or Global South Union"
+    },
+    {
+      "key": "alig",
+      "name": "Cold-War Alignment",
+      "negPole": "Soviet-Bloc Aligned",
+      "posPole": "Strict Non-Alignment"
+    },
+    {
+      "key": "deve",
+      "name": "Development Model",
+      "negPole": "State-Led Heavy Industrialisation",
+      "posPole": "Rural-Communal Self-Sufficiency"
+    },
+    {
+      "key": "plur",
+      "name": "Political Form",
+      "negPole": "Single-Party / Personalist Rule",
+      "posPole": "Electoral Pluralism Accepted"
+    },
+    {
+      "key": "agen",
+      "name": "Revolutionary Agent",
+      "negPole": "Domestic Workers & Peasants",
+      "posPole": "The Nation Against Imperialism"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Juche / Kim Il-Sungism",
+      "umbrella": false,
+      "anchor": {
+        "marx": 25,
+        "vehi": 0,
+        "reli": 15,
+        "scop": 0,
+        "alig": 35,
+        "deve": 20,
+        "plur": 0,
+        "agen": 80
+      }
+    },
+    {
+      "name": "Ba'athism",
+      "umbrella": false,
+      "anchor": {
+        "marx": 55,
+        "vehi": 2,
+        "reli": 8,
+        "scop": 96,
+        "alig": 55,
+        "deve": 5,
+        "plur": 2,
+        "agen": 90
+      }
+    },
+    {
+      "name": "Nasserism",
+      "umbrella": false,
+      "anchor": {
+        "marx": 72,
+        "vehi": 14,
+        "reli": 45,
+        "scop": 66,
+        "alig": 40,
+        "deve": 12,
+        "plur": 12,
+        "agen": 82
+      }
+    },
+    {
+      "name": "Bolivarianism / Chavismo",
+      "umbrella": false,
+      "anchor": {
+        "marx": 40,
+        "vehi": 35,
+        "reli": 60,
+        "scop": 75,
+        "alig": 55,
+        "deve": 25,
+        "plur": 66,
+        "agen": 55
+      }
+    },
+    {
+      "name": "Sandinismo",
+      "umbrella": false,
+      "anchor": {
+        "marx": 20,
+        "vehi": 25,
+        "reli": 66,
+        "scop": 35,
+        "alig": 20,
+        "deve": 40,
+        "plur": 60,
+        "agen": 35
+      }
+    },
+    {
+      "name": "Zapatismo",
+      "umbrella": false,
+      "anchor": {
+        "marx": 55,
+        "vehi": 100,
+        "reli": 55,
+        "scop": 35,
+        "alig": 92,
+        "deve": 98,
+        "plur": 48,
+        "agen": 24
+      }
+    },
+    {
+      "name": "Pan-Africanism (Nkrumaism)",
+      "umbrella": false,
+      "anchor": {
+        "marx": 35,
+        "vehi": 15,
+        "reli": 35,
+        "scop": 96,
+        "alig": 60,
+        "deve": 15,
+        "plur": 15,
+        "agen": 70
+      }
+    },
+    {
+      "name": "Ujamaa / African Socialism (Nyerere)",
+      "umbrella": false,
+      "anchor": {
+        "marx": 86,
+        "vehi": 15,
+        "reli": 45,
+        "scop": 25,
+        "alig": 76,
+        "deve": 97,
+        "plur": 20,
+        "agen": 60
+      }
+    },
+    {
+      "name": "Negritude-Socialism (Senghor)",
+      "umbrella": false,
+      "anchor": {
+        "marx": 97,
+        "vehi": 20,
+        "reli": 60,
+        "scop": 76,
+        "alig": 92,
+        "deve": 70,
+        "plur": 46,
+        "agen": 80
+      }
+    },
+    {
+      "name": "Pan-Arabism",
+      "umbrella": true,
+      "anchor": {
+        "marx": 76,
+        "vehi": 15,
+        "reli": 30,
+        "scop": 100,
+        "alig": 70,
+        "deve": 15,
+        "plur": 15,
+        "agen": 92
+      }
+    },
+    {
+      "name": "Sankarism (Burkina Faso)",
+      "umbrella": false,
+      "anchor": {
+        "marx": 20,
+        "vehi": 20,
+        "reli": 15,
+        "scop": 30,
+        "alig": 65,
+        "deve": 62,
+        "plur": 15,
+        "agen": 34
+      }
+    },
+    {
+      "name": "Gaddafism / Third International Theory",
+      "umbrella": false,
+      "anchor": {
+        "marx": 80,
+        "vehi": 72,
+        "reli": 86,
+        "scop": 86,
+        "alig": 86,
+        "deve": 45,
+        "plur": 10,
+        "agen": 76
+      }
+    },
+    {
+      "name": "Maoist Third-Worldism",
+      "umbrella": false,
+      "anchor": {
+        "marx": 0,
+        "vehi": 20,
+        "reli": 5,
+        "scop": 92,
+        "alig": 72,
+        "deve": 55,
+        "plur": 20,
+        "agen": 88
+      }
+    },
+    {
+      "name": "Non-Aligned Movement developmentalism",
+      "umbrella": false,
+      "anchor": {
+        "marx": 70,
+        "vehi": 20,
+        "reli": 40,
+        "scop": 88,
+        "alig": 100,
+        "deve": 25,
+        "plur": 56,
+        "agen": 92
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "marx01",
+      "axis": "marx",
+      "core": true,
+      "effect": {
+        "marx": -10
+      },
+      "text": "Class analysis and scientific socialism remain the right framework for understanding liberation struggles."
+    },
+    {
+      "id": "marx02",
+      "axis": "marx",
+      "core": true,
+      "effect": {
+        "marx": -9
+      },
+      "text": "Imperialism should be analysed primarily as a stage and structure of capitalism, in Marxist terms."
+    },
+    {
+      "id": "marx03",
+      "axis": "marx",
+      "core": true,
+      "effect": {
+        "marx": -8
+      },
+      "text": "A liberation movement's programme should be grounded in a materialist analysis of class and capital."
+    },
+    {
+      "id": "marx04",
+      "axis": "marx",
+      "core": false,
+      "effect": {
+        "marx": -10
+      },
+      "text": "Socialism, understood in the Marxist sense, is the proper end goal of national liberation."
+    },
+    {
+      "id": "marx05",
+      "axis": "marx",
+      "core": false,
+      "effect": {
+        "marx": -8
+      },
+      "text": "The vocabulary of scientific socialism translates well enough to describe any nation's path to liberation."
+    },
+    {
+      "id": "marx06",
+      "axis": "marx",
+      "core": false,
+      "effect": {
+        "marx": -7
+      },
+      "text": "A liberation movement without a class analysis of its own society will misdiagnose its real obstacles."
+    },
+    {
+      "id": "marx07",
+      "axis": "marx",
+      "core": true,
+      "effect": {
+        "marx": 10
+      },
+      "text": "The nation's own cultural and communal traditions, not imported Marxist theory, are the right foundation for its socialism."
+    },
+    {
+      "id": "marx08",
+      "axis": "marx",
+      "core": true,
+      "effect": {
+        "marx": 9
+      },
+      "text": "A borrowed European framework like Marxism doesn't fit the specific history and social structure of this nation."
+    },
+    {
+      "id": "marx09",
+      "axis": "marx",
+      "core": true,
+      "effect": {
+        "marx": 8
+      },
+      "text": "Indigenous values of community and solidarity are a sounder basis for socialism than imported class theory."
+    },
+    {
+      "id": "marx10",
+      "axis": "marx",
+      "core": false,
+      "effect": {
+        "marx": 10
+      },
+      "text": "This nation's socialism has to be built from its own traditions, not translated from foreign doctrine."
+    },
+    {
+      "id": "marx11",
+      "axis": "marx",
+      "core": false,
+      "effect": {
+        "marx": 8
+      },
+      "text": "Applying Marxist categories developed for industrial Europe to this society distorts more than it explains."
+    },
+    {
+      "id": "marx12",
+      "axis": "marx",
+      "core": false,
+      "effect": {
+        "marx": 7
+      },
+      "text": "The nation's own precolonial traditions of communal life are a truer foundation for its politics than any imported ideology."
+    },
+    {
+      "id": "vehi01",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": -10
+      },
+      "text": "A disciplined vanguard party, once in power, should hold and use the state to build the new society."
+    },
+    {
+      "id": "vehi02",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": -9
+      },
+      "text": "Building strong state institutions is the necessary vehicle for consolidating national liberation."
+    },
+    {
+      "id": "vehi03",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": -8
+      },
+      "text": "The party-state is the legitimate instrument through which liberation is defended and carried forward."
+    },
+    {
+      "id": "vehi04",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": -10
+      },
+      "text": "A revolutionary government needs to control the commanding heights of the state to make liberation durable."
+    },
+    {
+      "id": "vehi05",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": -8
+      },
+      "text": "National liberation is secured through state power, not despite it."
+    },
+    {
+      "id": "vehi06",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": -7
+      },
+      "text": "A single leading party, coordinating through the state apparatus, is the right vehicle for this nation's revolution."
+    },
+    {
+      "id": "vehi07",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": 10
+      },
+      "text": "Autonomous communities and grassroots movements, not a party controlling the state, are where liberation actually lives."
+    },
+    {
+      "id": "vehi08",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": 9
+      },
+      "text": "The state, even a revolutionary one, tends to become a new structure of domination over the people it claims to liberate."
+    },
+    {
+      "id": "vehi09",
+      "axis": "vehi",
+      "core": true,
+      "effect": {
+        "vehi": 8
+      },
+      "text": "Liberation should be built from below, through self-governing communities, rather than delegated to a party-state."
+    },
+    {
+      "id": "vehi10",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": 10
+      },
+      "text": "A movement that hands its power to a centralised state has already compromised its liberatory character."
+    },
+    {
+      "id": "vehi11",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": 8
+      },
+      "text": "Autonomy and self-organisation at the local level matter more than capturing state power."
+    },
+    {
+      "id": "vehi12",
+      "axis": "vehi",
+      "core": false,
+      "effect": {
+        "vehi": 7
+      },
+      "text": "Real liberation resists being absorbed into any single party or state apparatus, revolutionary or not."
+    },
+    {
+      "id": "reli01",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -10
+      },
+      "text": "Political liberation should be pursued on explicitly secular grounds, separate from religious authority."
+    },
+    {
+      "id": "reli02",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -9
+      },
+      "text": "Religious institutions should not have formal influence over a liberation movement's politics."
+    },
+    {
+      "id": "reli03",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -8
+      },
+      "text": "A secular state is the right framework for uniting a diverse population around a common liberation project."
+    },
+    {
+      "id": "reli04",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -10
+      },
+      "text": "Mixing religious authority into liberation politics risks excluding those who don't share the majority faith."
+    },
+    {
+      "id": "reli05",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -8
+      },
+      "text": "The movement's legitimacy should rest on national and social grounds, not religious ones."
+    },
+    {
+      "id": "reli06",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -7
+      },
+      "text": "Keeping religion out of formal politics helps liberation movements stay unified across religious lines."
+    },
+    {
+      "id": "reli07",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 10
+      },
+      "text": "Religious faith and identity are integral to this people's liberation and shouldn't be set aside in the name of secularism."
+    },
+    {
+      "id": "reli08",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 9
+      },
+      "text": "A liberation movement that ignores the religious convictions of its people has cut itself off from real popular support."
+    },
+    {
+      "id": "reli09",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 8
+      },
+      "text": "Faith-based solidarity is a genuine and legitimate source of strength for a liberation struggle."
+    },
+    {
+      "id": "reli10",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 10
+      },
+      "text": "This nation's liberation is inseparable from the defence and revival of its religious tradition."
+    },
+    {
+      "id": "reli11",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 8
+      },
+      "text": "Religious leaders and institutions have a legitimate place in the leadership of a liberation movement."
+    },
+    {
+      "id": "reli12",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 7
+      },
+      "text": "A purely secular liberation project would betray what actually motivates and unites this people's struggle."
+    },
+    {
+      "id": "scop01",
+      "axis": "scop",
+      "core": true,
+      "effect": {
+        "scop": -10
+      },
+      "text": "Liberation should focus on building this nation's own strength and self-reliance before anything wider."
+    },
+    {
+      "id": "scop02",
+      "axis": "scop",
+      "core": true,
+      "effect": {
+        "scop": -9
+      },
+      "text": "A single nation's revolution has to be consolidated on its own terms before looking outward."
+    },
+    {
+      "id": "scop03",
+      "axis": "scop",
+      "core": true,
+      "effect": {
+        "scop": -8
+      },
+      "text": "Overextending into regional or pan-national projects risks weakening what's been won at home."
+    },
+    {
+      "id": "scop04",
+      "axis": "scop",
+      "core": false,
+      "effect": {
+        "scop": -10
+      },
+      "text": "Self-reliance within the nation's own borders is the soundest basis for lasting liberation."
+    },
+    {
+      "id": "scop05",
+      "axis": "scop",
+      "core": false,
+      "effect": {
+        "scop": -8
+      },
+      "text": "This nation's specific struggle deserves priority over broader regional or pan-ideological ambitions."
+    },
+    {
+      "id": "scop06",
+      "axis": "scop",
+      "core": false,
+      "effect": {
+        "scop": -7
+      },
+      "text": "A movement should secure its own house before committing resources to liberation elsewhere."
+    },
+    {
+      "id": "scop07",
+      "axis": "scop",
+      "core": true,
+      "effect": {
+        "scop": 10
+      },
+      "text": "True liberation requires uniting with other peoples across the region into a broader union or federation."
+    },
+    {
+      "id": "scop08",
+      "axis": "scop",
+      "core": true,
+      "effect": {
+        "scop": 9
+      },
+      "text": "This nation's struggle is inseparable from a wider regional or civilisational liberation project."
+    },
+    {
+      "id": "scop09",
+      "axis": "scop",
+      "core": true,
+      "effect": {
+        "scop": 8
+      },
+      "text": "Artificial borders drawn by colonial powers should be transcended by a larger union of peoples."
+    },
+    {
+      "id": "scop10",
+      "axis": "scop",
+      "core": false,
+      "effect": {
+        "scop": 10
+      },
+      "text": "Solidarity and unification across the whole region matters more than any single nation's separate path."
+    },
+    {
+      "id": "scop11",
+      "axis": "scop",
+      "core": false,
+      "effect": {
+        "scop": 8
+      },
+      "text": "This nation's liberation is only a first step toward a broader union it should actively pursue."
+    },
+    {
+      "id": "scop12",
+      "axis": "scop",
+      "core": false,
+      "effect": {
+        "scop": 7
+      },
+      "text": "Pan-regional unity is not a distraction from national liberation but its necessary completion."
+    },
+    {
+      "id": "alig01",
+      "axis": "alig",
+      "core": true,
+      "effect": {
+        "alig": -10
+      },
+      "text": "Practical alliance with the Soviet bloc or its successors was, and remains, a reasonable strategic choice against imperialism."
+    },
+    {
+      "id": "alig02",
+      "axis": "alig",
+      "core": true,
+      "effect": {
+        "alig": -9
+      },
+      "text": "Accepting military and economic support from a socialist power was a legitimate part of the liberation struggle."
+    },
+    {
+      "id": "alig03",
+      "axis": "alig",
+      "core": true,
+      "effect": {
+        "alig": -8
+      },
+      "text": "Alignment with an anti-imperialist bloc strengthens a liberation movement more than strict neutrality does."
+    },
+    {
+      "id": "alig04",
+      "axis": "alig",
+      "core": false,
+      "effect": {
+        "alig": -10
+      },
+      "text": "A liberation movement facing powerful enemies is right to seek powerful allies, socialist or otherwise."
+    },
+    {
+      "id": "alig05",
+      "axis": "alig",
+      "core": false,
+      "effect": {
+        "alig": -8
+      },
+      "text": "Formal alliance with a socialist power doesn't compromise a liberation movement's independence in any meaningful way."
+    },
+    {
+      "id": "alig06",
+      "axis": "alig",
+      "core": false,
+      "effect": {
+        "alig": -7
+      },
+      "text": "Turning down support from a sympathetic bloc out of a principle of non-alignment would have weakened the struggle."
+    },
+    {
+      "id": "alig07",
+      "axis": "alig",
+      "core": true,
+      "effect": {
+        "alig": 10
+      },
+      "text": "A liberation movement should avoid dependence on any single foreign bloc, socialist or capitalist."
+    },
+    {
+      "id": "alig08",
+      "axis": "alig",
+      "core": true,
+      "effect": {
+        "alig": 9
+      },
+      "text": "Strict non-alignment protects a movement's independence better than any alliance, however sympathetic, would."
+    },
+    {
+      "id": "alig09",
+      "axis": "alig",
+      "core": true,
+      "effect": {
+        "alig": 8
+      },
+      "text": "Reliance on a foreign patron, even an anti-imperialist one, tends to compromise a movement's autonomy over time."
+    },
+    {
+      "id": "alig10",
+      "axis": "alig",
+      "core": false,
+      "effect": {
+        "alig": 10
+      },
+      "text": "The movement's foreign policy should be judged case by case, aligned with no permanent bloc."
+    },
+    {
+      "id": "alig11",
+      "axis": "alig",
+      "core": false,
+      "effect": {
+        "alig": 8
+      },
+      "text": "Non-alignment gives a liberation movement more genuine room to manoeuvre than any fixed alliance does."
+    },
+    {
+      "id": "alig12",
+      "axis": "alig",
+      "core": false,
+      "effect": {
+        "alig": 7
+      },
+      "text": "Even a sympathetic foreign patron has its own interests that can come to override the movement's own."
+    },
+    {
+      "id": "deve01",
+      "axis": "deve",
+      "core": true,
+      "effect": {
+        "deve": -10
+      },
+      "text": "Rapid state-led industrialisation is the surest route out of underdevelopment and dependency."
+    },
+    {
+      "id": "deve02",
+      "axis": "deve",
+      "core": true,
+      "effect": {
+        "deve": -9
+      },
+      "text": "Heavy industry, built and coordinated by the state, is the backbone of real national development."
+    },
+    {
+      "id": "deve03",
+      "axis": "deve",
+      "core": true,
+      "effect": {
+        "deve": -8
+      },
+      "text": "A five-year-plan style approach to industrial development is appropriate for a newly liberated nation."
+    },
+    {
+      "id": "deve04",
+      "axis": "deve",
+      "core": false,
+      "effect": {
+        "deve": -10
+      },
+      "text": "Concentrating resources on industrial capacity, even at short-term cost, pays off in long-term sovereignty."
+    },
+    {
+      "id": "deve05",
+      "axis": "deve",
+      "core": false,
+      "effect": {
+        "deve": -8
+      },
+      "text": "State-directed industrial development reduces dependency on former colonial powers faster than gradual growth would."
+    },
+    {
+      "id": "deve06",
+      "axis": "deve",
+      "core": false,
+      "effect": {
+        "deve": -7
+      },
+      "text": "A strong industrial base is what ultimately secures a nation's independence, not just political sovereignty."
+    },
+    {
+      "id": "deve07",
+      "axis": "deve",
+      "core": true,
+      "effect": {
+        "deve": 10
+      },
+      "text": "Development should build outward from self-sufficient rural and communal life, not from forced industrialisation."
+    },
+    {
+      "id": "deve08",
+      "axis": "deve",
+      "core": true,
+      "effect": {
+        "deve": 9
+      },
+      "text": "Village-level self-sufficiency is a sounder development model for this nation than heavy industrial planning."
+    },
+    {
+      "id": "deve09",
+      "axis": "deve",
+      "core": true,
+      "effect": {
+        "deve": 8
+      },
+      "text": "Rushing toward industrialisation risks uprooting the communal structures the nation's strength actually rests on."
+    },
+    {
+      "id": "deve10",
+      "axis": "deve",
+      "core": false,
+      "effect": {
+        "deve": 10
+      },
+      "text": "A development model rooted in rural cooperation fits this nation's conditions better than an imported industrial model."
+    },
+    {
+      "id": "deve11",
+      "axis": "deve",
+      "core": false,
+      "effect": {
+        "deve": 8
+      },
+      "text": "Strengthening local, communal production is more sustainable than concentrating on industrial mega-projects."
+    },
+    {
+      "id": "deve12",
+      "axis": "deve",
+      "core": false,
+      "effect": {
+        "deve": 7
+      },
+      "text": "This nation's own agrarian and communal traditions offer a better development path than state-led industrialisation."
+    },
+    {
+      "id": "plur01",
+      "axis": "plur",
+      "core": true,
+      "effect": {
+        "plur": -10
+      },
+      "text": "A single party, or a strong personalist leader, is necessary to hold the nation together through the liberation struggle and after it."
+    },
+    {
+      "id": "plur02",
+      "axis": "plur",
+      "core": true,
+      "effect": {
+        "plur": -9
+      },
+      "text": "Multi-party competition, introduced too soon, risks fracturing a fragile post-liberation state along old colonial or ethnic lines."
+    },
+    {
+      "id": "plur03",
+      "axis": "plur",
+      "core": true,
+      "effect": {
+        "plur": -8
+      },
+      "text": "Unified leadership under one party or leader is what has actually delivered liberation in practice."
+    },
+    {
+      "id": "plur04",
+      "axis": "plur",
+      "core": false,
+      "effect": {
+        "plur": -10
+      },
+      "text": "The urgency of consolidating liberation justifies concentrating political authority for a time."
+    },
+    {
+      "id": "plur05",
+      "axis": "plur",
+      "core": false,
+      "effect": {
+        "plur": -8
+      },
+      "text": "Factional political competition is a luxury a newly liberated nation often cannot yet afford."
+    },
+    {
+      "id": "plur06",
+      "axis": "plur",
+      "core": false,
+      "effect": {
+        "plur": -7
+      },
+      "text": "A movement that fragments into competing parties too early tends to lose what it fought to win."
+    },
+    {
+      "id": "plur07",
+      "axis": "plur",
+      "core": true,
+      "effect": {
+        "plur": 10
+      },
+      "text": "Multi-party democracy and open political competition should be established as soon as liberation is achieved."
+    },
+    {
+      "id": "plur08",
+      "axis": "plur",
+      "core": true,
+      "effect": {
+        "plur": 9
+      },
+      "text": "Concentrating power in one party or leader, even temporarily, tends to become permanent and should be avoided."
+    },
+    {
+      "id": "plur09",
+      "axis": "plur",
+      "core": true,
+      "effect": {
+        "plur": 8
+      },
+      "text": "Genuine liberation includes the right of the people to remove their own leaders through open competition."
+    },
+    {
+      "id": "plur10",
+      "axis": "plur",
+      "core": false,
+      "effect": {
+        "plur": 10
+      },
+      "text": "A liberation movement should commit to pluralism as a core value, not a postponable luxury."
+    },
+    {
+      "id": "plur11",
+      "axis": "plur",
+      "core": false,
+      "effect": {
+        "plur": 8
+      },
+      "text": "Political competition after liberation is a source of legitimacy and correction, not a threat to be managed."
+    },
+    {
+      "id": "plur12",
+      "axis": "plur",
+      "core": false,
+      "effect": {
+        "plur": 7
+      },
+      "text": "Personalist or single-party rule, whatever its justification, tends to outlive the emergency that supposedly required it."
+    },
+    {
+      "id": "agen01",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": -10
+      },
+      "text": "This nation's own workers and peasants, organised around their material interests, are the true agents of liberation."
+    },
+    {
+      "id": "agen02",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": -9
+      },
+      "text": "Liberation has to serve the concrete interests of ordinary working people, not just national sovereignty in the abstract."
+    },
+    {
+      "id": "agen03",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": -8
+      },
+      "text": "Class interest within the nation shapes who actually benefits from liberation and who leads it."
+    },
+    {
+      "id": "agen04",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": -10
+      },
+      "text": "A liberation movement that ignores internal class inequality has left its work half done."
+    },
+    {
+      "id": "agen05",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": -8
+      },
+      "text": "The struggle against internal exploitation is as central to liberation as the struggle against foreign domination."
+    },
+    {
+      "id": "agen06",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": -7
+      },
+      "text": "Domestic elites who exploit their own people are as much an obstacle to liberation as any foreign power."
+    },
+    {
+      "id": "agen07",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": 10
+      },
+      "text": "The nation as a whole, uniting across classes against a common external enemy, is the true agent of liberation."
+    },
+    {
+      "id": "agen08",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": 9
+      },
+      "text": "Internal class conflict should be set aside while the more urgent struggle against imperialism is fought."
+    },
+    {
+      "id": "agen09",
+      "axis": "agen",
+      "core": true,
+      "effect": {
+        "agen": 8
+      },
+      "text": "Liberation is first and foremost a national project, not a class one."
+    },
+    {
+      "id": "agen10",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": 10
+      },
+      "text": "Emphasising class divisions within the nation weakens the unity liberation actually requires."
+    },
+    {
+      "id": "agen11",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": 8
+      },
+      "text": "The colonising or imperial power, not any internal class, is the movement's primary target."
+    },
+    {
+      "id": "agen12",
+      "axis": "agen",
+      "core": false,
+      "effect": {
+        "agen": 7
+      },
+      "text": "National unity against a common external enemy matters more right now than resolving internal class conflict."
+    }
+  ]
+}

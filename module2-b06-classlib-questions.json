@@ -1,0 +1,1066 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 6,
+    "bucket": "Classical / Market Liberalism",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "stat",
+      "name": "State & the Market",
+      "negPole": "Pure Laissez-Faire",
+      "posPole": "State Constructs the Market Order"
+    },
+    {
+      "key": "prop",
+      "name": "Property Theory",
+      "negPole": "Natural-Rights Absolutism",
+      "posPole": "Property as Social Convention"
+    },
+    {
+      "key": "epis",
+      "name": "Epistemic Method",
+      "negPole": "Deductive / Rationalist",
+      "posPole": "Empirical / Utilitarian"
+    },
+    {
+      "key": "demo",
+      "name": "Democracy",
+      "negPole": "Bind Democracy by Rules",
+      "posPole": "Trust Majoritarian Democracy"
+    },
+    {
+      "key": "soci",
+      "name": "Social Provision",
+      "negPole": "No Public Welfare",
+      "posPole": "Substantial Safety Net"
+    },
+    {
+      "key": "intl",
+      "name": "Trade Order",
+      "negPole": "Free-Trade Universalism",
+      "posPole": "Managed National Economic Sovereignty"
+    },
+    {
+      "key": "mora",
+      "name": "Moral Register",
+      "negPole": "Individualist / Egoist Ethics",
+      "posPole": "Civic Virtue & Moral Community"
+    },
+    {
+      "key": "corp",
+      "name": "Concentrated Capital",
+      "negPole": "Concentration Is Benign",
+      "posPole": "Private Power Must Be Broken Up"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Classical Liberalism (Locke, Smith)",
+      "umbrella": false,
+      "anchor": {
+        "stat": 68,
+        "prop": 28,
+        "epis": 87,
+        "demo": 30,
+        "soci": 81,
+        "intl": 29,
+        "mora": 81,
+        "corp": 66
+      }
+    },
+    {
+      "name": "Neoliberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 55,
+        "prop": 45,
+        "epis": 88,
+        "demo": 18,
+        "soci": 40,
+        "intl": 10,
+        "mora": 34,
+        "corp": 28
+      }
+    },
+    {
+      "name": "Ordoliberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 97,
+        "prop": 60,
+        "epis": 60,
+        "demo": 14,
+        "soci": 82,
+        "intl": 55,
+        "mora": 82,
+        "corp": 97
+      }
+    },
+    {
+      "name": "Manchester Liberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 2,
+        "prop": 20,
+        "epis": 72,
+        "demo": 62,
+        "soci": 12,
+        "intl": 0,
+        "mora": 30,
+        "corp": 40
+      }
+    },
+    {
+      "name": "Georgism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 60,
+        "prop": 99,
+        "epis": 42,
+        "demo": 78,
+        "soci": 70,
+        "intl": 24,
+        "mora": 62,
+        "corp": 80
+      }
+    },
+    {
+      "name": "Austrian School Liberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 8,
+        "prop": 8,
+        "epis": 2,
+        "demo": 24,
+        "soci": 10,
+        "intl": 18,
+        "mora": 26,
+        "corp": 18
+      }
+    },
+    {
+      "name": "Constitutional / Federalist Liberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 45,
+        "prop": 40,
+        "epis": 50,
+        "demo": 4,
+        "soci": 30,
+        "intl": 58,
+        "mora": 72,
+        "corp": 60
+      }
+    },
+    {
+      "name": "Objectivism (Rand)",
+      "umbrella": false,
+      "anchor": {
+        "stat": 5,
+        "prop": 0,
+        "epis": 4,
+        "demo": 10,
+        "soci": 0,
+        "intl": 26,
+        "mora": 0,
+        "corp": 0
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "stat01",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -10
+      },
+      "text": "The state's role should be strictly limited to enforcing contracts and protecting property, nothing more."
+    },
+    {
+      "id": "stat02",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -9
+      },
+      "text": "Even a well-designed regulatory state tends to distort markets more than it improves them."
+    },
+    {
+      "id": "stat03",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -8
+      },
+      "text": "The fewer functions government performs, the better markets tend to work."
+    },
+    {
+      "id": "stat04",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -10
+      },
+      "text": "Government should get out of the way of voluntary exchange as a general rule."
+    },
+    {
+      "id": "stat05",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -8
+      },
+      "text": "Regulation, however well-intentioned, usually ends up serving established interests over the public."
+    },
+    {
+      "id": "stat06",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -7
+      },
+      "text": "A minimal state, confined to defence and courts, is the ideal to aim toward."
+    },
+    {
+      "id": "stat07",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 10
+      },
+      "text": "A sound market order has to be actively constructed and maintained by appropriate state institutions, not simply left alone."
+    },
+    {
+      "id": "stat08",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 9
+      },
+      "text": "Competition policy and a strong legal framework are necessary conditions for markets to function well, not optional extras."
+    },
+    {
+      "id": "stat09",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 8
+      },
+      "text": "Government has a legitimate role in designing the rules that make fair competition possible."
+    },
+    {
+      "id": "stat10",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 10
+      },
+      "text": "Laissez-faire without a strong institutional framework tends to produce monopoly, not competition."
+    },
+    {
+      "id": "stat11",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 8
+      },
+      "text": "The state should actively shape market structure, not just step back and let outcomes happen."
+    },
+    {
+      "id": "stat12",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 7
+      },
+      "text": "Deliberately building the legal and institutional order of the market is itself a proper task of government."
+    },
+    {
+      "id": "prop01",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": -10
+      },
+      "text": "Property rights derive from an individual's labour and are prior to any decision by the state."
+    },
+    {
+      "id": "prop02",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": -9
+      },
+      "text": "What a person justly acquires through voluntary exchange, they are entitled to keep, full stop."
+    },
+    {
+      "id": "prop03",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": -8
+      },
+      "text": "Taxation beyond what's needed for basic state functions is a violation of property rights."
+    },
+    {
+      "id": "prop04",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": -10
+      },
+      "text": "Property rights should be treated as close to absolute, not subject to routine political adjustment."
+    },
+    {
+      "id": "prop05",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": -8
+      },
+      "text": "The right to property exists independently of whether society currently recognises or enforces it."
+    },
+    {
+      "id": "prop06",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": -7
+      },
+      "text": "Redistribution of justly acquired property is a form of taking, whatever social goal it serves."
+    },
+    {
+      "id": "prop07",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": 10
+      },
+      "text": "Property rights are a useful social convention, justified by their good consequences, not a natural entitlement."
+    },
+    {
+      "id": "prop08",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": 9
+      },
+      "text": "Whether a rule of property is respected should depend on whether it produces good outcomes, not on an abstract right."
+    },
+    {
+      "id": "prop09",
+      "axis": "prop",
+      "core": true,
+      "effect": {
+        "prop": 8
+      },
+      "text": "Land and unearned value should be treated differently from wealth actually produced by labour and enterprise."
+    },
+    {
+      "id": "prop10",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": 10
+      },
+      "text": "Society can legitimately redefine property arrangements when doing so improves overall welfare."
+    },
+    {
+      "id": "prop11",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": 8
+      },
+      "text": "Property rights are justified because they work, not because they're owed to anyone by nature."
+    },
+    {
+      "id": "prop12",
+      "axis": "prop",
+      "core": false,
+      "effect": {
+        "prop": 7
+      },
+      "text": "The value of a property system lies entirely in its practical benefits, which makes it open to revision."
+    },
+    {
+      "id": "epis01",
+      "axis": "epis",
+      "core": true,
+      "effect": {
+        "epis": -10
+      },
+      "text": "Economic truths can be established by logical deduction from basic axioms of human action, without needing statistical testing."
+    },
+    {
+      "id": "epis02",
+      "axis": "epis",
+      "core": true,
+      "effect": {
+        "epis": -9
+      },
+      "text": "Economics is fundamentally a deductive discipline, closer to logic than to empirical science."
+    },
+    {
+      "id": "epis03",
+      "axis": "epis",
+      "core": true,
+      "effect": {
+        "epis": -8
+      },
+      "text": "Attempts to mathematically model and test economic behaviour miss what's essential about individual human choice."
+    },
+    {
+      "id": "epis04",
+      "axis": "epis",
+      "core": false,
+      "effect": {
+        "epis": -10
+      },
+      "text": "Sound economic reasoning follows from first principles, and data can at most illustrate it, not establish it."
+    },
+    {
+      "id": "epis05",
+      "axis": "epis",
+      "core": false,
+      "effect": {
+        "epis": -8
+      },
+      "text": "The core truths of economics don't depend on statistical verification."
+    },
+    {
+      "id": "epis06",
+      "axis": "epis",
+      "core": false,
+      "effect": {
+        "epis": -7
+      },
+      "text": "Formal models that abstract from real human choice can mislead more than they clarify."
+    },
+    {
+      "id": "epis07",
+      "axis": "epis",
+      "core": true,
+      "effect": {
+        "epis": 10
+      },
+      "text": "Economic claims should be tested empirically and revised when the evidence doesn't support them."
+    },
+    {
+      "id": "epis08",
+      "axis": "epis",
+      "core": true,
+      "effect": {
+        "epis": 9
+      },
+      "text": "Economics should be treated like other sciences: hypotheses tested against data, not derived from axioms alone."
+    },
+    {
+      "id": "epis09",
+      "axis": "epis",
+      "core": true,
+      "effect": {
+        "epis": 8
+      },
+      "text": "Good policy follows from empirical study of what actually works, not from deducing conclusions from first principles."
+    },
+    {
+      "id": "epis10",
+      "axis": "epis",
+      "core": false,
+      "effect": {
+        "epis": 10
+      },
+      "text": "Statistical evidence should override abstract theoretical reasoning when the two conflict."
+    },
+    {
+      "id": "epis11",
+      "axis": "epis",
+      "core": false,
+      "effect": {
+        "epis": 8
+      },
+      "text": "Utilitarian calculation of costs and benefits is the right way to evaluate economic policy."
+    },
+    {
+      "id": "epis12",
+      "axis": "epis",
+      "core": false,
+      "effect": {
+        "epis": 7
+      },
+      "text": "Economic theory should be judged by its predictive accuracy, tested against real outcomes."
+    },
+    {
+      "id": "demo01",
+      "axis": "demo",
+      "core": true,
+      "effect": {
+        "demo": -10
+      },
+      "text": "Constitutional limits should bind what a democratic majority is permitted to legislate, especially over property and contract."
+    },
+    {
+      "id": "demo02",
+      "axis": "demo",
+      "core": true,
+      "effect": {
+        "demo": -9
+      },
+      "text": "Some economic rights should be placed beyond the reach of ordinary majority votes."
+    },
+    {
+      "id": "demo03",
+      "axis": "demo",
+      "core": true,
+      "effect": {
+        "demo": -8
+      },
+      "text": "Unrestrained democracy poses a real danger to individual liberty and property."
+    },
+    {
+      "id": "demo04",
+      "axis": "demo",
+      "core": false,
+      "effect": {
+        "demo": -10
+      },
+      "text": "A written constitution constraining economic policy protects liberty better than trusting each new majority."
+    },
+    {
+      "id": "demo05",
+      "axis": "demo",
+      "core": false,
+      "effect": {
+        "demo": -8
+      },
+      "text": "The risk of a democratic majority voting away individual rights is serious enough to justify strong constitutional limits."
+    },
+    {
+      "id": "demo06",
+      "axis": "demo",
+      "core": false,
+      "effect": {
+        "demo": -7
+      },
+      "text": "Judicial review that strikes down economically illiberal legislation is a legitimate check on democracy."
+    },
+    {
+      "id": "demo07",
+      "axis": "demo",
+      "core": true,
+      "effect": {
+        "demo": 10
+      },
+      "text": "Democratic majorities should have wide latitude to regulate the economy as they see fit."
+    },
+    {
+      "id": "demo08",
+      "axis": "demo",
+      "core": true,
+      "effect": {
+        "demo": 9
+      },
+      "text": "Trusting elected majorities to set economic policy is more legitimate than binding them with rigid constitutional limits."
+    },
+    {
+      "id": "demo09",
+      "axis": "demo",
+      "core": true,
+      "effect": {
+        "demo": 8
+      },
+      "text": "Constraining what voters can decide about the economy is itself a democratic problem, not a solution to one."
+    },
+    {
+      "id": "demo10",
+      "axis": "demo",
+      "core": false,
+      "effect": {
+        "demo": 10
+      },
+      "text": "Economic policy should be as responsive to shifting majorities as any other area of legislation."
+    },
+    {
+      "id": "demo11",
+      "axis": "demo",
+      "core": false,
+      "effect": {
+        "demo": 8
+      },
+      "text": "There's no special reason to wall off economic questions from ordinary democratic decision-making."
+    },
+    {
+      "id": "demo12",
+      "axis": "demo",
+      "core": false,
+      "effect": {
+        "demo": 7
+      },
+      "text": "A society is more legitimate when its economic rules can be changed by the people who live under them."
+    },
+    {
+      "id": "soci01",
+      "axis": "soci",
+      "core": true,
+      "effect": {
+        "soci": -10
+      },
+      "text": "There should be no state-run welfare programmes; charity and mutual aid should meet social needs."
+    },
+    {
+      "id": "soci02",
+      "axis": "soci",
+      "core": true,
+      "effect": {
+        "soci": -9
+      },
+      "text": "Public pensions, unemployment insurance, and similar programmes crowd out better private and voluntary alternatives."
+    },
+    {
+      "id": "soci03",
+      "axis": "soci",
+      "core": true,
+      "effect": {
+        "soci": -8
+      },
+      "text": "A safety net provided by the state creates dependency that voluntary provision would not."
+    },
+    {
+      "id": "soci04",
+      "axis": "soci",
+      "core": false,
+      "effect": {
+        "soci": -10
+      },
+      "text": "People are better served by private insurance and saving than by state welfare programmes."
+    },
+    {
+      "id": "soci05",
+      "axis": "soci",
+      "core": false,
+      "effect": {
+        "soci": -8
+      },
+      "text": "The state has no proper role in guaranteeing anyone's economic security."
+    },
+    {
+      "id": "soci06",
+      "axis": "soci",
+      "core": false,
+      "effect": {
+        "soci": -7
+      },
+      "text": "Welfare provision should be left entirely to families, churches, and voluntary associations."
+    },
+    {
+      "id": "soci07",
+      "axis": "soci",
+      "core": true,
+      "effect": {
+        "soci": 10
+      },
+      "text": "A basic social safety net is compatible with, and even strengthens, a market economy."
+    },
+    {
+      "id": "soci08",
+      "axis": "soci",
+      "core": true,
+      "effect": {
+        "soci": 9
+      },
+      "text": "Public provision of health, unemployment, and retirement security is a reasonable complement to markets, not a threat to them."
+    },
+    {
+      "id": "soci09",
+      "axis": "soci",
+      "core": true,
+      "effect": {
+        "soci": 8
+      },
+      "text": "A market economy is more politically sustainable when it's paired with real social insurance."
+    },
+    {
+      "id": "soci10",
+      "axis": "soci",
+      "core": false,
+      "effect": {
+        "soci": 10
+      },
+      "text": "There's no contradiction between believing in free markets and supporting a substantial welfare state."
+    },
+    {
+      "id": "soci11",
+      "axis": "soci",
+      "core": false,
+      "effect": {
+        "soci": 8
+      },
+      "text": "Universal basic protections make a market economy more resilient, not less efficient."
+    },
+    {
+      "id": "soci12",
+      "axis": "soci",
+      "core": false,
+      "effect": {
+        "soci": 7
+      },
+      "text": "A humane floor under market outcomes is compatible with a broadly free-market economy."
+    },
+    {
+      "id": "intl01",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": -10
+      },
+      "text": "Free trade, pursued unilaterally if necessary, benefits a country regardless of what other countries do."
+    },
+    {
+      "id": "intl02",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": -9
+      },
+      "text": "Tariffs and trade barriers virtually always make a country poorer than free trade would."
+    },
+    {
+      "id": "intl03",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": -8
+      },
+      "text": "Global economic integration should be pursued as an end in itself, not conditioned on reciprocity."
+    },
+    {
+      "id": "intl04",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": -10
+      },
+      "text": "Open borders for trade and capital produce better outcomes than managed trade policy."
+    },
+    {
+      "id": "intl05",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": -8
+      },
+      "text": "A country should not sacrifice free trade for the sake of protecting specific domestic industries."
+    },
+    {
+      "id": "intl06",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": -7
+      },
+      "text": "The gains from free trade outweigh the disruption it causes to particular sectors or regions."
+    },
+    {
+      "id": "intl07",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": 10
+      },
+      "text": "Trade policy should be actively managed to protect national economic capacity and strategic industries."
+    },
+    {
+      "id": "intl08",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": 9
+      },
+      "text": "A country is right to prioritise its own economic sovereignty over the gains from unrestricted trade."
+    },
+    {
+      "id": "intl09",
+      "axis": "intl",
+      "core": true,
+      "effect": {
+        "intl": 8
+      },
+      "text": "Reciprocity and strategic considerations should shape trade policy more than a general commitment to openness."
+    },
+    {
+      "id": "intl10",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": 10
+      },
+      "text": "Free trade agreements should be judged by their effect on domestic jobs and industry, not on principle alone."
+    },
+    {
+      "id": "intl11",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": 8
+      },
+      "text": "National economic self-sufficiency in key sectors is worth some sacrifice in overall efficiency."
+    },
+    {
+      "id": "intl12",
+      "axis": "intl",
+      "core": false,
+      "effect": {
+        "intl": 7
+      },
+      "text": "Blanket commitment to free trade underestimates the value of retaining domestic productive capacity."
+    },
+    {
+      "id": "mora01",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": -10
+      },
+      "text": "The pursuit of one's own rational self-interest is a legitimate, even admirable, guide to action."
+    },
+    {
+      "id": "mora02",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": -9
+      },
+      "text": "Individuals owe nothing to others beyond what they voluntarily choose to give."
+    },
+    {
+      "id": "mora03",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": -8
+      },
+      "text": "A society of people pursuing their own interests, without coerced obligation to each other, is a moral achievement."
+    },
+    {
+      "id": "mora04",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": -10
+      },
+      "text": "Altruism imposed as a duty is a corruption of genuine, voluntary generosity."
+    },
+    {
+      "id": "mora05",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": -8
+      },
+      "text": "Self-interest, properly understood, is compatible with and even productive of a flourishing society."
+    },
+    {
+      "id": "mora06",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": -7
+      },
+      "text": "There is no moral obligation to sacrifice one's own interests for the collective good."
+    },
+    {
+      "id": "mora07",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": 10
+      },
+      "text": "A functioning market economy still depends on habits of trust, restraint, and civic virtue that self-interest alone won't produce."
+    },
+    {
+      "id": "mora08",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": 9
+      },
+      "text": "Individual liberty has to be balanced by a sense of obligation to the community that sustains it."
+    },
+    {
+      "id": "mora09",
+      "axis": "mora",
+      "core": true,
+      "effect": {
+        "mora": 8
+      },
+      "text": "A purely self-interested citizenry would eventually undermine the institutions that let markets function."
+    },
+    {
+      "id": "mora10",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": 10
+      },
+      "text": "Virtues like honesty and restraint are civic goods that markets depend on but don't generate on their own."
+    },
+    {
+      "id": "mora11",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": 8
+      },
+      "text": "A healthy market order requires a moral culture that goes beyond simple self-interest."
+    },
+    {
+      "id": "mora12",
+      "axis": "mora",
+      "core": false,
+      "effect": {
+        "mora": 7
+      },
+      "text": "Liberty without a sense of duty to others tends to hollow out the community that liberty depends on."
+    },
+    {
+      "id": "corp01",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": 10
+      },
+      "text": "Large concentrations of private economic power rarely persist without abusing it, and should be broken up."
+    },
+    {
+      "id": "corp02",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": 9
+      },
+      "text": "Antitrust action against dominant firms is a legitimate and often necessary use of state power."
+    },
+    {
+      "id": "corp03",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": 8
+      },
+      "text": "Corporate concentration is as much a threat to a free market as government overreach is."
+    },
+    {
+      "id": "corp04",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": 10
+      },
+      "text": "Big business, left unchecked, tends to entrench itself against competition rather than earn its position through it."
+    },
+    {
+      "id": "corp05",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": 8
+      },
+      "text": "A market economy needs active measures against monopoly power to actually stay competitive."
+    },
+    {
+      "id": "corp06",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": 7
+      },
+      "text": "Unequal concentrations of private economic power can become a form of unaccountable rule."
+    },
+    {
+      "id": "corp07",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": -10
+      },
+      "text": "Market concentration achieved through genuine competitive success shouldn't be broken up by government fiat."
+    },
+    {
+      "id": "corp08",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": -9
+      },
+      "text": "The size of a firm isn't itself a problem as long as it succeeded through voluntary exchange."
+    },
+    {
+      "id": "corp09",
+      "axis": "corp",
+      "core": true,
+      "effect": {
+        "corp": -8
+      },
+      "text": "Antitrust intervention usually punishes efficiency and success rather than genuine abuse."
+    },
+    {
+      "id": "corp10",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": -10
+      },
+      "text": "Concerns about corporate concentration are usually overstated compared to the danger of government power."
+    },
+    {
+      "id": "corp11",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": -8
+      },
+      "text": "Large firms that serve customers well shouldn't be penalised just for being large."
+    },
+    {
+      "id": "corp12",
+      "axis": "corp",
+      "core": false,
+      "effect": {
+        "corp": -7
+      },
+      "text": "Government intervention against big business tends to do more economic harm than the concentration it targets."
+    }
+  ]
+}

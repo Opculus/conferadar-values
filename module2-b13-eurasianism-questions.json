@@ -1,0 +1,1080 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 13,
+    "bucket": "Neo-Eurasianism / Traditionalism",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "meta",
+      "name": "Metaphysical Ground",
+      "negPole": "Secular / Materialist Analysis",
+      "posPole": "Sacred Metaphysics & Cyclical Time"
+    },
+    {
+      "key": "unit",
+      "name": "Political Unit",
+      "negPole": "Ethnic Nation-State",
+      "posPole": "Multi-Ethnic Civilisation-Empire"
+    },
+    {
+      "key": "econ",
+      "name": "Economic Doctrine",
+      "negPole": "Anti-Capitalist / Socialising",
+      "posPole": "Market & Techno-Capital Embrace"
+    },
+    {
+      "key": "mode",
+      "name": "Modernity",
+      "negPole": "Accelerate Technology",
+      "posPole": "Reject Modernity Wholesale"
+    },
+    {
+      "key": "mass",
+      "name": "Political Method",
+      "negPole": "Elite / Esoteric Cadre",
+      "posPole": "Mass Mobilisation"
+    },
+    {
+      "key": "geop",
+      "name": "Geopolitical Orientation",
+      "negPole": "Atlanticist or Indifferent",
+      "posPole": "Militant Anti-Atlanticism"
+    },
+    {
+      "key": "spec",
+      "name": "Religious Form",
+      "negPole": "Single Confessional Truth Claim",
+      "posPole": "Perennialist / Multi-Confessional"
+    },
+    {
+      "key": "race",
+      "name": "Basis of Belonging",
+      "negPole": "Culture & Faith",
+      "posPole": "Biological Race"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Duginism / Fourth Political Theory",
+      "umbrella": false,
+      "anchor": {
+        "meta": 90,
+        "unit": 98,
+        "econ": 25,
+        "mode": 60,
+        "mass": 60,
+        "geop": 100,
+        "spec": 85,
+        "race": 15
+      }
+    },
+    {
+      "name": "Classical Eurasianism (Trubetzkoy)",
+      "umbrella": false,
+      "anchor": {
+        "meta": 60,
+        "unit": 95,
+        "econ": 35,
+        "mode": 55,
+        "mass": 30,
+        "geop": 90,
+        "spec": 40,
+        "race": 10
+      }
+    },
+    {
+      "name": "Integral Traditionalism (Guenon, Evola)",
+      "umbrella": false,
+      "anchor": {
+        "meta": 100,
+        "unit": 60,
+        "econ": 40,
+        "mode": 100,
+        "mass": 0,
+        "geop": 45,
+        "spec": 90,
+        "race": 50
+      }
+    },
+    {
+      "name": "Conservative Revolution (Weimar)",
+      "umbrella": false,
+      "anchor": {
+        "meta": 45,
+        "unit": 45,
+        "econ": 30,
+        "mode": 30,
+        "mass": 55,
+        "geop": 65,
+        "spec": 60,
+        "race": 35
+      }
+    },
+    {
+      "name": "National Bolshevism",
+      "umbrella": false,
+      "anchor": {
+        "meta": 25,
+        "unit": 60,
+        "econ": 5,
+        "mode": 35,
+        "mass": 95,
+        "geop": 92,
+        "spec": 65,
+        "race": 30
+      }
+    },
+    {
+      "name": "Identitarianism / European New Right",
+      "umbrella": false,
+      "anchor": {
+        "meta": 40,
+        "unit": 55,
+        "econ": 35,
+        "mode": 55,
+        "mass": 25,
+        "geop": 70,
+        "spec": 75,
+        "race": 78
+      }
+    },
+    {
+      "name": "Neo-Reaction / Dark Enlightenment",
+      "umbrella": false,
+      "anchor": {
+        "meta": 15,
+        "unit": 20,
+        "econ": 80,
+        "mode": 15,
+        "mass": 3,
+        "geop": 20,
+        "spec": 55,
+        "race": 82
+      }
+    },
+    {
+      "name": "Neoreactionary Techno-Commercialism",
+      "umbrella": false,
+      "anchor": {
+        "meta": 5,
+        "unit": 5,
+        "econ": 100,
+        "mode": 0,
+        "mass": 5,
+        "geop": 10,
+        "spec": 60,
+        "race": 60
+      }
+    },
+    {
+      "name": "Traditionalist Catholicism",
+      "umbrella": false,
+      "anchor": {
+        "meta": 98,
+        "unit": 70,
+        "econ": 45,
+        "mode": 75,
+        "mass": 25,
+        "geop": 35,
+        "spec": 0,
+        "race": 5
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "meta01",
+      "axis": "meta",
+      "core": true,
+      "effect": {
+        "meta": 10
+      },
+      "text": "There is a sacred, cyclical order underlying history that modern secular thought has lost sight of."
+    },
+    {
+      "id": "meta02",
+      "axis": "meta",
+      "core": true,
+      "effect": {
+        "meta": 9
+      },
+      "text": "The modern world represents a spiritual decline from an earlier, higher civilisational order."
+    },
+    {
+      "id": "meta03",
+      "axis": "meta",
+      "core": true,
+      "effect": {
+        "meta": 8
+      },
+      "text": "Metaphysical truth, not empirical analysis, is the proper foundation for understanding politics and history."
+    },
+    {
+      "id": "meta04",
+      "axis": "meta",
+      "core": false,
+      "effect": {
+        "meta": 10
+      },
+      "text": "Ancient and traditional societies possessed a spiritual wisdom that modern rationalism cannot recover on its own terms."
+    },
+    {
+      "id": "meta05",
+      "axis": "meta",
+      "core": false,
+      "effect": {
+        "meta": 8
+      },
+      "text": "Restoring a sense of the sacred is a precondition for any real political renewal."
+    },
+    {
+      "id": "meta06",
+      "axis": "meta",
+      "core": false,
+      "effect": {
+        "meta": 7
+      },
+      "text": "History moves through cycles of ascent and decline, not the linear progress modern thought assumes."
+    },
+    {
+      "id": "meta07",
+      "axis": "meta",
+      "core": true,
+      "effect": {
+        "meta": -10
+      },
+      "text": "Politics and history should be understood through material and secular analysis, not sacred or cyclical metaphysics."
+    },
+    {
+      "id": "meta08",
+      "axis": "meta",
+      "core": true,
+      "effect": {
+        "meta": -9
+      },
+      "text": "Talk of spiritual decline and sacred order is a poor substitute for concrete social and economic analysis."
+    },
+    {
+      "id": "meta09",
+      "axis": "meta",
+      "core": true,
+      "effect": {
+        "meta": -8
+      },
+      "text": "Modern secular reasoning, whatever its limits, remains the soundest basis for understanding society."
+    },
+    {
+      "id": "meta10",
+      "axis": "meta",
+      "core": false,
+      "effect": {
+        "meta": -10
+      },
+      "text": "Appeals to cyclical time and metaphysical decline explain little that materialist analysis doesn't explain better."
+    },
+    {
+      "id": "meta11",
+      "axis": "meta",
+      "core": false,
+      "effect": {
+        "meta": -8
+      },
+      "text": "A political movement grounded in mysticism trades clarity for evocative but empty language."
+    },
+    {
+      "id": "meta12",
+      "axis": "meta",
+      "core": false,
+      "effect": {
+        "meta": -7
+      },
+      "text": "Historical change is better explained by material conditions than by any sacred or cyclical pattern."
+    },
+    {
+      "id": "unit01",
+      "axis": "unit",
+      "core": true,
+      "effect": {
+        "unit": 10
+      },
+      "text": "A civilisation-state uniting many peoples and languages under one pole is a more natural unit than the ethnic nation-state."
+    },
+    {
+      "id": "unit02",
+      "axis": "unit",
+      "core": true,
+      "effect": {
+        "unit": 9
+      },
+      "text": "Political unity should be organised around a whole civilisation, not a single ethnic nation."
+    },
+    {
+      "id": "unit03",
+      "axis": "unit",
+      "core": true,
+      "effect": {
+        "unit": 8
+      },
+      "text": "The nation-state is too small and too recent a form to be the proper unit of political loyalty."
+    },
+    {
+      "id": "unit04",
+      "axis": "unit",
+      "core": false,
+      "effect": {
+        "unit": 10
+      },
+      "text": "Different peoples within one civilisational bloc can and should share a common political destiny."
+    },
+    {
+      "id": "unit05",
+      "axis": "unit",
+      "core": false,
+      "effect": {
+        "unit": 8
+      },
+      "text": "A multi-ethnic empire, organised around a shared civilisational mission, is preferable to a mosaic of separate nation-states."
+    },
+    {
+      "id": "unit06",
+      "axis": "unit",
+      "core": false,
+      "effect": {
+        "unit": 7
+      },
+      "text": "The true political unit is the civilisation, encompassing many ethnicities bound by a shared spiritual and geopolitical destiny."
+    },
+    {
+      "id": "unit07",
+      "axis": "unit",
+      "core": true,
+      "effect": {
+        "unit": -10
+      },
+      "text": "The ethnic nation-state, bounded and homogeneous, is the proper and sufficient unit of political loyalty."
+    },
+    {
+      "id": "unit08",
+      "axis": "unit",
+      "core": true,
+      "effect": {
+        "unit": -9
+      },
+      "text": "A political order should rest on a single people sharing one language, culture, and territory, not a sprawling multi-ethnic bloc."
+    },
+    {
+      "id": "unit09",
+      "axis": "unit",
+      "core": true,
+      "effect": {
+        "unit": -8
+      },
+      "text": "Large multi-ethnic civilisational projects tend to dilute rather than strengthen any one people's identity."
+    },
+    {
+      "id": "unit10",
+      "axis": "unit",
+      "core": false,
+      "effect": {
+        "unit": -10
+      },
+      "text": "The nation-state remains the right scale for genuine self-government, not a vast civilisational union."
+    },
+    {
+      "id": "unit11",
+      "axis": "unit",
+      "core": false,
+      "effect": {
+        "unit": -8
+      },
+      "text": "Loyalty to one's own ethnic nation should take priority over any broader civilisational project."
+    },
+    {
+      "id": "unit12",
+      "axis": "unit",
+      "core": false,
+      "effect": {
+        "unit": -7
+      },
+      "text": "A homogeneous nation-state is a sounder political foundation than a sprawling multi-ethnic empire."
+    },
+    {
+      "id": "econ01",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -10
+      },
+      "text": "Global capital and finance are instruments of a hostile, homogenising world order that has to be resisted."
+    },
+    {
+      "id": "econ02",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -9
+      },
+      "text": "The economy should be subordinated to the civilisation's spiritual and geopolitical goals, not run for profit alone."
+    },
+    {
+      "id": "econ03",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -8
+      },
+      "text": "Socialising or restraining capital is a legitimate and necessary part of resisting Western economic domination."
+    },
+    {
+      "id": "econ04",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -10
+      },
+      "text": "A traditional civilisation should reject the atomising, profit-driven logic of global capitalism."
+    },
+    {
+      "id": "econ05",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -8
+      },
+      "text": "Economic policy should serve the community's traditional and spiritual cohesion, even at a cost to growth."
+    },
+    {
+      "id": "econ06",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -7
+      },
+      "text": "Market capitalism, as much as liberal democracy, is part of the modern order that has to be transcended."
+    },
+    {
+      "id": "econ07",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 10
+      },
+      "text": "Markets and technological capital, embraced rather than restrained, are the real engines of civilisational strength today."
+    },
+    {
+      "id": "econ08",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 9
+      },
+      "text": "Trying to socialise or restrain capital wastes energy that should go toward technological and economic dynamism."
+    },
+    {
+      "id": "econ09",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 8
+      },
+      "text": "A civilisation that rejects market capitalism will simply fall behind those that embrace it."
+    },
+    {
+      "id": "econ10",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 10
+      },
+      "text": "Economic dynamism and technological capital should be harnessed, not treated as a spiritual threat."
+    },
+    {
+      "id": "econ11",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 8
+      },
+      "text": "Restraining capital in the name of tradition is a losing strategy against more economically dynamic rivals."
+    },
+    {
+      "id": "econ12",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 7
+      },
+      "text": "Embracing technological capitalism is compatible with, and can even serve, a civilisation's larger ambitions."
+    },
+    {
+      "id": "mode01",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": -10
+      },
+      "text": "Modern technology and industry should be accelerated and mastered, not rejected, in the service of the civilisation's goals."
+    },
+    {
+      "id": "mode02",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": -9
+      },
+      "text": "A movement that rejects modern technology cedes real power to its rivals for no spiritual gain."
+    },
+    {
+      "id": "mode03",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": -8
+      },
+      "text": "Harnessing modern industrial and technological capacity is compatible with restoring a traditional spiritual order."
+    },
+    {
+      "id": "mode04",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": -10
+      },
+      "text": "The tools of modernity can be turned against modernity's own corrosive effects."
+    },
+    {
+      "id": "mode05",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": -8
+      },
+      "text": "Refusing technological development in the name of tradition is a strategic mistake."
+    },
+    {
+      "id": "mode06",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": -7
+      },
+      "text": "A civilisation strong enough to resist the modern order will need modern technological capacity to do it."
+    },
+    {
+      "id": "mode07",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": 10
+      },
+      "text": "Modernity itself, not just its excesses, has to be rejected in favour of a return to pre-modern order."
+    },
+    {
+      "id": "mode08",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": 9
+      },
+      "text": "Technological acceleration is part of the problem, not a tool that can be safely turned to traditional ends."
+    },
+    {
+      "id": "mode09",
+      "axis": "mode",
+      "core": true,
+      "effect": {
+        "mode": 8
+      },
+      "text": "A genuine return to sacred order means stepping outside modernity's logic altogether, not just redirecting its tools."
+    },
+    {
+      "id": "mode10",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": 10
+      },
+      "text": "The traditional world's real strength lay in what it refused to become, not in what technology it could master."
+    },
+    {
+      "id": "mode11",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": 8
+      },
+      "text": "Trying to use modern technology for anti-modern ends ends up serving modernity after all."
+    },
+    {
+      "id": "mode12",
+      "axis": "mode",
+      "core": false,
+      "effect": {
+        "mode": 7
+      },
+      "text": "A wholesale rejection of the modern technological order is the only consistent traditionalist position."
+    },
+    {
+      "id": "mass01",
+      "axis": "mass",
+      "core": true,
+      "effect": {
+        "mass": -10
+      },
+      "text": "Political change should come through a small, disciplined elite that understands the deeper metaphysical stakes."
+    },
+    {
+      "id": "mass02",
+      "axis": "mass",
+      "core": true,
+      "effect": {
+        "mass": -9
+      },
+      "text": "The masses cannot be relied on to grasp the civilisation's true spiritual mission; that task belongs to an initiated few."
+    },
+    {
+      "id": "mass03",
+      "axis": "mass",
+      "core": true,
+      "effect": {
+        "mass": -8
+      },
+      "text": "An esoteric cadre, not a popular movement, is the proper vehicle for restoring traditional order."
+    },
+    {
+      "id": "mass04",
+      "axis": "mass",
+      "core": false,
+      "effect": {
+        "mass": -10
+      },
+      "text": "Mass democratic mobilisation dilutes and distorts a project that depends on deeper understanding."
+    },
+    {
+      "id": "mass05",
+      "axis": "mass",
+      "core": false,
+      "effect": {
+        "mass": -8
+      },
+      "text": "Real civilisational change is driven from above, by those who understand what's actually at stake."
+    },
+    {
+      "id": "mass06",
+      "axis": "mass",
+      "core": false,
+      "effect": {
+        "mass": -7
+      },
+      "text": "A movement's core should remain a small circle of the genuinely initiated, whatever its public face looks like."
+    },
+    {
+      "id": "mass07",
+      "axis": "mass",
+      "core": true,
+      "effect": {
+        "mass": 10
+      },
+      "text": "A civilisational project needs mass mobilisation and popular energy to have any real political force."
+    },
+    {
+      "id": "mass08",
+      "axis": "mass",
+      "core": true,
+      "effect": {
+        "mass": 9
+      },
+      "text": "Confining the movement to a small elite cuts it off from the popular base it needs to actually win power."
+    },
+    {
+      "id": "mass09",
+      "axis": "mass",
+      "core": true,
+      "effect": {
+        "mass": 8
+      },
+      "text": "The people themselves, mobilised at scale, are the true engine of any lasting political transformation."
+    },
+    {
+      "id": "mass10",
+      "axis": "mass",
+      "core": false,
+      "effect": {
+        "mass": 10
+      },
+      "text": "A movement that stays purely esoteric will never build the popular strength to challenge the existing order."
+    },
+    {
+      "id": "mass11",
+      "axis": "mass",
+      "core": false,
+      "effect": {
+        "mass": 8
+      },
+      "text": "Mass parties and popular movements, not secret circles, are what actually reshape a civilisation's politics."
+    },
+    {
+      "id": "mass12",
+      "axis": "mass",
+      "core": false,
+      "effect": {
+        "mass": 7
+      },
+      "text": "Broad popular mobilisation is more decisive for real change than any elite vanguard's understanding."
+    },
+    {
+      "id": "geop01",
+      "axis": "geop",
+      "core": true,
+      "effect": {
+        "geop": 10
+      },
+      "text": "Confronting and undermining the Atlantic, US-led world order is a central strategic goal."
+    },
+    {
+      "id": "geop02",
+      "axis": "geop",
+      "core": true,
+      "effect": {
+        "geop": 9
+      },
+      "text": "The civilisation's core geopolitical task is building a multipolar order against a single dominant Atlanticist power."
+    },
+    {
+      "id": "geop03",
+      "axis": "geop",
+      "core": true,
+      "effect": {
+        "geop": 8
+      },
+      "text": "Alliance with any power willing to oppose Atlanticist dominance is strategically justified."
+    },
+    {
+      "id": "geop04",
+      "axis": "geop",
+      "core": false,
+      "effect": {
+        "geop": 10
+      },
+      "text": "The struggle between land-based and sea-based powers is the deep structure of world politics today."
+    },
+    {
+      "id": "geop05",
+      "axis": "geop",
+      "core": false,
+      "effect": {
+        "geop": 8
+      },
+      "text": "Undermining the unipolar Western order is worth pursuing even through unconventional or destabilising means."
+    },
+    {
+      "id": "geop06",
+      "axis": "geop",
+      "core": false,
+      "effect": {
+        "geop": 7
+      },
+      "text": "A genuinely traditional civilisation has to actively work to break Atlanticist global dominance."
+    },
+    {
+      "id": "geop07",
+      "axis": "geop",
+      "core": true,
+      "effect": {
+        "geop": -10
+      },
+      "text": "There is no special civilisational struggle against the Atlantic order; geopolitics should be judged case by case."
+    },
+    {
+      "id": "geop08",
+      "axis": "geop",
+      "core": true,
+      "effect": {
+        "geop": -9
+      },
+      "text": "Treating the West as a permanent civilisational enemy oversimplifies a more ordinary set of national interests."
+    },
+    {
+      "id": "geop09",
+      "axis": "geop",
+      "core": true,
+      "effect": {
+        "geop": -8
+      },
+      "text": "A traditionalist movement doesn't need a grand anti-Atlanticist strategy to pursue its actual goals."
+    },
+    {
+      "id": "geop10",
+      "axis": "geop",
+      "core": false,
+      "effect": {
+        "geop": -10
+      },
+      "text": "Practical cooperation with Western powers, where interests align, shouldn't be ruled out on civilisational grounds."
+    },
+    {
+      "id": "geop11",
+      "axis": "geop",
+      "core": false,
+      "effect": {
+        "geop": -8
+      },
+      "text": "Geopolitical alignment should follow specific national interest, not a fixed land-versus-sea civilisational theory."
+    },
+    {
+      "id": "geop12",
+      "axis": "geop",
+      "core": false,
+      "effect": {
+        "geop": -7
+      },
+      "text": "Framing world politics as a land-power versus sea-power struggle adds mysticism without adding insight."
+    },
+    {
+      "id": "spec01",
+      "axis": "spec",
+      "core": true,
+      "effect": {
+        "spec": 10
+      },
+      "text": "Different religious traditions express the same underlying sacred truth in different cultural forms."
+    },
+    {
+      "id": "spec02",
+      "axis": "spec",
+      "core": true,
+      "effect": {
+        "spec": 9
+      },
+      "text": "A traditionalist movement can draw on multiple confessional traditions without being bound to just one."
+    },
+    {
+      "id": "spec03",
+      "axis": "spec",
+      "core": true,
+      "effect": {
+        "spec": 8
+      },
+      "text": "The perennial wisdom beneath all the great religions matters more than any single confession's specific doctrine."
+    },
+    {
+      "id": "spec04",
+      "axis": "spec",
+      "core": false,
+      "effect": {
+        "spec": 10
+      },
+      "text": "A civilisational project can unite believers of different faiths around a shared sense of the sacred."
+    },
+    {
+      "id": "spec05",
+      "axis": "spec",
+      "core": false,
+      "effect": {
+        "spec": 8
+      },
+      "text": "Orthodoxy, Islam, and other traditions can be treated as parallel expressions of one deeper truth."
+    },
+    {
+      "id": "spec06",
+      "axis": "spec",
+      "core": false,
+      "effect": {
+        "spec": 7
+      },
+      "text": "Confessional differences matter less than a shared commitment to sacred order against secular modernity."
+    },
+    {
+      "id": "spec07",
+      "axis": "spec",
+      "core": true,
+      "effect": {
+        "spec": -10
+      },
+      "text": "One specific confessional tradition holds the truth, and other traditions cannot simply be treated as equivalent to it."
+    },
+    {
+      "id": "spec08",
+      "axis": "spec",
+      "core": true,
+      "effect": {
+        "spec": -9
+      },
+      "text": "A movement should be rooted in one particular faith, not a syncretic blend of many traditions."
+    },
+    {
+      "id": "spec09",
+      "axis": "spec",
+      "core": true,
+      "effect": {
+        "spec": -8
+      },
+      "text": "Treating all religions as interchangeable expressions of one truth dilutes what makes any one of them true."
+    },
+    {
+      "id": "spec10",
+      "axis": "spec",
+      "core": false,
+      "effect": {
+        "spec": -10
+      },
+      "text": "Genuine religious commitment means fidelity to one specific tradition, not a perennialist synthesis of many."
+    },
+    {
+      "id": "spec11",
+      "axis": "spec",
+      "core": false,
+      "effect": {
+        "spec": -8
+      },
+      "text": "A civilisational movement should be explicit about which single faith it stands for."
+    },
+    {
+      "id": "spec12",
+      "axis": "spec",
+      "core": false,
+      "effect": {
+        "spec": -7
+      },
+      "text": "Perennialist blending of religions tends to produce a vague spirituality rather than a real faith."
+    },
+    {
+      "id": "race01",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": -10
+      },
+      "text": "What defines a people is their shared culture and faith, not their biological ancestry."
+    },
+    {
+      "id": "race02",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": -9
+      },
+      "text": "Civilisational belonging is a matter of adopting a shared tradition, not a matter of blood."
+    },
+    {
+      "id": "race03",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": -8
+      },
+      "text": "Race is a poor and reductive way to describe what actually holds a civilisation together."
+    },
+    {
+      "id": "race04",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": -10
+      },
+      "text": "Peoples of different ancestries can share fully in one civilisational and spiritual project."
+    },
+    {
+      "id": "race05",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": -8
+      },
+      "text": "Cultural and religious conversion, not ancestry, is what should determine who belongs."
+    },
+    {
+      "id": "race06",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": -7
+      },
+      "text": "A civilisational identity organised around shared faith and culture is more coherent than one organised around race."
+    },
+    {
+      "id": "race07",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": 10
+      },
+      "text": "Biological race is the deeper reality beneath a people's culture, faith, and history."
+    },
+    {
+      "id": "race08",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": 9
+      },
+      "text": "Preserving racial identity is a legitimate and necessary part of preserving a people's civilisation."
+    },
+    {
+      "id": "race09",
+      "axis": "race",
+      "core": true,
+      "effect": {
+        "race": 8
+      },
+      "text": "Cultural belonging, without a racial foundation, is too thin to hold a civilisation together over time."
+    },
+    {
+      "id": "race10",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": 10
+      },
+      "text": "A people's biological continuity underlies and grounds everything else about its identity."
+    },
+    {
+      "id": "race11",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": 8
+      },
+      "text": "Racial mixing dilutes the deeper biological foundation a civilisation's identity actually rests on."
+    },
+    {
+      "id": "race12",
+      "axis": "race",
+      "core": false,
+      "effect": {
+        "race": 7
+      },
+      "text": "Blood and descent remain the truest markers of who belongs to a civilisation, whatever culture claims."
+    }
+  ]
+}

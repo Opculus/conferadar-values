@@ -1,0 +1,1109 @@
+{
+  "meta": {
+    "module": 1,
+    "name": "Bucket Test",
+    "version": "0.2-draft",
+    "questionCount": 94,
+    "shortFormCount": 50,
+    "purpose": "Route respondent into one of 13 ideological family buckets via 6 structural axes. Cultural axis is measured but NEVER used for routing.",
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)",
+      "note": "Positive effect pulls toward the SECOND pole named in the axis label. Every axis is keyed-balanced: positive-keyed magnitudes sum exactly equal to negative-keyed magnitudes, so an all-neutral respondent lands at exactly 50 on every axis."
+    },
+    "routing": {
+      "method": "euclidean",
+      "description": "Compute Euclidean distance between the respondent's 6-axis vector and each bucket anchor vector below. Lowest distance wins. Report the top 3 with match percentages so near-ties are visible.",
+      "matchPercent": "100 * (1 - distance / maxPossibleDistance), maxPossibleDistance = sqrt(6 * 100^2) = 244.9",
+      "anchorsStatus": "v0.2 - retuned. Min pairwise separation 36.1 (was 15.0). Monte Carlo self-routing at sigma=15 noise: 86.1% (was 78.2%)."
+    },
+    "designRules": [
+      "Axis-pure: no question loads onto more than one routing axis. Keeps the distance metric honest and makes misroutes debuggable.",
+      "Keyed-balanced: half the items on each axis are reverse-keyed, to control acquiescence bias.",
+      "Graded weights (7-10), not a flat 10 like 8values. Weaker discriminators carry less.",
+      "No consensus statements. Every item should split respondents; if nearly everyone agrees, it carries no information.",
+      "Legitimacy measures the SOURCE OF POLITICAL AUTHORITY (divine law vs human law), never personal piety or cultural conservatism. This is 8values' single biggest design error - it fused religion and traditionalism into one axis.",
+      "Cultural axis is a separate appendage stat, orthogonal by design, excluded from all routing math."
+    ],
+    "presentation": "Questions are stored grouped by axis for maintainability. The app should SHUFFLE them (fixed seed for reproducible share-links) so consecutive items don't come from the same axis - grouped presentation invites response sets."
+  },
+  "axes": {
+    "econ": {
+      "name": "Economic",
+      "negPole": "Equality",
+      "posPole": "Markets",
+      "routing": true
+    },
+    "auth": {
+      "name": "Authority",
+      "negPole": "Liberty",
+      "posPole": "Authority",
+      "routing": true
+    },
+    "soli": {
+      "name": "Solidarity Basis",
+      "negPole": "Class",
+      "posPole": "Nation",
+      "routing": true
+    },
+    "chng": {
+      "name": "Change Orientation",
+      "negPole": "Revolutionary",
+      "posPole": "Reactionary",
+      "routing": true
+    },
+    "legi": {
+      "name": "Legitimacy",
+      "negPole": "Secular",
+      "posPole": "Religious",
+      "routing": true
+    },
+    "impe": {
+      "name": "Imperial Orientation",
+      "negPole": "Anti-imperialist",
+      "posPole": "Expansionist",
+      "routing": true
+    },
+    "cult": {
+      "name": "Cultural",
+      "negPole": "Traditionalist",
+      "posPole": "Progressive",
+      "routing": false
+    }
+  },
+  "buckets": [
+    {
+      "id": 1,
+      "name": "Marxism-Leninism / Communism",
+      "anchor": {
+        "econ": 18,
+        "auth": 78,
+        "soli": 18,
+        "chng": 22,
+        "legi": 8,
+        "impe": 18
+      }
+    },
+    {
+      "id": 2,
+      "name": "Left-Communism / Communization",
+      "anchor": {
+        "econ": 3,
+        "auth": 25,
+        "soli": 3,
+        "chng": 3,
+        "legi": 3,
+        "impe": 22
+      }
+    },
+    {
+      "id": 3,
+      "name": "Anarchism",
+      "anchor": {
+        "econ": 18,
+        "auth": 4,
+        "soli": 22,
+        "chng": 12,
+        "legi": 15,
+        "impe": 15
+      }
+    },
+    {
+      "id": 4,
+      "name": "Social Democracy / Dem. Socialism",
+      "anchor": {
+        "econ": 26,
+        "auth": 45,
+        "soli": 22,
+        "chng": 58,
+        "legi": 22,
+        "impe": 36
+      }
+    },
+    {
+      "id": 5,
+      "name": "Progressive / Social Liberalism",
+      "anchor": {
+        "econ": 48,
+        "auth": 30,
+        "soli": 48,
+        "chng": 55,
+        "legi": 12,
+        "impe": 52
+      }
+    },
+    {
+      "id": 6,
+      "name": "Classical / Market Liberalism",
+      "anchor": {
+        "econ": 88,
+        "auth": 24,
+        "soli": 45,
+        "chng": 65,
+        "legi": 18,
+        "impe": 48
+      }
+    },
+    {
+      "id": 7,
+      "name": "Conservatism",
+      "anchor": {
+        "econ": 70,
+        "auth": 62,
+        "soli": 66,
+        "chng": 80,
+        "legi": 58,
+        "impe": 52
+      }
+    },
+    {
+      "id": 8,
+      "name": "Fascism / Third Position",
+      "anchor": {
+        "econ": 52,
+        "auth": 96,
+        "soli": 92,
+        "chng": 48,
+        "legi": 38,
+        "impe": 88
+      }
+    },
+    {
+      "id": 9,
+      "name": "Monarchism / Reaction",
+      "anchor": {
+        "econ": 70,
+        "auth": 90,
+        "soli": 52,
+        "chng": 96,
+        "legi": 74,
+        "impe": 45
+      }
+    },
+    {
+      "id": 10,
+      "name": "Theocracy / Religious Fundamentalism",
+      "anchor": {
+        "econ": 48,
+        "auth": 85,
+        "soli": 42,
+        "chng": 72,
+        "legi": 96,
+        "impe": 55
+      }
+    },
+    {
+      "id": 11,
+      "name": "Anarcho-Capitalism / Right-Lib.",
+      "anchor": {
+        "econ": 98,
+        "auth": 4,
+        "soli": 28,
+        "chng": 52,
+        "legi": 15,
+        "impe": 28
+      }
+    },
+    {
+      "id": 12,
+      "name": "Third-Worldism / National Liberation",
+      "anchor": {
+        "econ": 22,
+        "auth": 58,
+        "soli": 68,
+        "chng": 18,
+        "legi": 32,
+        "impe": 8
+      }
+    },
+    {
+      "id": 13,
+      "name": "Neo-Eurasianism / Traditionalism",
+      "anchor": {
+        "econ": 55,
+        "auth": 82,
+        "soli": 75,
+        "chng": 88,
+        "legi": 66,
+        "impe": 78
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "auth01",
+      "axis": "auth",
+      "core": true,
+      "effect": {
+        "auth": 10
+      },
+      "text": "A single disciplined organisation must hold decisive power during a period of transformation."
+    },
+    {
+      "id": "auth02",
+      "axis": "auth",
+      "core": true,
+      "effect": {
+        "auth": 10
+      },
+      "text": "Political opposition can legitimately be banned when it threatens the established order."
+    },
+    {
+      "id": "auth03",
+      "axis": "auth",
+      "core": false,
+      "effect": {
+        "auth": 8
+      },
+      "text": "The state is right to use surveillance against organised internal enemies."
+    },
+    {
+      "id": "auth04",
+      "axis": "auth",
+      "core": false,
+      "effect": {
+        "auth": 9
+      },
+      "text": "A centralised command structure is more effective than any assembly or council."
+    },
+    {
+      "id": "auth05",
+      "axis": "auth",
+      "core": true,
+      "effect": {
+        "auth": 8
+      },
+      "text": "Ordinary people generally lack the information needed to decide major questions of state directly."
+    },
+    {
+      "id": "auth06",
+      "axis": "auth",
+      "core": true,
+      "effect": {
+        "auth": 9
+      },
+      "text": "Coercion by the state is a normal instrument of rule, not a regrettable exception."
+    },
+    {
+      "id": "auth07",
+      "axis": "auth",
+      "core": false,
+      "effect": {
+        "auth": 7
+      },
+      "text": "Discipline and obedience are more valuable civic qualities than dissent."
+    },
+    {
+      "id": "auth08",
+      "axis": "auth",
+      "core": false,
+      "effect": {
+        "auth": 9
+      },
+      "text": "A single leader holding wide personal authority serves a country better than rule by committee."
+    },
+    {
+      "id": "auth09",
+      "axis": "auth",
+      "core": true,
+      "effect": {
+        "auth": -10
+      },
+      "text": "All political power should be exercised by delegates who can be recalled at any moment."
+    },
+    {
+      "id": "auth10",
+      "axis": "auth",
+      "core": true,
+      "effect": {
+        "auth": -10
+      },
+      "text": "No permanent body of officials should be allowed to exist above the population."
+    },
+    {
+      "id": "auth11",
+      "axis": "auth",
+      "core": false,
+      "effect": {
+        "auth": -10
+      },
+      "text": "Any concentration of coercive power reproduces domination regardless of who holds it."
+    },
+    {
+      "id": "auth12",
+      "axis": "auth",
+      "core": true,
+      "effect": {
+        "auth": -9
+      },
+      "text": "Decisions should be made by federated local assemblies rather than a central authority."
+    },
+    {
+      "id": "auth13",
+      "axis": "auth",
+      "core": true,
+      "effect": {
+        "auth": -8
+      },
+      "text": "The right to organise politically must be unconditional, including for one's enemies."
+    },
+    {
+      "id": "auth14",
+      "axis": "auth",
+      "core": false,
+      "effect": {
+        "auth": -8
+      },
+      "text": "Hierarchy within an organisation corrupts its purpose, however good its intentions."
+    },
+    {
+      "id": "auth15",
+      "axis": "auth",
+      "core": false,
+      "effect": {
+        "auth": -8
+      },
+      "text": "A police apparatus separate from the armed population is always dangerous."
+    },
+    {
+      "id": "auth16",
+      "axis": "auth",
+      "core": false,
+      "effect": {
+        "auth": -7
+      },
+      "text": "Rule by permanent officials is a form of class power in its own right."
+    },
+    {
+      "id": "auth17",
+      "axis": "auth",
+      "core": true,
+      "effect": {
+        "auth": 7
+      },
+      "text": "A revolutionary movement needs a formal, disciplined party organisation even when it holds no state power.",
+      "note": "added v0.2: mid-range discriminator"
+    },
+    {
+      "id": "auth18",
+      "axis": "auth",
+      "core": false,
+      "effect": {
+        "auth": 6
+      },
+      "text": "Binding collective decisions are necessary; spontaneous coordination is not enough.",
+      "note": "added v0.2: mid-range discriminator"
+    },
+    {
+      "id": "auth19",
+      "axis": "auth",
+      "core": true,
+      "effect": {
+        "auth": -7
+      },
+      "text": "Any group should be free to ignore a decision it did not itself consent to.",
+      "note": "added v0.2: mid-range discriminator"
+    },
+    {
+      "id": "auth20",
+      "axis": "auth",
+      "core": false,
+      "effect": {
+        "auth": -6
+      },
+      "text": "Political authority should never be delegated to anyone, even temporarily.",
+      "note": "added v0.2: mid-range discriminator"
+    },
+    {
+      "id": "chng01",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": 10
+      },
+      "text": "Society took a wrong turn at an identifiable point in the past and should return to what preceded it."
+    },
+    {
+      "id": "chng02",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": 9
+      },
+      "text": "Inherited institutions carry accumulated wisdom that no deliberate redesign can replace."
+    },
+    {
+      "id": "chng03",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": 9
+      },
+      "text": "The transformations of the past century have been mostly losses to be reversed."
+    },
+    {
+      "id": "chng04",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": 10
+      },
+      "text": "Restoring an older order is a more worthy aim than constructing a new one."
+    },
+    {
+      "id": "chng05",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": 8
+      },
+      "text": "Continuity with our ancestors is a stronger claim on us than the demands of the future."
+    },
+    {
+      "id": "chng06",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": 8
+      },
+      "text": "Attempts to remake society from first principles end in catastrophe."
+    },
+    {
+      "id": "chng07",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": 7
+      },
+      "text": "The existing order should be defended against those who would overturn it."
+    },
+    {
+      "id": "chng08",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": 7
+      },
+      "text": "Stability is worth more than justice when the two come into conflict."
+    },
+    {
+      "id": "chng09",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": -10
+      },
+      "text": "The present order cannot be repaired and must be broken."
+    },
+    {
+      "id": "chng10",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": -10
+      },
+      "text": "What is needed is a rupture with the entire existing structure, not a series of corrections."
+    },
+    {
+      "id": "chng11",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": -9
+      },
+      "text": "Existing institutions should be dismantled rather than inherited and reformed."
+    },
+    {
+      "id": "chng12",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": -8
+      },
+      "text": "Nothing in the present arrangement is worth conserving for its own sake."
+    },
+    {
+      "id": "chng13",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": -9
+      },
+      "text": "Decisive change comes through struggle, not through legislation."
+    },
+    {
+      "id": "chng14",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": -8
+      },
+      "text": "Gradual reform ultimately stabilises the thing it claims to improve."
+    },
+    {
+      "id": "chng15",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": -7
+      },
+      "text": "History moves forward, and the task is to accelerate it."
+    },
+    {
+      "id": "chng16",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": -7
+      },
+      "text": "Those who defend continuity are really defending the interests continuity serves."
+    },
+    {
+      "id": "cult01",
+      "axis": "cult",
+      "core": true,
+      "effect": {
+        "cult": -9
+      },
+      "text": "The traditional family structure should be upheld as the social norm."
+    },
+    {
+      "id": "cult02",
+      "axis": "cult",
+      "core": true,
+      "effect": {
+        "cult": -8
+      },
+      "text": "Established sexual morality should be maintained and publicly upheld."
+    },
+    {
+      "id": "cult03",
+      "axis": "cult",
+      "core": false,
+      "effect": {
+        "cult": -8
+      },
+      "text": "Long-standing cultural and religious customs deserve deference even when they constrain individuals."
+    },
+    {
+      "id": "cult04",
+      "axis": "cult",
+      "core": false,
+      "effect": {
+        "cult": -7
+      },
+      "text": "Changes in gender roles over recent decades have gone too far."
+    },
+    {
+      "id": "cult05",
+      "axis": "cult",
+      "core": true,
+      "effect": {
+        "cult": 9
+      },
+      "text": "Individuals should be free to define their own identity and way of life without social sanction."
+    },
+    {
+      "id": "cult06",
+      "axis": "cult",
+      "core": true,
+      "effect": {
+        "cult": 8
+      },
+      "text": "Inherited moral codes should be revised whenever they conflict with individual freedom."
+    },
+    {
+      "id": "cult07",
+      "axis": "cult",
+      "core": false,
+      "effect": {
+        "cult": 8
+      },
+      "text": "Society should actively work to dismantle traditional social hierarchies in everyday life."
+    },
+    {
+      "id": "cult08",
+      "axis": "cult",
+      "core": false,
+      "effect": {
+        "cult": 7
+      },
+      "text": "Public morality should keep pace with changing social attitudes rather than resist them."
+    },
+    {
+      "id": "econ01",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 10
+      },
+      "text": "Competition between privately owned firms is the most reliable engine of prosperity."
+    },
+    {
+      "id": "econ02",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 10
+      },
+      "text": "Wealth accumulated through business success is legitimately earned and should not be redistributed."
+    },
+    {
+      "id": "econ03",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 9
+      },
+      "text": "Price signals allocate resources better than any planning body could."
+    },
+    {
+      "id": "econ04",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 7
+      },
+      "text": "Passing private wealth to one's children across generations is legitimate."
+    },
+    {
+      "id": "econ05",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 8
+      },
+      "text": "Most industries currently in state hands would be run better privately."
+    },
+    {
+      "id": "econ06",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -10
+      },
+      "text": "The commanding heights of the economy — energy, transport, heavy industry — should be publicly owned."
+    },
+    {
+      "id": "econ07",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -10
+      },
+      "text": "Employment for wages is inherently exploitative, whatever the wage level."
+    },
+    {
+      "id": "econ08",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -9
+      },
+      "text": "Production should be organised to meet needs directly, not to be sold for profit."
+    },
+    {
+      "id": "econ09",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -7
+      },
+      "text": "The gap between the highest and lowest incomes should be capped by law."
+    },
+    {
+      "id": "econ10",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -8
+      },
+      "text": "Land should not be privately owned as a commodity."
+    },
+    {
+      "id": "econ11",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -7
+      },
+      "text": "Key industries should be taken into public ownership even when they are running profitably.",
+      "note": "added v0.2: mid-range discriminator"
+    },
+    {
+      "id": "econ12",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -6
+      },
+      "text": "Workers should have a legally guaranteed share of control over the firms that employ them.",
+      "note": "added v0.2: mid-range discriminator"
+    },
+    {
+      "id": "econ13",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 7
+      },
+      "text": "A well-regulated market economy with a strong welfare state is preferable to public ownership.",
+      "note": "added v0.2: mid-range discriminator"
+    },
+    {
+      "id": "econ14",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 6
+      },
+      "text": "Redistributing income through taxation is preferable to changing who owns productive property.",
+      "note": "added v0.2: mid-range discriminator"
+    },
+    {
+      "id": "impe01",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": 10
+      },
+      "text": "A powerful state is entitled to secure its interests abroad by force."
+    },
+    {
+      "id": "impe02",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": 10
+      },
+      "text": "Some nations are fit to lead others, and the world order should reflect this."
+    },
+    {
+      "id": "impe03",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": 10
+      },
+      "text": "Territorial expansion is a legitimate expression of national vitality."
+    },
+    {
+      "id": "impe04",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": 8
+      },
+      "text": "Military intervention abroad is justified when it serves the intervening nation's interests."
+    },
+    {
+      "id": "impe05",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": 8
+      },
+      "text": "Great powers naturally have spheres of influence that smaller states must respect."
+    },
+    {
+      "id": "impe06",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": -10
+      },
+      "text": "The wealth of the developed world rests on continued extraction of value from the periphery."
+    },
+    {
+      "id": "impe07",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": -9
+      },
+      "text": "Armed resistance to foreign occupation is a legitimate response to illegitimate force."
+    },
+    {
+      "id": "impe08",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": -9
+      },
+      "text": "A government that serves a foreign imperial power against its own people forfeits its legitimacy."
+    },
+    {
+      "id": "impe09",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": -9
+      },
+      "text": "National liberation struggles in the periphery are a central front of world politics, not a peripheral concern."
+    },
+    {
+      "id": "impe10",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": -9
+      },
+      "text": "Sanctions and debt are instruments of domination as much as armies are."
+    },
+    {
+      "id": "legi01",
+      "axis": "legi",
+      "core": true,
+      "effect": {
+        "legi": 10
+      },
+      "text": "Political authority is ultimately answerable to divine law, not to any human assembly."
+    },
+    {
+      "id": "legi02",
+      "axis": "legi",
+      "core": true,
+      "effect": {
+        "legi": 10
+      },
+      "text": "Legislation that contradicts revealed law is illegitimate regardless of how it was passed."
+    },
+    {
+      "id": "legi03",
+      "axis": "legi",
+      "core": true,
+      "effect": {
+        "legi": 9
+      },
+      "text": "Religious scholars should hold formal power to review the state's decisions."
+    },
+    {
+      "id": "legi04",
+      "axis": "legi",
+      "core": false,
+      "effect": {
+        "legi": 9
+      },
+      "text": "A state without a religious foundation cannot command genuine obedience."
+    },
+    {
+      "id": "legi05",
+      "axis": "legi",
+      "core": false,
+      "effect": {
+        "legi": 9
+      },
+      "text": "Public life should be ordered according to a single revealed moral code."
+    },
+    {
+      "id": "legi06",
+      "axis": "legi",
+      "core": true,
+      "effect": {
+        "legi": 8
+      },
+      "text": "The clergy are a more trustworthy check on rulers than any constitution."
+    },
+    {
+      "id": "legi07",
+      "axis": "legi",
+      "core": false,
+      "effect": {
+        "legi": 7
+      },
+      "text": "Religious institutions should be funded and privileged by the state."
+    },
+    {
+      "id": "legi08",
+      "axis": "legi",
+      "core": false,
+      "effect": {
+        "legi": 8
+      },
+      "text": "A sacred order stands above politics and sets its limits."
+    },
+    {
+      "id": "legi09",
+      "axis": "legi",
+      "core": true,
+      "effect": {
+        "legi": -10
+      },
+      "text": "Law derives its authority solely from human beings, and from nothing above them."
+    },
+    {
+      "id": "legi10",
+      "axis": "legi",
+      "core": true,
+      "effect": {
+        "legi": -9
+      },
+      "text": "Religious institutions should have no formal role in government whatsoever."
+    },
+    {
+      "id": "legi11",
+      "axis": "legi",
+      "core": true,
+      "effect": {
+        "legi": -9
+      },
+      "text": "Religious teaching is too often used to make people accept injustice they would otherwise resist."
+    },
+    {
+      "id": "legi12",
+      "axis": "legi",
+      "core": true,
+      "effect": {
+        "legi": -9
+      },
+      "text": "The state should treat all metaphysical claims as private matters with no political standing."
+    },
+    {
+      "id": "legi13",
+      "axis": "legi",
+      "core": false,
+      "effect": {
+        "legi": -8
+      },
+      "text": "Political questions should be settled by material analysis, not by scripture."
+    },
+    {
+      "id": "legi14",
+      "axis": "legi",
+      "core": false,
+      "effect": {
+        "legi": -8
+      },
+      "text": "A religious ruling class is a ruling class like any other."
+    },
+    {
+      "id": "legi15",
+      "axis": "legi",
+      "core": false,
+      "effect": {
+        "legi": -8
+      },
+      "text": "Public policy should never appeal to divine sanction as its justification."
+    },
+    {
+      "id": "legi16",
+      "axis": "legi",
+      "core": false,
+      "effect": {
+        "legi": -9
+      },
+      "text": "Clerical influence over the state should be actively removed where it exists."
+    },
+    {
+      "id": "soli01",
+      "axis": "soli",
+      "core": true,
+      "effect": {
+        "soli": 10
+      },
+      "text": "The bonds between members of a nation matter more than the bonds between workers of different nations."
+    },
+    {
+      "id": "soli02",
+      "axis": "soli",
+      "core": true,
+      "effect": {
+        "soli": 10
+      },
+      "text": "A people sharing common descent and culture is the natural political unit."
+    },
+    {
+      "id": "soli03",
+      "axis": "soli",
+      "core": true,
+      "effect": {
+        "soli": 9
+      },
+      "text": "Loyalty to one's country should override loyalty to any international movement."
+    },
+    {
+      "id": "soli04",
+      "axis": "soli",
+      "core": false,
+      "effect": {
+        "soli": 9
+      },
+      "text": "Conflict between classes within a nation is a distraction from the nation's common interest."
+    },
+    {
+      "id": "soli05",
+      "axis": "soli",
+      "core": false,
+      "effect": {
+        "soli": 7
+      },
+      "text": "Large-scale immigration dissolves the solidarity a political community depends on."
+    },
+    {
+      "id": "soli06",
+      "axis": "soli",
+      "core": true,
+      "effect": {
+        "soli": -10
+      },
+      "text": "A worker has more in common with a foreign worker than with an employer of their own nationality."
+    },
+    {
+      "id": "soli07",
+      "axis": "soli",
+      "core": true,
+      "effect": {
+        "soli": -9
+      },
+      "text": "Nations are historical constructions that will dissolve as class society is overcome."
+    },
+    {
+      "id": "soli08",
+      "axis": "soli",
+      "core": true,
+      "effect": {
+        "soli": -10
+      },
+      "text": "Appeals to a shared 'national interest' usually mask the particular interests of that nation's ruling class."
+    },
+    {
+      "id": "soli09",
+      "axis": "soli",
+      "core": false,
+      "effect": {
+        "soli": -8
+      },
+      "text": "Borders serve mainly to divide those who would otherwise share a common interest."
+    },
+    {
+      "id": "soli10",
+      "axis": "soli",
+      "core": false,
+      "effect": {
+        "soli": -8
+      },
+      "text": "Appeals to national unity are usually a means of suppressing internal conflict."
+    }
+  ]
+}

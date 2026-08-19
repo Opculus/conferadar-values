@@ -1,0 +1,1136 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 10,
+    "bucket": "Theocracy / Religious Fundamentalism",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "rout",
+      "name": "Route to Power",
+      "negPole": "Electoral / Gradualist / Preaching",
+      "posPole": "Armed Vanguard Struggle"
+    },
+    {
+      "key": "cler",
+      "name": "Locus of Authority",
+      "negPole": "Lay Political Leadership",
+      "posPole": "Formal Clerical Rule"
+    },
+    {
+      "key": "lite",
+      "name": "Relation to Text",
+      "negPole": "Interpretive Tradition & Jurisprudence",
+      "posPole": "Direct Return to Scripture"
+    },
+    {
+      "key": "natl",
+      "name": "Political Community",
+      "negPole": "Universal Religious Community",
+      "posPole": "Ethno-National Religious State"
+    },
+    {
+      "key": "econ",
+      "name": "Economic Doctrine",
+      "negPole": "Redistributive Religious Economics",
+      "posPole": "Market & Merchant-Friendly"
+    },
+    {
+      "key": "form",
+      "name": "The Modern State",
+      "negPole": "Reject It / Pre-Modern Order",
+      "posPole": "Capture and Use It"
+    },
+    {
+      "key": "takf",
+      "name": "Boundary of the Faithful",
+      "negPole": "Broad / Ecumenical Inclusion",
+      "posPole": "Excommunicative Purism"
+    },
+    {
+      "key": "impe",
+      "name": "Geopolitical Posture",
+      "negPole": "Accommodating to Western Power",
+      "posPole": "Militant Anti-Western"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Salafism / Wahhabism",
+      "umbrella": false,
+      "anchor": {
+        "rout": 35,
+        "cler": 60,
+        "lite": 98,
+        "natl": 15,
+        "econ": 80,
+        "form": 25,
+        "takf": 86,
+        "impe": 25
+      }
+    },
+    {
+      "name": "Khomeinism (Vilayat-e Faqih)",
+      "umbrella": false,
+      "anchor": {
+        "rout": 70,
+        "cler": 100,
+        "lite": 30,
+        "natl": 40,
+        "econ": 20,
+        "form": 88,
+        "takf": 45,
+        "impe": 97
+      }
+    },
+    {
+      "name": "Muslim Brotherhood Islamism",
+      "umbrella": false,
+      "anchor": {
+        "rout": 12,
+        "cler": 42,
+        "lite": 55,
+        "natl": 30,
+        "econ": 55,
+        "form": 78,
+        "takf": 24,
+        "impe": 66
+      }
+    },
+    {
+      "name": "Salafi-Jihadism",
+      "umbrella": false,
+      "anchor": {
+        "rout": 100,
+        "cler": 50,
+        "lite": 95,
+        "natl": 0,
+        "econ": 45,
+        "form": 4,
+        "takf": 100,
+        "impe": 100
+      }
+    },
+    {
+      "name": "Christian Dominionism",
+      "umbrella": false,
+      "anchor": {
+        "rout": 20,
+        "cler": 30,
+        "lite": 65,
+        "natl": 60,
+        "econ": 82,
+        "form": 62,
+        "takf": 45,
+        "impe": 10
+      }
+    },
+    {
+      "name": "Christian Reconstructionism",
+      "umbrella": false,
+      "anchor": {
+        "rout": 12,
+        "cler": 55,
+        "lite": 92,
+        "natl": 55,
+        "econ": 97,
+        "form": 34,
+        "takf": 72,
+        "impe": 20
+      }
+    },
+    {
+      "name": "Religious Zionism / Kahanism",
+      "umbrella": false,
+      "anchor": {
+        "rout": 58,
+        "cler": 40,
+        "lite": 60,
+        "natl": 92,
+        "econ": 66,
+        "form": 72,
+        "takf": 66,
+        "impe": 12
+      }
+    },
+    {
+      "name": "Hindutva",
+      "umbrella": false,
+      "anchor": {
+        "rout": 38,
+        "cler": 18,
+        "lite": 35,
+        "natl": 97,
+        "econ": 78,
+        "form": 97,
+        "takf": 40,
+        "impe": 20
+      }
+    },
+    {
+      "name": "Buddhist Nationalism",
+      "umbrella": false,
+      "anchor": {
+        "rout": 42,
+        "cler": 46,
+        "lite": 28,
+        "natl": 94,
+        "econ": 52,
+        "form": 86,
+        "takf": 46,
+        "impe": 32
+      }
+    },
+    {
+      "name": "Catholic Integralism",
+      "umbrella": false,
+      "anchor": {
+        "rout": 6,
+        "cler": 88,
+        "lite": 4,
+        "natl": 18,
+        "econ": 42,
+        "form": 28,
+        "takf": 40,
+        "impe": 36
+      }
+    },
+    {
+      "name": "Deobandi political current",
+      "umbrella": false,
+      "anchor": {
+        "rout": 40,
+        "cler": 72,
+        "lite": 58,
+        "natl": 44,
+        "econ": 48,
+        "form": 44,
+        "takf": 68,
+        "impe": 62
+      }
+    },
+    {
+      "name": "Barelvi political current",
+      "umbrella": false,
+      "anchor": {
+        "rout": 28,
+        "cler": 82,
+        "lite": 8,
+        "natl": 58,
+        "econ": 44,
+        "form": 56,
+        "takf": 26,
+        "impe": 40
+      }
+    },
+    {
+      "name": "Islamism (general, umbrella)",
+      "umbrella": true,
+      "anchor": {
+        "rout": 30,
+        "cler": 55,
+        "lite": 55,
+        "natl": 25,
+        "econ": 45,
+        "form": 66,
+        "takf": 45,
+        "impe": 70
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "rout01",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": 10
+      },
+      "text": "Armed struggle is a legitimate and necessary means of establishing religious rule."
+    },
+    {
+      "id": "rout02",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": 9
+      },
+      "text": "Political change through preaching and elections alone is too slow to correct a society that has strayed this far."
+    },
+    {
+      "id": "rout03",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": 8
+      },
+      "text": "A vanguard willing to use force is sometimes required to bring about a truly religious order."
+    },
+    {
+      "id": "rout04",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": 10
+      },
+      "text": "Waiting on gradual persuasion cedes the field to those actively working against religious values."
+    },
+    {
+      "id": "rout05",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": 8
+      },
+      "text": "Jihad or holy struggle, in its militant sense, remains a legitimate instrument of religious politics today."
+    },
+    {
+      "id": "rout06",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": 7
+      },
+      "text": "Revolutionary upheaval, not incremental reform, is what real religious renewal requires."
+    },
+    {
+      "id": "rout07",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": -10
+      },
+      "text": "Religious renewal should be pursued through preaching, education, and participation in existing political processes."
+    },
+    {
+      "id": "rout08",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": -9
+      },
+      "text": "Elections and gradual religious education are a legitimate and sufficient path to a more religious society."
+    },
+    {
+      "id": "rout09",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": -8
+      },
+      "text": "Armed struggle against the existing order tends to discredit religious politics rather than advance it."
+    },
+    {
+      "id": "rout10",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": -10
+      },
+      "text": "Patient civic and missionary work builds more lasting change than confrontation does."
+    },
+    {
+      "id": "rout11",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": -8
+      },
+      "text": "Working within the existing political system is compatible with a serious commitment to religious values."
+    },
+    {
+      "id": "rout12",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": -7
+      },
+      "text": "A movement that renounces violence can still achieve real religious influence over society."
+    },
+    {
+      "id": "cler01",
+      "axis": "cler",
+      "core": true,
+      "effect": {
+        "cler": 10
+      },
+      "text": "Trained religious scholars should hold formal authority to govern or to veto un-Islamic or ungodly legislation."
+    },
+    {
+      "id": "cler02",
+      "axis": "cler",
+      "core": true,
+      "effect": {
+        "cler": 9
+      },
+      "text": "The guardianship of the jurist, or an equivalent clerical office, is a legitimate model of government."
+    },
+    {
+      "id": "cler03",
+      "axis": "cler",
+      "core": true,
+      "effect": {
+        "cler": 8
+      },
+      "text": "Ordinary political leaders should be answerable to religious scholars on matters of law and policy."
+    },
+    {
+      "id": "cler04",
+      "axis": "cler",
+      "core": false,
+      "effect": {
+        "cler": 10
+      },
+      "text": "A council of clergy should have the final word when law conflicts with religious teaching."
+    },
+    {
+      "id": "cler05",
+      "axis": "cler",
+      "core": false,
+      "effect": {
+        "cler": 8
+      },
+      "text": "Formal clerical office is a more reliable guardian of religious law than lay politicians."
+    },
+    {
+      "id": "cler06",
+      "axis": "cler",
+      "core": false,
+      "effect": {
+        "cler": 7
+      },
+      "text": "The scholars of the faith, not elected politicians, should have ultimate authority over what counts as legitimate law."
+    },
+    {
+      "id": "cler07",
+      "axis": "cler",
+      "core": true,
+      "effect": {
+        "cler": -10
+      },
+      "text": "Governance should remain in the hands of lay political leaders, with clergy limited to moral and religious guidance."
+    },
+    {
+      "id": "cler08",
+      "axis": "cler",
+      "core": true,
+      "effect": {
+        "cler": -9
+      },
+      "text": "Formal clerical rule over the state risks corrupting the clergy as much as it risks corrupting the state."
+    },
+    {
+      "id": "cler09",
+      "axis": "cler",
+      "core": true,
+      "effect": {
+        "cler": -8
+      },
+      "text": "A lay government that consults religious scholars, without being bound by them, is the better model."
+    },
+    {
+      "id": "cler10",
+      "axis": "cler",
+      "core": false,
+      "effect": {
+        "cler": -10
+      },
+      "text": "Political authority and religious authority should be held by different people, even in a religious state."
+    },
+    {
+      "id": "cler11",
+      "axis": "cler",
+      "core": false,
+      "effect": {
+        "cler": -8
+      },
+      "text": "Clergy who govern directly tend to lose the moral authority that comes from staying above politics."
+    },
+    {
+      "id": "cler12",
+      "axis": "cler",
+      "core": false,
+      "effect": {
+        "cler": -7
+      },
+      "text": "The state should implement religious law through its own institutions, not cede governing power to the clergy."
+    },
+    {
+      "id": "lite01",
+      "axis": "lite",
+      "core": true,
+      "effect": {
+        "lite": -10
+      },
+      "text": "Centuries of legal scholarship and interpretive tradition remain the proper guide to applying scripture today."
+    },
+    {
+      "id": "lite02",
+      "axis": "lite",
+      "core": true,
+      "effect": {
+        "lite": -9
+      },
+      "text": "Sound religious law depends on trained jurisprudence, not on reading scripture without that tradition."
+    },
+    {
+      "id": "lite03",
+      "axis": "lite",
+      "core": true,
+      "effect": {
+        "lite": -8
+      },
+      "text": "Interpretive schools built up over generations should not be casually discarded in favour of individual readings."
+    },
+    {
+      "id": "lite04",
+      "axis": "lite",
+      "core": false,
+      "effect": {
+        "lite": -10
+      },
+      "text": "A jurist's ruling, grounded in the accumulated tradition, carries real authority in applying the text."
+    },
+    {
+      "id": "lite05",
+      "axis": "lite",
+      "core": false,
+      "effect": {
+        "lite": -8
+      },
+      "text": "Scripture has to be read through the accumulated wisdom of scholars across generations, not in isolation."
+    },
+    {
+      "id": "lite06",
+      "axis": "lite",
+      "core": false,
+      "effect": {
+        "lite": -7
+      },
+      "text": "Bypassing centuries of legal tradition in favour of a direct reading of scripture invites serious error."
+    },
+    {
+      "id": "lite07",
+      "axis": "lite",
+      "core": true,
+      "effect": {
+        "lite": 10
+      },
+      "text": "Believers should return directly to the original scripture, setting aside centuries of accumulated interpretation."
+    },
+    {
+      "id": "lite08",
+      "axis": "lite",
+      "core": true,
+      "effect": {
+        "lite": 9
+      },
+      "text": "Much of the later interpretive tradition represents a departure from, not a clarification of, the original texts."
+    },
+    {
+      "id": "lite09",
+      "axis": "lite",
+      "core": true,
+      "effect": {
+        "lite": 8
+      },
+      "text": "The earliest generation's practice, not later scholarly elaboration, is the authoritative guide."
+    },
+    {
+      "id": "lite10",
+      "axis": "lite",
+      "core": false,
+      "effect": {
+        "lite": 10
+      },
+      "text": "Later schools of interpretation added innovations that a return to the source text should strip away."
+    },
+    {
+      "id": "lite11",
+      "axis": "lite",
+      "core": false,
+      "effect": {
+        "lite": 8
+      },
+      "text": "A direct, literal reading of scripture is more reliable than layers of scholarly commentary."
+    },
+    {
+      "id": "lite12",
+      "axis": "lite",
+      "core": false,
+      "effect": {
+        "lite": 7
+      },
+      "text": "Purifying religious practice means stripping away accumulated interpretation and returning to the original sources."
+    },
+    {
+      "id": "natl01",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": -10
+      },
+      "text": "The community of the faithful transcends nationality and is the proper political community."
+    },
+    {
+      "id": "natl02",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": -9
+      },
+      "text": "Believers everywhere belong to a single community that should take priority over national citizenship."
+    },
+    {
+      "id": "natl03",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": -8
+      },
+      "text": "National borders are a secondary, even artificial, division within the true community of the faith."
+    },
+    {
+      "id": "natl04",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": -10
+      },
+      "text": "A religious polity should aim to unite believers across national lines, not confine itself to one nation."
+    },
+    {
+      "id": "natl05",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": -8
+      },
+      "text": "Loyalty to the faith community should outweigh loyalty to any particular nation-state."
+    },
+    {
+      "id": "natl06",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": -7
+      },
+      "text": "The ultimate political horizon is the community of believers, not any single national state."
+    },
+    {
+      "id": "natl07",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": 10
+      },
+      "text": "The religious state should be organised around and for a particular nation and its people."
+    },
+    {
+      "id": "natl08",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": 9
+      },
+      "text": "Religious and national identity are properly fused, not separated into rival loyalties."
+    },
+    {
+      "id": "natl09",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": 8
+      },
+      "text": "A religious state has legitimate obligations to its own nation that come before universal religious solidarity."
+    },
+    {
+      "id": "natl10",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": 10
+      },
+      "text": "The nation, not the wider community of believers, is the primary vessel of religious political life today."
+    },
+    {
+      "id": "natl11",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": 8
+      },
+      "text": "Religious politics should serve the particular people and homeland it arises from, not a universal community."
+    },
+    {
+      "id": "natl12",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": 7
+      },
+      "text": "A specific national mission is central to this movement's religious project, not incidental to it."
+    },
+    {
+      "id": "econ01",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -10
+      },
+      "text": "The wealthy have a binding religious obligation to redistribute a real share of their wealth to the poor."
+    },
+    {
+      "id": "econ02",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -9
+      },
+      "text": "Charging interest and similar exploitative financial practices should be prohibited by religious law."
+    },
+    {
+      "id": "econ03",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -8
+      },
+      "text": "Economic policy should actively narrow the gap between rich and poor as a matter of religious duty."
+    },
+    {
+      "id": "econ04",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -10
+      },
+      "text": "A religious economy should place limits on private accumulation in the name of communal welfare."
+    },
+    {
+      "id": "econ05",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -8
+      },
+      "text": "Religious welfare obligations should be enforced through the state, not left to voluntary charity alone."
+    },
+    {
+      "id": "econ06",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -7
+      },
+      "text": "Concentrated private wealth is a religious as well as a social problem that policy should address."
+    },
+    {
+      "id": "econ07",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 10
+      },
+      "text": "A religious state should welcome commerce and free exchange rather than impose heavy redistributive obligations."
+    },
+    {
+      "id": "econ08",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 9
+      },
+      "text": "Private property and market exchange are fully compatible with, and even blessed by, religious teaching."
+    },
+    {
+      "id": "econ09",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 8
+      },
+      "text": "Merchants and entrepreneurs deserve religious and social respect, not suspicion, for their success."
+    },
+    {
+      "id": "econ10",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 10
+      },
+      "text": "Religious law protects private property and trade at least as much as it demands redistribution."
+    },
+    {
+      "id": "econ11",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 8
+      },
+      "text": "A prosperous merchant class strengthens a religious society rather than threatening it."
+    },
+    {
+      "id": "econ12",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 7
+      },
+      "text": "Voluntary charity, not state-enforced redistribution, is the proper religious response to poverty."
+    },
+    {
+      "id": "form01",
+      "axis": "form",
+      "core": true,
+      "effect": {
+        "form": 10
+      },
+      "text": "The modern nation-state, its constitutions, and its bureaucracy should be actively captured and used to enact religious law."
+    },
+    {
+      "id": "form02",
+      "axis": "form",
+      "core": true,
+      "effect": {
+        "form": 9
+      },
+      "text": "A movement can and should work through existing state institutions to establish religious governance."
+    },
+    {
+      "id": "form03",
+      "axis": "form",
+      "core": true,
+      "effect": {
+        "form": 8
+      },
+      "text": "Modern administrative capacity, once captured, is a legitimate and useful tool for religious governance."
+    },
+    {
+      "id": "form04",
+      "axis": "form",
+      "core": false,
+      "effect": {
+        "form": 10
+      },
+      "text": "There's nothing wrong in principle with running for office and legislating within a modern constitutional state."
+    },
+    {
+      "id": "form05",
+      "axis": "form",
+      "core": false,
+      "effect": {
+        "form": 8
+      },
+      "text": "Using the machinery of a modern state is compatible with, and even necessary for, implementing religious law at scale."
+    },
+    {
+      "id": "form06",
+      "axis": "form",
+      "core": false,
+      "effect": {
+        "form": 7
+      },
+      "text": "A religious movement should be pragmatic about using whatever modern institutions are available to it."
+    },
+    {
+      "id": "form07",
+      "axis": "form",
+      "core": true,
+      "effect": {
+        "form": -10
+      },
+      "text": "The modern nation-state and its man-made constitutions are themselves illegitimate and should be rejected, not captured."
+    },
+    {
+      "id": "form08",
+      "axis": "form",
+      "core": true,
+      "effect": {
+        "form": -9
+      },
+      "text": "Sovereignty belongs to God alone, which makes man-made constitutions a rival and false claim to authority."
+    },
+    {
+      "id": "form09",
+      "axis": "form",
+      "core": true,
+      "effect": {
+        "form": -8
+      },
+      "text": "A truly religious order requires dismantling the modern state, not winning elections within it."
+    },
+    {
+      "id": "form10",
+      "axis": "form",
+      "core": false,
+      "effect": {
+        "form": -10
+      },
+      "text": "Legitimate religious governance can't be built by working through institutions premised on human, not divine, sovereignty."
+    },
+    {
+      "id": "form11",
+      "axis": "form",
+      "core": false,
+      "effect": {
+        "form": -8
+      },
+      "text": "Modern constitutionalism is itself part of the problem a religious movement exists to overturn."
+    },
+    {
+      "id": "form12",
+      "axis": "form",
+      "core": false,
+      "effect": {
+        "form": -7
+      },
+      "text": "Participating in the modern state's institutions concedes their legitimacy in a way true believers shouldn't accept."
+    },
+    {
+      "id": "takf01",
+      "axis": "takf",
+      "core": true,
+      "effect": {
+        "takf": -10
+      },
+      "text": "The community of the truly faithful should be broad, including those who differ on secondary matters of practice or doctrine."
+    },
+    {
+      "id": "takf02",
+      "axis": "takf",
+      "core": true,
+      "effect": {
+        "takf": -9
+      },
+      "text": "Fellow believers should not be readily declared apostates over disagreements in interpretation."
+    },
+    {
+      "id": "takf03",
+      "axis": "takf",
+      "core": true,
+      "effect": {
+        "takf": -8
+      },
+      "text": "Unity among believers of different schools and traditions matters more than doctrinal precision on every point."
+    },
+    {
+      "id": "takf04",
+      "axis": "takf",
+      "core": false,
+      "effect": {
+        "takf": -10
+      },
+      "text": "Excommunicating other believers over doctrinal disputes weakens the community more than it purifies it."
+    },
+    {
+      "id": "takf05",
+      "axis": "takf",
+      "core": false,
+      "effect": {
+        "takf": -8
+      },
+      "text": "A wide, tolerant view of who counts as a genuine believer serves the community better than a narrow one."
+    },
+    {
+      "id": "takf06",
+      "axis": "takf",
+      "core": false,
+      "effect": {
+        "takf": -7
+      },
+      "text": "Doctrinal disagreement among believers should be a matter for debate, not grounds for exclusion."
+    },
+    {
+      "id": "takf07",
+      "axis": "takf",
+      "core": true,
+      "effect": {
+        "takf": 10
+      },
+      "text": "Believers who deviate seriously from correct doctrine or practice should be considered outside the true faith."
+    },
+    {
+      "id": "takf08",
+      "axis": "takf",
+      "core": true,
+      "effect": {
+        "takf": 9
+      },
+      "text": "Maintaining doctrinal purity sometimes requires declaring even nominal believers apostate."
+    },
+    {
+      "id": "takf09",
+      "axis": "takf",
+      "core": true,
+      "effect": {
+        "takf": 8
+      },
+      "text": "A community that tolerates significant doctrinal deviation has compromised the faith itself."
+    },
+    {
+      "id": "takf10",
+      "axis": "takf",
+      "core": false,
+      "effect": {
+        "takf": 10
+      },
+      "text": "Firm boundaries around correct belief and practice are necessary, even when they exclude many who call themselves believers."
+    },
+    {
+      "id": "takf11",
+      "axis": "takf",
+      "core": false,
+      "effect": {
+        "takf": 8
+      },
+      "text": "Doctrinal laxity is a greater danger to the faith than the divisiveness of strict boundaries."
+    },
+    {
+      "id": "takf12",
+      "axis": "takf",
+      "core": false,
+      "effect": {
+        "takf": 7
+      },
+      "text": "True religious renewal requires clearly separating the genuinely faithful from those who only appear to be."
+    },
+    {
+      "id": "impe01",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": 10
+      },
+      "text": "Western political and cultural influence is a corrupting force that religious politics should actively resist."
+    },
+    {
+      "id": "impe02",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": 9
+      },
+      "text": "Accommodation with Western powers tends to compromise a movement's religious integrity."
+    },
+    {
+      "id": "impe03",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": 8
+      },
+      "text": "The West's global dominance is itself a target that religious politics is right to confront."
+    },
+    {
+      "id": "impe04",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": 10
+      },
+      "text": "Cooperation with Western governments should be treated with deep suspicion, if not rejected outright."
+    },
+    {
+      "id": "impe05",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": 8
+      },
+      "text": "Resisting Western cultural and political influence is as central to this movement as its domestic religious goals."
+    },
+    {
+      "id": "impe06",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": 7
+      },
+      "text": "A movement that grows too close to Western powers has already begun to lose its religious purpose."
+    },
+    {
+      "id": "impe07",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": -10
+      },
+      "text": "Practical cooperation and diplomacy with Western powers can serve a religious movement's interests without betraying them."
+    },
+    {
+      "id": "impe08",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": -9
+      },
+      "text": "Religious politics doesn't require treating the West as a fundamental enemy."
+    },
+    {
+      "id": "impe09",
+      "axis": "impe",
+      "core": true,
+      "effect": {
+        "impe": -8
+      },
+      "text": "A pragmatic relationship with Western governments is compatible with maintaining religious conviction."
+    },
+    {
+      "id": "impe10",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": -10
+      },
+      "text": "Isolating a movement from all relations with Western powers weakens it more than it protects it."
+    },
+    {
+      "id": "impe11",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": -8
+      },
+      "text": "Confrontation with the West should not be an end in itself for a religious movement."
+    },
+    {
+      "id": "impe12",
+      "axis": "impe",
+      "core": false,
+      "effect": {
+        "impe": -7
+      },
+      "text": "A religious movement can pursue its domestic goals without making opposition to the West central to its identity."
+    }
+  ]
+}

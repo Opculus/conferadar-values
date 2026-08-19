@@ -1,0 +1,1108 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 2,
+    "bucket": "Left-Communism / Communization",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "org",
+      "name": "Organisational Form",
+      "negPole": "Formal Party / Organic Centralism",
+      "posPole": "Spontaneous Self-Organisation"
+    },
+    {
+      "key": "prog",
+      "name": "Programme Fixity",
+      "negPole": "Invariant Programme",
+      "posPole": "Historically Open / Self-Revising"
+    },
+    {
+      "key": "comz",
+      "name": "Communisation Immediacy",
+      "negPole": "Transitional Workers' Power First",
+      "posPole": "Immediate Abolition of Value & Work"
+    },
+    {
+      "key": "site",
+      "name": "Site of Struggle",
+      "negPole": "Point of Production",
+      "posPole": "Everyday Life & Social Reproduction"
+    },
+    {
+      "key": "unio",
+      "name": "Union Question",
+      "negPole": "Unions as Revolutionary Vehicle",
+      "posPole": "Unions as Organs of Capital"
+    },
+    {
+      "key": "parl",
+      "name": "Electoral Tactic",
+      "negPole": "Strict Abstentionism",
+      "posPole": "Revolutionary Parliamentarism"
+    },
+    {
+      "key": "natl",
+      "name": "National Question",
+      "negPole": "Anti-Colonial Struggles Supportable",
+      "posPole": "No Support for Any National Struggle"
+    },
+    {
+      "key": "insu",
+      "name": "Form of Action",
+      "negPole": "Mass Strike / Class Movement",
+      "posPole": "Minoritarian Direct Action"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Council Communism (Pannekoek, Gorter)",
+      "umbrella": false,
+      "anchor": {
+        "org": 92,
+        "prog": 55,
+        "comz": 42,
+        "site": 12,
+        "unio": 88,
+        "parl": 4,
+        "natl": 80,
+        "insu": 10
+      }
+    },
+    {
+      "name": "Bordigism (Italian Left)",
+      "umbrella": false,
+      "anchor": {
+        "org": 2,
+        "prog": 2,
+        "comz": 12,
+        "site": 22,
+        "unio": 42,
+        "parl": 0,
+        "natl": 30,
+        "insu": 15
+      }
+    },
+    {
+      "name": "Luxemburgism",
+      "umbrella": false,
+      "anchor": {
+        "org": 58,
+        "prog": 62,
+        "comz": 28,
+        "site": 18,
+        "unio": 28,
+        "parl": 78,
+        "natl": 88,
+        "insu": 4
+      }
+    },
+    {
+      "name": "Communization Theory",
+      "umbrella": false,
+      "anchor": {
+        "org": 86,
+        "prog": 88,
+        "comz": 98,
+        "site": 82,
+        "unio": 94,
+        "parl": 2,
+        "natl": 92,
+        "insu": 58
+      }
+    },
+    {
+      "name": "Autonomism / Operaismo",
+      "umbrella": false,
+      "anchor": {
+        "org": 80,
+        "prog": 90,
+        "comz": 78,
+        "site": 66,
+        "unio": 90,
+        "parl": 6,
+        "natl": 58,
+        "insu": 72
+      }
+    },
+    {
+      "name": "Situationism (Debord, SI)",
+      "umbrella": false,
+      "anchor": {
+        "org": 78,
+        "prog": 80,
+        "comz": 45,
+        "site": 97,
+        "unio": 88,
+        "parl": 0,
+        "natl": 65,
+        "insu": 45
+      }
+    },
+    {
+      "name": "De Leonism",
+      "umbrella": false,
+      "anchor": {
+        "org": 18,
+        "prog": 18,
+        "comz": 24,
+        "site": 2,
+        "unio": 0,
+        "parl": 72,
+        "natl": 60,
+        "insu": 8
+      }
+    },
+    {
+      "name": "Impossibilism (SPGB)",
+      "umbrella": false,
+      "anchor": {
+        "org": 26,
+        "prog": 14,
+        "comz": 34,
+        "site": 26,
+        "unio": 62,
+        "parl": 97,
+        "natl": 92,
+        "insu": 2
+      }
+    },
+    {
+      "name": "Council-ist Trotskyism (Castoriadis)",
+      "umbrella": false,
+      "anchor": {
+        "org": 72,
+        "prog": 96,
+        "comz": 52,
+        "site": 48,
+        "unio": 74,
+        "parl": 12,
+        "natl": 76,
+        "insu": 20
+      }
+    },
+    {
+      "name": "Insurrectionary / Anti-Work Communism",
+      "umbrella": false,
+      "anchor": {
+        "org": 96,
+        "prog": 80,
+        "comz": 92,
+        "site": 86,
+        "unio": 96,
+        "parl": 0,
+        "natl": 70,
+        "insu": 99
+      }
+    },
+    {
+      "name": "Ultra-leftism (umbrella)",
+      "umbrella": true,
+      "anchor": {
+        "org": 80,
+        "prog": 70,
+        "comz": 70,
+        "site": 60,
+        "unio": 85,
+        "parl": 5,
+        "natl": 78,
+        "insu": 55
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "org01",
+      "axis": "org",
+      "core": true,
+      "effect": {
+        "org": 10
+      },
+      "text": "Revolutionary consciousness arises from the class's own activity, not from a party that brings it in from outside."
+    },
+    {
+      "id": "org02",
+      "axis": "org",
+      "core": true,
+      "effect": {
+        "org": 9
+      },
+      "text": "Councils elected and recallable on the shop floor are the only legitimate organs of proletarian power."
+    },
+    {
+      "id": "org03",
+      "axis": "org",
+      "core": true,
+      "effect": {
+        "org": 8
+      },
+      "text": "Fixed leadership positions reproduce the separation between leaders and led that the revolution exists to abolish."
+    },
+    {
+      "id": "org04",
+      "axis": "org",
+      "core": false,
+      "effect": {
+        "org": 10
+      },
+      "text": "Delegation should be so immediate and revocable that no delegate ever becomes a fixture."
+    },
+    {
+      "id": "org05",
+      "axis": "org",
+      "core": false,
+      "effect": {
+        "org": 8
+      },
+      "text": "The class does not need a general staff; it needs to recognise its own power."
+    },
+    {
+      "id": "org06",
+      "axis": "org",
+      "core": false,
+      "effect": {
+        "org": 7
+      },
+      "text": "Organisational forms should dissolve back into the class the moment their task is done."
+    },
+    {
+      "id": "org07",
+      "axis": "org",
+      "core": true,
+      "effect": {
+        "org": -10
+      },
+      "text": "A single centralised organisation, organically unified around one programme, is what turns scattered militancy into a revolution."
+    },
+    {
+      "id": "org08",
+      "axis": "org",
+      "core": true,
+      "effect": {
+        "org": -9
+      },
+      "text": "Without a party the class can win a strike, but not a revolution."
+    },
+    {
+      "id": "org09",
+      "axis": "org",
+      "core": true,
+      "effect": {
+        "org": -8
+      },
+      "text": "Discipline flowing from an organic centre is a strength, not a defect, of a revolutionary organisation."
+    },
+    {
+      "id": "org10",
+      "axis": "org",
+      "core": false,
+      "effect": {
+        "org": -10
+      },
+      "text": "Councils without a party to give them a programme drift and dissolve."
+    },
+    {
+      "id": "org11",
+      "axis": "org",
+      "core": false,
+      "effect": {
+        "org": -8
+      },
+      "text": "Centralism is not the enemy of the working class; disorganisation is."
+    },
+    {
+      "id": "org12",
+      "axis": "org",
+      "core": false,
+      "effect": {
+        "org": -7
+      },
+      "text": "The organisation exists prior to and independent of the immediate mood of the class, and must."
+    },
+    {
+      "id": "prog01",
+      "axis": "prog",
+      "core": true,
+      "effect": {
+        "prog": 10
+      },
+      "text": "The programme should be rewritten as the movement's practice reveals new possibilities."
+    },
+    {
+      "id": "prog02",
+      "axis": "prog",
+      "core": true,
+      "effect": {
+        "prog": 9
+      },
+      "text": "No text handed down from an earlier period can bind revolutionaries in the present."
+    },
+    {
+      "id": "prog03",
+      "axis": "prog",
+      "core": true,
+      "effect": {
+        "prog": 8
+      },
+      "text": "Theory develops through the struggle itself, not through fidelity to a founding document."
+    },
+    {
+      "id": "prog04",
+      "axis": "prog",
+      "core": false,
+      "effect": {
+        "prog": 10
+      },
+      "text": "A programme fixed in the past cannot anticipate the forms communisation will actually take."
+    },
+    {
+      "id": "prog05",
+      "axis": "prog",
+      "core": false,
+      "effect": {
+        "prog": 8
+      },
+      "text": "Openness to revision is a sign of a living theory, not of opportunism."
+    },
+    {
+      "id": "prog06",
+      "axis": "prog",
+      "core": false,
+      "effect": {
+        "prog": 7
+      },
+      "text": "Each cycle of struggles produces its own theoretical questions that earlier texts could not have posed."
+    },
+    {
+      "id": "prog07",
+      "axis": "prog",
+      "core": true,
+      "effect": {
+        "prog": -10
+      },
+      "text": "The invariant core of the communist programme was established long ago and cannot be revised without abandoning it."
+    },
+    {
+      "id": "prog08",
+      "axis": "prog",
+      "core": true,
+      "effect": {
+        "prog": -9
+      },
+      "text": "What looks like theoretical innovation is usually the old opportunism finding new words."
+    },
+    {
+      "id": "prog09",
+      "axis": "prog",
+      "core": true,
+      "effect": {
+        "prog": -8
+      },
+      "text": "A movement that keeps revising its basic positions has no basis on which to build continuity."
+    },
+    {
+      "id": "prog10",
+      "axis": "prog",
+      "core": false,
+      "effect": {
+        "prog": -10
+      },
+      "text": "The party's theses are the fixed compass by which every new development is judged."
+    },
+    {
+      "id": "prog11",
+      "axis": "prog",
+      "core": false,
+      "effect": {
+        "prog": -8
+      },
+      "text": "Adapting the programme to the mood of the moment is how revolutionary movements are lost."
+    },
+    {
+      "id": "prog12",
+      "axis": "prog",
+      "core": false,
+      "effect": {
+        "prog": -7
+      },
+      "text": "Loyalty to the founding texts is what distinguishes a real communist current from its impostors."
+    },
+    {
+      "id": "comz01",
+      "axis": "comz",
+      "core": true,
+      "effect": {
+        "comz": 10
+      },
+      "text": "The abolition of value, wage labour, and the state must begin immediately, in the revolution itself, not after a transition."
+    },
+    {
+      "id": "comz02",
+      "axis": "comz",
+      "core": true,
+      "effect": {
+        "comz": 9
+      },
+      "text": "Waiting for a workers' state to wither away has always meant the state does not wither."
+    },
+    {
+      "id": "comz03",
+      "axis": "comz",
+      "core": true,
+      "effect": {
+        "comz": 8
+      },
+      "text": "Communism is a set of immediate measures, not a distant end-state to be built toward."
+    },
+    {
+      "id": "comz04",
+      "axis": "comz",
+      "core": false,
+      "effect": {
+        "comz": 10
+      },
+      "text": "Any period of continued wage labour under a revolutionary government reproduces capitalist social relations."
+    },
+    {
+      "id": "comz05",
+      "axis": "comz",
+      "core": false,
+      "effect": {
+        "comz": 8
+      },
+      "text": "The revolution either abolishes exchange at the outset or it isn't a communist revolution at all."
+    },
+    {
+      "id": "comz06",
+      "axis": "comz",
+      "core": false,
+      "effect": {
+        "comz": 7
+      },
+      "text": "Producing for need rather than for exchange has to start on day one, not after a period of accumulation."
+    },
+    {
+      "id": "comz07",
+      "axis": "comz",
+      "core": true,
+      "effect": {
+        "comz": -10
+      },
+      "text": "A transitional period of workers' state power is necessary before value and wage labour can be abolished."
+    },
+    {
+      "id": "comz08",
+      "axis": "comz",
+      "core": true,
+      "effect": {
+        "comz": -9
+      },
+      "text": "Trying to abolish exchange immediately, before production has developed, produces only generalised scarcity."
+    },
+    {
+      "id": "comz09",
+      "axis": "comz",
+      "core": true,
+      "effect": {
+        "comz": -8
+      },
+      "text": "The dictatorship of the proletariat is a real stage, not a formula to be skipped over."
+    },
+    {
+      "id": "comz10",
+      "axis": "comz",
+      "core": false,
+      "effect": {
+        "comz": -10
+      },
+      "text": "Communism has to be built up through planned development, not declared into existence overnight."
+    },
+    {
+      "id": "comz11",
+      "axis": "comz",
+      "core": false,
+      "effect": {
+        "comz": -8
+      },
+      "text": "Without a period of proletarian state power, the old ruling class simply retakes what was taken from it."
+    },
+    {
+      "id": "comz12",
+      "axis": "comz",
+      "core": false,
+      "effect": {
+        "comz": -7
+      },
+      "text": "The idea that communism can be achieved in a single stroke underestimates what it takes to reorganise production."
+    },
+    {
+      "id": "site01",
+      "axis": "site",
+      "core": true,
+      "effect": {
+        "site": 10
+      },
+      "text": "Reproducing daily life outside the wage relation is as much a terrain of struggle as the factory floor."
+    },
+    {
+      "id": "site02",
+      "axis": "site",
+      "core": true,
+      "effect": {
+        "site": 9
+      },
+      "text": "The revolution has to transform housework, care, and consumption, not just the point of production."
+    },
+    {
+      "id": "site03",
+      "axis": "site",
+      "core": true,
+      "effect": {
+        "site": 8
+      },
+      "text": "Struggles in the neighbourhood and the household are not secondary to the strike; they are part of the same struggle."
+    },
+    {
+      "id": "site04",
+      "axis": "site",
+      "core": false,
+      "effect": {
+        "site": 10
+      },
+      "text": "Capital organises life outside the workplace as thoroughly as it organises work, and both have to be contested."
+    },
+    {
+      "id": "site05",
+      "axis": "site",
+      "core": false,
+      "effect": {
+        "site": 8
+      },
+      "text": "A revolution that changes ownership of the factories but leaves domestic and social reproduction untouched has changed less than it thinks."
+    },
+    {
+      "id": "site06",
+      "axis": "site",
+      "core": false,
+      "effect": {
+        "site": 7
+      },
+      "text": "The community, not only the workplace, is where the working class actually lives its condition."
+    },
+    {
+      "id": "site07",
+      "axis": "site",
+      "core": true,
+      "effect": {
+        "site": -10
+      },
+      "text": "The wage relation at the point of production is the foundation everything else rests on; struggles elsewhere are secondary to it."
+    },
+    {
+      "id": "site08",
+      "axis": "site",
+      "core": true,
+      "effect": {
+        "site": -9
+      },
+      "text": "Whoever controls production controls the rest of social life as a consequence."
+    },
+    {
+      "id": "site09",
+      "axis": "site",
+      "core": true,
+      "effect": {
+        "site": -8
+      },
+      "text": "Focusing on lifestyle and everyday life is a retreat from the discipline of class struggle at work."
+    },
+    {
+      "id": "site10",
+      "axis": "site",
+      "core": false,
+      "effect": {
+        "site": -10
+      },
+      "text": "The factory remains the decisive site because that is where surplus value is actually extracted."
+    },
+    {
+      "id": "site11",
+      "axis": "site",
+      "core": false,
+      "effect": {
+        "site": -8
+      },
+      "text": "Struggles over consumption and daily life rarely generalise the way strikes at the point of production do."
+    },
+    {
+      "id": "site12",
+      "axis": "site",
+      "core": false,
+      "effect": {
+        "site": -7
+      },
+      "text": "Organising the workplace is harder and more decisive than organising the neighbourhood, and should be prioritised."
+    },
+    {
+      "id": "unio01",
+      "axis": "unio",
+      "core": true,
+      "effect": {
+        "unio": 10
+      },
+      "text": "Trade unions today function to manage and contain working-class discontent on capital's behalf."
+    },
+    {
+      "id": "unio02",
+      "axis": "unio",
+      "core": true,
+      "effect": {
+        "unio": 9
+      },
+      "text": "A union's job is to negotiate the price of labour power, which means administering exploitation, not ending it."
+    },
+    {
+      "id": "unio03",
+      "axis": "unio",
+      "core": true,
+      "effect": {
+        "unio": 8
+      },
+      "text": "Union bureaucracies have interests of their own that diverge from the rank and file's."
+    },
+    {
+      "id": "unio04",
+      "axis": "unio",
+      "core": false,
+      "effect": {
+        "unio": 10
+      },
+      "text": "The more successfully a union is integrated into collective bargaining, the less capable it is of revolutionary action."
+    },
+    {
+      "id": "unio05",
+      "axis": "unio",
+      "core": false,
+      "effect": {
+        "unio": 8
+      },
+      "text": "Permanent union structures tend to outlive their usefulness and become obstacles to wildcat action."
+    },
+    {
+      "id": "unio06",
+      "axis": "unio",
+      "core": false,
+      "effect": {
+        "unio": 7
+      },
+      "text": "Workers acting outside and against their own unions is sometimes the only way forward."
+    },
+    {
+      "id": "unio07",
+      "axis": "unio",
+      "core": true,
+      "effect": {
+        "unio": -10
+      },
+      "text": "Mass unions remain the indispensable organisational vehicle through which the working class builds its power."
+    },
+    {
+      "id": "unio08",
+      "axis": "unio",
+      "core": true,
+      "effect": {
+        "unio": -9
+      },
+      "text": "Abandoning the unions cedes the largest existing workers' organisations to the class enemy for nothing."
+    },
+    {
+      "id": "unio09",
+      "axis": "unio",
+      "core": true,
+      "effect": {
+        "unio": -8
+      },
+      "text": "Building rank-and-file strength inside the unions is more realistic than trying to bypass them."
+    },
+    {
+      "id": "unio10",
+      "axis": "unio",
+      "core": false,
+      "effect": {
+        "unio": -10
+      },
+      "text": "A union, whatever its bureaucracy's faults, still organises workers on a scale nothing else does."
+    },
+    {
+      "id": "unio11",
+      "axis": "unio",
+      "core": false,
+      "effect": {
+        "unio": -8
+      },
+      "text": "Syndicalist strategy has a real record of building working-class power that dismissing the unions ignores."
+    },
+    {
+      "id": "unio12",
+      "axis": "unio",
+      "core": false,
+      "effect": {
+        "unio": -7
+      },
+      "text": "Even a compromised union is a better base for organising than none at all."
+    },
+    {
+      "id": "parl01",
+      "axis": "parl",
+      "core": true,
+      "effect": {
+        "parl": 10
+      },
+      "text": "Standing candidates for parliament can be used to build revolutionary organisation and propaganda even without illusions in the state."
+    },
+    {
+      "id": "parl02",
+      "axis": "parl",
+      "core": true,
+      "effect": {
+        "parl": 9
+      },
+      "text": "Winning a parliamentary majority is one legitimate route among others to transforming society."
+    },
+    {
+      "id": "parl03",
+      "axis": "parl",
+      "core": true,
+      "effect": {
+        "parl": 8
+      },
+      "text": "Revolutionaries should use every legal opening, including elections, that helps organise the class."
+    },
+    {
+      "id": "parl04",
+      "axis": "parl",
+      "core": false,
+      "effect": {
+        "parl": 10
+      },
+      "text": "A seat in parliament gives a platform that street agitation alone cannot reach."
+    },
+    {
+      "id": "parl05",
+      "axis": "parl",
+      "core": false,
+      "effect": {
+        "parl": 8
+      },
+      "text": "Refusing all engagement with representative institutions cuts revolutionaries off from millions of workers who still vote."
+    },
+    {
+      "id": "parl06",
+      "axis": "parl",
+      "core": false,
+      "effect": {
+        "parl": 7
+      },
+      "text": "Participating in elections tactically does not commit a movement to parliamentary illusions."
+    },
+    {
+      "id": "parl07",
+      "axis": "parl",
+      "core": true,
+      "effect": {
+        "parl": -10
+      },
+      "text": "Parliament is a capitalist institution that cannot be used for revolutionary ends, however tactically it is approached."
+    },
+    {
+      "id": "parl08",
+      "axis": "parl",
+      "core": true,
+      "effect": {
+        "parl": -9
+      },
+      "text": "Voting confirms the fiction that the state represents the interests of those it rules over."
+    },
+    {
+      "id": "parl09",
+      "axis": "parl",
+      "core": true,
+      "effect": {
+        "parl": -8
+      },
+      "text": "Every experience of workers' parties entering parliament has ended in their absorption into the system."
+    },
+    {
+      "id": "parl10",
+      "axis": "parl",
+      "core": false,
+      "effect": {
+        "parl": -10
+      },
+      "text": "Abstention from elections is a matter of principle, not a tactic to be weighed case by case."
+    },
+    {
+      "id": "parl11",
+      "axis": "parl",
+      "core": false,
+      "effect": {
+        "parl": -8
+      },
+      "text": "A revolutionary organisation that contests elections has already accepted the terrain the state has set for it."
+    },
+    {
+      "id": "parl12",
+      "axis": "parl",
+      "core": false,
+      "effect": {
+        "parl": -7
+      },
+      "text": "Direct action outside all institutional channels is the only form of politics that hasn't been recuperated."
+    },
+    {
+      "id": "natl01",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": -10
+      },
+      "text": "Anti-colonial and national liberation struggles deserve support as blows against imperialism, whatever their internal class content."
+    },
+    {
+      "id": "natl02",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": -9
+      },
+      "text": "Backing a national liberation movement against a colonial power is a defensible tactical choice for internationalists."
+    },
+    {
+      "id": "natl03",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": -8
+      },
+      "text": "National liberation struggles, whatever their limits, weaken the world system revolutionaries are trying to overthrow."
+    },
+    {
+      "id": "natl04",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": -10
+      },
+      "text": "Solidarity with the colonised is owed even when the movement leading the struggle is not itself communist."
+    },
+    {
+      "id": "natl05",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": -8
+      },
+      "text": "Refusing to distinguish coloniser from colonised in the name of pure class politics ends up serving the coloniser."
+    },
+    {
+      "id": "natl06",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": -7
+      },
+      "text": "A national liberation struggle can be a genuine front of the wider struggle against capital."
+    },
+    {
+      "id": "natl07",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": 10
+      },
+      "text": "The nation is a bourgeois category, and no national struggle, colonial or otherwise, is a proletarian one."
+    },
+    {
+      "id": "natl08",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": 9
+      },
+      "text": "Support for national liberation always ends up subordinating class struggle to a new nationalist ruling class."
+    },
+    {
+      "id": "natl09",
+      "axis": "natl",
+      "core": true,
+      "effect": {
+        "natl": 8
+      },
+      "text": "Every national liberation movement in power has built a new state that exploits its own working class."
+    },
+    {
+      "id": "natl10",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": 10
+      },
+      "text": "Internationalism means refusing all national flags, including those raised against colonialism."
+    },
+    {
+      "id": "natl11",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": 8
+      },
+      "text": "A struggle organised around the nation cannot, by its nature, point toward the abolition of classes."
+    },
+    {
+      "id": "natl12",
+      "axis": "natl",
+      "core": false,
+      "effect": {
+        "natl": 7
+      },
+      "text": "Solidarity should go to the proletariat inside a colonised country, never to the movement claiming to speak for the nation as a whole."
+    },
+    {
+      "id": "insu01",
+      "axis": "insu",
+      "core": true,
+      "effect": {
+        "insu": -10
+      },
+      "text": "Mass strikes that draw in the whole class are the movement's most powerful weapon."
+    },
+    {
+      "id": "insu02",
+      "axis": "insu",
+      "core": true,
+      "effect": {
+        "insu": -9
+      },
+      "text": "The revolution will be made by the broad movement of the class, not by any smaller group acting on its behalf."
+    },
+    {
+      "id": "insu03",
+      "axis": "insu",
+      "core": true,
+      "effect": {
+        "insu": -8
+      },
+      "text": "A generalised strike, spreading through solidarity rather than leadership, is the model of revolutionary action."
+    },
+    {
+      "id": "insu04",
+      "axis": "insu",
+      "core": false,
+      "effect": {
+        "insu": -10
+      },
+      "text": "Building toward a mass strike is more valuable than any isolated action a small group could carry out."
+    },
+    {
+      "id": "insu05",
+      "axis": "insu",
+      "core": false,
+      "effect": {
+        "insu": -8
+      },
+      "text": "The class moves as a class or it doesn't move at all; there is no substitute for its numbers."
+    },
+    {
+      "id": "insu06",
+      "axis": "insu",
+      "core": false,
+      "effect": {
+        "insu": -7
+      },
+      "text": "Wide participation, even if less disciplined, beats a small group's more coordinated action."
+    },
+    {
+      "id": "insu07",
+      "axis": "insu",
+      "core": true,
+      "effect": {
+        "insu": 10
+      },
+      "text": "Small groups willing to act decisively can break an impasse that a mass movement, waiting for consensus, cannot."
+    },
+    {
+      "id": "insu08",
+      "axis": "insu",
+      "core": true,
+      "effect": {
+        "insu": 9
+      },
+      "text": "Riot, sabotage, and expropriation are legitimate tactics regardless of whether the broader class is yet moving."
+    },
+    {
+      "id": "insu09",
+      "axis": "insu",
+      "core": true,
+      "effect": {
+        "insu": 8
+      },
+      "text": "Waiting for a mass movement to arrive before acting means never acting at all."
+    },
+    {
+      "id": "insu10",
+      "axis": "insu",
+      "core": false,
+      "effect": {
+        "insu": 10
+      },
+      "text": "A determined minority that acts can open possibilities a passive majority never would have found on its own."
+    },
+    {
+      "id": "insu11",
+      "axis": "insu",
+      "core": false,
+      "effect": {
+        "insu": 8
+      },
+      "text": "Direct, immediate action matters more than building the numbers for a hypothetical future mass strike."
+    },
+    {
+      "id": "insu12",
+      "axis": "insu",
+      "core": false,
+      "effect": {
+        "insu": 7
+      },
+      "text": "Insurrectionary action doesn't need to wait for the working class as a whole to be ready."
+    }
+  ]
+}

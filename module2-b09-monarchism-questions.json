@@ -1,0 +1,1094 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 9,
+    "bucket": "Monarchism / Reaction",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "sove",
+      "name": "Sovereign Power",
+      "negPole": "Ceremonial / Constrained Crown",
+      "posPole": "Absolute Personal Sovereignty"
+    },
+    {
+      "key": "titl",
+      "name": "Basis of Title",
+      "negPole": "Dynastic Blood & Divine Right",
+      "posPole": "Acclaim, Performance or Contract"
+    },
+    {
+      "key": "reli",
+      "name": "Religion",
+      "negPole": "Secular / Erastian",
+      "posPole": "Confessional Throne-and-Altar"
+    },
+    {
+      "key": "orde",
+      "name": "Social Order",
+      "negPole": "Estate / Corporate Hierarchy",
+      "posPole": "Legal Equality of Subjects"
+    },
+    {
+      "key": "cent",
+      "name": "Territorial Form",
+      "negPole": "Regional Privileges / Fueros",
+      "posPole": "Unitary Absolutist Centralism"
+    },
+    {
+      "key": "econ",
+      "name": "Economic Order",
+      "negPole": "Agrarian-Corporatist",
+      "posPole": "Commercial-Capitalist"
+    },
+    {
+      "key": "rout",
+      "name": "Route to Restoration",
+      "negPole": "Legal / Institutional",
+      "posPole": "Coup, Rising or Rupture"
+    },
+    {
+      "key": "popu",
+      "name": "Social Base",
+      "negPole": "Elite / Aristocratic Politics",
+      "posPole": "Mass Popular Base"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Absolute Monarchism",
+      "umbrella": false,
+      "anchor": {
+        "sove": 100,
+        "titl": 12,
+        "reli": 60,
+        "orde": 30,
+        "cent": 92,
+        "econ": 40,
+        "rout": 50,
+        "popu": 12
+      }
+    },
+    {
+      "name": "Constitutional Monarchism",
+      "umbrella": false,
+      "anchor": {
+        "sove": 2,
+        "titl": 60,
+        "reli": 30,
+        "orde": 88,
+        "cent": 50,
+        "econ": 75,
+        "rout": 3,
+        "popu": 30
+      }
+    },
+    {
+      "name": "Legitimism (Bourbon)",
+      "umbrella": false,
+      "anchor": {
+        "sove": 82,
+        "titl": 0,
+        "reli": 78,
+        "orde": 8,
+        "cent": 55,
+        "econ": 18,
+        "rout": 25,
+        "popu": 8
+      }
+    },
+    {
+      "name": "Orleanism",
+      "umbrella": false,
+      "anchor": {
+        "sove": 25,
+        "titl": 45,
+        "reli": 40,
+        "orde": 65,
+        "cent": 60,
+        "econ": 92,
+        "rout": 20,
+        "popu": 10
+      }
+    },
+    {
+      "name": "Carlism (Spain)",
+      "umbrella": false,
+      "anchor": {
+        "sove": 65,
+        "titl": 8,
+        "reli": 98,
+        "orde": 5,
+        "cent": 2,
+        "econ": 5,
+        "rout": 90,
+        "popu": 80
+      }
+    },
+    {
+      "name": "Jacobitism (Stuart claim)",
+      "umbrella": false,
+      "anchor": {
+        "sove": 55,
+        "titl": 3,
+        "reli": 70,
+        "orde": 20,
+        "cent": 25,
+        "econ": 25,
+        "rout": 75,
+        "popu": 45
+      }
+    },
+    {
+      "name": "Bonapartism",
+      "umbrella": false,
+      "anchor": {
+        "sove": 85,
+        "titl": 88,
+        "reli": 30,
+        "orde": 85,
+        "cent": 95,
+        "econ": 60,
+        "rout": 92,
+        "popu": 98
+      }
+    },
+    {
+      "name": "Tsarist Restorationism",
+      "umbrella": false,
+      "anchor": {
+        "sove": 90,
+        "titl": 10,
+        "reli": 85,
+        "orde": 20,
+        "cent": 88,
+        "econ": 30,
+        "rout": 55,
+        "popu": 40
+      }
+    },
+    {
+      "name": "Throne-and-Altar Traditionalism",
+      "umbrella": false,
+      "anchor": {
+        "sove": 72,
+        "titl": 18,
+        "reli": 100,
+        "orde": 3,
+        "cent": 25,
+        "econ": 8,
+        "rout": 30,
+        "popu": 35
+      }
+    },
+    {
+      "name": "Neo-Reaction / Dark Enlightenment",
+      "umbrella": false,
+      "anchor": {
+        "sove": 88,
+        "titl": 95,
+        "reli": 15,
+        "orde": 25,
+        "cent": 20,
+        "econ": 98,
+        "rout": 40,
+        "popu": 3
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "sove01",
+      "axis": "sove",
+      "core": true,
+      "effect": {
+        "sove": 10
+      },
+      "text": "The monarch should hold real, personal decision-making power, not merely a ceremonial role."
+    },
+    {
+      "id": "sove02",
+      "axis": "sove",
+      "core": true,
+      "effect": {
+        "sove": 9
+      },
+      "text": "Ultimate sovereignty properly rests in the person of the monarch, not in a legislature."
+    },
+    {
+      "id": "sove03",
+      "axis": "sove",
+      "core": true,
+      "effect": {
+        "sove": 8
+      },
+      "text": "A crown without real governing power has lost the thing that makes monarchy worthwhile."
+    },
+    {
+      "id": "sove04",
+      "axis": "sove",
+      "core": false,
+      "effect": {
+        "sove": 10
+      },
+      "text": "The monarch's personal judgment should be able to override the counsel of ministers when necessary."
+    },
+    {
+      "id": "sove05",
+      "axis": "sove",
+      "core": false,
+      "effect": {
+        "sove": 8
+      },
+      "text": "Executive authority concentrated in the monarch is more decisive and coherent than authority spread across institutions."
+    },
+    {
+      "id": "sove06",
+      "axis": "sove",
+      "core": false,
+      "effect": {
+        "sove": 7
+      },
+      "text": "The crown's power should not be reduced to signing what parliament has already decided."
+    },
+    {
+      "id": "sove07",
+      "axis": "sove",
+      "core": true,
+      "effect": {
+        "sove": -10
+      },
+      "text": "The monarch should reign but not rule, with real governing power resting in elected or constitutional bodies."
+    },
+    {
+      "id": "sove08",
+      "axis": "sove",
+      "core": true,
+      "effect": {
+        "sove": -9
+      },
+      "text": "A ceremonial monarchy, above ordinary politics, does more for national unity than one that governs directly."
+    },
+    {
+      "id": "sove09",
+      "axis": "sove",
+      "core": true,
+      "effect": {
+        "sove": -8
+      },
+      "text": "Political power exercised through accountable institutions is preferable to power concentrated in one person, even a monarch."
+    },
+    {
+      "id": "sove10",
+      "axis": "sove",
+      "core": false,
+      "effect": {
+        "sove": -10
+      },
+      "text": "The crown's value lies in continuity and symbolism, not in exercising personal command."
+    },
+    {
+      "id": "sove11",
+      "axis": "sove",
+      "core": false,
+      "effect": {
+        "sove": -8
+      },
+      "text": "Constitutional limits on the monarch protect the institution as much as they protect the people."
+    },
+    {
+      "id": "sove12",
+      "axis": "sove",
+      "core": false,
+      "effect": {
+        "sove": -7
+      },
+      "text": "A monarch confined to ceremonial duties is fulfilling, not diminishing, the office's proper role."
+    },
+    {
+      "id": "titl01",
+      "axis": "titl",
+      "core": true,
+      "effect": {
+        "titl": -10
+      },
+      "text": "Legitimate rule passes by hereditary right and divine sanction, not by popular consent."
+    },
+    {
+      "id": "titl02",
+      "axis": "titl",
+      "core": true,
+      "effect": {
+        "titl": -9
+      },
+      "text": "A monarch's claim to the throne rests on bloodline, not on the approval of the governed."
+    },
+    {
+      "id": "titl03",
+      "axis": "titl",
+      "core": true,
+      "effect": {
+        "titl": -8
+      },
+      "text": "The legitimacy of a dynasty does not depend on whether the current generation performs well."
+    },
+    {
+      "id": "titl04",
+      "axis": "titl",
+      "core": false,
+      "effect": {
+        "titl": -10
+      },
+      "text": "Succession by blood provides a stability and continuity that no elected office can match."
+    },
+    {
+      "id": "titl05",
+      "axis": "titl",
+      "core": false,
+      "effect": {
+        "titl": -8
+      },
+      "text": "God-given right, not the people's will, is the true foundation of royal authority."
+    },
+    {
+      "id": "titl06",
+      "axis": "titl",
+      "core": false,
+      "effect": {
+        "titl": -7
+      },
+      "text": "A rightful heir's claim stands regardless of how popular or unpopular they personally are."
+    },
+    {
+      "id": "titl07",
+      "axis": "titl",
+      "core": true,
+      "effect": {
+        "titl": 10
+      },
+      "text": "A ruler's legitimacy ultimately depends on the consent and acclaim of the people they govern."
+    },
+    {
+      "id": "titl08",
+      "axis": "titl",
+      "core": true,
+      "effect": {
+        "titl": 9
+      },
+      "text": "Effective, popular leadership is a more solid basis for authority than inherited bloodline."
+    },
+    {
+      "id": "titl09",
+      "axis": "titl",
+      "core": true,
+      "effect": {
+        "titl": 8
+      },
+      "text": "A ruler who has lost the people's confidence has lost their legitimacy, whatever their lineage."
+    },
+    {
+      "id": "titl10",
+      "axis": "titl",
+      "core": false,
+      "effect": {
+        "titl": 10
+      },
+      "text": "Authority earned through demonstrated capability outranks authority claimed through birth."
+    },
+    {
+      "id": "titl11",
+      "axis": "titl",
+      "core": false,
+      "effect": {
+        "titl": 8
+      },
+      "text": "A social or constitutional contract, not divine right, is what properly grounds a ruler's power."
+    },
+    {
+      "id": "titl12",
+      "axis": "titl",
+      "core": false,
+      "effect": {
+        "titl": 7
+      },
+      "text": "Even a monarch's legitimacy ultimately rests on some form of public acceptance."
+    },
+    {
+      "id": "reli01",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 10
+      },
+      "text": "The state should be formally bound to a single confessional church and its teachings."
+    },
+    {
+      "id": "reli02",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 9
+      },
+      "text": "The monarch's authority is properly understood as sanctioned and blessed by the church."
+    },
+    {
+      "id": "reli03",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 8
+      },
+      "text": "Church and throne should stand together as mutually reinforcing pillars of the social order."
+    },
+    {
+      "id": "reli04",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 10
+      },
+      "text": "Religious orthodoxy should be actively defended and enforced by the crown."
+    },
+    {
+      "id": "reli05",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 8
+      },
+      "text": "The nation's laws should reflect and be answerable to the teachings of its established church."
+    },
+    {
+      "id": "reli06",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 7
+      },
+      "text": "A monarchy without a religious foundation lacks the deeper legitimacy that sustains it."
+    },
+    {
+      "id": "reli07",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -10
+      },
+      "text": "The state's authority should rest on secular, civil grounds, independent of any church's blessing."
+    },
+    {
+      "id": "reli08",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -9
+      },
+      "text": "Religious and political authority should be kept separate, even under a monarchy."
+    },
+    {
+      "id": "reli09",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -8
+      },
+      "text": "A monarch's legitimacy shouldn't depend on the endorsement of any religious institution."
+    },
+    {
+      "id": "reli10",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -10
+      },
+      "text": "Erastian control of the church by the state is preferable to the church holding independent authority."
+    },
+    {
+      "id": "reli11",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -8
+      },
+      "text": "The crown should treat religious institutions as subordinate to civil authority, not as a co-equal pillar of order."
+    },
+    {
+      "id": "reli12",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -7
+      },
+      "text": "A modern monarchy is stronger when it isn't bound to any one confessional tradition."
+    },
+    {
+      "id": "orde01",
+      "axis": "orde",
+      "core": true,
+      "effect": {
+        "orde": -10
+      },
+      "text": "Society is naturally and rightly ordered into estates and ranks, each with its own duties and privileges."
+    },
+    {
+      "id": "orde02",
+      "axis": "orde",
+      "core": true,
+      "effect": {
+        "orde": -9
+      },
+      "text": "Formal social hierarchy, recognised in law, reflects a natural and legitimate order."
+    },
+    {
+      "id": "orde03",
+      "axis": "orde",
+      "core": true,
+      "effect": {
+        "orde": -8
+      },
+      "text": "Different classes of society properly have different rights, obligations, and legal standing."
+    },
+    {
+      "id": "orde04",
+      "axis": "orde",
+      "core": false,
+      "effect": {
+        "orde": -10
+      },
+      "text": "A hereditary nobility with its own privileges is a legitimate and stabilising feature of society."
+    },
+    {
+      "id": "orde05",
+      "axis": "orde",
+      "core": false,
+      "effect": {
+        "orde": -8
+      },
+      "text": "Corporate bodies — guilds, estates, orders — properly mediate between the individual and the crown."
+    },
+    {
+      "id": "orde06",
+      "axis": "orde",
+      "core": false,
+      "effect": {
+        "orde": -7
+      },
+      "text": "Formal legal distinctions between ranks of society preserve a natural and functional order."
+    },
+    {
+      "id": "orde07",
+      "axis": "orde",
+      "core": true,
+      "effect": {
+        "orde": 10
+      },
+      "text": "All subjects should be equal before the law, regardless of birth or rank."
+    },
+    {
+      "id": "orde08",
+      "axis": "orde",
+      "core": true,
+      "effect": {
+        "orde": 9
+      },
+      "text": "Legal privilege attached to noble birth has no place in a well-ordered modern state."
+    },
+    {
+      "id": "orde09",
+      "axis": "orde",
+      "core": true,
+      "effect": {
+        "orde": 8
+      },
+      "text": "A single, uniform citizenship is a fairer basis for society than a hierarchy of legal estates."
+    },
+    {
+      "id": "orde10",
+      "axis": "orde",
+      "core": false,
+      "effect": {
+        "orde": 10
+      },
+      "text": "Formal distinctions of rank in law should give way to equal legal status for all."
+    },
+    {
+      "id": "orde11",
+      "axis": "orde",
+      "core": false,
+      "effect": {
+        "orde": 8
+      },
+      "text": "The abolition of legal privilege by birth was a genuine improvement, not a loss, in social order."
+    },
+    {
+      "id": "orde12",
+      "axis": "orde",
+      "core": false,
+      "effect": {
+        "orde": 7
+      },
+      "text": "A modern monarchy is more legitimate when all its subjects share the same legal standing."
+    },
+    {
+      "id": "cent01",
+      "axis": "cent",
+      "core": true,
+      "effect": {
+        "cent": -10
+      },
+      "text": "Historic regional rights, charters, and local privileges deserve to be respected and preserved."
+    },
+    {
+      "id": "cent02",
+      "axis": "cent",
+      "core": true,
+      "effect": {
+        "cent": -9
+      },
+      "text": "A kingdom made up of distinct provinces with their own traditional laws is a legitimate model of order."
+    },
+    {
+      "id": "cent03",
+      "axis": "cent",
+      "core": true,
+      "effect": {
+        "cent": -8
+      },
+      "text": "Local and regional autonomy should be protected against absorption into a single centralised administration."
+    },
+    {
+      "id": "cent04",
+      "axis": "cent",
+      "core": false,
+      "effect": {
+        "cent": -10
+      },
+      "text": "Traditional local liberties are worth defending even against the crown's own centralising instincts."
+    },
+    {
+      "id": "cent05",
+      "axis": "cent",
+      "core": false,
+      "effect": {
+        "cent": -8
+      },
+      "text": "A patchwork of regional laws and customs reflects the organic, historical character of the realm."
+    },
+    {
+      "id": "cent06",
+      "axis": "cent",
+      "core": false,
+      "effect": {
+        "cent": -7
+      },
+      "text": "Centralising every function of government erodes the local attachments that give a kingdom its cohesion."
+    },
+    {
+      "id": "cent07",
+      "axis": "cent",
+      "core": true,
+      "effect": {
+        "cent": 10
+      },
+      "text": "A single, unified legal and administrative system across the whole realm is the mark of a well-ordered state."
+    },
+    {
+      "id": "cent08",
+      "axis": "cent",
+      "core": true,
+      "effect": {
+        "cent": 9
+      },
+      "text": "Regional privileges and local exceptions weaken the crown's ability to govern effectively."
+    },
+    {
+      "id": "cent09",
+      "axis": "cent",
+      "core": true,
+      "effect": {
+        "cent": 8
+      },
+      "text": "The crown should override local particularism in favour of uniform, centrally administered law."
+    },
+    {
+      "id": "cent10",
+      "axis": "cent",
+      "core": false,
+      "effect": {
+        "cent": 10
+      },
+      "text": "A strong, centralised monarchy is more capable of defending the realm than one fragmented by local privilege."
+    },
+    {
+      "id": "cent11",
+      "axis": "cent",
+      "core": false,
+      "effect": {
+        "cent": 8
+      },
+      "text": "Absolute royal authority is best exercised through a single, unified administration, not through regional intermediaries."
+    },
+    {
+      "id": "cent12",
+      "axis": "cent",
+      "core": false,
+      "effect": {
+        "cent": 7
+      },
+      "text": "Uniform centralisation, even at the cost of local tradition, serves the strength of the state."
+    },
+    {
+      "id": "econ01",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -10
+      },
+      "text": "The traditional agrarian order — land, estate, and peasant obligation — is the proper economic foundation of the realm."
+    },
+    {
+      "id": "econ02",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -9
+      },
+      "text": "Guild and corporate regulation of trade and craft is preferable to unregulated commerce."
+    },
+    {
+      "id": "econ03",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -8
+      },
+      "text": "Land tied to noble estates and inherited obligation is a more stable economic basis than commercial exchange."
+    },
+    {
+      "id": "econ04",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -10
+      },
+      "text": "Rapid commercial and industrial change threatens the social bonds a traditional economy depends on."
+    },
+    {
+      "id": "econ05",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -8
+      },
+      "text": "The economy should serve the traditional social order, not reshape it in the name of efficiency."
+    },
+    {
+      "id": "econ06",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -7
+      },
+      "text": "Restraining commercial and financial interests protects the older, more stable agrarian foundation of society."
+    },
+    {
+      "id": "econ07",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 10
+      },
+      "text": "A modern commercial and capitalist economy is compatible with, and can strengthen, monarchical rule."
+    },
+    {
+      "id": "econ08",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 9
+      },
+      "text": "The crown should encourage trade, industry, and commercial growth rather than defend an agrarian order against them."
+    },
+    {
+      "id": "econ09",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 8
+      },
+      "text": "Economic modernisation, even where it disrupts old estates and guilds, ultimately strengthens the realm."
+    },
+    {
+      "id": "econ10",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 10
+      },
+      "text": "A monarchy that embraces commerce and enterprise is more durable than one tied to an agrarian past."
+    },
+    {
+      "id": "econ11",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 8
+      },
+      "text": "Financial and mercantile interests can be valuable allies of the crown, not threats to it."
+    },
+    {
+      "id": "econ12",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 7
+      },
+      "text": "The traditional agrarian economy is not worth preserving at the cost of the realm's commercial strength."
+    },
+    {
+      "id": "rout01",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": -10
+      },
+      "text": "Restoration of the monarchy should proceed through legal, constitutional, and peaceful means."
+    },
+    {
+      "id": "rout02",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": -9
+      },
+      "text": "Patient legal and diplomatic effort is the proper route to restoring rightful rule."
+    },
+    {
+      "id": "rout03",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": -8
+      },
+      "text": "A restoration achieved through negotiation and legitimate process carries more lasting authority than one imposed by force."
+    },
+    {
+      "id": "rout04",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": -10
+      },
+      "text": "Working within existing legal and political structures is the responsible path back to monarchy."
+    },
+    {
+      "id": "rout05",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": -8
+      },
+      "text": "A monarchist movement should renounce violence and pursue restoration by lawful means."
+    },
+    {
+      "id": "rout06",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": -7
+      },
+      "text": "Gradual, institutional change is more likely to produce a durable restoration than any sudden seizure of power."
+    },
+    {
+      "id": "rout07",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": 10
+      },
+      "text": "Restoration may legitimately require an uprising, coup, or armed struggle if legal channels are closed."
+    },
+    {
+      "id": "rout08",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": 9
+      },
+      "text": "Waiting on legal process when the crown has been unjustly displaced can mean waiting forever."
+    },
+    {
+      "id": "rout09",
+      "axis": "rout",
+      "core": true,
+      "effect": {
+        "rout": 8
+      },
+      "text": "A rightful monarch's cause justifies the use of force to reclaim the throne when necessary."
+    },
+    {
+      "id": "rout10",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": 10
+      },
+      "text": "History shows that restorations have usually come through decisive action, not patient legalism."
+    },
+    {
+      "id": "rout11",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": 8
+      },
+      "text": "A monarchist movement that rules out force in principle has no real path back to power."
+    },
+    {
+      "id": "rout12",
+      "axis": "rout",
+      "core": false,
+      "effect": {
+        "rout": 7
+      },
+      "text": "Direct action to restore the crown is legitimate when the existing order has no lawful path to change."
+    },
+    {
+      "id": "popu01",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": -10
+      },
+      "text": "Monarchist politics is properly the business of the aristocracy, the court, and established elites."
+    },
+    {
+      "id": "popu02",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": -9
+      },
+      "text": "Restoration should be pursued through influence over elites and institutions, not popular mobilisation."
+    },
+    {
+      "id": "popu03",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": -8
+      },
+      "text": "A monarchist movement should be cautious about appeals to the masses, which can spiral beyond its control."
+    },
+    {
+      "id": "popu04",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": -10
+      },
+      "text": "The legitimacy of monarchy rests on tradition and elite continuity, not on popular enthusiasm."
+    },
+    {
+      "id": "popu05",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": -8
+      },
+      "text": "Popular political mobilisation is a poor fit for a cause grounded in inherited, not democratic, legitimacy."
+    },
+    {
+      "id": "popu06",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": -7
+      },
+      "text": "Court and aristocratic politics, not mass rallies, are the proper terrain for a monarchist movement."
+    },
+    {
+      "id": "popu07",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": 10
+      },
+      "text": "A monarchist cause needs to build genuine popular support to have any chance of succeeding today."
+    },
+    {
+      "id": "popu08",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": 9
+      },
+      "text": "Mass mobilisation and popular appeal are necessary tools for restoring a monarchy in the modern era."
+    },
+    {
+      "id": "popu09",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": 8
+      },
+      "text": "A restored monarchy needs the demonstrated backing of ordinary people, not just elite favour, to be secure."
+    },
+    {
+      "id": "popu10",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": 10
+      },
+      "text": "Popular plebiscite or acclaim can be a legitimate part of restoring a monarch to power."
+    },
+    {
+      "id": "popu11",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": 8
+      },
+      "text": "A monarchist movement should actively organise and appeal to popular sentiment, not rely on elite networks alone."
+    },
+    {
+      "id": "popu12",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": 7
+      },
+      "text": "Winning over the crowd is as important to a modern restoration as winning over the aristocracy."
+    }
+  ]
+}

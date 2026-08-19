@@ -1,0 +1,1122 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 7,
+    "bucket": "Conservatism",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "econ",
+      "name": "Economic Posture",
+      "negPole": "Market Fundamentalist",
+      "posPole": "Economic Paternalism / Social Market"
+    },
+    {
+      "key": "forp",
+      "name": "Foreign Posture",
+      "negPole": "Restraint / Non-Intervention",
+      "posPole": "Global Interventionism"
+    },
+    {
+      "key": "reli",
+      "name": "Religion in Public Life",
+      "negPole": "Secular Civic Conservatism",
+      "posPole": "Confessional Grounding"
+    },
+    {
+      "key": "iden",
+      "name": "National Identity",
+      "negPole": "Civic / Creedal Nation",
+      "posPole": "Ethno-Cultural / Ancestral Nation"
+    },
+    {
+      "key": "chng",
+      "name": "Disposition to Change",
+      "negPole": "Prudential Gradualism",
+      "posPole": "Restorationist / Roll Back"
+    },
+    {
+      "key": "stat",
+      "name": "State Capacity",
+      "negPole": "Minimal State",
+      "posPole": "Strong Directive State"
+    },
+    {
+      "key": "cpol",
+      "name": "Moral Policy Instrument",
+      "negPole": "Persuasion & Civil Society",
+      "posPole": "Legal Enforcement of Moral Order"
+    },
+    {
+      "key": "popu",
+      "name": "Political Style",
+      "negPole": "Deference to Established Elites",
+      "posPole": "Popular Anti-Elite Mobilisation"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "Traditional / Burkean Conservatism",
+      "umbrella": false,
+      "anchor": {
+        "econ": 55,
+        "forp": 40,
+        "reli": 45,
+        "iden": 50,
+        "chng": 5,
+        "stat": 45,
+        "cpol": 30,
+        "popu": 5
+      }
+    },
+    {
+      "name": "Paleoconservatism",
+      "umbrella": false,
+      "anchor": {
+        "econ": 45,
+        "forp": 2,
+        "reli": 65,
+        "iden": 88,
+        "chng": 85,
+        "stat": 35,
+        "cpol": 55,
+        "popu": 80
+      }
+    },
+    {
+      "name": "Neoconservatism",
+      "umbrella": false,
+      "anchor": {
+        "econ": 25,
+        "forp": 99,
+        "reli": 25,
+        "iden": 3,
+        "chng": 50,
+        "stat": 70,
+        "cpol": 35,
+        "popu": 20
+      }
+    },
+    {
+      "name": "Fusionism",
+      "umbrella": false,
+      "anchor": {
+        "econ": 12,
+        "forp": 65,
+        "reli": 30,
+        "iden": 15,
+        "chng": 45,
+        "stat": 15,
+        "cpol": 15,
+        "popu": 35
+      }
+    },
+    {
+      "name": "One-Nation Conservatism / Toryism",
+      "umbrella": false,
+      "anchor": {
+        "econ": 80,
+        "forp": 45,
+        "reli": 30,
+        "iden": 35,
+        "chng": 15,
+        "stat": 65,
+        "cpol": 25,
+        "popu": 10
+      }
+    },
+    {
+      "name": "Christian Democracy",
+      "umbrella": false,
+      "anchor": {
+        "econ": 88,
+        "forp": 45,
+        "reli": 97,
+        "iden": 28,
+        "chng": 20,
+        "stat": 66,
+        "cpol": 45,
+        "popu": 18
+      }
+    },
+    {
+      "name": "National Conservatism",
+      "umbrella": false,
+      "anchor": {
+        "econ": 60,
+        "forp": 30,
+        "reli": 55,
+        "iden": 86,
+        "chng": 78,
+        "stat": 90,
+        "cpol": 76,
+        "popu": 94
+      }
+    },
+    {
+      "name": "Agrarian Conservatism",
+      "umbrella": false,
+      "anchor": {
+        "econ": 66,
+        "forp": 10,
+        "reli": 62,
+        "iden": 70,
+        "chng": 70,
+        "stat": 30,
+        "cpol": 40,
+        "popu": 66
+      }
+    },
+    {
+      "name": "Cultural / Social Conservatism",
+      "umbrella": false,
+      "anchor": {
+        "econ": 50,
+        "forp": 40,
+        "reli": 86,
+        "iden": 60,
+        "chng": 65,
+        "stat": 58,
+        "cpol": 92,
+        "popu": 60
+      }
+    },
+    {
+      "name": "Compassionate Conservatism",
+      "umbrella": false,
+      "anchor": {
+        "econ": 58,
+        "forp": 55,
+        "reli": 72,
+        "iden": 18,
+        "chng": 22,
+        "stat": 50,
+        "cpol": 32,
+        "popu": 28
+      }
+    },
+    {
+      "name": "Libertarian Conservatism",
+      "umbrella": false,
+      "anchor": {
+        "econ": 2,
+        "forp": 8,
+        "reli": 5,
+        "iden": 20,
+        "chng": 45,
+        "stat": 2,
+        "cpol": 0,
+        "popu": 45
+      }
+    },
+    {
+      "name": "Communitarian Conservatism",
+      "umbrella": false,
+      "anchor": {
+        "econ": 92,
+        "forp": 22,
+        "reli": 50,
+        "iden": 45,
+        "chng": 30,
+        "stat": 58,
+        "cpol": 30,
+        "popu": 48
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "econ01",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 10
+      },
+      "text": "Government should actively shape the economy to serve the community, not just referee a free market."
+    },
+    {
+      "id": "econ02",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 9
+      },
+      "text": "A strong social safety net is compatible with, and even expresses, conservative values of care for one's own."
+    },
+    {
+      "id": "econ03",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": 8
+      },
+      "text": "Protecting domestic industry and workers can justify departing from free-market orthodoxy."
+    },
+    {
+      "id": "econ04",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 10
+      },
+      "text": "The state has a legitimate role in supporting families and communities against pure market pressures."
+    },
+    {
+      "id": "econ05",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 8
+      },
+      "text": "Economic policy should serve social stability, even where that means limiting market forces."
+    },
+    {
+      "id": "econ06",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": 7
+      },
+      "text": "A conservative government should be willing to intervene economically to protect its own people and institutions."
+    },
+    {
+      "id": "econ07",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -10
+      },
+      "text": "Free markets, left largely alone, are the best mechanism for producing widely shared prosperity."
+    },
+    {
+      "id": "econ08",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -9
+      },
+      "text": "Government intervention in the economy usually does more harm than the problems it's meant to fix."
+    },
+    {
+      "id": "econ09",
+      "axis": "econ",
+      "core": true,
+      "effect": {
+        "econ": -8
+      },
+      "text": "Lower taxes and less regulation are generally the right conservative default."
+    },
+    {
+      "id": "econ10",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -10
+      },
+      "text": "A dynamic, competitive market economy is itself a conservative value worth protecting from state overreach."
+    },
+    {
+      "id": "econ11",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -8
+      },
+      "text": "Economic freedom and limited government go together as core conservative commitments."
+    },
+    {
+      "id": "econ12",
+      "axis": "econ",
+      "core": false,
+      "effect": {
+        "econ": -7
+      },
+      "text": "The state should mainly get out of the way and let markets and individual enterprise do the work."
+    },
+    {
+      "id": "forp01",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": 10
+      },
+      "text": "A country should actively use its power abroad to defend its interests and allies, even through military means."
+    },
+    {
+      "id": "forp02",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": 9
+      },
+      "text": "Standing by while threats to the international order grow unchecked is itself a dangerous policy."
+    },
+    {
+      "id": "forp03",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": 8
+      },
+      "text": "Strength and willingness to act abroad deters aggression better than restraint does."
+    },
+    {
+      "id": "forp04",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": 10
+      },
+      "text": "A great power has responsibilities beyond its own borders that sometimes require intervention."
+    },
+    {
+      "id": "forp05",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": 8
+      },
+      "text": "Isolationism leaves a vacuum that hostile powers are happy to fill."
+    },
+    {
+      "id": "forp06",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": 7
+      },
+      "text": "Credible military commitments abroad are a core part of national strength."
+    },
+    {
+      "id": "forp07",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": -10
+      },
+      "text": "Foreign wars and entanglements rarely serve the actual national interest and should be avoided."
+    },
+    {
+      "id": "forp08",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": -9
+      },
+      "text": "A country's first duty is to its own people, not to policing the rest of the world."
+    },
+    {
+      "id": "forp09",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": -8
+      },
+      "text": "Restraint abroad conserves the resources and cohesion a nation needs at home."
+    },
+    {
+      "id": "forp10",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": -10
+      },
+      "text": "Nation-building efforts overseas have mostly failed and shouldn't be repeated."
+    },
+    {
+      "id": "forp11",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": -8
+      },
+      "text": "A modest, defensive foreign policy serves the nation better than an interventionist one."
+    },
+    {
+      "id": "forp12",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": -7
+      },
+      "text": "Foreign entanglements distract from and drain resources away from problems at home."
+    },
+    {
+      "id": "reli01",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -10
+      },
+      "text": "Public life can be conducted on shared civic and moral terms without appeal to any particular religious tradition."
+    },
+    {
+      "id": "reli02",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -9
+      },
+      "text": "A pluralist society is better served by secular civic institutions than by religiously grounded ones."
+    },
+    {
+      "id": "reli03",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": -8
+      },
+      "text": "Conservatism does not require religious belief; a secular tradition of prudence and order is enough."
+    },
+    {
+      "id": "reli04",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -10
+      },
+      "text": "Public policy should be justified in terms accessible to believers and non-believers alike."
+    },
+    {
+      "id": "reli05",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -8
+      },
+      "text": "Religious institutions should stay out of formal political power, whatever moral influence they retain informally."
+    },
+    {
+      "id": "reli06",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": -7
+      },
+      "text": "A conservative order can rest on custom and civic virtue without needing a religious foundation."
+    },
+    {
+      "id": "reli07",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 10
+      },
+      "text": "A society's moral order should be explicitly grounded in religious faith and tradition."
+    },
+    {
+      "id": "reli08",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 9
+      },
+      "text": "Religious institutions and teaching deserve a formal, protected place in public life."
+    },
+    {
+      "id": "reli09",
+      "axis": "reli",
+      "core": true,
+      "effect": {
+        "reli": 8
+      },
+      "text": "A nation's laws and public morality lose their foundation once they're cut off from religious grounding."
+    },
+    {
+      "id": "reli10",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 10
+      },
+      "text": "Faith communities should have real influence over policies touching family, life, and public morality."
+    },
+    {
+      "id": "reli11",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 8
+      },
+      "text": "A confessional foundation gives a society's moral order a stability that secular reasoning alone cannot."
+    },
+    {
+      "id": "reli12",
+      "axis": "reli",
+      "core": false,
+      "effect": {
+        "reli": 7
+      },
+      "text": "Public education and law should reflect the religious tradition of the community, not stand apart from it."
+    },
+    {
+      "id": "iden01",
+      "axis": "iden",
+      "core": true,
+      "effect": {
+        "iden": -10
+      },
+      "text": "National identity should be open to anyone who embraces the country's civic institutions and values, regardless of ancestry."
+    },
+    {
+      "id": "iden02",
+      "axis": "iden",
+      "core": true,
+      "effect": {
+        "iden": -9
+      },
+      "text": "Shared commitment to a country's constitution and civic culture, not shared ancestry, is what makes someone a member of the nation."
+    },
+    {
+      "id": "iden03",
+      "axis": "iden",
+      "core": true,
+      "effect": {
+        "iden": -8
+      },
+      "text": "Immigrants who adopt the nation's institutions and civic values are as fully members of it as anyone born there."
+    },
+    {
+      "id": "iden04",
+      "axis": "iden",
+      "core": false,
+      "effect": {
+        "iden": -10
+      },
+      "text": "A nation is best understood as a community of citizens united by law and creed."
+    },
+    {
+      "id": "iden05",
+      "axis": "iden",
+      "core": false,
+      "effect": {
+        "iden": -8
+      },
+      "text": "What binds a nation together is allegiance to its principles, not descent from a common stock."
+    },
+    {
+      "id": "iden06",
+      "axis": "iden",
+      "core": false,
+      "effect": {
+        "iden": -7
+      },
+      "text": "Citizenship, properly earned, confers full national belonging regardless of ethnic background."
+    },
+    {
+      "id": "iden07",
+      "axis": "iden",
+      "core": true,
+      "effect": {
+        "iden": 10
+      },
+      "text": "A nation is fundamentally a people with a shared ancestry, culture, and history, not just a set of institutions."
+    },
+    {
+      "id": "iden08",
+      "axis": "iden",
+      "core": true,
+      "effect": {
+        "iden": 9
+      },
+      "text": "Large-scale demographic change poses a real threat to a nation's cultural continuity."
+    },
+    {
+      "id": "iden09",
+      "axis": "iden",
+      "core": true,
+      "effect": {
+        "iden": 8
+      },
+      "text": "A country's historic ethnic and cultural core deserves special protection and priority."
+    },
+    {
+      "id": "iden10",
+      "axis": "iden",
+      "core": false,
+      "effect": {
+        "iden": 10
+      },
+      "text": "National identity is inherited, not simply chosen by anyone who adopts the country's institutions."
+    },
+    {
+      "id": "iden11",
+      "axis": "iden",
+      "core": false,
+      "effect": {
+        "iden": 8
+      },
+      "text": "Preserving a nation's traditional cultural character is a legitimate goal of immigration policy."
+    },
+    {
+      "id": "iden12",
+      "axis": "iden",
+      "core": false,
+      "effect": {
+        "iden": 7
+      },
+      "text": "A common ancestry and cultural inheritance are what make a people a nation, more than any legal document."
+    },
+    {
+      "id": "chng01",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": -10
+      },
+      "text": "Institutions should be reformed gradually and cautiously, correcting flaws without discarding what works."
+    },
+    {
+      "id": "chng02",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": -9
+      },
+      "text": "Prudent, incremental adjustment is the responsible conservative approach to a changing world."
+    },
+    {
+      "id": "chng03",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": -8
+      },
+      "text": "Change should be tested and reversible, not sweeping and irreversible."
+    },
+    {
+      "id": "chng04",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": -10
+      },
+      "text": "A conservative should be willing to reform institutions that have genuinely stopped serving their purpose."
+    },
+    {
+      "id": "chng05",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": -8
+      },
+      "text": "Careful, piecemeal improvement respects both the wisdom of the past and the needs of the present."
+    },
+    {
+      "id": "chng06",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": -7
+      },
+      "text": "Conservatism at its best manages change rather than simply resisting it."
+    },
+    {
+      "id": "chng07",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": 10
+      },
+      "text": "Society has drifted so far from its proper order that a real restoration, not just gradual correction, is needed."
+    },
+    {
+      "id": "chng08",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": 9
+      },
+      "text": "Many of the last century's changes were net losses that deserve to be reversed, not merely managed."
+    },
+    {
+      "id": "chng09",
+      "axis": "chng",
+      "core": true,
+      "effect": {
+        "chng": 8
+      },
+      "text": "Cautious reform is inadequate when the institutions themselves have been captured by the wrong values."
+    },
+    {
+      "id": "chng10",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": 10
+      },
+      "text": "A return to an earlier, sounder order is a legitimate political goal, not mere nostalgia."
+    },
+    {
+      "id": "chng11",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": 8
+      },
+      "text": "What's needed now is restoration, not incremental adjustment within a fundamentally compromised system."
+    },
+    {
+      "id": "chng12",
+      "axis": "chng",
+      "core": false,
+      "effect": {
+        "chng": 7
+      },
+      "text": "Gradualism is too slow a response to how far things have already gone wrong."
+    },
+    {
+      "id": "stat01",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -10
+      },
+      "text": "Government should be kept small, with most decisions left to individuals, families, and local communities."
+    },
+    {
+      "id": "stat02",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -9
+      },
+      "text": "Centralised state power, even used for conservative ends, tends to outgrow its original purpose."
+    },
+    {
+      "id": "stat03",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -8
+      },
+      "text": "A conservative should be as wary of an activist state as of a radical one."
+    },
+    {
+      "id": "stat04",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -10
+      },
+      "text": "Power should be devolved downward whenever possible, away from central government."
+    },
+    {
+      "id": "stat05",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -8
+      },
+      "text": "Local and voluntary institutions handle most social problems better than a central bureaucracy does."
+    },
+    {
+      "id": "stat06",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -7
+      },
+      "text": "The instinct to expand state authority, whatever the intent behind it, deserves conservative suspicion."
+    },
+    {
+      "id": "stat07",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 10
+      },
+      "text": "A strong, capable central state is necessary to defend the national order and enforce its values."
+    },
+    {
+      "id": "stat08",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 9
+      },
+      "text": "Conservatives should be willing to use state power decisively, not just resist its growth."
+    },
+    {
+      "id": "stat09",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 8
+      },
+      "text": "Effective governance sometimes requires a strong executive able to act without being bogged down by every institutional check."
+    },
+    {
+      "id": "stat10",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 10
+      },
+      "text": "A weak state cannot actually protect the traditions and order conservatives care about."
+    },
+    {
+      "id": "stat11",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 8
+      },
+      "text": "Directing state power toward explicitly conservative ends is a legitimate and necessary strategy."
+    },
+    {
+      "id": "stat12",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 7
+      },
+      "text": "Institutional gridlock is as much an enemy of good order as an overreaching state."
+    },
+    {
+      "id": "cpol01",
+      "axis": "cpol",
+      "core": true,
+      "effect": {
+        "cpol": -10
+      },
+      "text": "Moral order in society is best sustained through persuasion, example, and civil institutions, not legal compulsion."
+    },
+    {
+      "id": "cpol02",
+      "axis": "cpol",
+      "core": true,
+      "effect": {
+        "cpol": -9
+      },
+      "text": "The law should stay fairly neutral on questions of personal and family morality."
+    },
+    {
+      "id": "cpol03",
+      "axis": "cpol",
+      "core": true,
+      "effect": {
+        "cpol": -8
+      },
+      "text": "Cultural and moral renewal has to come from within communities and institutions, not from legislation."
+    },
+    {
+      "id": "cpol04",
+      "axis": "cpol",
+      "core": false,
+      "effect": {
+        "cpol": -10
+      },
+      "text": "Using the law to enforce a particular moral vision usually backfires and breeds resentment."
+    },
+    {
+      "id": "cpol05",
+      "axis": "cpol",
+      "core": false,
+      "effect": {
+        "cpol": -8
+      },
+      "text": "Civil society — family, church, community — should carry the weight of moral formation, not the state."
+    },
+    {
+      "id": "cpol06",
+      "axis": "cpol",
+      "core": false,
+      "effect": {
+        "cpol": -7
+      },
+      "text": "Persuasion within a free society is a more legitimate route to moral order than legal coercion."
+    },
+    {
+      "id": "cpol07",
+      "axis": "cpol",
+      "core": true,
+      "effect": {
+        "cpol": 10
+      },
+      "text": "The law should actively uphold and enforce the community's moral and social order, not remain neutral on it."
+    },
+    {
+      "id": "cpol08",
+      "axis": "cpol",
+      "core": true,
+      "effect": {
+        "cpol": 9
+      },
+      "text": "Legal enforcement of core moral norms — around family, life, and public decency — is a proper role of government."
+    },
+    {
+      "id": "cpol09",
+      "axis": "cpol",
+      "core": true,
+      "effect": {
+        "cpol": 8
+      },
+      "text": "A society that refuses to legislate morality has already lost the fight over what its public order should be."
+    },
+    {
+      "id": "cpol10",
+      "axis": "cpol",
+      "core": false,
+      "effect": {
+        "cpol": 10
+      },
+      "text": "Some questions of right and wrong are too important to leave to persuasion alone; the law has to take a side."
+    },
+    {
+      "id": "cpol11",
+      "axis": "cpol",
+      "core": false,
+      "effect": {
+        "cpol": 8
+      },
+      "text": "Protecting the moral fabric of society sometimes requires using the law, not just cultural argument."
+    },
+    {
+      "id": "cpol12",
+      "axis": "cpol",
+      "core": false,
+      "effect": {
+        "cpol": 7
+      },
+      "text": "A conservative government should be willing to legislate its moral convictions, not just hold them privately."
+    },
+    {
+      "id": "popu01",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": -10
+      },
+      "text": "Experienced, established leaders and institutions should generally be trusted over popular anger at them."
+    },
+    {
+      "id": "popu02",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": -9
+      },
+      "text": "Political stability depends on deference to competent, tested institutions rather than constant upheaval."
+    },
+    {
+      "id": "popu03",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": -8
+      },
+      "text": "Conservatism is fundamentally about preserving established authority, not overturning it in the name of the people."
+    },
+    {
+      "id": "popu04",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": -10
+      },
+      "text": "Elite expertise, however imperfect, usually outperforms populist mobilisation at actual governing."
+    },
+    {
+      "id": "popu05",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": -8
+      },
+      "text": "A conservative should be suspicious of movements that promise to sweep away the existing establishment entirely."
+    },
+    {
+      "id": "popu06",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": -7
+      },
+      "text": "Respect for established institutions and their leadership is itself a conservative virtue."
+    },
+    {
+      "id": "popu07",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": 10
+      },
+      "text": "The existing political and cultural establishment has betrayed ordinary people and deserves to be swept aside."
+    },
+    {
+      "id": "popu08",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": 9
+      },
+      "text": "Popular anger at entrenched elites is a legitimate and healthy political force, not something to be managed away."
+    },
+    {
+      "id": "popu09",
+      "axis": "popu",
+      "core": true,
+      "effect": {
+        "popu": 8
+      },
+      "text": "Mobilising ordinary people against an unresponsive establishment is a legitimate conservative strategy."
+    },
+    {
+      "id": "popu10",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": 10
+      },
+      "text": "Elites who no longer represent the nation's real interests and values have forfeited their claim to deference."
+    },
+    {
+      "id": "popu11",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": 8
+      },
+      "text": "A movement that channels popular grievance against the establishment can be a genuinely conservative one."
+    },
+    {
+      "id": "popu12",
+      "axis": "popu",
+      "core": false,
+      "effect": {
+        "popu": 7
+      },
+      "text": "Established institutions have drifted so far from the public they serve that they no longer deserve automatic trust."
+    }
+  ]
+}

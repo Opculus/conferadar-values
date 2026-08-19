@@ -1,0 +1,1094 @@
+{
+  "meta": {
+    "module": 2,
+    "bucketId": 5,
+    "bucket": "Progressive / Social Liberalism",
+    "version": "0.1-draft",
+    "questionCount": 96,
+    "shortFormCount": 48,
+    "scoring": {
+      "answerScale": [
+        {
+          "label": "Strongly Agree",
+          "mult": 1.0
+        },
+        {
+          "label": "Agree",
+          "mult": 0.5
+        },
+        {
+          "label": "Neutral / Unsure",
+          "mult": 0.0
+        },
+        {
+          "label": "Disagree",
+          "mult": -0.5
+        },
+        {
+          "label": "Strongly Disagree",
+          "mult": -1.0
+        }
+      ],
+      "formula": "raw[axis] = sum(mult * effect[axis]); max[axis] = sum(abs(effect[axis])); score[axis] = 100 * (max + raw) / (2 * max)"
+    },
+    "presentation": "Stored grouped by axis for maintainability. The app must SHUFFLE at runtime with a fixed seed so consecutive items do not come from the same axis."
+  },
+  "axes": [
+    {
+      "key": "stat",
+      "name": "State Economic Role",
+      "negPole": "Market-Deferential",
+      "posPole": "Large Redistributive State"
+    },
+    {
+      "key": "just",
+      "name": "Ground of Justification",
+      "negPole": "Pragmatic Problem-Solving",
+      "posPole": "Principled Rights & Theory"
+    },
+    {
+      "key": "reco",
+      "name": "Axis of Justice",
+      "negPole": "Material Redistribution",
+      "posPole": "Recognition & Identity"
+    },
+    {
+      "key": "expe",
+      "name": "Mode of Change",
+      "negPole": "Technocratic Administration",
+      "posPole": "Popular Movement Pressure"
+    },
+    {
+      "key": "grow",
+      "name": "Growth & Limits",
+      "negPole": "Growth-Compatible",
+      "posPole": "Ecological Limits Bind"
+    },
+    {
+      "key": "cosm",
+      "name": "Community of Obligation",
+      "negPole": "Bounded National Community",
+      "posPole": "Cosmopolitan / Global"
+    },
+    {
+      "key": "mkt",
+      "name": "Market Confidence",
+      "negPole": "Markets Need Structural Correction",
+      "posPole": "Markets Work; Correct at Margins"
+    },
+    {
+      "key": "forp",
+      "name": "Foreign Posture",
+      "negPole": "Restraint / Non-Intervention",
+      "posPole": "Liberal Interventionism"
+    }
+  ],
+  "subIdeologies": [
+    {
+      "name": "New Deal Liberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 92,
+        "just": 18,
+        "reco": 4,
+        "expe": 42,
+        "grow": 8,
+        "cosm": 18,
+        "mkt": 12,
+        "forp": 58
+      }
+    },
+    {
+      "name": "Rawlsian Liberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 76,
+        "just": 99,
+        "reco": 24,
+        "expe": 30,
+        "grow": 30,
+        "cosm": 56,
+        "mkt": 38,
+        "forp": 44
+      }
+    },
+    {
+      "name": "Welfare Liberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 86,
+        "just": 55,
+        "reco": 14,
+        "expe": 34,
+        "grow": 20,
+        "cosm": 34,
+        "mkt": 24,
+        "forp": 44
+      }
+    },
+    {
+      "name": "Third Way / Blairism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 24,
+        "just": 18,
+        "reco": 42,
+        "expe": 6,
+        "grow": 2,
+        "cosm": 46,
+        "mkt": 94,
+        "forp": 96
+      }
+    },
+    {
+      "name": "Green Liberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 60,
+        "just": 46,
+        "reco": 44,
+        "expe": 62,
+        "grow": 97,
+        "cosm": 76,
+        "mkt": 34,
+        "forp": 16
+      }
+    },
+    {
+      "name": "Feminist Liberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 66,
+        "just": 76,
+        "reco": 88,
+        "expe": 78,
+        "grow": 34,
+        "cosm": 66,
+        "mkt": 46,
+        "forp": 48
+      }
+    },
+    {
+      "name": "Multiculturalist Liberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 54,
+        "just": 82,
+        "reco": 97,
+        "expe": 58,
+        "grow": 28,
+        "cosm": 92,
+        "mkt": 56,
+        "forp": 52
+      }
+    },
+    {
+      "name": "Civil Rights Liberalism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 60,
+        "just": 86,
+        "reco": 82,
+        "expe": 96,
+        "grow": 18,
+        "cosm": 44,
+        "mkt": 44,
+        "forp": 22
+      }
+    },
+    {
+      "name": "Progressivism (US Progressive Era)",
+      "umbrella": false,
+      "anchor": {
+        "stat": 66,
+        "just": 8,
+        "reco": 18,
+        "expe": 8,
+        "grow": 14,
+        "cosm": 12,
+        "mkt": 24,
+        "forp": 40
+      }
+    },
+    {
+      "name": "Radical Centrism",
+      "umbrella": false,
+      "anchor": {
+        "stat": 34,
+        "just": 4,
+        "reco": 34,
+        "expe": 2,
+        "grow": 10,
+        "cosm": 30,
+        "mkt": 84,
+        "forp": 66
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "stat01",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 10
+      },
+      "text": "Government should take an active, sustained role in redistributing income and providing social insurance."
+    },
+    {
+      "id": "stat02",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 9
+      },
+      "text": "A large welfare state is a legitimate and necessary feature of a decent society."
+    },
+    {
+      "id": "stat03",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": 8
+      },
+      "text": "Public programmes should guarantee a baseline of security that markets alone won't provide."
+    },
+    {
+      "id": "stat04",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 10
+      },
+      "text": "Taxation to fund broad social programmes is a reasonable price for a fairer society."
+    },
+    {
+      "id": "stat05",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 8
+      },
+      "text": "Government has a responsibility to correct the unequal outcomes markets produce."
+    },
+    {
+      "id": "stat06",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": 7
+      },
+      "text": "Expanding public provision of health, education, and income support is a core task of government."
+    },
+    {
+      "id": "stat07",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -10
+      },
+      "text": "Government's economic role should be limited mostly to setting the rules within which markets operate."
+    },
+    {
+      "id": "stat08",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -9
+      },
+      "text": "Most social needs are better met by markets and private initiative than by large public programmes."
+    },
+    {
+      "id": "stat09",
+      "axis": "stat",
+      "core": true,
+      "effect": {
+        "stat": -8
+      },
+      "text": "Extensive redistribution risks doing more economic harm than the inequality it's meant to fix."
+    },
+    {
+      "id": "stat10",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -10
+      },
+      "text": "A leaner state, focused on targeted rather than universal programmes, serves people better."
+    },
+    {
+      "id": "stat11",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -8
+      },
+      "text": "Public spending should be judged mainly by its efficiency, not its scale."
+    },
+    {
+      "id": "stat12",
+      "axis": "stat",
+      "core": false,
+      "effect": {
+        "stat": -7
+      },
+      "text": "Government intervention should be the exception that's justified, not the default approach."
+    },
+    {
+      "id": "just01",
+      "axis": "just",
+      "core": true,
+      "effect": {
+        "just": 10
+      },
+      "text": "Political principles should follow from a coherent theory of rights and fairness, worked out in advance."
+    },
+    {
+      "id": "just02",
+      "axis": "just",
+      "core": true,
+      "effect": {
+        "just": 9
+      },
+      "text": "A just policy is one that could be justified to anyone regardless of their position in society."
+    },
+    {
+      "id": "just03",
+      "axis": "just",
+      "core": true,
+      "effect": {
+        "just": 8
+      },
+      "text": "Consistency with a defensible theory of justice matters even when it's politically inconvenient."
+    },
+    {
+      "id": "just04",
+      "axis": "just",
+      "core": false,
+      "effect": {
+        "just": 10
+      },
+      "text": "Rights-based reasoning should constrain policy even against short-term practical pressures."
+    },
+    {
+      "id": "just05",
+      "axis": "just",
+      "core": false,
+      "effect": {
+        "just": 8
+      },
+      "text": "Working out the principles first, then applying them, produces better policy than improvising case by case."
+    },
+    {
+      "id": "just06",
+      "axis": "just",
+      "core": false,
+      "effect": {
+        "just": 7
+      },
+      "text": "A society's institutions should be judged against an ideal of fairness, not just against what currently works."
+    },
+    {
+      "id": "just07",
+      "axis": "just",
+      "core": true,
+      "effect": {
+        "just": -10
+      },
+      "text": "Good policy comes from solving concrete problems as they arise, not from applying a general theory."
+    },
+    {
+      "id": "just08",
+      "axis": "just",
+      "core": true,
+      "effect": {
+        "just": -9
+      },
+      "text": "Pragmatic compromise, even where it's theoretically untidy, usually beats principled consistency."
+    },
+    {
+      "id": "just09",
+      "axis": "just",
+      "core": true,
+      "effect": {
+        "just": -8
+      },
+      "text": "What matters is whether a policy works, not whether it fits a general theory of justice."
+    },
+    {
+      "id": "just10",
+      "axis": "just",
+      "core": false,
+      "effect": {
+        "just": -10
+      },
+      "text": "Flexibility to adapt policy to circumstances is more valuable than fidelity to abstract principle."
+    },
+    {
+      "id": "just11",
+      "axis": "just",
+      "core": false,
+      "effect": {
+        "just": -8
+      },
+      "text": "Most political problems are better solved by expertise and experimentation than by philosophical first principles."
+    },
+    {
+      "id": "just12",
+      "axis": "just",
+      "core": false,
+      "effect": {
+        "just": -7
+      },
+      "text": "Rigid adherence to a theory of justice often gets in the way of practical, achievable reform."
+    },
+    {
+      "id": "reco01",
+      "axis": "reco",
+      "core": true,
+      "effect": {
+        "reco": 10
+      },
+      "text": "Recognising and affirming marginalised identities is as important a task of justice as redistributing income."
+    },
+    {
+      "id": "reco02",
+      "axis": "reco",
+      "core": true,
+      "effect": {
+        "reco": 9
+      },
+      "text": "Discrimination based on identity is a distinct injustice that redistribution alone does not fix."
+    },
+    {
+      "id": "reco03",
+      "axis": "reco",
+      "core": true,
+      "effect": {
+        "reco": 8
+      },
+      "text": "Representation and dignity for historically excluded groups are legitimate goals of public policy in their own right."
+    },
+    {
+      "id": "reco04",
+      "axis": "reco",
+      "core": false,
+      "effect": {
+        "reco": 10
+      },
+      "text": "Addressing cultural stigma and exclusion matters even independent of any economic effect."
+    },
+    {
+      "id": "reco05",
+      "axis": "reco",
+      "core": false,
+      "effect": {
+        "reco": 8
+      },
+      "text": "Justice requires that institutions recognise different identities and experiences, not just distribute resources equally."
+    },
+    {
+      "id": "reco06",
+      "axis": "reco",
+      "core": false,
+      "effect": {
+        "reco": 7
+      },
+      "text": "Symbolic recognition — visibility, respect, representation — is a real form of justice, not a distraction from it."
+    },
+    {
+      "id": "reco07",
+      "axis": "reco",
+      "core": true,
+      "effect": {
+        "reco": -10
+      },
+      "text": "Economic redistribution is the more fundamental form of justice; recognition of identity is secondary to it."
+    },
+    {
+      "id": "reco08",
+      "axis": "reco",
+      "core": true,
+      "effect": {
+        "reco": -9
+      },
+      "text": "Focusing on identity and recognition can distract from the material inequality that underlies most injustice."
+    },
+    {
+      "id": "reco09",
+      "axis": "reco",
+      "core": true,
+      "effect": {
+        "reco": -8
+      },
+      "text": "If material inequality were solved, most grievances currently framed around identity would fade."
+    },
+    {
+      "id": "reco10",
+      "axis": "reco",
+      "core": false,
+      "effect": {
+        "reco": -10
+      },
+      "text": "Policy should target income and opportunity directly rather than focus on symbolic recognition."
+    },
+    {
+      "id": "reco11",
+      "axis": "reco",
+      "core": false,
+      "effect": {
+        "reco": -8
+      },
+      "text": "Redistribution reaches more people and does more good than recognition-focused policy does."
+    },
+    {
+      "id": "reco12",
+      "axis": "reco",
+      "core": false,
+      "effect": {
+        "reco": -7
+      },
+      "text": "Class and income remain a more solid basis for a justice agenda than identity and recognition."
+    },
+    {
+      "id": "expe01",
+      "axis": "expe",
+      "core": true,
+      "effect": {
+        "expe": 10
+      },
+      "text": "Sustained public pressure and organised movements are often necessary to force meaningful reform."
+    },
+    {
+      "id": "expe02",
+      "axis": "expe",
+      "core": true,
+      "effect": {
+        "expe": 9
+      },
+      "text": "Progress on rights and equality has historically depended on movements outside government, not administrators inside it."
+    },
+    {
+      "id": "expe03",
+      "axis": "expe",
+      "core": true,
+      "effect": {
+        "expe": 8
+      },
+      "text": "Grassroots organising deserves a central place in a progressive theory of change."
+    },
+    {
+      "id": "expe04",
+      "axis": "expe",
+      "core": false,
+      "effect": {
+        "expe": 10
+      },
+      "text": "Protest and mobilisation are legitimate and often necessary complements to legislative work."
+    },
+    {
+      "id": "expe05",
+      "axis": "expe",
+      "core": false,
+      "effect": {
+        "expe": 8
+      },
+      "text": "Change driven from below tends to be more durable than change handed down from above."
+    },
+    {
+      "id": "expe06",
+      "axis": "expe",
+      "core": false,
+      "effect": {
+        "expe": 7
+      },
+      "text": "Movements holding politicians accountable from outside government are essential to real progress."
+    },
+    {
+      "id": "expe07",
+      "axis": "expe",
+      "core": true,
+      "effect": {
+        "expe": -10
+      },
+      "text": "Careful policy design by qualified experts and administrators is a more reliable route to progress than mass mobilisation."
+    },
+    {
+      "id": "expe08",
+      "axis": "expe",
+      "core": true,
+      "effect": {
+        "expe": -9
+      },
+      "text": "Technocratic governance, insulated from populist pressure, tends to produce better long-run outcomes."
+    },
+    {
+      "id": "expe09",
+      "axis": "expe",
+      "core": true,
+      "effect": {
+        "expe": -8
+      },
+      "text": "Expert-driven incrementalism achieves more durable progress than movement pressure that burns out."
+    },
+    {
+      "id": "expe10",
+      "axis": "expe",
+      "core": false,
+      "effect": {
+        "expe": -10
+      },
+      "text": "Good administration, not agitation, is what actually implements progressive goals once they're won."
+    },
+    {
+      "id": "expe11",
+      "axis": "expe",
+      "core": false,
+      "effect": {
+        "expe": -8
+      },
+      "text": "Professional policymaking should be trusted over popular pressure to get complex reforms right."
+    },
+    {
+      "id": "expe12",
+      "axis": "expe",
+      "core": false,
+      "effect": {
+        "expe": -7
+      },
+      "text": "Movements are useful for raising issues, but implementation is properly the work of experts and administrators."
+    },
+    {
+      "id": "grow01",
+      "axis": "grow",
+      "core": true,
+      "effect": {
+        "grow": 10
+      },
+      "text": "Economic growth has to be constrained by ecological limits, even where that means slower growth."
+    },
+    {
+      "id": "grow02",
+      "axis": "grow",
+      "core": true,
+      "effect": {
+        "grow": 9
+      },
+      "text": "Environmental sustainability should take priority over growth when the two conflict."
+    },
+    {
+      "id": "grow03",
+      "axis": "grow",
+      "core": true,
+      "effect": {
+        "grow": 8
+      },
+      "text": "The planet's ecological limits are a hard constraint that policy has to respect, not just balance against other goals."
+    },
+    {
+      "id": "grow04",
+      "axis": "grow",
+      "core": false,
+      "effect": {
+        "grow": 10
+      },
+      "text": "Some current levels of consumption and production are not sustainable and need to be reduced."
+    },
+    {
+      "id": "grow05",
+      "axis": "grow",
+      "core": false,
+      "effect": {
+        "grow": 8
+      },
+      "text": "Climate and environmental goals justify significant near-term costs to economic growth."
+    },
+    {
+      "id": "grow06",
+      "axis": "grow",
+      "core": false,
+      "effect": {
+        "grow": 7
+      },
+      "text": "A serious environmental policy sometimes means accepting less growth, not just greener growth."
+    },
+    {
+      "id": "grow07",
+      "axis": "grow",
+      "core": true,
+      "effect": {
+        "grow": -10
+      },
+      "text": "Growth and environmental protection can generally be pursued together without hard trade-offs."
+    },
+    {
+      "id": "grow08",
+      "axis": "grow",
+      "core": true,
+      "effect": {
+        "grow": -9
+      },
+      "text": "Technological innovation will resolve most environmental constraints without needing to slow growth."
+    },
+    {
+      "id": "grow09",
+      "axis": "grow",
+      "core": true,
+      "effect": {
+        "grow": -8
+      },
+      "text": "Prioritising growth remains the most reliable way to fund the programmes progressives care about."
+    },
+    {
+      "id": "grow10",
+      "axis": "grow",
+      "core": false,
+      "effect": {
+        "grow": -10
+      },
+      "text": "Environmental goals should be pursued in ways that don't compromise economic growth."
+    },
+    {
+      "id": "grow11",
+      "axis": "grow",
+      "core": false,
+      "effect": {
+        "grow": -8
+      },
+      "text": "A growing economy gives government more resources to address environmental problems than a shrinking one would."
+    },
+    {
+      "id": "grow12",
+      "axis": "grow",
+      "core": false,
+      "effect": {
+        "grow": -7
+      },
+      "text": "Ecological limits should be treated as one consideration among several, not an overriding constraint."
+    },
+    {
+      "id": "cosm01",
+      "axis": "cosm",
+      "core": true,
+      "effect": {
+        "cosm": 10
+      },
+      "text": "Moral obligations extend to people everywhere, not just to fellow citizens."
+    },
+    {
+      "id": "cosm02",
+      "axis": "cosm",
+      "core": true,
+      "effect": {
+        "cosm": 9
+      },
+      "text": "Global inequality between nations is as much a matter of justice as inequality within one."
+    },
+    {
+      "id": "cosm03",
+      "axis": "cosm",
+      "core": true,
+      "effect": {
+        "cosm": 8
+      },
+      "text": "International institutions deserve real authority to address problems that cross borders."
+    },
+    {
+      "id": "cosm04",
+      "axis": "cosm",
+      "core": false,
+      "effect": {
+        "cosm": 10
+      },
+      "text": "Immigration should be judged mainly by its effects on the migrants and the world, not only on current citizens."
+    },
+    {
+      "id": "cosm05",
+      "axis": "cosm",
+      "core": false,
+      "effect": {
+        "cosm": 8
+      },
+      "text": "A just global order matters as much as a just national one."
+    },
+    {
+      "id": "cosm06",
+      "axis": "cosm",
+      "core": false,
+      "effect": {
+        "cosm": 7
+      },
+      "text": "Citizens of wealthy countries have significant obligations to people in poorer ones."
+    },
+    {
+      "id": "cosm07",
+      "axis": "cosm",
+      "core": true,
+      "effect": {
+        "cosm": -10
+      },
+      "text": "Government's primary obligation is to its own citizens; global obligations are real but secondary."
+    },
+    {
+      "id": "cosm08",
+      "axis": "cosm",
+      "core": true,
+      "effect": {
+        "cosm": -9
+      },
+      "text": "National borders and national community are a legitimate basis for prioritising fellow citizens' interests."
+    },
+    {
+      "id": "cosm09",
+      "axis": "cosm",
+      "core": true,
+      "effect": {
+        "cosm": -8
+      },
+      "text": "Policy should weigh the interests of citizens more heavily than the interests of non-citizens."
+    },
+    {
+      "id": "cosm10",
+      "axis": "cosm",
+      "core": false,
+      "effect": {
+        "cosm": -10
+      },
+      "text": "Strong national sovereignty is compatible with progressive values and shouldn't be treated with suspicion."
+    },
+    {
+      "id": "cosm11",
+      "axis": "cosm",
+      "core": false,
+      "effect": {
+        "cosm": -8
+      },
+      "text": "International institutions should support national governments, not override their democratic decisions."
+    },
+    {
+      "id": "cosm12",
+      "axis": "cosm",
+      "core": false,
+      "effect": {
+        "cosm": -7
+      },
+      "text": "The nation remains the primary and appropriate unit of political obligation."
+    },
+    {
+      "id": "mkt01",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": -10
+      },
+      "text": "Markets left to themselves produce outcomes that need serious structural correction, not just tinkering at the margins."
+    },
+    {
+      "id": "mkt02",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": -9
+      },
+      "text": "Market failures are common and significant enough to justify active government intervention as a rule, not an exception."
+    },
+    {
+      "id": "mkt03",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": -8
+      },
+      "text": "Concentrated corporate power distorts market outcomes badly enough to need real regulatory correction."
+    },
+    {
+      "id": "mkt04",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": -10
+      },
+      "text": "Markets systematically underprice environmental and social costs unless government intervenes."
+    },
+    {
+      "id": "mkt05",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": -8
+      },
+      "text": "Left alone, markets tend to concentrate wealth and power in ways that need active counterbalancing."
+    },
+    {
+      "id": "mkt06",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": -7
+      },
+      "text": "Structural reform of market institutions, not just redistribution after the fact, is often necessary."
+    },
+    {
+      "id": "mkt07",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": 10
+      },
+      "text": "Markets generally work well and mainly need correction only at the margins."
+    },
+    {
+      "id": "mkt08",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": 9
+      },
+      "text": "Most economic problems are better solved by improving market competition than by heavy regulation."
+    },
+    {
+      "id": "mkt09",
+      "axis": "mkt",
+      "core": true,
+      "effect": {
+        "mkt": 8
+      },
+      "text": "Government's role should mostly be removing obstacles to markets working efficiently, not overriding them."
+    },
+    {
+      "id": "mkt10",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": 10
+      },
+      "text": "Light-touch regulation, rather than structural intervention, usually gets the best economic outcomes."
+    },
+    {
+      "id": "mkt11",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": 8
+      },
+      "text": "Markets are broadly good at allocating resources; policy should nudge, not override, their outcomes."
+    },
+    {
+      "id": "mkt12",
+      "axis": "mkt",
+      "core": false,
+      "effect": {
+        "mkt": 7
+      },
+      "text": "The presumption should favour market solutions unless there's a clear, specific failure to correct."
+    },
+    {
+      "id": "forp01",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": -10
+      },
+      "text": "Military restraint and diplomacy should be the default in foreign policy, not intervention."
+    },
+    {
+      "id": "forp02",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": -9
+      },
+      "text": "Interventions abroad, even well-intentioned ones, usually cause more harm than they prevent."
+    },
+    {
+      "id": "forp03",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": -8
+      },
+      "text": "A country should be very cautious about using force to promote its values overseas."
+    },
+    {
+      "id": "forp04",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": -10
+      },
+      "text": "Foreign policy should prioritise avoiding war over promoting democracy abroad by force."
+    },
+    {
+      "id": "forp05",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": -8
+      },
+      "text": "The record of humanitarian and democracy-promoting interventions counsels strong scepticism about future ones."
+    },
+    {
+      "id": "forp06",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": -7
+      },
+      "text": "National sovereignty should generally be respected even when a foreign government's conduct is troubling."
+    },
+    {
+      "id": "forp07",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": 10
+      },
+      "text": "The international community has a responsibility to intervene, including militarily, to stop severe human rights abuses."
+    },
+    {
+      "id": "forp08",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": 9
+      },
+      "text": "Promoting democracy and human rights abroad can justify the use of force in serious cases."
+    },
+    {
+      "id": "forp09",
+      "axis": "forp",
+      "core": true,
+      "effect": {
+        "forp": 8
+      },
+      "text": "Standing by while atrocities occur abroad is itself a moral failure that inaction doesn't excuse."
+    },
+    {
+      "id": "forp10",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": 10
+      },
+      "text": "Liberal states have a duty to use their power, including military power, in defence of universal rights."
+    },
+    {
+      "id": "forp11",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": 8
+      },
+      "text": "Non-intervention in the face of genocide or mass atrocity is not genuine neutrality; it has consequences too."
+    },
+    {
+      "id": "forp12",
+      "axis": "forp",
+      "core": false,
+      "effect": {
+        "forp": 7
+      },
+      "text": "A credible commitment to human rights sometimes requires the willingness to intervene abroad."
+    }
+  ]
+}
