@@ -354,7 +354,7 @@ html, body {
 .begin-btn.compact { margin-top: 0; padding: 12px; }
 .action-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 10px;
   margin-top: 16px;
 }

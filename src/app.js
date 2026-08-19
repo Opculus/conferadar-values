@@ -13,7 +13,7 @@ const LABEL_THRESHOLD = 9;
 // respondents agree with their result?). Empty string disables the feature —
 // no submit UI renders until a real endpoint is deployed. See
 // SETUP-DATA-COLLECTION.md to deploy one and fill this in.
-const SUBMIT_ENDPOINT = '';
+const SUBMIT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzahPrIlJ7yyB7y5n8-sTqbxUaHOhHsikaqlokw6eD46psP0BOwNqWV1eURHvhS0PJtdA/exec';
 const MODULE2_FILES = {
   1: 'module2-b01-ml-questions.json',
   2: 'module2-b02-leftcom-questions.json',
@@ -87,6 +87,107 @@ function getSeed(key) {
 function clearSeeds() {
   for (const k in memSeeds) delete memSeeds[k];
   try { sessionStorage.clear(); } catch (e) { /* storage blocked */ }
+}
+
+// ---------------------------------------------------------- save/resume
+// localStorage (not sessionStorage) so progress survives closing the tab —
+// but that means the shuffle seed must be saved explicitly alongside it: a
+// fresh getSeed() call after a browser restart would draw a NEW seed and
+// reshuffle the question order, making the saved answers/idx point at the
+// wrong items. Same SecurityError guard as sessionStorage above applies.
+const PROGRESS_KEY = 'cfv_progress_v1';
+const PROGRESS_VERSION = 1;
+
+function saveProgress() {
+  const p = {
+    v: PROGRESS_VERSION,
+    screen: state.screen,
+    form: state.form,
+    seed1: state.seed1,
+    answers1: state.answers1,
+    idx1: state.screen === 'quiz1' ? state.idx : null,
+    m1scores: state.m1scores,
+    culturalScore: state.culturalScore,
+    bucketId: state.bucketId,
+    seed2: state.seed2,
+    answers2: state.answers2,
+    idx2: state.screen === 'quiz2' ? state.idx : null,
+  };
+  try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); } catch (e) { /* storage blocked */ }
+}
+function clearProgress() {
+  try { localStorage.removeItem(PROGRESS_KEY); } catch (e) { /* storage blocked */ }
+}
+function loadRawProgress() {
+  try {
+    const raw = localStorage.getItem(PROGRESS_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) { return null; }
+}
+
+// Re-derives order1/order2 from the saved seeds and checks every saved
+// answer id still exists in the current question set, so stale progress from
+// a previous build (questions added/removed/reworded) is dropped rather than
+// resumed into a broken state.
+function validateProgress(p, data) {
+  if (!p || p.v !== PROGRESS_VERSION) return null;
+  if (p.form !== 'full' && p.form !== 'short') return null;
+  if (!['quiz1', 'transition', 'quiz2'].includes(p.screen)) return null;
+
+  const m1q = questionsForForm(data.module1.questions, p.form);
+  const order1 = seededShuffle(m1q, p.seed1);
+  const ids1 = new Set(order1.map(q => q.id));
+  if (!Object.keys(p.answers1 || {}).every(id => ids1.has(id))) return null;
+
+  if (p.screen === 'quiz1') {
+    if (!Number.isInteger(p.idx1) || p.idx1 < 0 || p.idx1 >= order1.length) return null;
+    return { ...p, order1 };
+  }
+
+  const bucketData = data.module2.buckets[p.bucketId];
+  if (!bucketData || !p.m1scores) return null;
+  if (p.screen === 'transition') return { ...p, order1 };
+
+  const m2q = questionsForForm(bucketData.questions, p.form);
+  const order2 = seededShuffle(m2q, p.seed2);
+  const ids2 = new Set(order2.map(q => q.id));
+  if (!Object.keys(p.answers2 || {}).every(id => ids2.has(id))) return null;
+  if (!Number.isInteger(p.idx2) || p.idx2 < 0 || p.idx2 >= order2.length) return null;
+  return { ...p, order1, order2 };
+}
+
+function resumeProgress() {
+  const p = state.resumable;
+  if (!p) return;
+  state.form = p.form;
+  state.seed1 = p.seed1;
+  state.order1 = p.order1;
+  state.answers1 = p.answers1 || {};
+
+  if (p.screen === 'quiz1') {
+    state.idx = p.idx1;
+    state.screen = 'quiz1';
+    render();
+    return;
+  }
+
+  state.m1scores = p.m1scores;
+  state.culturalScore = p.culturalScore;
+  state.routing = routeModule1(p.m1scores, state.data.module1.buckets);
+  state.bucketId = p.bucketId;
+
+  if (p.screen === 'transition') {
+    state.screen = 'transition';
+    render();
+    return;
+  }
+
+  state.seed2 = p.seed2;
+  state.order2 = p.order2;
+  state.answers2 = p.answers2 || {};
+  state.idx = p.idx2;
+  state.screen = 'quiz2';
+  render();
 }
 
 // ------------------------------------------------------------------ scoring
@@ -244,6 +345,9 @@ const state = {
   idx: 0,
   answers1: {},
   answers2: {},
+  seed1: null,
+  seed2: null,
+  resumable: null, // validated save/resume snapshot offered on the intro screen
   bucketId: null,
   routing: null,
   m1scores: null,
@@ -263,6 +367,12 @@ function questionsForForm(all, form) {
 
 // ------------------------------------------------------------------ render
 function render() {
+  if (state.screen === 'quiz1' || state.screen === 'transition' || state.screen === 'quiz2') {
+    saveProgress();
+  } else if (state.screen === 'results' && !state.fromLink) {
+    // a freshly-finished run — nothing left to resume
+    clearProgress();
+  }
   root.innerHTML = '';
   if (state.screen === 'intro') return renderIntro();
   if (state.screen === 'quiz1') return renderQuiz(1);
@@ -400,6 +510,29 @@ function renderIntro() {
     'Stage Two administers a battery specific to that cluster, scoring eight further axes unique to it. ' +
     'A cultural orientation reading is taken independently and never affects routing.'));
 
+  if (state.resumable) {
+    const p = state.resumable;
+    const info = p.screen === 'quiz1'
+      ? `Module 1 — item ${p.idx1 + 1} of ${p.order1.length}`
+      : p.screen === 'transition'
+        ? 'Module 1 complete — ready to start Module 2'
+        : `Module 2 — item ${p.idx2 + 1} of ${p.order2.length}`;
+    wrap.appendChild(el('div', { class: 'validate-box' }, [
+      text('div', 'section-title', 'IN-PROGRESS ASSESSMENT FOUND'),
+      text('p', 'note', info),
+      el('div', { class: 'action-row' }, [
+        el('button', {
+          class: 'begin-btn compact',
+          onclick: () => resumeProgress(),
+        }, text('span', '', '↻ RESUME')),
+        el('button', {
+          class: 'nav-btn',
+          onclick: () => { clearProgress(); state.resumable = null; render(); },
+        }, text('span', '', 'DISCARD & START OVER')),
+      ]),
+    ]));
+  }
+
   const formPicker = el('div', { class: 'form-picker' });
   const full = el('button', {
     class: 'choice-btn' + (state.form === 'full' ? ' active' : ''),
@@ -423,8 +556,11 @@ function renderIntro() {
 }
 
 function beginModule1() {
+  clearProgress();
+  state.resumable = null;
   const q = questionsForForm(state.data.module1.questions, state.form);
   const seed = getSeed('cfv_seed1_' + state.form);
+  state.seed1 = seed;
   state.order1 = seededShuffle(q, seed);
   state.idx = 0;
   state.answers1 = {};
@@ -521,6 +657,7 @@ function beginModule2() {
   const bucketData = state.data.module2.buckets[state.bucketId];
   const q = questionsForForm(bucketData.questions, state.form);
   const seed = getSeed('cfv_seed2_' + state.bucketId + '_' + state.form);
+  state.seed2 = seed;
   state.order2 = seededShuffle(q, seed);
   state.idx = 0;
   state.answers2 = {};
@@ -656,6 +793,103 @@ function matchList(rows, limit) {
   return list;
 }
 
+// ------------------------------------------------------------- share card
+// A downloadable PNG for manual sharing (Discord, Twitter, etc), NOT a
+// crawler-fetched og:image — the result payload lives in location.hash, and
+// URL fragments never reach a server, so a link-preview bot can never see it.
+// Drawn with 2D canvas primitives rather than serializing the results radar
+// <svg>: that SVG is styled entirely by CSS classes (radar-ring, radar-data,
+// ...), which do not travel when cloned into an off-DOM canvas — it would
+// rasterize blank.
+function drawRadarOnCanvas(ctx, axes, scores, cx, cy, R) {
+  const n = axes.length;
+  const angleFor = i => -Math.PI / 2 + (i * 2 * Math.PI) / n;
+
+  ctx.strokeStyle = 'rgba(217,201,163,0.25)';
+  ctx.lineWidth = 1;
+  for (const frac of [0.25, 0.5, 0.75, 1]) {
+    ctx.beginPath();
+    axes.forEach((_, i) => {
+      const a = angleFor(i);
+      const x = cx + R * frac * Math.cos(a), y = cy + R * frac * Math.sin(a);
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    });
+    ctx.closePath();
+    ctx.stroke();
+  }
+
+  ctx.fillStyle = '#d9c9a3';
+  ctx.font = '12px Georgia, serif';
+  axes.forEach((ax, i) => {
+    const a = angleFor(i);
+    const x = cx + R * Math.cos(a), y = cy + R * Math.sin(a);
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(x, y); ctx.stroke();
+    const lx = cx + (R + 16) * Math.cos(a), ly = cy + (R + 16) * Math.sin(a);
+    ctx.textAlign = Math.abs(lx - cx) < 4 ? 'center' : (lx > cx ? 'left' : 'right');
+    ctx.textBaseline = ly < cy ? 'bottom' : 'top';
+    ctx.fillText(ax.name, lx, ly);
+  });
+
+  const radiusFor = ax => (R * leaning(ax, scores[ax.key]).strength) / 100;
+  ctx.beginPath();
+  axes.forEach((ax, i) => {
+    const a = angleFor(i), r = radiusFor(ax);
+    const x = cx + r * Math.cos(a), y = cy + r * Math.sin(a);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(140,31,31,0.35)';
+  ctx.fill();
+  ctx.strokeStyle = '#8c1f1f';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+}
+
+function buildShareCardCanvas() {
+  const W = 1200, H = 630;
+  const canvas = document.createElement('canvas');
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext('2d');
+
+  const family = state.routing.find(r => r.id === state.bucketId) || state.routing[0];
+
+  ctx.fillStyle = '#1c2a44';
+  ctx.fillRect(0, 0, W, H);
+  ctx.strokeStyle = '#8c1f1f';
+  ctx.lineWidth = 6;
+  ctx.strokeRect(3, 3, W - 6, H - 6);
+
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'alphabetic';
+  ctx.fillStyle = '#a89873';
+  ctx.font = 'bold 22px Georgia, serif';
+  ctx.fillText('CONFERADAR VALUES — CASE FILE', 48, 64);
+
+  ctx.fillStyle = '#d9c9a3';
+  ctx.font = 'bold 46px Georgia, serif';
+  ctx.fillText(family.name, 48, 130);
+
+  ctx.fillStyle = '#c2492a';
+  ctx.font = '26px Georgia, serif';
+  wrapWords(state.m2.label, 34).slice(0, 2).forEach((line, i) => {
+    ctx.fillText(line, 48, 168 + i * 32);
+  });
+
+  ctx.fillStyle = '#d9c9a3';
+  ctx.font = '19px Georgia, serif';
+  ctx.fillText(
+    `${family.matchPercent.toFixed(0)}% family match · ${state.m2.primary.matchPercent.toFixed(0)}% tendency match`,
+    48, 240);
+
+  drawRadarOnCanvas(ctx, state.m2.axes, state.m2.scores, 860, 360, 190);
+
+  ctx.fillStyle = '#a89873';
+  ctx.font = '15px Georgia, serif';
+  ctx.fillText('conferadar values — take the test yourself', 48, H - 36);
+
+  return canvas;
+}
+
 function renderResults() {
   const wrap = el('div', { class: 'sheet results' });
   wrap.appendChild(el('div', { class: 'stamp verdict-stamp' }, text('span', '', 'VERDICT')));
@@ -732,11 +966,31 @@ function renderResults() {
   });
   actions.appendChild(shareBtn);
 
+  const cardBtn = el('button', { class: 'begin-btn compact' },
+    text('span', '', '🖼 DOWNLOAD SHARE CARD'));
+  cardBtn.addEventListener('click', () => {
+    const canvas = buildShareCardCanvas();
+    canvas.toBlob(blob => {
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'conferadar-result.png';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+    }, 'image/png');
+  });
+  actions.appendChild(cardBtn);
+
   actions.appendChild(el('button', {
     class: 'begin-btn compact',
     onclick: () => {
       clearSeeds();
       clearResultHash();
+      clearProgress();
+      state.resumable = null;
       state.screen = 'intro';
       state.answers1 = {}; state.answers2 = {};
       state.fromLink = false;
@@ -759,6 +1013,7 @@ function routeFromHash() {
     state.screen = 'results';
   } else {
     state.screen = 'intro';
+    state.resumable = validateProgress(loadRawProgress(), state.data);
   }
   render();
 }
