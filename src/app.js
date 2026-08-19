@@ -621,8 +621,14 @@ function advance(moduleNum) {
 }
 
 function finishModule1() {
-  const all = state.data.module1.questions;
-  const scores = scoreAxes(all, state.answers1);
+  // MUST be the form-filtered set, not all 94. scoreAxes treats a missing
+  // answer as 0 in the numerator but still counts its weight in the
+  // denominator, so scoring the short form against every question drags each
+  // axis toward 50 by the fraction of items that form never asked (~0.53-0.64
+  // per axis). That compression collapsed the whole moderate-left region onto
+  // the Social Democracy anchor.
+  const asked = questionsForForm(state.data.module1.questions, state.form);
+  const scores = scoreAxes(asked, state.answers1);
   state.m1scores = scores;
   state.culturalScore = scores.cult ?? 50;
   state.routing = routeModule1(scores, state.data.module1.buckets);
@@ -667,7 +673,8 @@ function beginModule2() {
 
 function finishModule2() {
   const bucketData = state.data.module2.buckets[state.bucketId];
-  const scores = scoreAxes(bucketData.questions, state.answers2);
+  // form-filtered for the same reason as finishModule1()
+  const scores = scoreAxes(questionsForForm(bucketData.questions, state.form), state.answers2);
   const axisKeys = bucketData.axes.map(a => a.key);
   const resolved = resolveModule2Label(scores, bucketData.subIdeologies, axisKeys);
   state.m2 = { scores, axes: bucketData.axes, ...resolved };
